@@ -9,8 +9,8 @@ const routes = [
 		path: '/'
 	},
 	{
-		title: 'Gallerie',
-		path: '/gallerie'
+		title: 'Galerie',
+		path: '/galerie'
 	},
 	{
 		title: 'Partenaires',
