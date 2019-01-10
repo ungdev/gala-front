@@ -1,0 +1,18 @@
+:root {
+	--primary-color: #c90e0e;
+	--secondary-color: #fff;
+}
+
+html, body {
+  font-family: 'Roboto', arial, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	background-color: #555555;
+	background-image: url(./assets/noise.png);
+	background-repeat: repeat;
+}
+
+#page {
+	color: #fff;
+}

@@ -1,0 +1,164 @@
+#header {
+	margin-top: 70px;
+}
+
+#header .header-content {
+	position: fixed;
+	top: 0;
+	text-align: center;
+	width: 100%;
+	height: 70px;
+	background: #272727;
+	z-index: 999;
+}
+
+#header nav {
+	font-size: 14px;
+	height: 100%;
+}
+
+#header nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#header nav ul a {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	height: 100%;
+	padding: 0 20px;
+	transition: all .3s;
+}
+
+#header nav ul a::before {
+	content: '';
+	position: absolute;
+	display: block;
+	bottom: 0;
+	left: 0;
+	height: 0;
+	width: 100%;
+	background: var(--primary-color);
+	z-index: -1;
+	transition: all .3s;
+}
+
+#header nav ul a.active::before {
+	height: calc(100% + 5px);
+}
+
+#header nav ul a:not(.active):hover::before {
+	height: 5px;
+}
+
+#header nav ul li {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #fff;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#header nav ul a.active li {
+	color: var(--secondary-color);
+}
+
+@media screen and (max-width: 800px) {
+	#header nav .mobile-hamburger-menu {
+		position: relative;
+		display: block;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 20px;
+		height: 22px;
+		width: 32px;
+		cursor: pointer;
+	}
+
+	#header nav .mobile-hamburger-menu > span {
+		position: absolute;
+		background: #fff;
+		left: 0;
+		height: 4px;
+		width: 100%;
+		transition: all .3s;
+	}
+
+	#header nav .mobile-hamburger-menu > span:nth-child(1) {
+		top: 0;
+	}
+	#header nav .mobile-hamburger-menu > span:nth-child(2) {
+		top: 9px;
+	}
+	#header nav .mobile-hamburger-menu > span:nth-child(3) {
+		top: 18px;
+	}
+
+	#header nav.active .mobile-hamburger-menu > span:nth-child(1) {
+		top: 50%;
+		transform: rotate(45deg);
+	}
+
+	#header nav.active .mobile-hamburger-menu > span:nth-child(3) {
+		top: 50%;
+		transform: rotate(-45deg);
+	}
+
+	#header nav.active .mobile-hamburger-menu > span:nth-child(2) {
+		left: -52px;
+	}
+
+	#header nav ul {
+		position: absolute;
+		top: 70px;
+		left: 0;
+		height: 0;
+		overflow: hidden;
+		transition: all .3s;
+	}
+
+	#header nav ul::before {
+		content: '';
+		position: fixed;
+		display: block;
+		background: rgba(50, 50, 50, 0.8);
+		height: 0;
+		width: 100%;
+		z-index: -1;
+		transition: all .3s;
+	}
+
+	#header nav.active ul::before {
+		height: 100%;
+	}
+
+	#header nav.active ul {
+		height: calc(100vh - 70px);
+		overflow: scroll;
+	}
+
+	#header nav ul a {
+		display: block;
+		height: 50px;
+	}
+
+	#header nav ul a::before {
+		width: 0;
+		height: 100%;
+	}
+
+	#header nav ul a.active::before {
+		height: 100%;
+		width: 100%;
+	}
+
+	#header nav ul a:not(.active):hover::before {
+		width: 8px;
+		height: 100%;
+	}
+}

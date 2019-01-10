@@ -1,0 +1,85 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import './header.css';
+
+const routes = [
+	{
+		title: 'Accueil',
+		path: '/'
+	},
+	{
+		title: 'Gallerie',
+		path: '/gallerie'
+	},
+	{
+		title: 'Partenaires',
+		path: '/partenaires'
+	},
+	{
+		title: 'Conditions d\'entrée',
+		path: '/conditions-entree'
+	},
+	{
+		title: 'Accès',
+		path: '/acces'
+	},
+	{
+		title: 'Contact',
+		path: '/contact'
+	}
+];
+
+class Header extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			mobileMenuActive: false
+		};
+	}
+
+	toggleMobileMenu = () => {
+		this.setState({
+			mobileMenuActive: !this.state.mobileMenuActive
+		});
+	}
+
+	closeMobileMenu = () => {
+		this.setState({
+			mobileMenuActive: false
+		});
+	}
+
+  render() {
+		const navigationLinks = routes.map((route, i) => {
+			const active = route.path === document.location.pathname;
+
+			return (
+				<Link to={route.path} key={i} className={active ? 'active' : ''} onClick={this.closeMobileMenu}>
+					<li>{route.title}</li>
+				</Link>
+			);
+		});
+
+    return (
+			<div id="header">
+				<div className="header-content">
+					<nav className={this.state.mobileMenuActive ? 'active' : ''}>
+						<div className="mobile-hamburger-menu" onClick={this.toggleMobileMenu}>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+
+						<ul>
+							{ navigationLinks }
+						</ul>
+					</nav>
+				</div>
+			</div>
+		);
+  }
+};
+
+export default Header;
