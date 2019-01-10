@@ -51,6 +51,7 @@
 	height: calc(100% + 5px);
 }
 
+#header nav ul a:not(.active):focus::before,
 #header nav ul a:not(.active):hover::before {
 	height: 5px;
 }
@@ -119,27 +120,29 @@
 		left: 0;
 		height: 0;
 		overflow: hidden;
-		transition: all .3s;
+		transition: all .05s;
 	}
 
 	#header nav ul::before {
 		content: '';
 		position: fixed;
 		display: block;
-		background: rgba(50, 50, 50, 0.8);
+		background: rgba(50, 50, 50, 0.9);
 		height: 0;
 		width: 100%;
 		z-index: -1;
-		transition: all .3s;
-	}
-
-	#header nav.active ul::before {
-		height: 100%;
+		transition: all .05s;
 	}
 
 	#header nav.active ul {
 		height: calc(100vh - 70px);
 		overflow: scroll;
+		transition: all .3s;
+	}
+
+	#header nav.active ul::before {
+		height: 100%;
+		transition: all .3s;
 	}
 
 	#header nav ul a {
@@ -157,8 +160,9 @@
 		width: 100%;
 	}
 
+	#header nav ul a:not(.active):focus::before,
 	#header nav ul a:not(.active):hover::before {
-		width: 8px;
+		width: 10px;
 		height: 100%;
 	}
 }

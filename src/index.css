@@ -13,6 +13,10 @@ html, body {
 	background-repeat: repeat;
 }
 
+a {
+	outline: none;
+}
+
 #page {
 	color: #fff;
 }
