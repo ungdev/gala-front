@@ -40,12 +40,17 @@ class Header extends React.Component {
 	}
 
 	toggleMobileMenu = () => {
+		// Prevent from scrolling the body when menu is active
+		document.getElementsByTagName('body')[0].style.overflow = this.state.mobileMenuActive ? '' : 'hidden';
+
 		this.setState({
 			mobileMenuActive: !this.state.mobileMenuActive
 		});
 	}
 
 	closeMobileMenu = () => {
+		document.getElementsByTagName('body')[0].style.overflow = '';
+
 		this.setState({
 			mobileMenuActive: false
 		});
