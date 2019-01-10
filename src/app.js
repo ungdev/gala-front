@@ -10,6 +10,7 @@ import Partners from './containers/partners';
 import Conditions from './containers/conditions';
 import Access from './containers/access';
 import Contact from './containers/contact';
+import Legal from './containers/legal';
 import PageNotFound from './containers/pageNotFound';
 
 import './index.css';
@@ -28,6 +29,7 @@ const App = () => (
 						<Route path="/conditions-entree" exact component={Conditions} />
 						<Route path="/acces" exact component={Access} />
 						<Route path="/contact" exact component={Contact} />
+						<Route path="/mentions-legales" exact component={Legal} />
 						<Route component={PageNotFound} />
 					</Switch>
 				</div>

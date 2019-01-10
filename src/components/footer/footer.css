@@ -64,10 +64,25 @@
 }
 
 #footer .copyright {
-	font-size: 12px;
+	font-size: 13px;
 }
 
 #footer .copyright i {
 	font-size: 11px;
 	margin-right: 3px;
+}
+
+#footer .legal {
+	margin-top: 8px;
+}
+
+#footer .legal a {
+	font-size: 13px;
+	text-decoration: none;
+	color: #fff;
+	transition: all .3s;
+}
+
+#footer .legal a:hover {
+	color: #aaa;
 }

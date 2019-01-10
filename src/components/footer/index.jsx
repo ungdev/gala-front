@@ -26,6 +26,10 @@ class Footer extends React.Component {
 				<div className="copyright">
 					<i class="far fa-copyright"></i> Tous droits réservés - Gala UTT 2019
 				</div>
+
+				<div className="legal">
+					<Link to="/mentions-legales">Mentions légales</Link>
+				</div>
 			</div>
 		);
   }
