@@ -67,9 +67,11 @@ class Header extends React.Component {
 				<div className="header-content">
 					<nav className={this.state.mobileMenuActive ? 'active' : ''}>
 						<div className="mobile-hamburger-menu" onClick={this.toggleMobileMenu}>
-							<span></span>
-							<span></span>
-							<span></span>
+							<div>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
 						</div>
 
 						<ul>
