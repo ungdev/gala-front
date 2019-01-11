@@ -23,7 +23,7 @@ class Home extends React.Component {
 		partners.forEach((partner, i) => {
 			const img = require(`../../assets/partners/${partner.image}`);
 
-			this.partners.push(<img src={img} alt={partner.name} key={i} />);
+			this.partners.push(<a href={partner.url} key={i}><img src={img} alt={partner.name} /></a>);
 		});
 	}
 

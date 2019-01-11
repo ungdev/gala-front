@@ -1,6 +1,6 @@
 export default [
 	{
-		name: 'Allyson',
+		name: 'Allyson Auto-école',
 		image: 'allyson.png',
 		url: 'http://ae-allyson.com/'
 	},

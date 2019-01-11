@@ -26,6 +26,9 @@ class Partners extends React.Component {
   render() {
     return (
 			<div id="partners">
+				<h1 className="centered">Partenaires</h1>
+				<hr />
+
 				<div className="partners-list">
 					{ this.partners }
 				</div>
