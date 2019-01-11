@@ -12,26 +12,6 @@
 	left: 0;
 }
 
-#access h2 {
-	position: relative;
-	margin: 50px 0 35px 0;
-	padding-left: 15px;
-	text-transform: uppercase;
-	font-weight: 100;
-	letter-spacing: 1px;
-}
-
-#access h2:before {
-	content: '';
-	position: absolute;
-	display: inline-block;
-	top: 0;
-	left: 0;
-	width: 3px;
-	height: 100%;
-	background: var(--primary-color);
-}
-
 #access .access-list {
 	padding-left: 20px;
 	list-style: none;

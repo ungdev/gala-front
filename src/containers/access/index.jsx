@@ -23,7 +23,7 @@ class Access extends React.Component {
 
 				<hr />
 
-				<h2>Navettes depuis le centre ville de Troyes</h2>
+				<h2 className="title-decoration">Navettes depuis le centre ville de Troyes</h2>
 				<p>
 					À partir de 21h30, une navette gratuite est mise en place entre le rond-point de Beurnonville
 					(proche du Centre des Finances Publiques et du CNAM) et le parking de l’UTT.
@@ -33,7 +33,7 @@ class Access extends React.Component {
 					<li>Départs UTT : 01h00 – 01h30 – 02h00 – 02h30 – 03h00 – 03h30 – 03h45 – 04h00 – 04h15 – 04h30 – 04h45 – 05h00 – 05h15 – 05h30</li>
 				</ul>
 
-				<h2>En voiture</h2>
+				<h2 className="title-decoration">En voiture</h2>
 
 				<p><strong>Depuis Paris</strong></p>
 				<ul className="access-list">
@@ -61,7 +61,7 @@ class Access extends React.Component {
 
 				<p>Un parking d’une centaine de places est disponible à proximité de l’UTT pour les personnes arrivant en voiture.</p>
 
-				<h2>En train</h2>
+				<h2 className="title-decoration">En train</h2>
 				<p><strong>Depuis Paris :</strong> TER Gare de l’Est vers Troyes</p>
 			</div>
 		);

@@ -81,3 +81,23 @@ a.button {
 a.button:hover {
 	filter: grayscale(0.25);
 }
+
+h2.title-decoration {
+	position: relative;
+	margin: 50px 0 35px 0;
+	padding-left: 15px;
+	text-transform: uppercase;
+	font-weight: 100;
+	letter-spacing: 1px;
+}
+
+h2.title-decoration:before {
+	content: '';
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	left: 0;
+	width: 3px;
+	height: 100%;
+	background: var(--primary-color);
+}
