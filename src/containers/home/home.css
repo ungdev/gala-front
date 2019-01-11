@@ -1,0 +1,9 @@
+#home h1,
+#home h2 {
+	text-align: center;
+}
+
+#home .poster-container {
+	max-width: 500px;
+	margin: 20px auto;
+}

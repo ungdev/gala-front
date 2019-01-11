@@ -1,3 +1,7 @@
+/* --------------- */
+/* --- General --- */
+/* --------------- */
+
 :root {
 	--primary-color: #c90e0e;
 	--secondary-color: #fff;
@@ -8,14 +12,44 @@ html, body {
 	font-size: 16px;
 	margin: 0;
 	padding: 0;
-	background-color: #555555;
+	background-color: #464646;
 	background-image: url(./assets/noise.png);
 	background-repeat: repeat;
 	overflow-x: hidden;
+	height: 100%;
 }
 
 a {
 	outline: none;
+}
+
+img, iframe {
+	max-width: 100%;
+}
+
+h1, h2, h3 {
+	font-family: 'Montserrat', 'Roboto', arial, sans-serif;
+}
+
+hr {
+	height: 2px;
+	width: 200px;
+	max-width: 100%;
+	background: var(--primary-color);
+	border: none;
+	margin: 30px auto;
+}
+
+/* ------------ */
+/* --- Misc --- */
+/* ------------ */
+
+.centered {
+	text-align: center;
+}
+
+.justified {
+	text-align: justify;
 }
 
 #page {
@@ -23,4 +57,22 @@ a {
 	max-width: 1000px;
 	margin: 0 auto;
 	padding: 20px;
+}
+
+a.button {
+	display: inline-block;
+	margin-top: 20px;
+	border-radius: 4px;
+	padding: 14px 20px;
+	background: var(--primary-color);
+	color: var(--secondary-color);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
+	transition: all .3s;
+}
+
+a.button:hover {
+	filter: grayscale(0.25);
 }
