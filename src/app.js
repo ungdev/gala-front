@@ -19,9 +19,7 @@ import './index.css';
 const App = () => (
   <div id="app">
     <Router>
-			<React.Fragment>
-				<ScrollToTop />
-
+			<ScrollToTop>
 				<Header />
 
 				<div id="page">
@@ -38,7 +36,7 @@ const App = () => (
 				</div>
 
 				<Footer />
-			</React.Fragment>
+			</ScrollToTop>
     </Router>
   </div>
 );
