@@ -1,0 +1,48 @@
+
+#partners .partners-list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#partners .partner {
+	position: relative;
+	width: 290px;
+	height: 290px;
+	margin: 20px;
+	overflow: hidden;
+}
+
+#partners .partner[data-name]::after {
+	content: attr(data-name);
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	font-size: 24px;
+	opacity: 0;
+	background: rgba(39, 39, 39, 0.9);
+	padding: 10px 15px;
+	transition: all .3s;
+}
+
+#partners .partner[data-name]:hover::after {
+	opacity: 1;
+}
+
+#partners .partner .partner-image {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: all .3s;
+}
+
+#partners .partner:hover .partner-image {
+	transform: scale(1.05);
+	filter: blur(3px) brightness(0.7);
+}

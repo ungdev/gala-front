@@ -88,7 +88,7 @@ class Home extends React.Component {
 
 					<h2>Partenaires</h2>
 
-					<div className="owl-carousel">
+					<div className="owl-carousel partners-carousel">
 						{ this.partners }
 					</div>
 

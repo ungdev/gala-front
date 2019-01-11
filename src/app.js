@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from './components/header';
 import Footer from './components/footer';
+import ScrollToTop from './components/scrollToTop';
 
 import Home from './containers/home';
 import Gallery from './containers/gallery';
@@ -19,6 +20,8 @@ const App = () => (
   <div id="app">
     <Router>
 			<React.Fragment>
+				<ScrollToTop />
+
 				<Header />
 
 				<div id="page">
