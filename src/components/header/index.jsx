@@ -68,7 +68,7 @@ class Header extends React.Component {
 		});
 
     return (
-			<div id="header">
+			<header>
 				<div className="header-content">
 					<nav className={this.state.mobileMenuActive ? 'active' : ''}>
 						<div className="mobile-hamburger-menu" onClick={this.toggleMobileMenu}>
@@ -84,7 +84,7 @@ class Header extends React.Component {
 						</ul>
 					</nav>
 				</div>
-			</div>
+			</header>
 		);
   }
 };
