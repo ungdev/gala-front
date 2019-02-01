@@ -95,7 +95,7 @@ class Home extends React.Component {
 					<h2>Aftermovie Gala UTT 2018</h2>
 					<iframe
 						title="Aftermovie Gala UTT 2018"
-						src="https://www.youtube.com/embed/EO_rrd8FfSM"
+						src="https://www.youtube.com/embed/EO_rrd8FfSM?autoplay=0"
 						width="720"
 						height="405"
 						frameBorder="0"
@@ -103,15 +103,23 @@ class Home extends React.Component {
 						allowFullScreen
 					></iframe>
 
-					<hr />
+					<div className="partners">
+						<div className="partners-background"></div>
 
-					<h2>Partenaires</h2>
+						<h2>Partenaires</h2>
 
-					<div className="owl-carousel partners-carousel">
-						{ this.partners }
+						<div className="partners-carousel-container">
+							<i class="partners-carousel-arrow-left fas fa-chevron-left"></i>
+
+							<div className="owl-carousel partners-carousel">
+								{ this.partners }
+							</div>
+
+							<i class="partners-carousel-arrow-right fas fa-chevron-right"></i>
+						</div>
+
+						<Link to="/partenaires" className="button">Tous les partenaires</Link>
 					</div>
-
-					<Link to="/partenaires" className="button">Tous les partenaires</Link>
 				</div>
 			</div>
 		);

@@ -15,6 +15,7 @@
 	width: 290px;
 	height: 290px;
 	overflow: hidden;
+	background: #fff;
 }
 
 #partners .partner[data-name]::after {
