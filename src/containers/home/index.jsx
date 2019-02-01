@@ -109,13 +109,13 @@ class Home extends React.Component {
 						<h2>Partenaires</h2>
 
 						<div className="partners-carousel-container">
-							<i class="partners-carousel-arrow-left fas fa-chevron-left"></i>
+							<i className="partners-carousel-arrow-left fas fa-chevron-left"></i>
 
 							<div className="owl-carousel partners-carousel">
 								{ this.partners }
 							</div>
 
-							<i class="partners-carousel-arrow-right fas fa-chevron-right"></i>
+							<i className="partners-carousel-arrow-right fas fa-chevron-right"></i>
 						</div>
 
 						<Link to="/partenaires" className="button">Tous les partenaires</Link>
