@@ -12,6 +12,9 @@
 	padding: 14px 20px 14px 44px;
 	transform-style: preserve-3d;
 	outline: 1px solid transparent;
+	font-size: 16px;
+	font-family: 'Roboto', arial, sans-serif;
+	border: none;
 	transition: all .3s;
 }
 
@@ -46,7 +49,28 @@
 	text-align: center;
 }
 
-.submit-button.active {
+.submit-button::before {
+	content: '\f00d';
+	font-weight: bold;
+	font-family: 'Font Awesome\ 5 Free';
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	height: 100%;
+	background: #f00;
+	transform-origin: 0% 0%;
+	transform: rotateX(-90deg);
+	line-height: 45px;
+	text-align: center;
+}
+
+.submit-button.success {
 	transform-origin: 50% 100%;
 	transform: rotateX(-90deg) translateY(100%);
+}
+
+.submit-button.error {
+	transform-origin: 50% 0%;
+	transform: rotateX(90deg) translateY(-100%);
 }

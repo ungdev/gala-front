@@ -2,33 +2,43 @@ import React from 'react';
 
 import './submitButton.css';
 
+// Available status : 'loading', 'success', 'error'
+
 class SubmitButton extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.buttonRef = React.createRef();
+		this.state = {
+			status: this.props.status
+		};
+	}
+
+	componentDidUpdate(prevProps) {
+		if(prevProps !== this.props) {
+			this.setState({
+				status: this.props.status
+			});
+		}
 	}
 
 	click = () => {
-		this.buttonRef.current.classList.add('loading');
+		// Prevent from spamming
+		if(this.state.status === 'loading') {
+			return;
+		}
 
-		setTimeout(() => {
-			this.buttonRef.current.classList.add('active');
-			this.buttonRef.current.classList.remove('loading');
-
-			setTimeout(() => {
-				this.buttonRef.current.classList.remove('active');
-			}, 3000);
-		}, 2000);
+		this.props.onClick();
 	}
 
 	render() {
 		return (
-			<div className="submit-button-container">
-				<div className="submit-button" ref={this.buttonRef} onClick={this.click}>
-					<i class="far fa-paper-plane submit-button-icon"></i>
-					<i class="fas fa-spinner fa-spin submit-button-load"></i>
-					Envoyer
+			<div className={this.props.className}>
+				<div className="submit-button-container">
+					<button className={"submit-button " + this.state.status} onClick={this.click}>
+						<i className="far fa-paper-plane submit-button-icon"></i>
+						<i className="fas fa-spinner fa-spin submit-button-load"></i>
+						Envoyer
+					</button>
 				</div>
 			</div>
 		);

@@ -26,7 +26,7 @@ class Textarea extends React.Component {
 
 	render() {
 		return (
-			<span style={this.props.style}>
+			<div className={this.props.className} style={this.props.style}>
 				<div className="textarea">
 					<div
 						className="textarea-placeholder"
@@ -43,7 +43,7 @@ class Textarea extends React.Component {
 						ref={this.textareaRef}
 					/>
 				</div>
-			</span>
+			</div>
 		);
 	}
 }

@@ -47,7 +47,8 @@
 	50% { right: -20px; }
 }
 
-#home .partners-carousel-arrow-left, #home .partners-carousel-arrow-right {
+#home .partners-carousel-arrow-left,
+#home .partners-carousel-arrow-right {
 	position: absolute;
 	top: 50%;
 	color: #606060;

@@ -26,7 +26,7 @@ class InputField extends React.Component {
 
 	render() {
 		return (
-			<span style={this.props.style}>
+			<div className={this.props.className} style={{ display: 'inline-block', ...this.props.style }}>
 				<div className="input-field">
 					<div
 						className="input-field-placeholder"
@@ -43,7 +43,7 @@ class InputField extends React.Component {
 						ref={this.inputRef}
 					/>
 				</div>
-			</span>
+			</div>
 		);
 	}
 }

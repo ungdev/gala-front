@@ -11,6 +11,16 @@
 	text-align: center;
 }
 
-#contact .textarea {
+#contact .contact-name-field {
+	margin-right: 20px;
+}
+
+#contact .contact-textarea {
+	margin-top: 10px;
+	width: 100%;
+}
+
+#contact .contact-submit-button {
 	margin-top: 30px;
+	text-align: right;
 }
