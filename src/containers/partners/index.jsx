@@ -14,7 +14,7 @@ class Partners extends React.Component {
 			const img = require(`../../assets/partners/${partner.image}`);
 
 			this.partners.push(
-				<a href={partner.url} key={i}>
+				<a href={partner.url} className="partner-link" key={i}>
 					<div className="partner" data-name={partner.name}>
 						<div className="partner-image" style={{ backgroundImage: `url(${img})` }} />
 					</div>
@@ -26,6 +26,9 @@ class Partners extends React.Component {
   render() {
     return (
 			<div id="partners">
+				<h1 className="centered">Partenaires</h1>
+				<hr />
+
 				<div className="partners-list">
 					{ this.partners }
 				</div>

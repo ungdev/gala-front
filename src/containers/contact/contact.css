@@ -1,0 +1,26 @@
+#contact {
+	background: #fff;
+	padding: 30px 40px;
+	border-radius: 5px;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+#contact h1 {
+	color: var(--primary-color);
+	text-align: center;
+}
+
+#contact .contact-name-field {
+	margin-right: 20px;
+}
+
+#contact .contact-textarea {
+	margin-top: 10px;
+	width: 100%;
+}
+
+#contact .contact-submit-button {
+	margin-top: 30px;
+	text-align: right;
+}

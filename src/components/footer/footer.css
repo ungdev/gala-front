@@ -1,4 +1,4 @@
-#footer {
+footer {
 	background: #272727;
 	color: #fff;
 	width: calc(100% - 40px);
@@ -7,11 +7,11 @@
 	box-shadow: 0 100vh 0 100vh #272727;
 }
 
-#footer .social-links {
+footer .social-links {
 	margin-bottom: 15px;
 }
 
-#footer .social-links a {
+footer .social-links a {
 	display: inline-block;
 	margin: 3px;
 	color: #fff;
@@ -23,65 +23,65 @@
 	transition: all .3s;
 }
 
-#footer .social-links a:hover {
+footer .social-links a:hover {
 	border: 2px solid #fff;
 }
 
-#footer .social-links i {
+footer .social-links i {
 	position: relative;
 	top: 50%;
 	transform: translateY(calc(-50% - 1px));
 }
 
-#footer .social-facebook:hover {
+footer .social-facebook:hover {
 	color: #4267b2;
 }
 
-#footer .social-twitter:hover {
+footer .social-twitter:hover {
 	color: #1da1f2;
 }
 
-#footer .social-youtube:hover {
+footer .social-youtube:hover {
 	color: #f00;
 }
 
-#footer .social-contact {
+footer .social-contact {
 	position: relative;
 }
 
-#footer .social-contact i.open {
+footer .social-contact i.open {
 	display: none;
 	padding-bottom: 5.5px;
 }
 
-#footer .social-contact:hover i.open {
+footer .social-contact:hover i.open {
 	display: inline-block;
 }
 
-#footer .social-contact:hover i:not(.open) {
+footer .social-contact:hover i:not(.open) {
 	display: none;
 }
 
-#footer .copyright {
+footer .copyright {
 	font-size: 13px;
 }
 
-#footer .copyright i {
+footer .copyright i {
 	font-size: 11px;
 	margin-right: 3px;
 }
 
-#footer .legal {
+footer .legal {
 	margin-top: 8px;
 }
 
-#footer .legal a {
+footer .legal a {
 	font-size: 13px;
 	text-decoration: none;
 	color: #fff;
 	transition: all .3s;
 }
 
-#footer .legal a:hover {
+footer .legal a:hover {
 	color: #aaa;
 }

@@ -3,32 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './header.css';
 
-const routes = [
-	{
-		title: 'Accueil',
-		path: '/'
-	},
-	{
-		title: 'Galerie',
-		path: '/galerie'
-	},
-	{
-		title: 'Partenaires',
-		path: '/partenaires'
-	},
-	{
-		title: 'Conditions d\'entrée',
-		path: '/conditions-entree'
-	},
-	{
-		title: 'Accès',
-		path: '/acces'
-	},
-	{
-		title: 'Contact',
-		path: '/contact'
-	}
-];
+import buttons from '../../variables/header';
 
 class Header extends React.Component {
 	constructor(props) {
@@ -40,7 +15,7 @@ class Header extends React.Component {
 	}
 
 	toggleMobileMenu = () => {
-		// Prevent from scrolling the body when menu is active
+		// Prevent from scrolling the body when mobile menu is active
 		document.getElementsByTagName('body')[0].style.overflow = this.state.mobileMenuActive ? '' : 'hidden';
 
 		this.setState({
@@ -57,18 +32,18 @@ class Header extends React.Component {
 	}
 
   render() {
-		const navigationLinks = routes.map((route, i) => {
-			const active = route.path === document.location.pathname;
+		const navigationLinks = buttons.map((button, i) => {
+			const active = button.path === document.location.pathname;
 
 			return (
-				<Link to={route.path} key={i} className={active ? 'active' : ''} onClick={this.closeMobileMenu}>
-					<li>{route.title}</li>
+				<Link to={button.path} key={i} className={active ? 'active' : ''} onClick={this.closeMobileMenu}>
+					<li>{button.title}</li>
 				</Link>
 			);
 		});
 
     return (
-			<div id="header">
+			<header>
 				<div className="header-content">
 					<nav className={this.state.mobileMenuActive ? 'active' : ''}>
 						<div className="mobile-hamburger-menu" onClick={this.toggleMobileMenu}>
@@ -84,7 +59,7 @@ class Header extends React.Component {
 						</ul>
 					</nav>
 				</div>
-			</div>
+			</header>
 		);
   }
 };

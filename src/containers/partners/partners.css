@@ -6,30 +6,36 @@
 	align-items: center;
 }
 
+#partners .partner-link {
+	margin: 20px;
+}
+
 #partners .partner {
 	position: relative;
 	width: 290px;
 	height: 290px;
-	margin: 20px;
 	overflow: hidden;
+	background: #fff;
 }
 
 #partners .partner[data-name]::after {
 	content: attr(data-name);
 	position: absolute;
 	text-align: center;
-	top: 50%;
+	bottom: 0;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, 100%);
 	color: #fff;
-	font-size: 24px;
 	opacity: 0;
 	background: rgba(39, 39, 39, 0.9);
+	font-size: 24px;
 	padding: 10px 15px;
 	transition: all .3s;
 }
 
 #partners .partner[data-name]:hover::after {
+	transform: translate(-50%, 50%);
+	bottom: 50%;
 	opacity: 1;
 }
 

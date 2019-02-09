@@ -1,0 +1,22 @@
+#access .plan-container {
+	width: 100%;
+	position: relative;
+	padding-top: 50%;
+	min-height: 350px;
+	box-sizing: border-box;
+}
+
+#access .plan-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#access .access-list {
+	padding-left: 20px;
+	list-style: none;
+}
+
+#access .access-list > li > i {
+	margin-right: 10px;
+}

@@ -6,7 +6,7 @@ import './footer.css';
 class Footer extends React.Component {
   render() {
     return (
-			<div id="footer">
+			<footer>
 				<div className="social-links">
 					<a className="social-facebook" href="https://www.facebook.com/gala.utt">
 						<i className="fab fa-facebook-f"></i>
@@ -30,7 +30,7 @@ class Footer extends React.Component {
 				<div className="legal">
 					<Link to="/mentions-legales">Mentions légales</Link>
 				</div>
-			</div>
+			</footer>
 		);
   }
 };
