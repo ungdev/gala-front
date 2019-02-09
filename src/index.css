@@ -22,6 +22,10 @@ html, body {
 	color: var(--secondary-color);
 }
 
+img::selection {
+	background: #adadad;
+}
+
 a {
 	outline: none;
 }

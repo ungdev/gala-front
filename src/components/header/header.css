@@ -10,6 +10,7 @@ header .header-content {
 	height: 70px;
 	background: #272727;
 	z-index: 999;
+	box-shadow: 0 0 4px 0 #202020;
 }
 
 header nav {
@@ -143,7 +144,7 @@ header nav ul a.active li {
 
 	header nav.active ul {
 		height: calc(100vh - 70px);
-		overflow: scroll;
+		overflow: auto;
 		transition: all .3s;
 	}
 
