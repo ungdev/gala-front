@@ -1,0 +1,8 @@
+#legal a {
+	color: #fff;
+	transition: all .3s;
+}
+
+#legal a:hover {
+	color: var(--primary-color);
+}
