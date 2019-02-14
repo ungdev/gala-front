@@ -7,10 +7,10 @@ export default [
 		title: 'Galerie',
 		path: '/galerie'
 	},
-	{
+	/*{
 		title: 'Partenaires',
 		path: '/partenaires'
-	},
+	},*/
 	{
 		title: 'Conditions d\'entrée',
 		path: '/conditions-entree'
