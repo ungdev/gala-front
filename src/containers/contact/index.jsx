@@ -5,8 +5,6 @@ import Textarea from '../../components/textarea';
 import SubmitButton from '../../components/submitButton';
 
 import './contact.css';
-import posterImage from "../../assets/poster.png";
-import mailImage from '../../assets/mail.JPG';
 
 class Contact extends React.Component {
 	constructor(props) {
@@ -44,7 +42,7 @@ class Contact extends React.Component {
 				<h1>Contact</h1>
 				<hr />
 
-				{/*<InputField
+				<InputField
 					placeholder="Nom"
 					className="contact-name-field"
 				/>
@@ -60,13 +58,7 @@ class Contact extends React.Component {
 					className="contact-submit-button"
 					onClick={this.submit}
 					status={this.state.buttonStatus}
-				/>*/}
-
-				<p>
-					Notre formulaire de contact est présentement en dérangement, mais vous pouvez nous joindre à l'adresse suivante :
-				</p>
-
-				<img src={mailImage} alt="Adresse e-mail"/>
+				/>
 			</div>
 		);
   }
