@@ -103,7 +103,7 @@ class Home extends React.Component {
 						allowFullScreen
 					></iframe>
 
-					{/*<div className="partners">
+					<div className="partners">
 						<div className="partners-background"></div>
 
 						<h2>Partenaires</h2>
@@ -119,7 +119,7 @@ class Home extends React.Component {
 						</div>
 
 						<Link to="/partenaires" className="button">Tous les partenaires</Link>
-					</div>*/}
+					</div>
 				</div>
 			</div>
 		);
