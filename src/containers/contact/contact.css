@@ -6,7 +6,7 @@
 	margin: 0 auto;
 }
 
-#contact h1 {
+#contact h1, #contact p {
 	color: var(--primary-color);
 	text-align: center;
 }
@@ -23,4 +23,10 @@
 #contact .contact-submit-button {
 	margin-top: 30px;
 	text-align: right;
+}
+
+#contact img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
