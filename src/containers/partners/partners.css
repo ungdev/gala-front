@@ -27,7 +27,7 @@
 	transform: translate(-50%, 100%);
 	color: #fff;
 	opacity: 0;
-	background: rgba(39, 39, 39, 0.9);
+	background: #272727e6;
 	font-size: 24px;
 	padding: 10px 15px;
 	transition: all .3s;

@@ -135,7 +135,7 @@ header nav ul a.active li {
 		content: '';
 		position: fixed;
 		display: block;
-		background: rgba(50, 50, 50, 0.95);
+		background: #323232f2;
 		height: 0;
 		width: 100%;
 		z-index: -1;

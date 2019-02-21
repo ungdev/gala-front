@@ -29,7 +29,7 @@
 	width: 100%;
 	height: calc(100vh - 70px);
 	padding-top: 70px;
-	background: rgba(20, 20, 20, 0.8);
+	background: #141414cc;
 	z-index: 1;
 	display: none;
 }
