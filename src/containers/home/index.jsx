@@ -97,15 +97,17 @@ class Home extends React.Component {
 
 				<div className="centered">
 					<h2>Aftermovie Gala UTT 2018</h2>
-					<iframe
-						title="Aftermovie Gala UTT 2018"
-						src="https://www.youtube.com/embed/EO_rrd8FfSM?autoplay=0"
-						width="720"
-						height="405"
-						frameBorder="0"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-						allowFullScreen
-					></iframe>
+					<div className="video-container">
+						<div>
+							<iframe
+								title="Aftermovie Gala UTT 2018"
+								src="https://www.youtube.com/embed/EO_rrd8FfSM?autoplay=0"
+								frameBorder="0"
+								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowFullScreen
+							></iframe>
+						</div>
+					</div>
 
 					<div className="partners">
 						<div className="partners-background"></div>

@@ -3,6 +3,26 @@
 	text-align: center;
 }
 
+#home .video-container {
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%;
+	background: #ffffff33;
+}
+
+#home .video-container > div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#home .video-container iframe {
+	width: 100%;
+	height: 100%;
+}
+
 #home .partners {
 	position: relative;
 	top: 54px;
