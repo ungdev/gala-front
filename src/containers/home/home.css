@@ -3,11 +3,6 @@
 	text-align: center;
 }
 
-#home .poster-container {
-	max-width: 500px;
-	margin: 20px auto;
-}
-
 #home .partners {
 	position: relative;
 	top: 40px;
@@ -37,35 +32,24 @@
 	position: relative;
 }
 
-@keyframes partners-arrow-left-animation {
-	0% { left: 0; }
-	50% { left: -20px; }
-}
-
-@keyframes partners-arrow-right-animation {
-	0% { right: 0; }
-	50% { right: -20px; }
-}
-
 #home .partners-carousel-arrow-left,
 #home .partners-carousel-arrow-right {
 	position: absolute;
 	top: 50%;
-	color: #999999;
+	color: #444;
 	font-size: 50px;
-	animation-timing-function: linear;
+	padding: 20px;
+	cursor: pointer;
 }
 
 #home .partners-carousel-arrow-left {
 	left: 0;
-	transform: translate(calc(-100% - 20px), -50%);
-	animation: partners-arrow-left-animation 2s infinite;
+	transform: translate(-100%, -50%);
 }
 
 #home .partners-carousel-arrow-right {
 	right: 0;
-	transform: translate(calc(100% + 20px), -50%);
-	animation: partners-arrow-right-animation 2s infinite;
+	transform: translate(100%, -50%);
 }
 
 #home .partners-carousel {
