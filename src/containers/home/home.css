@@ -5,9 +5,10 @@
 
 #home .partners {
 	position: relative;
-	top: 40px;
+	top: 54px;
 	background: #fff;
 	padding: 20px 0;
+	margin-top: -14px;
 }
 
 #home .partners-background {

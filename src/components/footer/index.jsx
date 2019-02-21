@@ -7,8 +7,6 @@ class Footer extends React.Component {
   render() {
     return (
 			<footer>
-				<div className="border-top"></div>
-
 				<div className="social-links">
 					<a className="social-facebook" href="https://www.facebook.com/gala.utt">
 						<i className="fab fa-facebook-f"></i>
