@@ -41,6 +41,7 @@ class InputField extends React.Component {
 						onFocus={this.onFocus}
 						onBlur={this.onBlur}
 						ref={this.inputRef}
+						onChange={(e) => this.props.onChange(e.target.value)}
 					/>
 				</div>
 			</div>

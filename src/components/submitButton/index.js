@@ -23,7 +23,7 @@ class SubmitButton extends React.Component {
 
 	click = () => {
 		// Prevent from spamming
-		if(this.state.status === 'loading') {
+		if(this.state.status !== null) {
 			return;
 		}
 
@@ -33,13 +33,13 @@ class SubmitButton extends React.Component {
 	render() {
 		return (
 			<div className={this.props.className}>
-				<div className="submit-button-container">
-					<button className={"submit-button " + this.state.status} onClick={this.click}>
-						<i className="far fa-paper-plane submit-button-icon"></i>
-						<i className="fas fa-spinner fa-spin submit-button-load"></i>
-						Envoyer
-					</button>
-				</div>
+				<button className={"submit-button " + (this.state.status !== null ? this.state.status : 'icon')} onClick={this.click}>
+					<i className="far fa-paper-plane submit-button-icon"></i>
+					<i className="fas fa-spinner fa-spin submit-button-loading"></i>
+					<i className="fas fa-check submit-button-success"></i>
+					<i className="fas fa-times submit-button-error"></i>
+					Envoyer
+				</button>
 			</div>
 		);
 	}

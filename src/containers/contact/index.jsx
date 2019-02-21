@@ -11,13 +11,20 @@ class Contact extends React.Component {
 		super(props);
 
 		this.state = {
-			buttonStatus: null
+			buttonStatus: null,
+			firstname: '',
+			lastname: '',
+			message: ''
 		};
 	}
 
 	submit = () => {
 		// the following code is for demo purpose
-		console.log('submit');
+		console.log({
+			firstname: this.state.firstname,
+			lastname: this.state.lastname,
+			message: this.state.message
+		});
 
 		this.setState({
 			buttonStatus: 'loading'
@@ -30,8 +37,14 @@ class Contact extends React.Component {
 
 			setTimeout(() => {
 				this.setState({
-					buttonStatus: null
+					buttonStatus: 'error'
 				});
+
+				setTimeout(() => {
+					this.setState({
+						buttonStatus: null
+					});
+				}, 2000);
 			}, 2000);
 		}, 2000);
 	}
@@ -39,19 +52,22 @@ class Contact extends React.Component {
   render() {
     return (
 			<div id="contact">
-				<h1>Contact</h1>
+				<h1 className="centered">Contact</h1>
 				<hr />
 
 				<InputField
-					placeholder="Nom"
-					className="contact-name-field"
+					placeholder="Prénom"
+					onChange={(firstname) => this.setState({ firstname })}
 				/>
 				<InputField
-					placeholder="Prénom"
+					placeholder="Nom"
+					className="contact-name-field"
+					onChange={(lastname) => this.setState({ lastname })}
 				/>
 				<Textarea
 					placeholder="Message"
 					className="contact-textarea"
+					onChange={(message) => this.setState({ message })}
 				/>
 
 				<SubmitButton
