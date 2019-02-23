@@ -83,7 +83,7 @@ hr {
 	padding: 30px;
 }
 
-a.button {
+.button {
 	position: relative;
 	display: inline-block;
 	margin: 10px 0;
@@ -95,10 +95,11 @@ a.button {
 	font-size: 14px;
 	letter-spacing: 1px;
 	overflow: hidden;
+	cursor: pointer;
 	transition: all .3s;
 }
 
-a.button::before {
+.button::before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -112,7 +113,7 @@ a.button::before {
 	transition: all .3s;
 }
 
-a.button:hover::before {
+.button:hover::before {
 	left: 0;
 }
 
