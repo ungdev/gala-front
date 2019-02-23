@@ -57,11 +57,11 @@ class Contact extends React.Component {
 
 				<InputField
 					placeholder="Prénom"
+					className="contact-firstname-field"
 					onChange={(firstname) => this.setState({ firstname })}
 				/>
 				<InputField
 					placeholder="Nom"
-					className="contact-name-field"
 					onChange={(lastname) => this.setState({ lastname })}
 				/>
 				<Textarea
