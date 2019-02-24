@@ -30,7 +30,7 @@ class Tickets extends React.Component {
 	}
 
 	openTicketsWindow = () => {
-		document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+		document.getElementsByTagName('html')[0].style.overflow = 'hidden';
 
 		this.setState({
 			ticketsWindowActive: true
@@ -38,7 +38,7 @@ class Tickets extends React.Component {
 	}
 
 	closeTicketsWindow = () => {
-		document.getElementsByTagName('body')[0].style.overflow = '';
+		document.getElementsByTagName('html')[0].style.overflow = '';
 
 		this.setState({
 			ticketsWindowActive: false

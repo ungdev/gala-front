@@ -12,17 +12,20 @@
 	--secondary-color: #fff;
 }
 
-html, body {
-  font-family: 'Roboto', arial, sans-serif;
-	font-size: 16px;
-	margin: 0;
-	padding: 0;
+html {
 	background: #282660 url('./assets/background.png');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-family: 'Roboto', arial, sans-serif;
+	font-size: 16px;
 	overflow-x: hidden;
-	height: 100%;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
 }
 
 ::selection {

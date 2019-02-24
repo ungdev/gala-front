@@ -77,7 +77,7 @@ class Gallery extends React.Component {
 			viewerActive: true
 		});
 
-		document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+		document.getElementsByTagName('html')[0].style.overflow = 'hidden';
 
 		this.updateArrows(i);
 	}
@@ -87,7 +87,7 @@ class Gallery extends React.Component {
 			viewerActive: false
 		});
 
-		document.getElementsByTagName('body')[0].style.overflow = '';
+		document.getElementsByTagName('html')[0].style.overflow = '';
 	}
 
 	arrowLeftClick = () => {
