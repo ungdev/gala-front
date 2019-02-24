@@ -1,6 +1,7 @@
 #tickets .tickets-button {
 	display: block;
 	text-align: center;
+	margin-top: 40px;
 }
 
 #tickets .tickets-button .icon {
