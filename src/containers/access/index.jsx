@@ -21,8 +21,6 @@ class Access extends React.Component {
 					</div>
 				</div>
 
-				<hr />
-
 				<h2 className="title-decoration">Navettes depuis le centre ville de Troyes</h2>
 				<p>
 					À partir de 21h30, une navette gratuite est mise en place entre le rond-point de Beurnonville

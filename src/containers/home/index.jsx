@@ -85,7 +85,7 @@ class Home extends React.Component {
   render() {
 		return (
 			<div id="home">
-				<h1>Bienvenue sur le site officiel du Gala UTT !</h1>
+				<h1>Bienvenue sur le site officiel du Gala UTT&nbsp;!</h1>
 				<hr />
 
 				<p className="justified">
