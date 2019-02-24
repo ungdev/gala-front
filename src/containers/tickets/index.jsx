@@ -58,7 +58,7 @@ class Tickets extends React.Component {
 					className="tickets-button button"
 					onClick={this.openTicketsWindow}
 				>
-					<i class="fas fa-ticket-alt icon"></i>
+					<i className="fas fa-ticket-alt icon"></i>
 					Accéder à la billetterie
 				</div>
 
@@ -67,11 +67,11 @@ class Tickets extends React.Component {
 					onClick={this.closeTicketsWindow}
 				>
 					<div className="tickets-close-button" title="Fermer">
-						<i class="fas fa-times"></i>
+						<i className="fas fa-times"></i>
 					</div>
 
 					<div className="tickets-window-spinner">
-						<i class="fas fa-spinner fa-spin"></i>
+						<i className="fas fa-spinner fa-spin"></i>
 					</div>
 
 					<iframe
