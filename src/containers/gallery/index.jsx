@@ -1,6 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 
+import LazyloadImage from '../../components/lazyloadImage';
+
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './gallery.css';
 
@@ -20,12 +22,12 @@ class Gallery extends React.Component {
 		imagesUrl.forEach((image, i) => {
 			this.images.push(
 				<div className="image-container" key={i}>
-					<img src={image} alt="" onClick={() => this.openViewer(i)} />
+					<LazyloadImage src={image} onClick={() => this.openViewer(i)} />
 				</div>
 			);
 
 			this.carouselImages.push(
-				<img src={image} alt="" key={i} onClick={this.cancelOutsideClick} />
+				<img className="owl-lazy" data-src={image} onClick={this.cancelOutsideClick} key={i} alt="" />
 			);
 		});
 
@@ -44,7 +46,9 @@ class Gallery extends React.Component {
 		this.carousel.owlCarousel({
 			items: 1,
 			margin: 20,
-			smartSpeed: 400
+			smartSpeed: 400,
+			lazyLoad: true,
+			lazyLoadEager: 1
 		});
 
 		window.addEventListener('keydown', this.keydownHandle);
