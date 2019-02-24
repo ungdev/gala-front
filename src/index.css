@@ -8,7 +8,7 @@
 }
 
 :root {
-	--primary-color: #a3136c;
+	--primary-color: #bc167c;
 	--secondary-color: #fff;
 }
 
@@ -76,7 +76,7 @@ hr {
 }
 
 #content {
-	background: #1116;
+	background: #212121cc;
 	box-shadow: 0 0 4px 4px #6ed1e0, inset 0 0 4px 4px #6ed1e0;
 	border: 3px solid #fff;
 	border-radius: 8px;
