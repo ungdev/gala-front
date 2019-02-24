@@ -15,6 +15,7 @@
 	width: 100vw;
 	height: 100vh;
 	z-index: 9999;
+	background: #fff;
 	transform: scale(0);
 	opacity: 0;
 	transition: all .3s;
@@ -32,6 +33,16 @@
 	padding: 12px 16px;
 	cursor: pointer;
 	background: #272727;
+}
+
+#tickets .tickets-window-spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #272727;
+	font-size: 50px;
+	z-index: -1;
 }
 
 #tickets .tickets-window iframe {

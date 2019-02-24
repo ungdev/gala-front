@@ -70,6 +70,10 @@ class Tickets extends React.Component {
 						<i class="fas fa-times"></i>
 					</div>
 
+					<div className="tickets-window-spinner">
+						<i class="fas fa-spinner fa-spin"></i>
+					</div>
+
 					<iframe
 						title="Billetterie Gala UTT"
 						src="https://www.billetweb.fr/shop.php?event=gala-utt-2019"
