@@ -15,7 +15,6 @@
 	width: 290px;
 	height: 290px;
 	overflow: hidden;
-	background: #fff;
 }
 
 #partners .partner[data-name]::after {
@@ -27,7 +26,7 @@
 	transform: translate(-50%, 100%);
 	color: #fff;
 	opacity: 0;
-	background: rgba(39, 39, 39, 0.9);
+	background: #272727e6;
 	font-size: 24px;
 	padding: 10px 15px;
 	transition: all .3s;
@@ -40,15 +39,23 @@
 }
 
 #partners .partner .partner-image {
+	display: flex;
 	width: 100%;
 	height: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	background: #fff;
 	transition: all .3s;
 }
 
 #partners .partner:hover .partner-image {
 	transform: scale(1.05);
 	filter: blur(3px) brightness(0.7);
+}
+
+#partners .partner-image img {
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
 }

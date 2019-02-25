@@ -8,7 +8,7 @@ import ScrollToTop from './components/scrollToTop';
 import Home from './containers/home';
 import Gallery from './containers/gallery';
 import Partners from './containers/partners';
-import Conditions from './containers/conditions';
+import Tickets from './containers/tickets';
 import Access from './containers/access';
 import Contact from './containers/contact';
 import Legal from './containers/legal';
@@ -23,16 +23,18 @@ const App = () => (
 				<Header />
 
 				<div id="page">
-					<Switch>
-						<Route path="/" exact component={Home} />
-						<Route path="/galerie" exact component={Gallery} />
-						{/*<Route path="/partenaires" exact component={Partners} />*/}
-						<Route path="/conditions-entree" exact component={Conditions} />
-						<Route path="/acces" exact component={Access} />
-						<Route path="/contact" exact component={Contact} />
-						<Route path="/mentions-legales" exact component={Legal} />
-						<Route component={PageNotFound} />
-					</Switch>
+					<div id="content">
+						<Switch>
+							<Route path="/" exact component={Home} />
+							<Route path="/galerie" exact component={Gallery} />
+							{/*<Route path="/partenaires" exact component={Partners} />*/}
+							<Route path="/billetterie" exact component={Tickets} />
+							<Route path="/acces" exact component={Access} />
+							<Route path="/contact" exact component={Contact} />
+							<Route path="/mentions-legales" exact component={Legal} />
+							<Route component={PageNotFound} />
+						</Switch>
+					</div>
 				</div>
 
 				<Footer />

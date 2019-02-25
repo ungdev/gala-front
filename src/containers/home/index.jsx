@@ -2,9 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
-import partners from '../../variables/partners'
-
-import posterImage from '../../assets/poster.png';
+import partners from '../../variables/partners';
 
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './home.css';
@@ -16,7 +14,7 @@ class Home extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { carousel: null };
+		this.carousel = null;
 		this.carouselInterval = null;
 		this.partners = [];
 
@@ -28,9 +26,9 @@ class Home extends React.Component {
 	}
 
 	componentDidMount() {
-		const carousel = $('.owl-carousel');
+		this.carousel = $('.owl-carousel');
 
-		carousel.owlCarousel({
+		this.carousel.owlCarousel({
 			responsive: {
         0:    { items: 2 },
         400:  { items: 3 },
@@ -43,10 +41,6 @@ class Home extends React.Component {
 			smartSpeed: 500,
 			onDrag: this.clearCarouselInterval,
 			onDragged: this.setCarouselInterval
-		});
-
-		this.setState({
-			carousel
 		});
 
 		this.setCarouselInterval();
@@ -67,15 +61,31 @@ class Home extends React.Component {
 	}
 
 	playCarousel = () => {
-		if(this.state.carousel) {
-			this.state.carousel.trigger('next.owl.carousel', [1200]);
+		if(this.carousel) {
+			this.carousel.trigger('next.owl.carousel', [1200]);
 		}
+	}
+
+	carouselPrev = () => {
+		this.carousel.trigger('prev.owl.carousel', [300]);
+
+		// Reset carousel interval
+		this.clearCarouselInterval();
+		this.setCarouselInterval();
+	}
+
+	carouselNext = () => {
+		this.carousel.trigger('next.owl.carousel', [300]);
+
+		// Reset carousel interval
+		this.clearCarouselInterval();
+		this.setCarouselInterval();
 	}
 
   render() {
 		return (
 			<div id="home">
-				<h1>Bienvenue sur le site officiel du Gala UTT !</h1>
+				<h1>Bienvenue sur le site officiel du Gala UTT&nbsp;!</h1>
 				<hr />
 
 				<p className="justified">
@@ -86,40 +96,43 @@ class Home extends React.Component {
 				</p>
 
 				<div className="centered">
-					<div className="poster-container">
-						<img src={posterImage} alt="" />
+					<h2>Aftermovie Gala UTT 2018</h2>
+					<div className="video-container">
+						<div>
+							<iframe
+								title="Aftermovie Gala UTT 2018"
+								src="https://www.youtube.com/embed/EO_rrd8FfSM?autoplay=0"
+								frameBorder="0"
+								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowFullScreen
+							></iframe>
+						</div>
 					</div>
 
-					<hr />
-
-					<h2>Aftermovie Gala UTT 2018</h2>
-					<iframe
-						title="Aftermovie Gala UTT 2018"
-						src="https://www.youtube.com/embed/EO_rrd8FfSM?autoplay=0"
-						width="720"
-						height="405"
-						frameBorder="0"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-						allowFullScreen
-					></iframe>
-
-					{/*<div className="partners">
+					{/*
+					<div className="partners">
 						<div className="partners-background"></div>
 
 						<h2>Partenaires</h2>
 
 						<div className="partners-carousel-container">
-							<i className="partners-carousel-arrow-left fas fa-chevron-left"></i>
+							<i
+								className="partners-carousel-arrow-left fas fa-chevron-left"
+								onClick={this.carouselPrev}
+							></i>
+							<i
+								className="partners-carousel-arrow-right fas fa-chevron-right"
+								onClick={this.carouselNext}
+							></i>
 
 							<div className="owl-carousel partners-carousel">
 								{ this.partners }
 							</div>
-
-							<i className="partners-carousel-arrow-right fas fa-chevron-right"></i>
 						</div>
 
 						<Link to="/partenaires" className="button">Tous les partenaires</Link>
-					</div>*/}
+					</div>
+					*/}
 				</div>
 			</div>
 		);

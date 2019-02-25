@@ -9,7 +9,7 @@
 	top: 50%;
 	left: 0;
 	transform: translate(0, -50%);
-	color: #707070;
+	color: #cecece;
 	padding: 0 8px;
 	user-select: none;
 	cursor: text;
@@ -17,15 +17,17 @@
 }
 
 .input-field-placeholder.active {
-	top: -6px;
+	top: -12px;
 	font-size: 13px;
 	left: -8px;
+	cursor: default;
 }
 
 .input-field input {
 	border: none;
 	padding: 8px;
-	color: #272727;
+	color: #fff;
+	background: #ffffff1c;
 	font-size: 16px;
 	font-family: 'Roboto', arial, sans-serif;
 	box-shadow: 0 1px 0 0 #707070;

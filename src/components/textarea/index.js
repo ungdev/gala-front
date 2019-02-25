@@ -1,4 +1,5 @@
 import React from 'react';
+import TextareaAutosize from 'react-autosize-textarea';
 
 import './textarea.css';
 
@@ -7,7 +8,6 @@ class Textarea extends React.Component {
 		super(props);
 
 		this.labelRef = React.createRef();
-		this.textareaRef = React.createRef();
 	}
 
 	onFocus = () => {
@@ -15,13 +15,13 @@ class Textarea extends React.Component {
 	}
 
 	onBlur = () => {
-		if(this.textareaRef.current.value === '') {
+		if(this.textareaRef.value === '') {
 			this.labelRef.current.classList.remove('active');
 		}
 	}
 
 	labelClick = () => {
-		this.textareaRef.current.focus();
+		this.textareaRef.focus();
 	}
 
 	render() {
@@ -36,11 +36,11 @@ class Textarea extends React.Component {
 						{this.props.placeholder}
 					</div>
 
-					<textarea
-						type="text"
+					<TextareaAutosize
 						onFocus={this.onFocus}
 						onBlur={this.onBlur}
-						ref={this.textareaRef}
+						innerRef={(ref) => { this.textareaRef = ref; }}
+						onChange={(e) => this.props.onChange(e.target.value)}
 					/>
 				</div>
 			</div>

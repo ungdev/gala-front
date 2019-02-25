@@ -2,19 +2,30 @@
 /* --- General --- */
 /* --------------- */
 
+@font-face {
+	font-family: 'LemonMilk';
+	src: url(./assets/fonts/LemonMilk.otf);
+}
+
 :root {
-	--primary-color: #c90e0e;
+	--primary-color: #bc167c;
 	--secondary-color: #fff;
 }
 
-html, body {
-  font-family: 'Roboto', arial, sans-serif;
+html {
+	background: #282660 url('./assets/background.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-family: 'Roboto', arial, sans-serif;
 	font-size: 16px;
+	overflow-x: hidden;
+}
+
+html, body {
 	margin: 0;
 	padding: 0;
-	background: #383838;
-	overflow-x: hidden;
-	height: 100%;
 }
 
 ::selection {
@@ -35,16 +46,17 @@ img, iframe {
 }
 
 h1, h2, h3 {
-	font-family: 'Montserrat', 'Roboto', arial, sans-serif;
+	font-family: 'LemonMilk', arial, sans-serif;
+	text-transform: uppercase;
 }
 
 hr {
-	height: 2px;
-	width: 200px;
+	height: 4px;
+	width: 400px;
 	max-width: 100%;
-	background: var(--primary-color);
+	background: linear-gradient(to right, transparent, #eb048b 50%, transparent);
 	border: none;
-	margin: 30px auto;
+	margin: 20px auto;
 }
 
 /* ------------ */
@@ -61,12 +73,20 @@ hr {
 
 #page {
 	color: #fff;
-	max-width: 1000px;
+	max-width: 1056px;
 	margin: 0 auto;
 	padding: 20px;
 }
 
-a.button {
+#content {
+	background: #212121cc;
+	box-shadow: 0 0 4px 4px #6ed1e0, inset 0 0 4px 4px #6ed1e0;
+	border: 3px solid #fff;
+	border-radius: 8px;
+	padding: 30px;
+}
+
+.button {
 	position: relative;
 	display: inline-block;
 	margin: 10px 0;
@@ -78,10 +98,11 @@ a.button {
 	font-size: 14px;
 	letter-spacing: 1px;
 	overflow: hidden;
+	cursor: pointer;
 	transition: all .3s;
 }
 
-a.button::before {
+.button::before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -89,19 +110,19 @@ a.button::before {
 	left: calc(-30% - 20px);
 	height: 100%;
 	width: 100%;
-	background: rgba(50, 50, 50, 0.2);
+	background: #32323233;
 	clip-path: polygon(0 0, 30% 0, calc(30% + 20px) 100%, 0% 100%);
 	z-index: 1;
 	transition: all .3s;
 }
 
-a.button:hover::before {
+.button:hover::before {
 	left: 0;
 }
 
 h2.title-decoration {
 	position: relative;
-	margin: 50px 0 35px 0;
+	margin: 50px 0 20px 0;
 	padding-left: 15px;
 	font-weight: 100;
 	letter-spacing: 1px;
@@ -113,7 +134,7 @@ h2.title-decoration::before {
 	display: inline-block;
 	top: 0;
 	left: 0;
-	width: 3px;
+	width: 4px;
 	height: 100%;
 	background: var(--primary-color);
 }

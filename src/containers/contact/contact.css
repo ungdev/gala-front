@@ -1,32 +1,18 @@
 #contact {
-	background: #fff;
-	padding: 30px 40px;
-	border-radius: 5px;
 	max-width: 500px;
-	margin: 0 auto;
+	margin: auto;
 }
 
-#contact h1, #contact p {
-	color: var(--primary-color);
-	text-align: center;
-}
-
-#contact .contact-name-field {
+#contact .contact-firstname-field {
 	margin-right: 20px;
 }
 
 #contact .contact-textarea {
-	margin-top: 10px;
+	margin-top: 20px;
 	width: 100%;
 }
 
 #contact .contact-submit-button {
 	margin-top: 30px;
 	text-align: right;
-}
-
-#contact img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 }

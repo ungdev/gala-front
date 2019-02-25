@@ -1,10 +1,12 @@
 footer {
+	position: relative;
 	background: #272727;
 	color: #fff;
 	width: calc(100% - 40px);
 	padding: 40px 20px;
 	text-align: center;
 	box-shadow: 0 100vh 0 100vh #272727;
+	border-top: 4px solid #eb048b;
 }
 
 footer .social-links {
@@ -25,6 +27,7 @@ footer .social-links a {
 
 footer .social-links a:hover {
 	border: 2px solid #fff;
+	box-shadow: 0 0 4px 0 #fff, inset 0 0 4px 0 #fff;
 }
 
 footer .social-links i {
@@ -83,5 +86,5 @@ footer .legal a {
 }
 
 footer .legal a:hover {
-	color: #aaa;
+	text-shadow: 0 0 2px #fff;
 }

@@ -4,22 +4,29 @@ import InputField from '../../components/inputField';
 import Textarea from '../../components/textarea';
 import SubmitButton from '../../components/submitButton';
 
+import emailImg from '../../assets/email.png';
+
 import './contact.css';
-import posterImage from "../../assets/poster.png";
-import mailImage from '../../assets/mail.JPG';
 
 class Contact extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			buttonStatus: null
+			buttonStatus: null,
+			firstname: '',
+			lastname: '',
+			message: ''
 		};
 	}
 
 	submit = () => {
 		// the following code is for demo purpose
-		console.log('submit');
+		console.log({
+			firstname: this.state.firstname,
+			lastname: this.state.lastname,
+			message: this.state.message
+		});
 
 		this.setState({
 			buttonStatus: 'loading'
@@ -41,32 +48,34 @@ class Contact extends React.Component {
   render() {
     return (
 			<div id="contact">
-				<h1>Contact</h1>
+				<h1 className="centered">Contact</h1>
 				<hr />
 
-				{/*<InputField
-					placeholder="Nom"
-					className="contact-name-field"
-				/>
+				<p>Le formulaire de contact n'est actuellement pas disponible, mais vous pouvez nous contacter à l'adresse suivante :</p>
+				<img src={emailImg} alt="" />
+
+				{/*
 				<InputField
 					placeholder="Prénom"
+					className="contact-firstname-field"
+					onChange={(firstname) => this.setState({ firstname })}
+				/>
+				<InputField
+					placeholder="Nom"
+					onChange={(lastname) => this.setState({ lastname })}
 				/>
 				<Textarea
 					placeholder="Message"
 					className="contact-textarea"
+					onChange={(message) => this.setState({ message })}
 				/>
 
 				<SubmitButton
 					className="contact-submit-button"
 					onClick={this.submit}
 					status={this.state.buttonStatus}
-				/>*/}
-
-				<p>
-					Notre formulaire de contact est présentement en dérangement, mais vous pouvez nous joindre à l'adresse suivante :
-				</p>
-
-				<img src={mailImage} alt="Adresse e-mail"/>
+				/>
+				*/}
 			</div>
 		);
   }
