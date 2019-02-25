@@ -4,6 +4,8 @@ import InputField from '../../components/inputField';
 import Textarea from '../../components/textarea';
 import SubmitButton from '../../components/submitButton';
 
+import emailImg from '../../assets/email.png';
+
 import './contact.css';
 
 class Contact extends React.Component {
@@ -37,14 +39,8 @@ class Contact extends React.Component {
 
 			setTimeout(() => {
 				this.setState({
-					buttonStatus: 'error'
+					buttonStatus: null
 				});
-
-				setTimeout(() => {
-					this.setState({
-						buttonStatus: null
-					});
-				}, 2000);
 			}, 2000);
 		}, 2000);
 	}
@@ -55,6 +51,10 @@ class Contact extends React.Component {
 				<h1 className="centered">Contact</h1>
 				<hr />
 
+				<p>Le formulaire de contact n'est actuellement pas disponible, mais vous pouvez nous contacter à l'adresse suivante :</p>
+				<img src={emailImg} alt="" />
+
+				{/*
 				<InputField
 					placeholder="Prénom"
 					className="contact-firstname-field"
@@ -75,6 +75,7 @@ class Contact extends React.Component {
 					onClick={this.submit}
 					status={this.state.buttonStatus}
 				/>
+				*/}
 			</div>
 		);
   }

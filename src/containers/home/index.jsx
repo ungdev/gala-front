@@ -109,6 +109,7 @@ class Home extends React.Component {
 						</div>
 					</div>
 
+					{/*
 					<div className="partners">
 						<div className="partners-background"></div>
 
@@ -131,6 +132,7 @@ class Home extends React.Component {
 
 						<Link to="/partenaires" className="button">Tous les partenaires</Link>
 					</div>
+					*/}
 				</div>
 			</div>
 		);
