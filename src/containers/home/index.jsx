@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
 import partners from '../../variables/partners';
+import panneauImg from '../../assets/panneau_1.png';
 
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './home.css';
@@ -85,8 +86,9 @@ class Home extends React.Component {
   render() {
 		return (
 			<div id="home">
-				<h1>Bienvenue sur le site officiel du Gala UTT !</h1>
-				<hr />
+				<div className="image-container">
+				<img src={panneauImg} alt="gala utt"/>
+				</div>
 
 				<p className="justified">
 					Le Gala de l’UTT est un soirée de prestige unique en son genre accueillant 3500 participants
