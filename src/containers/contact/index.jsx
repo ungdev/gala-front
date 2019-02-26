@@ -37,14 +37,8 @@ class Contact extends React.Component {
 
 			setTimeout(() => {
 				this.setState({
-					buttonStatus: 'error'
+					buttonStatus: null
 				});
-
-				setTimeout(() => {
-					this.setState({
-						buttonStatus: null
-					});
-				}, 2000);
 			}, 2000);
 		}, 2000);
 	}
@@ -57,11 +51,11 @@ class Contact extends React.Component {
 
 				<InputField
 					placeholder="Prénom"
+					className="contact-firstname-field"
 					onChange={(firstname) => this.setState({ firstname })}
 				/>
 				<InputField
 					placeholder="Nom"
-					className="contact-name-field"
 					onChange={(lastname) => this.setState({ lastname })}
 				/>
 				<Textarea

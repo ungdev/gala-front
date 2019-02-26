@@ -115,6 +115,9 @@
 
 #home .partners-carousel-container {
 	position: relative;
+	width: calc(100% - 20px);
+	left: 50%;
+	transform: translate(-50%, 0);
 }
 
 #home .partners-carousel-arrow-left,
@@ -139,4 +142,15 @@
 
 #home .partners-carousel {
 	margin: 60px 0 20px 0;
+}
+
+@media screen and (max-width: 800px) {
+	#home .partners-carousel-container {
+		width: calc(100% + 40px);
+	}
+
+	#home .partners-carousel-arrow-left,
+	#home .partners-carousel-arrow-right {
+		display: none;
+	}
 }

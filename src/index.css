@@ -8,21 +8,24 @@
 }
 
 :root {
-	--primary-color: #a3136c;
+	--primary-color: #bc167c;
 	--secondary-color: #fff;
 }
 
-html, body {
-  font-family: 'Roboto', arial, sans-serif;
-	font-size: 16px;
-	margin: 0;
-	padding: 0;
+html {
 	background: #282660 url('./assets/background.png');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-family: 'Roboto', arial, sans-serif;
+	font-size: 16px;
 	overflow-x: hidden;
-	height: 100%;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
 }
 
 ::selection {
@@ -76,14 +79,14 @@ hr {
 }
 
 #content {
-	background: #1116;
+	background: #212121cc;
 	box-shadow: 0 0 4px 4px #6ed1e0, inset 0 0 4px 4px #6ed1e0;
 	border: 3px solid #fff;
 	border-radius: 8px;
 	padding: 30px;
 }
 
-a.button {
+.button {
 	position: relative;
 	display: inline-block;
 	margin: 10px 0;
@@ -95,10 +98,11 @@ a.button {
 	font-size: 14px;
 	letter-spacing: 1px;
 	overflow: hidden;
+	cursor: pointer;
 	transition: all .3s;
 }
 
-a.button::before {
+.button::before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -112,13 +116,13 @@ a.button::before {
 	transition: all .3s;
 }
 
-a.button:hover::before {
+.button:hover::before {
 	left: 0;
 }
 
 h2.title-decoration {
 	position: relative;
-	margin: 50px 0 35px 0;
+	margin: 50px 0 20px 0;
 	padding-left: 15px;
 	font-weight: 100;
 	letter-spacing: 1px;

@@ -12,8 +12,8 @@ export default [
 		path: '/partenaires'
 	},
 	{
-		title: 'Conditions d\'entrée',
-		path: '/conditions-entree'
+		title: 'Billetterie',
+		path: '/billetterie'
 	},
 	{
 		title: 'Accès',

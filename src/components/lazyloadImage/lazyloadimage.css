@@ -1,0 +1,13 @@
+.lazyloadimage-placeholder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ffffff33;
+	transition: all .3s;
+}
+
+.lazyloadimage-placeholder.disabled {
+	opacity: 0;
+}

@@ -1,8 +1,12 @@
 import React from 'react';
 
 class ScrollToTop extends React.Component {
+	componentDidMount() {
+		document.getElementsByTagName('html')[0].scrollTop = 0;
+	}
+
   componentDidUpdate() {
-		document.getElementsByTagName('body')[0].scrollTop = 0;
+		document.getElementsByTagName('html')[0].scrollTop = 0;
   }
 
   render() {

@@ -1,6 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 
+import LazyloadImage from '../../components/lazyloadImage';
+
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './gallery.css';
 
@@ -20,12 +22,12 @@ class Gallery extends React.Component {
 		imagesUrl.forEach((image, i) => {
 			this.images.push(
 				<div className="image-container" key={i}>
-					<img src={image} alt="" onClick={() => this.openViewer(i)} />
+					<LazyloadImage src={image} onClick={() => this.openViewer(i)} />
 				</div>
 			);
 
 			this.carouselImages.push(
-				<img src={image} alt="" key={i} />
+				<img className="owl-lazy" data-src={image} onClick={this.cancelOutsideClick} key={i} alt="" />
 			);
 		});
 
@@ -34,6 +36,8 @@ class Gallery extends React.Component {
 			arrowLeftActive: true,
 			arrowRightActive: true
 		};
+
+		this.outsideClickEnabled = true;
 	}
 
 	componentDidMount() {
@@ -42,7 +46,9 @@ class Gallery extends React.Component {
 		this.carousel.owlCarousel({
 			items: 1,
 			margin: 20,
-			smartSpeed: 400
+			smartSpeed: 400,
+			lazyLoad: true,
+			lazyLoadEager: 1
 		});
 
 		window.addEventListener('keydown', this.keydownHandle);
@@ -75,7 +81,7 @@ class Gallery extends React.Component {
 			viewerActive: true
 		});
 
-		document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+		document.getElementsByTagName('html')[0].style.overflow = 'hidden';
 
 		this.updateArrows(i);
 	}
@@ -85,7 +91,17 @@ class Gallery extends React.Component {
 			viewerActive: false
 		});
 
-		document.getElementsByTagName('body')[0].style.overflow = '';
+		document.getElementsByTagName('html')[0].style.overflow = '';
+	}
+
+	arrowLeftClick = () => {
+		this.previousImage();
+		this.cancelOutsideClick();
+	}
+
+	arrowRightClick = () => {
+		this.nextImage();
+		this.cancelOutsideClick();
 	}
 
 	previousImage = () => {
@@ -120,6 +136,19 @@ class Gallery extends React.Component {
 		}
 	}
 
+	cancelOutsideClick = () => {
+		this.outsideClickEnabled = false;
+	}
+
+	checkOutsideClick = () => {
+		if(this.outsideClickEnabled) {
+			this.closeViewer();
+		}
+		else {
+			this.outsideClickEnabled = true;
+		}
+	}
+
 	render() {
     return (
 			<div id="gallery">
@@ -130,16 +159,16 @@ class Gallery extends React.Component {
 					{ this.images }
 				</div>
 
-				<div className={'viewer-container' + (this.state.viewerActive ? ' active' : '')}>
+				<div className={'viewer-container' + (this.state.viewerActive ? ' active' : '')} onClick={this.checkOutsideClick}>
 					<div
 						className={'viewer-carousel-arrow-left' + (this.state.arrowLeftActive ? '' : ' disabled')}
 						title="Photo précédente"
-						onClick={this.previousImage}
+						onClick={this.arrowLeftClick}
 					></div>
 					<div
 						className={'viewer-carousel-arrow-right' + (this.state.arrowRightActive ? '' : ' disabled')}
 						title="Photo suivante"
-						onClick={this.nextImage}
+						onClick={this.arrowRightClick}
 					></div>
 
 					<div className="viewer-carousel owl-carousel">
