@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
 import partners from '../../variables/partners';
+import panneauImg from '../../assets/panneau_1.png';
 
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './home.css';
