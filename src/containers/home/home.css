@@ -35,15 +35,15 @@
 	0%, 100% {
 	background-image : url('../../assets/panneau_1.png');
 	}
-	
+
 	8% {
-	background-image : url('../../assets/panneau_2.png');	
+	background-image : url('../../assets/panneau_2.png');
 	}
-	
+
 	16% {
 	background-image : url('../../assets/panneau_3.png');
 	}
-	
+
 	24% {
 	background-image : url('../../assets/panneau_4.png');
 	}
@@ -51,7 +51,7 @@
 	32% {
 	background-image : url('../../assets/panneau_5.png');
 	}
-	
+
 	40% {
 	background-image : url('../../assets/panneau_6.png');
 	}
@@ -75,11 +75,6 @@
 	90% {
 	background-image : url('../../assets/panneau_7.png');
 	}
-}
-
-#home img {
-	width : 100%;
-	visibility : hidden;
 }
 
 #home .partners {
@@ -137,6 +132,15 @@
 
 #home .partners-carousel {
 	margin: 60px 0 20px 0;
+}
+
+#home .owl-carousel .owl-stage {
+	display: flex;
+	padding: 0 3px;
+}
+
+#home .owl-carousel .owl-item {
+	margin: auto;
 }
 
 @media screen and (max-width: 1000px) {
