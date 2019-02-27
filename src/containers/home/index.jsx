@@ -85,7 +85,7 @@ class Home extends React.Component {
   render() {
 		return (
 			<div id="home">
-				<h1>GALA UTT - 18 mai 2019</h1>
+				<h1 className="centered">GALA UTT - 18 mai 2019</h1>
 				<hr />
 
 				<p className="justified">

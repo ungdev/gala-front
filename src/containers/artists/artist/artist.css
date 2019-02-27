@@ -1,0 +1,59 @@
+.artist {
+	display: flex;
+	flex-flow: row wrap;
+	margin-top: 40px;
+}
+
+.artist .artist-container {
+	margin: auto;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.artist .artist-container > * {
+	margin: 0 auto;
+}
+
+.artist .artist-image {
+	width: 300px;
+	height: 300px;
+}
+
+.artist .artist-infos {
+	width: 260px;
+	height: calc(300px - 20px);
+	padding: 10px 20px;
+	background: #fff1;
+}
+
+.artist .artist-name {
+	font-size: 24px;
+	font-family: 'LemonMilk', arial, sans-serif;
+}
+
+.artist .artist-description {
+	margin: 10px 0;
+}
+
+.artist .artist-schedule {
+	margin-top: 20px;
+}
+
+.artist .artist-divider {
+	height: 2px;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 14px;
+}
+
+.artist .artist-hour .icon,
+.artist .artist-place .icon {
+	color: var(--primary-color);
+	width: 20px;
+}
+
+@media screen and (max-width: 705px) {
+	.artist .artist-infos {
+		height: auto;
+	}
+}
