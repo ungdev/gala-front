@@ -35,6 +35,10 @@ header nav ul a {
 	transition: all .3s;
 }
 
+header nav ul a:hover {
+	background: #fff1;
+}
+
 header nav ul a::before {
 	content: '';
 	position: absolute;
@@ -67,10 +71,10 @@ header nav ul li {
 }
 
 header nav ul a.active li {
-	color: var(--secondary-color);
+	color: #fff;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
 	header nav .mobile-hamburger-menu {
 		position: relative;
 		display: block;

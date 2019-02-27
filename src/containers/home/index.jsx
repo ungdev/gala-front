@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
 import partners from '../../variables/partners';
+import panneauImg from '../../assets/panneau_1.png';
 
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './home.css';
@@ -85,13 +86,12 @@ class Home extends React.Component {
   render() {
 		return (
 			<div id="home">
-				<h1>Bienvenue sur le site officiel du Gala UTT&nbsp;!</h1>
+				<h1 className="centered">GALA UTT - 18 mai 2019</h1>
 				<hr />
 
 				<p className="justified">
-					Le Gala de l’UTT est un soirée de prestige unique en son genre accueillant 3500 participants
-					et dont les bénéfices sont reversés à des associations de charité.
-					Nous revenons en 2019 pour une 23ème édition.
+					Le Gala de l’UTT est un soirée de prestige unique en son genre accueillant 3500 participants.
+					Nous revenons en 2019 pour une 23ème édition de folie autour de Las Vegas.
 					Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
 				</p>
 
@@ -109,7 +109,6 @@ class Home extends React.Component {
 						</div>
 					</div>
 
-					{/*
 					<div className="partners">
 						<div className="partners-background"></div>
 
@@ -132,7 +131,6 @@ class Home extends React.Component {
 
 						<Link to="/partenaires" className="button">Tous les partenaires</Link>
 					</div>
-					*/}
 				</div>
 			</div>
 		);

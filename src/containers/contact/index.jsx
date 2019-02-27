@@ -52,7 +52,7 @@ class Contact extends React.Component {
 				<hr />
 
 				<p>Le formulaire de contact n'est actuellement pas disponible, mais vous pouvez nous contacter à l'adresse suivante :</p>
-				<img src={emailImg} alt="" />
+				<img src={emailImg} alt="" style={{ margin: '0 auto', display: 'block' }} />
 
 				{/*
 				<InputField

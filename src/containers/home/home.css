@@ -1,8 +1,3 @@
-#home h1,
-#home h2 {
-	text-align: center;
-}
-
 #home .video-container {
 	position: relative;
 	width: 100%;
@@ -21,6 +16,65 @@
 #home .video-container iframe {
 	width: 100%;
 	height: 100%;
+}
+
+#home .image-container {
+	width : 100%;
+	min-height : 50vh;
+	position : relative;
+	top : 0;
+	right: 0;
+	margin-bottom : 30px;
+	background-image : url('../../assets/panneau_1.png');
+	background-repeat : no-repeat;
+	background-size : 100% 100%;
+	animation: panneauanim 4s steps(4) infinite;
+}
+
+@keyframes panneauanim {
+	0%, 100% {
+	background-image : url('../../assets/panneau_1.png');
+	}
+
+	8% {
+	background-image : url('../../assets/panneau_2.png');
+	}
+
+	16% {
+	background-image : url('../../assets/panneau_3.png');
+	}
+
+	24% {
+	background-image : url('../../assets/panneau_4.png');
+	}
+
+	32% {
+	background-image : url('../../assets/panneau_5.png');
+	}
+
+	40% {
+	background-image : url('../../assets/panneau_6.png');
+	}
+
+	48% {
+	background-image : url('../../assets/panneau_7.png');
+	}
+
+	58% {
+	background-image : url('../../assets/panneau_1.png');
+	}
+
+	68% {
+	background-image : url('../../assets/panneau_7.png');
+	}
+
+	78% {
+	background-image : url('../../assets/panneau_1.png');
+	}
+
+	90% {
+	background-image : url('../../assets/panneau_7.png');
+	}
 }
 
 #home .partners {
@@ -80,7 +134,16 @@
 	margin: 60px 0 20px 0;
 }
 
-@media screen and (max-width: 800px) {
+#home .owl-carousel .owl-stage {
+	display: flex;
+	padding: 0 3px;
+}
+
+#home .owl-carousel .owl-item {
+	margin: auto;
+}
+
+@media screen and (max-width: 1000px) {
 	#home .partners-carousel-container {
 		width: calc(100% + 40px);
 	}
