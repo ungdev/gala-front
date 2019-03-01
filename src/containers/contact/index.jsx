@@ -14,6 +14,7 @@ class Contact extends React.Component {
 
 		this.state = {
 			buttonStatus: null,
+			messageStatus: null,
 			firstname: '',
 			lastname: '',
 			message: ''
@@ -34,15 +35,27 @@ class Contact extends React.Component {
 
 		setTimeout(() => {
 			this.setState({
-				buttonStatus: 'success'
+				buttonStatus: 'success',
+				messageStatus: 'success'
 			});
+
+			this.clearFields();
 
 			setTimeout(() => {
 				this.setState({
-					buttonStatus: null
+					buttonStatus: null,
+					messageStatus: null
 				});
-			}, 2000);
+			}, 4000);
 		}, 2000);
+	}
+
+	clearFields = () => {
+		this.setState({
+			firstname: '',
+			lastname: '',
+			message: ''
+		});
 	}
 
   render() {
@@ -60,15 +73,18 @@ class Contact extends React.Component {
 					placeholder="Prénom"
 					className="contact-firstname-field"
 					onChange={(firstname) => this.setState({ firstname })}
+					value={this.state.firstname}
 				/>
 				<InputField
 					placeholder="Nom"
 					onChange={(lastname) => this.setState({ lastname })}
+					value={this.state.lastname}
 				/>
 				<Textarea
 					placeholder="Message"
 					className="contact-textarea"
 					onChange={(message) => this.setState({ message })}
+					value={this.state.message}
 				/>
 
 				<SubmitButton
@@ -76,6 +92,9 @@ class Contact extends React.Component {
 					onClick={this.submit}
 					status={this.state.buttonStatus}
 				/>
+
+				<div className={'contact-message success' + (this.state.messageStatus === 'success' ? ' active' : '')}>Votre message a bien été envoyé</div>
+				<div className={'contact-message error' + (this.state.messageStatus === 'error' ? ' active' : '')}>Erreur lors de l'envoi du message</div>
 			</div>
 		);
   }

@@ -16,3 +16,44 @@
 	margin-top: 30px;
 	text-align: right;
 }
+
+#contact .contact-message {
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 400px;
+	max-width: 80vw;
+	padding: 6px 14px;
+	border: 2px solid #fff;
+	border-radius: 4px;
+	z-index: 999;
+	transition: top .3s, opacity .3s;
+}
+
+#contact .contact-message:not(.active) {
+	top: -20px;
+	opacity: 0;
+}
+
+#contact .contact-message.error {
+	background: #d23131;
+}
+
+#contact .contact-message.success {
+	background: #bc167c;
+}
+
+#contact .contact-message:before {
+	font-family: 'Font Awesome 5 Free';
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+#contact .contact-message.error:before {
+	content : '\f071';
+}
+
+#contact .contact-message.success:before {
+	content: '\f00c';
+}

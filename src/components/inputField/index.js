@@ -10,6 +10,12 @@ class InputField extends React.Component {
 		this.labelRef = React.createRef();
 	}
 
+	componentDidUpdate(prevProps) {
+		if(prevProps.value !== this.props.value) {
+			this.onBlur();
+		}
+	}
+
 	onFocus = () => {
 		this.labelRef.current.classList.add('active');
 	}
@@ -42,6 +48,7 @@ class InputField extends React.Component {
 						onBlur={this.onBlur}
 						ref={this.inputRef}
 						onChange={(e) => this.props.onChange(e.target.value)}
+						value={this.props.value}
 					/>
 				</div>
 			</div>

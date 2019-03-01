@@ -10,6 +10,12 @@ class Textarea extends React.Component {
 		this.labelRef = React.createRef();
 	}
 
+	componentDidUpdate(prevProps) {
+		if(prevProps.value !== this.props.value) {
+			this.onBlur();
+		}
+	}
+
 	onFocus = () => {
 		this.labelRef.current.classList.add('active');
 	}
@@ -41,6 +47,7 @@ class Textarea extends React.Component {
 						onBlur={this.onBlur}
 						innerRef={(ref) => { this.textareaRef = ref; }}
 						onChange={(e) => this.props.onChange(e.target.value)}
+						value={this.props.value}
 					/>
 				</div>
 			</div>
