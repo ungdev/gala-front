@@ -28,7 +28,7 @@ html, body {
 }
 
 ::selection {
-	background: var(--primary-color);
+	background: #fff5;
 	color: #fff;
 }
 
