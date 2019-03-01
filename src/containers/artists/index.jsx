@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Artist from './artist';
+//import Artist from './artist';
 
 class Artists extends React.Component {
 	render() {
