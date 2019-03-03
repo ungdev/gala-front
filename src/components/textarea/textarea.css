@@ -5,24 +5,6 @@
 	width: 100%;
 }
 
-.textarea-placeholder {
-	position: absolute;
-	top: 9px;
-	left: 0;
-	color: #cecece;
-	padding: 0 8px;
-	user-select: none;
-	cursor: text;
-	transition: all .3s;
-}
-
-.textarea-placeholder.active {
-	top: -18px;
-	font-size: 13px;
-	left: -8px;
-	cursor: default;
-}
-
 .textarea textarea {
 	resize: vertical;
 	min-height: 70px;
@@ -39,4 +21,27 @@
 
 .textarea textarea:focus {
 	box-shadow: 0 3px 0 0 var(--primary-color);
+}
+
+.textarea-placeholder {
+	position: absolute;
+	top: 9px;
+	left: 0;
+	color: #cecece;
+	padding: 0 8px;
+	user-select: none;
+	cursor: text;
+	transition: all .3s;
+}
+
+.textarea-placeholder label {
+	cursor: text;
+}
+
+.textarea textarea:not(:empty) + .textarea-placeholder,
+.textarea textarea:focus + .textarea-placeholder {
+	top: -18px;
+	font-size: 13px;
+	left: -8px;
+	cursor: default;
 }

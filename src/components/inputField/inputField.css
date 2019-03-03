@@ -4,25 +4,6 @@
 	margin-top: 30px;
 }
 
-.input-field-placeholder {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	transform: translate(0, -50%);
-	color: #cecece;
-	padding: 0 8px;
-	user-select: none;
-	cursor: text;
-	transition: all .3s;
-}
-
-.input-field-placeholder.active {
-	top: -12px;
-	font-size: 13px;
-	left: -8px;
-	cursor: default;
-}
-
 .input-field input {
 	border: none;
 	padding: 8px;
@@ -36,4 +17,33 @@
 
 .input-field input:focus {
 	box-shadow: 0 3px 0 0 var(--primary-color);
+}
+
+.input-field-placeholder {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(0, -50%);
+	color: #cecece;
+	padding: 0 8px;
+	user-select: none;
+	cursor: text;
+	transition: all .3s;
+}
+
+.input-field-placeholder label {
+	cursor: text;
+}
+
+.input-field input:not([value=""]) + .input-field-placeholder,
+.input-field input:focus + .input-field-placeholder {
+	top: -12px;
+	font-size: 13px;
+	left: -8px;
+	cursor: default;
+}
+
+.input-field input:not([value=""]) + .input-field-placeholder label,
+.input-field input:focus + .input-field-placeholder label {
+	cursor: default;
 }
