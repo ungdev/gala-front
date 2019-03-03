@@ -36,7 +36,7 @@ header nav ul a {
 }
 
 header nav ul a:hover {
-	background: #fff1;
+	background: rgba(255, 255, 255, 0.07);
 }
 
 header nav ul a::before {
@@ -139,7 +139,7 @@ header nav ul a.active li {
 		content: '';
 		position: fixed;
 		display: block;
-		background: #323232f2;
+		background: rgba(50, 50, 50, 0.95);
 		height: 0;
 		width: 100%;
 		z-index: -1;
