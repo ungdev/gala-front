@@ -20,11 +20,11 @@ const InputField = (props) => {
 					id={`input-field-${id}`}
 				/>
 
-				<div className="input-field-placeholder">
-					<label htmlFor={`input-field-${id}`}>
-						{props.placeholder}
-					</label>
-				</div>
+				<label htmlFor={`input-field-${id}`} className="input-field-placeholder">
+					{props.placeholder}
+				</label>
+
+				{props.error && <div className="input-field-error">{props.error}</div>}
 			</div>
 		</div>
 	);
