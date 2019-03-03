@@ -1,8 +1,11 @@
 import React from 'react';
 
+import axios from '../../utils/axios';
+
 import InputField from '../../components/inputField';
 import Textarea from '../../components/textarea';
 import SubmitButton from '../../components/submitButton';
+import Notification from '../../components/notification';
 
 //import emailImg from '../../assets/email.png';
 
@@ -14,46 +17,48 @@ class Contact extends React.Component {
 
 		this.state = {
 			buttonStatus: null,
-			messageStatus: null,
-			firstname: '',
-			lastname: '',
+			notificationStatus: null,
+			notificationText: '',
+			name: '',
+			email: '',
 			message: ''
 		};
 	}
 
-	submit = () => {
-		// the following code is for demo purpose
-		console.log({
-			firstname: this.state.firstname,
-			lastname: this.state.lastname,
-			message: this.state.message
-		});
-
+	submit = async () => {
 		this.setState({
 			buttonStatus: 'loading'
 		});
 
-		setTimeout(() => {
+		try {
+			await axios.post('contact', {
+				name: this.state.name,
+				email: this.state.email,
+				message: this.state.message
+			});
+
 			this.setState({
-				buttonStatus: 'success',
-				messageStatus: 'success'
+				notificationStatus: 'success',
+				notificationText: 'Le message a bien été envoyé'
 			});
 
 			this.clearFields();
+		} catch(err) {
+			this.setState({
+				notificationStatus: 'error',
+				notificationText: 'Erreur lors de l\'envoi du message'
+			});
+		}
 
-			setTimeout(() => {
-				this.setState({
-					buttonStatus: null,
-					messageStatus: null
-				});
-			}, 4000);
-		}, 2000);
+		this.setState({
+			buttonStatus: null
+		});
 	}
 
 	clearFields = () => {
 		this.setState({
-			firstname: '',
-			lastname: '',
+			name: '',
+			email: '',
 			message: ''
 		});
 	}
@@ -69,16 +74,22 @@ class Contact extends React.Component {
 				<img src={emailImg} alt="" style={{ margin: '0 auto', display: 'block' }} />
 				*/}
 
-				<InputField
-					placeholder="Prénom"
-					className="contact-firstname-field"
-					onChange={(firstname) => this.setState({ firstname })}
-					value={this.state.firstname}
-				/>
+				<Notification
+					status={this.state.notificationStatus}
+				>
+					{this.state.notificationText}
+				</Notification>
+
 				<InputField
 					placeholder="Nom"
-					onChange={(lastname) => this.setState({ lastname })}
-					value={this.state.lastname}
+					className="contact-name-field"
+					onChange={(name) => this.setState({ name })}
+					value={this.state.name}
+				/>
+				<InputField
+					placeholder="Email"
+					onChange={(email) => this.setState({ email })}
+					value={this.state.email}
 				/>
 				<Textarea
 					placeholder="Message"
@@ -92,9 +103,6 @@ class Contact extends React.Component {
 					onClick={this.submit}
 					status={this.state.buttonStatus}
 				/>
-
-				<div className={'contact-message success' + (this.state.messageStatus === 'success' ? ' active' : '')}>Votre message a bien été envoyé</div>
-				<div className={'contact-message error' + (this.state.messageStatus === 'error' ? ' active' : '')}>Erreur lors de l'envoi du message</div>
 			</div>
 		);
   }
