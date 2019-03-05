@@ -20,6 +20,11 @@ const Textarea = (props) => {
 				<label htmlFor={`textarea-${id}`} className="textarea-placeholder">
 					{props.placeholder}
 				</label>
+
+				<div className={'textarea-error' + (props.error ? ' active' : '')}>
+					<i class="fas fa-exclamation-triangle error-icon"></i>
+					<div className="error-content">{props.error}</div>
+				</div>
 			</div>
 		</div>
 	);

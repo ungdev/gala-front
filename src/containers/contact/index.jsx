@@ -7,9 +7,9 @@ import Textarea from '../../components/textarea';
 import SubmitButton from '../../components/submitButton';
 import Notification from '../../components/notification';
 
-//import emailImg from '../../assets/email.png';
-
 import './contact.css';
+
+const emailRegexp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 class Contact extends React.Component {
 	constructor(props) {
@@ -19,13 +19,56 @@ class Contact extends React.Component {
 			buttonStatus: null,
 			notificationStatus: null,
 			notificationText: '',
+			errorFields: {
+				name: '',
+				email: '',
+				message: ''
+			},
 			name: '',
 			email: '',
 			message: ''
 		};
 	}
 
+	checkFields = () => {
+		let errors = {
+			name: '',
+			email: '',
+			message: ''
+		};
+
+		if(this.state.name === '') {
+			errors.name = 'Veuillez saisir votre nom';
+		}
+
+		if(this.state.email === '') {
+			errors.email = 'Veuillez saisir votre adresse mail';
+		}
+		else if(!this.state.email.match(emailRegexp)) {
+			errors.email = 'Veuillez saisir une adresse mail valide';
+		}
+
+		if(this.state.message === '') {
+			errors.message = 'Veuillez saisir votre message';
+		}
+
+		if(!errors.name && !errors.email && !errors.message) {
+			return true;
+		}
+		else {
+			this.setState({
+				errorFields: errors
+			});
+
+			return false;
+		}
+	}
+
 	submit = async () => {
+		if(!this.checkFields()) {
+			return;
+		}
+
 		this.setState({
 			buttonStatus: 'loading'
 		});
@@ -57,6 +100,11 @@ class Contact extends React.Component {
 
 	clearFields = () => {
 		this.setState({
+			errorFields: {
+				name: '',
+				email: '',
+				message: ''
+			},
 			name: '',
 			email: '',
 			message: ''
@@ -69,11 +117,6 @@ class Contact extends React.Component {
 				<h1 className="centered">Contact</h1>
 				<hr />
 
-				{/*
-				<p>Le formulaire de contact n'est actuellement pas disponible, mais vous pouvez nous contacter à l'adresse suivante :</p>
-				<img src={emailImg} alt="" style={{ margin: '0 auto', display: 'block' }} />
-				*/}
-
 				<Notification
 					status={this.state.notificationStatus}
 				>
@@ -83,19 +126,24 @@ class Contact extends React.Component {
 				<InputField
 					placeholder="Nom"
 					className="contact-name-field"
-					onChange={(name) => this.setState({ name })}
+					onChange={(name) => this.setState({ name, errorFields: { ...this.state.errorFields, name: '' } })}
 					value={this.state.name}
+					error={this.state.errorFields.name}
 				/>
+
 				<InputField
 					placeholder="Email"
-					onChange={(email) => this.setState({ email })}
+					onChange={(email) => this.setState({ email, errorFields: { ...this.state.errorFields, email: '' } })}
 					value={this.state.email}
+					error={this.state.errorFields.email}
 				/>
+
 				<Textarea
 					placeholder="Message"
 					className="contact-textarea"
-					onChange={(message) => this.setState({ message })}
+					onChange={(message) => this.setState({ message, errorFields: { ...this.state.errorFields, message: '' } })}
 					value={this.state.message}
+					error={this.state.errorFields.message}
 				/>
 
 				<SubmitButton
