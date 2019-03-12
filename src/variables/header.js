@@ -19,10 +19,10 @@ export default [
 		title: 'Partenaires',
 		path: '/partenaires'
 	},
-	{
+	/*{
 		title: 'Nos engagements',
 		path: '/nos-engagements'
-	},
+	},*/
 	{
 		title: 'Accès',
 		path: '/acces'
