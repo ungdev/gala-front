@@ -2,51 +2,35 @@ import React from 'react';
 
 import './inputField.css';
 
-class InputField extends React.Component {
-	constructor(props) {
-		super(props);
+let lastGeneratedId = 0;
 
-		this.inputRef = React.createRef();
-		this.labelRef = React.createRef();
-	}
+const InputField = (props) => {
+	const id = lastGeneratedId++;
 
-	onFocus = () => {
-		this.labelRef.current.classList.add('active');
-	}
+	return (
+		<div
+			className={props.className}
+			style={{ display: 'inline-block' }}
+		>
+			<div className="input-field">
+				<input
+					type="text"
+					onChange={(e) => props.onChange(e.target.value)}
+					value={props.value}
+					id={`input-field-${id}`}
+				/>
 
-	onBlur = () => {
-		if(this.inputRef.current.value === '') {
-			this.labelRef.current.classList.remove('active');
-		}
-	}
+				<label htmlFor={`input-field-${id}`} className="input-field-placeholder">
+					{props.placeholder}
+				</label>
 
-	labelClick = () => {
-		this.inputRef.current.focus();
-	}
-
-	render() {
-		return (
-			<div className={this.props.className} style={{ display: 'inline-block', ...this.props.style }}>
-				<div className="input-field">
-					<div
-						className="input-field-placeholder"
-						onClick={this.labelClick}
-						ref={this.labelRef}
-					>
-						{this.props.placeholder}
-					</div>
-
-					<input
-						type="text"
-						onFocus={this.onFocus}
-						onBlur={this.onBlur}
-						ref={this.inputRef}
-						onChange={(e) => this.props.onChange(e.target.value)}
-					/>
+				<div className={'input-field-error' + (props.error ? ' active' : '')}>
+					<i className="fas fa-exclamation-triangle error-icon"></i>
+					<div className="error-content">{props.error}</div>
 				</div>
 			</div>
-		);
-	}
-}
+		</div>
+	);
+};
 
 export default InputField;

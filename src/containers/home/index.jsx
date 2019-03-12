@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
 import partners from '../../variables/partners';
-import panneauImg from '../../assets/panneau_1.png';
 
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './home.css';
@@ -91,7 +90,7 @@ class Home extends React.Component {
 
 				<p className="justified">
 					Le Gala de l’UTT est un soirée de prestige unique en son genre accueillant 3500 participants.
-					Nous revenons en 2019 pour une 23ème édition de folie autour de Las Vegas.
+					Nous revenons en 2019 pour une 23<sup>ème</sup> édition de folie autour de Las Vegas.
 					Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
 				</p>
 

@@ -28,7 +28,7 @@ html, body {
 }
 
 ::selection {
-	background: var(--primary-color);
+	background: #adadad;
 	color: #fff;
 }
 
@@ -78,10 +78,8 @@ hr {
 }
 
 #content {
-	background: #212121cc;
-	box-shadow: 0 0 4px 4px #6ed1e0, inset 0 0 4px 4px #6ed1e0;
-	border: 3px solid #fff;
-	border-radius: 8px;
+	background: rgba(39, 39, 39, 0.7);
+	border-radius: 4px;
 	padding: 30px;
 }
 
@@ -109,7 +107,7 @@ hr {
 	left: calc(-30% - 20px);
 	height: 100%;
 	width: 100%;
-	background: #32323233;
+	background: rgba(50, 50, 50, 0.2);
 	clip-path: polygon(0 0, 30% 0, calc(30% + 20px) 100%, 0% 100%);
 	z-index: 1;
 	transition: all .3s;

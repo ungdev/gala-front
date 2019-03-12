@@ -5,8 +5,9 @@ class Commitments extends React.Component {
 		return (
 			<div id="commitments">
 				<h1 className="centered">Nos engagements</h1>
+				<hr />
 
-				<p>À venir...</p>
+				<p className="centered">À venir...</p>
 			</div>
 		);
 	}

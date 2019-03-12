@@ -8,6 +8,7 @@
 	margin: auto;
 	display: flex;
 	flex-flow: row wrap;
+	max-width: 100%;
 }
 
 .artist .artist-container > * {
@@ -15,15 +16,21 @@
 }
 
 .artist .artist-image {
-	width: 300px;
-	height: 300px;
+	max-width: 300px;
+	max-height: 300px;
 }
 
 .artist .artist-infos {
 	width: 260px;
 	height: calc(300px - 20px);
 	padding: 10px 20px;
-	background: #fff1;
+	background: rgba(255, 255, 255, 0.07);
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.artist .artist-infos > :last-child {
+	margin-bottom: 10px;
 }
 
 .artist .artist-name {
@@ -32,24 +39,48 @@
 }
 
 .artist .artist-description {
+	word-wrap: break-word;
 	margin: 10px 0;
 }
 
-.artist .artist-schedule {
-	margin-top: 20px;
-}
-
 .artist .artist-divider {
-	height: 2px;
+	height: 1px;
 	width: 100%;
 	background: #fff;
 	margin-bottom: 14px;
 }
 
+.artist .artist-hour,
+.artist .artist-place {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
 .artist .artist-hour .icon,
 .artist .artist-place .icon {
 	color: var(--primary-color);
-	width: 20px;
+	margin-right: 10px;
+	font-size: 20px;
+}
+
+.artist .artist-link {
+	display: inline-block;
+	font-size: 0.9em;
+	margin-top: 5px;
+	color: var(--primary-color);
+	text-decoration: none;
+	transition: all .3s;
+}
+
+.artist .artist-link:hover {
+	color: #fff;
+}
+
+.artist .artist-link .icon {
+	position: relative;
+	top: -1px;
+	font-size: 10px;
+	margin-left: 2px;
 }
 
 @media screen and (max-width: 705px) {

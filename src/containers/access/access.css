@@ -4,6 +4,7 @@
 	padding-top: 50%;
 	min-height: 350px;
 	box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.2);
 }
 
 #access .plan-container iframe {
