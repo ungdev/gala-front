@@ -18,6 +18,7 @@
 .artist .artist-image {
 	max-width: 300px;
 	max-height: 300px;
+	background: rgba(255, 255, 255, 0.2);
 }
 
 .artist .artist-infos {
