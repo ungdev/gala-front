@@ -25,7 +25,7 @@ const InputField = (props) => {
 				</label>
 
 				<div className={'input-field-error' + (props.error ? ' active' : '')}>
-					<i class="fas fa-exclamation-triangle error-icon"></i>
+					<i className="fas fa-exclamation-triangle error-icon"></i>
 					<div className="error-content">{props.error}</div>
 				</div>
 			</div>
