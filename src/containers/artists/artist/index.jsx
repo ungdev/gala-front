@@ -19,7 +19,7 @@ const Artist = (props) => (
 			<div className="artist-image">
 				<img
 					src={props.image}
-					alt={props.name}
+					alt=""
 				/>
 			</div>
 			<div className="artist-infos">
@@ -42,7 +42,7 @@ const Artist = (props) => (
 				)}
 
 				{ props.link && (
-					<a href={props.link} className="artist-link">Page de l'artiste <i className="fas fa-external-link-alt icon"></i></a>
+					<a href={props.link} className="artist-link" target="_blank" rel="noopener noreferrer">Page de l'artiste <i className="fas fa-external-link-alt icon"></i></a>
 				)}
 			</div>
 		</div>
