@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
 import partners from '../../variables/partners';
-import posterImg from '../../assets/poster.png';
 
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './home.css';
@@ -88,12 +87,6 @@ class Home extends React.Component {
 			<div id="home">
 				<h1 className="centered">GALA UTT - 18 mai 2019</h1>
 				<hr />
-
-				<img
-					src={posterImg}
-					alt=""
-					className="poster"
-				/>
 
 				<p className="justified">
 					Le Gala de l’UTT est un soirée de prestige unique en son genre accueillant 3500 participants.
