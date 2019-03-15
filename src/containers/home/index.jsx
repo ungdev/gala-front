@@ -94,40 +94,40 @@ class Home extends React.Component {
 					Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
 				</p>
 
-				<div className="centered">
-					<h2>Aftermovie Gala UTT 2018</h2>
-					<div className="video-container">
-						<div>
-							<iframe
-								title="Aftermovie Gala UTT 2018"
-								src="https://www.youtube.com/embed/EO_rrd8FfSM?autoplay=0"
-								frameBorder="0"
-								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							></iframe>
+				<h2 className="centered">Aftermovie Gala UTT 2018</h2>
+				<div className="video-container">
+					<div>
+						<iframe
+							title="Aftermovie Gala UTT 2018"
+							src="https://www.youtube.com/embed/EO_rrd8FfSM?autoplay=0"
+							frameBorder="0"
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+							allowFullScreen
+						></iframe>
+					</div>
+				</div>
+
+				<div className="partners">
+					<div className="partners-background"></div>
+
+					<h2>Partenaires</h2>
+
+					<div className="partners-carousel-container">
+						<i
+							className="partners-carousel-arrow-left fas fa-chevron-left"
+							onClick={this.carouselPrev}
+						></i>
+						<i
+							className="partners-carousel-arrow-right fas fa-chevron-right"
+							onClick={this.carouselNext}
+						></i>
+
+						<div className="owl-carousel partners-carousel">
+							{ this.partners }
 						</div>
 					</div>
 
-					<div className="partners">
-						<div className="partners-background"></div>
-
-						<h2>Partenaires</h2>
-
-						<div className="partners-carousel-container">
-							<i
-								className="partners-carousel-arrow-left fas fa-chevron-left"
-								onClick={this.carouselPrev}
-							></i>
-							<i
-								className="partners-carousel-arrow-right fas fa-chevron-right"
-								onClick={this.carouselNext}
-							></i>
-
-							<div className="owl-carousel partners-carousel">
-								{ this.partners }
-							</div>
-						</div>
-
+					<div className="centered">
 						<Link to="/partenaires" className="button">Tous les partenaires</Link>
 					</div>
 				</div>
