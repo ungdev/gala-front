@@ -1,3 +1,7 @@
+#tickets p {
+	text-align: justify;
+}
+
 #tickets .tickets-button {
 	display: block;
 	text-align: center;

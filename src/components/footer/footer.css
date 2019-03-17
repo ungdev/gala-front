@@ -27,7 +27,6 @@ footer .social-links a {
 
 footer .social-links a:hover {
 	border: 2px solid #fff;
-	box-shadow: 0 0 4px 0 #fff, inset 0 0 4px 0 #fff;
 }
 
 footer .social-links i {

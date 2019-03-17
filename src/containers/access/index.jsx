@@ -6,19 +6,17 @@ class Access extends React.Component {
   render() {
     return (
 			<div id="access">
-				<div className="centered">
-					<h1>Accès</h1>
-					<hr />
+				<h1 className="centered">Accès</h1>
+				<hr />
 
-					<div className="plan-container">
-						<iframe
-							title="Plan accès Gala UTT"
-							src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5311.667167902067!2d4.064695!3d48.267577!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x42148ce859fa2d02!2sUniversit%C3%A9+de+Technologie+de+Troyes!5e0!3m2!1sfr!2sde!4v1547220645001"
-							frameBorder="0"
-							allowFullScreen
-							style={{ border: 0, width: '100%', height: '100%' }}
-						></iframe>
-					</div>
+				<div className="plan-container">
+					<iframe
+						title="Plan accès Gala UTT"
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5311.667167902067!2d4.064695!3d48.267577!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x42148ce859fa2d02!2sUniversit%C3%A9+de+Technologie+de+Troyes!5e0!3m2!1sfr!2sde!4v1547220645001"
+						frameBorder="0"
+						allowFullScreen
+						style={{ border: 0, width: '100%', height: '100%' }}
+					></iframe>
 				</div>
 
 				<h2 className="title-decoration">Navettes depuis le centre ville de Troyes</h2>

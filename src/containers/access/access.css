@@ -13,6 +13,10 @@
 	left: 0;
 }
 
+#access p {
+	text-align: justify;
+}
+
 #access .access-list {
 	padding-left: 20px;
 	list-style: none;

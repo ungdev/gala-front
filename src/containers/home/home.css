@@ -1,3 +1,8 @@
+#home .poster {
+	display: block;
+	margin: 30px auto;
+}
+
 #home .video-container {
 	position: relative;
 	width: 100%;

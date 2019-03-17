@@ -16,8 +16,10 @@
 }
 
 .artist .artist-image {
+	width: 300px;
 	max-width: 300px;
 	max-height: 300px;
+	background: rgba(255, 255, 255, 0.2);
 }
 
 .artist .artist-infos {
@@ -47,7 +49,7 @@
 	height: 1px;
 	width: 100%;
 	background: #fff;
-	margin-bottom: 14px;
+	margin: 8px 0 14px 0;
 }
 
 .artist .artist-hour,
@@ -66,14 +68,17 @@
 .artist .artist-link {
 	display: inline-block;
 	font-size: 0.9em;
-	margin-top: 5px;
-	color: var(--primary-color);
+	margin-top: 10px;
+	padding: 6px 10px;
+	color: #fff;
+	background: var(--primary-color);
+	border-radius: 3px;
 	text-decoration: none;
 	transition: all .3s;
 }
 
 .artist .artist-link:hover {
-	color: #fff;
+	filter: brightness(85%);
 }
 
 .artist .artist-link .icon {
@@ -86,5 +91,9 @@
 @media screen and (max-width: 705px) {
 	.artist .artist-infos {
 		height: auto;
+	}
+
+	.artist .artist-image {
+		width: auto;
 	}
 }

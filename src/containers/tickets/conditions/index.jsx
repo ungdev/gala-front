@@ -2,7 +2,7 @@ import React from 'react';
 
 export default (
 	<React.Fragment>
-		<p><strong>Veuillez lire attentivement les conditions d'entrée avant d'acheter votre billet.</strong></p>
+		<div className="centered"><strong>Veuillez lire attentivement les conditions d'entrée avant d'acheter votre billet.</strong></div>
 
 		<h2 className="title-decoration">Vêtements</h2>
 		<p>Une tenue de Gala est <strong>exigée</strong>. Un vestiaire gratuit sera mis à votre disposition toute la soirée.</p>

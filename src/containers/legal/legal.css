@@ -1,3 +1,7 @@
+#legal p {
+	text-align: justify;
+}
+
 #legal a {
 	color: #fff;
 	transition: all .3s;
