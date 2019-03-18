@@ -42,7 +42,7 @@ class Artists extends React.Component {
 				/>
 
 				<Artist
-					name="Jay Style"
+					name="NRJ extravadance mixé par Jay Style"
 					image={jayStyleImg}
 					description=""
 					link="https://www.facebook.com/JayStyleOfficiel/"
