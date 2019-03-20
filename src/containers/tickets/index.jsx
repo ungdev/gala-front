@@ -54,13 +54,13 @@ class Tickets extends React.Component {
 				<br />
 				{ Conditions }
 
-				<div
+				<button
 					className="tickets-button button"
 					onClick={this.openTicketsWindow}
 				>
 					<i className="fas fa-ticket-alt icon"></i>
 					Accéder à la billetterie
-				</div>
+				</button>
 
 				<div
 					className={'tickets-window' + (this.state.ticketsWindowActive ? ' active' : '')}

@@ -6,6 +6,9 @@
 	display: block;
 	text-align: center;
 	margin-top: 40px;
+	width: 100%;
+	border: none;
+	font-family: inherit;
 }
 
 #tickets .tickets-button .icon {
