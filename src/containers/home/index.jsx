@@ -24,6 +24,10 @@ class Home extends React.Component {
 
 			this.partners.push(<a href={partner.url} key={i}><img src={img} alt={partner.name} /></a>);
 		});
+
+		this.state = {
+			top: true
+		};
 	}
 
 	componentDidMount() {
@@ -38,17 +42,28 @@ class Home extends React.Component {
         1000: { items: 6 }
     	},
 			loop: true,
-			margin: 10,
 			smartSpeed: 500,
 			onDrag: this.clearCarouselInterval,
 			onDragged: this.setCarouselInterval
 		});
 
 		this.setCarouselInterval();
+
+		window.addEventListener('scroll', this.scrollHandle);
 	}
 
 	componentWillUnmount() {
 		this.clearCarouselInterval();
+
+		window.removeEventListener('scroll', this.scrollHandle);
+	}
+
+	scrollHandle = () => {
+		const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+		this.setState({
+			top: scrollTop === 0
+		});
 	}
 
 	clearCarouselInterval = () => {
@@ -86,31 +101,36 @@ class Home extends React.Component {
   render() {
 		return (
 			<div id="home">
-				<h1 className="centered">GALA UTT - 18 mai 2019</h1>
-				<hr />
+				<div className="poster-container">
+					<img
+						src={posterImg}
+						alt=""
+						className="poster"
+					/>
 
-				<img
-					src={posterImg}
-					alt=""
-					className="poster"
-				/>
+					<div className={'arrow-icon' + (this.state.top ? ' active' : '')}>
+						<i className="fas fa-arrow-down icon"></i>
+					</div>
+				</div>
 
-				<p className="justified">
-					Le Gala de l’UTT est un soirée de prestige unique en son genre accueillant 3500 participants.
-					Nous revenons en 2019 pour une 23<sup>ème</sup> édition de folie autour de Las Vegas.
-					Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
-				</p>
+				<div className="page-container">
+					<p className="justified">
+						Le Gala de l’UTT est un soirée de prestige unique en son genre accueillant 3500 participants.
+						Nous revenons en 2019 pour une 23<sup>ème</sup> édition de folie autour de Las Vegas.
+						Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
+					</p>
 
-				<h2 className="centered">Aftermovie Gala UTT 2018</h2>
-				<div className="video-container">
-					<div>
-						<iframe
-							title="Aftermovie Gala UTT 2018"
-							src="https://www.youtube.com/embed/EO_rrd8FfSM?autoplay=0"
-							frameBorder="0"
-							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-							allowFullScreen
-						></iframe>
+					<h2 className="centered">Aftermovie Gala UTT 2018</h2>
+					<div className="video-container">
+						<div>
+							<iframe
+								title="Aftermovie Gala UTT 2018"
+								src="https://www.youtube.com/embed/EO_rrd8FfSM?autoplay=0"
+								frameBorder="0"
+								allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture"
+								allowFullScreen
+							></iframe>
+						</div>
 					</div>
 				</div>
 

@@ -1,6 +1,56 @@
-#home .poster {
-	display: block;
-	margin: 30px auto;
+@keyframes arrow-icon-animation {
+	0% {
+		bottom: 60px;
+		opacity: 0;
+	}
+
+	20% {
+		opacity: 1;
+	}
+
+	60% {
+		bottom: 30px;
+		opacity: 1;
+	}
+
+	100% {
+		bottom: 5px;
+		opacity: 0;
+	}
+}
+
+#home .poster-container {
+	display: flex;
+	height: calc(100vh - 140px);
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+#home .poster-container .poster {
+	margin: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#home .poster-container .arrow-icon {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 26px;
+	height: 30px;
+	width: 30px;
+	animation: arrow-icon-animation 2s infinite;
+	opacity: 1;
+	transition: all .3s;
+}
+
+#home .poster-container .arrow-icon .icon {
+	opacity: 1;
+	transition: all .3s;
+}
+
+#home .poster-container .arrow-icon:not(.active) .icon {
+	opacity: 0;
 }
 
 #home .video-container {
