@@ -33,12 +33,12 @@ class Legal extends React.Component {
 				<h2 className="title-decoration">2. Conditions générales d’utilisation du site et des services proposés</h2>
 				<p>
 					En utilisant notre site web <a href="https://gala.utt.fr">https://gala.utt.fr</a>, vous acceptez pleinement et entièrement les conditions générales d’utilisation
-					précisées dans nos mentions légales. Accessible à tout type de visiteurs, il est important de préciser toutefois
-					qu’une interruption pour maintenance du site web peut-être décidée par l’association Gala UTT.
-					Les dates et heures d’interruptions pourront néanmoins précisées à l’avance aux utilisateurs.
+					précisées dans nos mentions légales. Accessible à tous types de visiteurs, il est important de préciser toutefois
+					qu’une interruption pour maintenance du site web peut être décidée par l’association Gala UTT.
+					Les dates et heures d’interruptions pourront néanmoins être précisées à l’avance aux utilisateurs.
 				</p>
 
-				<h2 className="title-decoration">3. Produits et services proposés par https://gala.utt.fr</h2>
+				<h2 className="title-decoration">3. Produits et services proposés par <a href="https://gala.utt.fr">https://gala.utt.fr</a></h2>
 				<p>
 					En accord avec sa politique de communication, le site <a href="https://gala.utt.fr">https://gala.utt.fr</a> a pour vocation
 					d’informer les utilisateurs sur l’évènement organisé par l’association Gala UTT,
@@ -64,7 +64,7 @@ class Legal extends React.Component {
 					Utilisant la technologie JavaScript, le site <a href="https://gala.utt.fr">https://gala.utt.fr</a> ne pourra
 					être tenu pour responsable en cas de dommages matériels liés à son utilisation.
 					Cela est également valable pour tout autre type de conséquence liée à l’exploitation du site <a href="https://gala.utt.fr">https://gala.utt.fr</a>,
-					qu’elle soit direct ou indirect (bug, incompatibilité, virus, perte de marché, etc.).
+					qu’elle soit directe ou indirecte (bug, incompatibilité, virus, perte de marché, etc.).
 				</p>
 
 				<h2 className="title-decoration">5. Propriété intellectuelle et contenu du site Internet</h2>
