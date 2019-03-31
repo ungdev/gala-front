@@ -1,11 +1,11 @@
 footer {
 	position: relative;
-	background: #272727;
+	background: #222145;
 	color: #fff;
 	width: calc(100% - 40px);
 	padding: 40px 20px;
 	text-align: center;
-	box-shadow: 0 100vh 0 100vh #272727;
+	box-shadow: 0 100vh 0 100vh #222145;
 	border-top: 4px solid #eb048b;
 }
 
