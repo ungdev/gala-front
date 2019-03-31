@@ -59,9 +59,11 @@ class Header extends React.Component {
 			);
 		});
 
+		const transparent = this.state.top && window.location.pathname === '/' && !this.state.mobileMenuActive;
+
     return (
 			<header>
-				<div className={'header-content' + ((this.state.top && window.location.pathname === '/') ? ' transparent' : '')}>
+				<div className={'header-content' + (transparent ? ' transparent' : '')}>
 					<nav className={this.state.mobileMenuActive ? 'active' : ''}>
 						<div className="mobile-hamburger-menu" onClick={this.toggleMobileMenu}>
 							<div>
