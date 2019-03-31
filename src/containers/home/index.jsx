@@ -42,7 +42,7 @@ class Home extends React.Component {
 				550:  { items: 4 },
 				800:  { items: 5 },
         1000: { items: 6 }
-    	},
+			},
 			loop: true,
 			smartSpeed: 500,
 			onDrag: this.clearCarouselInterval,
@@ -75,13 +75,11 @@ class Home extends React.Component {
 	}
 
 	setCarouselInterval = () => {
-		this.carouselInterval = window.setInterval(this.playCarousel, 2000);
-	}
-
-	playCarousel = () => {
-		if(this.carousel) {
-			this.carousel.trigger('next.owl.carousel', [1200]);
-		}
+		this.carouselInterval = window.setInterval(() => {
+			if(this.carousel) {
+				this.carousel.trigger('next.owl.carousel', [1200]);
+			}
+		}, 2000);
 	}
 
 	carouselPrev = () => {
