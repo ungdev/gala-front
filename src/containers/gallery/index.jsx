@@ -151,7 +151,7 @@ class Gallery extends React.Component {
 
 	render() {
     return (
-			<div id="gallery">
+			<div className="page-container" id="gallery">
 				<h1 className="centered">Galerie</h1>
 				<hr />
 

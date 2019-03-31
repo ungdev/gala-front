@@ -113,7 +113,7 @@ class Contact extends React.Component {
 
   render() {
     return (
-			<div id="contact">
+			<div className="page-container" id="contact">
 				<h1 className="centered">Contact</h1>
 				<hr />
 

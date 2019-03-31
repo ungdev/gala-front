@@ -10,7 +10,7 @@ import jayStyleImg from '../../assets/artists/jayStyle.jpg';
 class Artists extends React.Component {
 	render() {
 		return (
-			<div id="artists">
+			<div className="page-container" id="artists">
 				<h1 className="centered">Artistes</h1>
 				<hr />
 

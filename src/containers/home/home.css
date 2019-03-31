@@ -25,10 +25,9 @@
 
 #home .partners {
 	position: relative;
-	top: 54px;
+	top: 20px;
 	background: #fff;
 	padding: 20px 0;
-	margin-top: -14px;
 }
 
 #home .partners-background {
@@ -82,11 +81,10 @@
 
 #home .owl-carousel .owl-stage {
 	display: flex;
-	padding: 0 3px;
 }
 
 #home .owl-carousel .owl-item {
-	margin: auto;
+	margin: auto 10px;
 }
 
 @media screen and (max-width: 1000px) {

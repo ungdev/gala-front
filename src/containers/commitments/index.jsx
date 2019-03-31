@@ -5,7 +5,7 @@ import './commitments.css';
 class Commitments extends React.Component {
 	render() {
 		return (
-			<div id="commitments">
+			<div className="page-container" id="commitments">
 				<h1 className="centered">Nos engagements</h1>
 				<hr />
 

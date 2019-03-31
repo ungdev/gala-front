@@ -5,7 +5,7 @@ import './legal.css';
 class Legal extends React.Component {
   render() {
     return (
-			<div id="legal">
+			<div className="page-container" id="legal">
 				<h1 className="centered">Mentions légales</h1>
 				<hr />
 

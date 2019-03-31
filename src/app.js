@@ -25,20 +25,18 @@ const App = () => (
 				<Header />
 
 				<div id="page">
-					<div id="content">
-						<Switch>
-							<Route path="/" exact component={Home} />
-							<Route path="/galerie" exact component={Gallery} />
-							<Route path="/artistes" exact component={Artists} />
-							<Route path="/billetterie" exact component={Tickets} />
-							<Route path="/partenaires" exact component={Partners} />
-							<Route path="/nos-engagements" exact component={Commitments} />
-							<Route path="/acces" exact component={Access} />
-							<Route path="/contact" exact component={Contact} />
-							<Route path="/mentions-legales" exact component={Legal} />
-							<Route component={PageNotFound} />
-						</Switch>
-					</div>
+					<Switch>
+						<Route path="/" exact component={Home} />
+						<Route path="/galerie" exact component={Gallery} />
+						<Route path="/artistes" exact component={Artists} />
+						<Route path="/billetterie" exact component={Tickets} />
+						<Route path="/partenaires" exact component={Partners} />
+						<Route path="/nos-engagements" exact component={Commitments} />
+						<Route path="/acces" exact component={Access} />
+						<Route path="/contact" exact component={Contact} />
+						<Route path="/mentions-legales" exact component={Legal} />
+						<Route component={PageNotFound} />
+					</Switch>
 				</div>
 
 				<Footer />

@@ -47,7 +47,7 @@ class Tickets extends React.Component {
 
   render() {
     return (
-			<div id="tickets">
+			<div className="page-container" id="tickets">
 				<h1 className="centered">Billetterie</h1>
 				<hr />
 

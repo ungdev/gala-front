@@ -27,7 +27,7 @@ class Partners extends React.Component {
 
   render() {
     return (
-			<div id="partners">
+			<div className="page-container" id="partners">
 				<h1 className="centered">Partenaires</h1>
 				<hr />
 

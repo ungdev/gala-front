@@ -5,7 +5,7 @@ import './access.css';
 class Access extends React.Component {
   render() {
     return (
-			<div id="access">
+			<div className="page-container" id="access">
 				<h1 className="centered">Accès</h1>
 				<hr />
 
