@@ -66,9 +66,9 @@ class Tickets extends React.Component {
 					className={'tickets-window' + (this.state.ticketsWindowActive ? ' active' : '')}
 					onClick={this.closeTicketsWindow}
 				>
-					<div className="tickets-close-button" title="Fermer">
+					<button className="tickets-close-button" title="Fermer">
 						<i className="fas fa-times"></i>
-					</div>
+					</button>
 
 					<div className="tickets-window-spinner">
 						<i className="fas fa-spinner fa-spin"></i>

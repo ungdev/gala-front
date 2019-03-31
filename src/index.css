@@ -96,6 +96,7 @@ hr {
 	letter-spacing: 1px;
 	overflow: hidden;
 	cursor: pointer;
+	outline: none;
 	transition: all .3s;
 }
 
@@ -113,7 +114,13 @@ hr {
 	transition: all .3s;
 }
 
-.button:hover::before {
+.button:hover,
+.button:focus {
+	filter: brightness(0.9);
+}
+
+.button:hover::before,
+.button:focus::before {
 	left: 0;
 }
 
