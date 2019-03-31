@@ -80,10 +80,11 @@ footer .legal {
 footer .legal a {
 	font-size: 13px;
 	text-decoration: none;
+	border-bottom: 1px solid transparent;
 	color: #fff;
 	transition: all .3s;
 }
 
 footer .legal a:hover {
-	text-shadow: 0 0 2px #fff;
+	border-bottom: 1px solid #fff;
 }
