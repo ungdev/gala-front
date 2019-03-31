@@ -21,12 +21,13 @@
 
 #home .poster-container {
 	display: flex;
-	height: calc(100vh - 140px);
+	height: calc(100vh - 90px);
 	width: 100%;
-	margin-bottom: 50px;
 }
 
 #home .poster-container .poster {
+	position: relative;
+	top: -30px;
 	margin: auto;
 	max-width: 100%;
 	max-height: 100%;

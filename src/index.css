@@ -74,13 +74,13 @@ hr {
 	color: #fff;
 	max-width: 1056px;
 	margin: 0 auto;
-	padding: 20px;
+	padding: 10px;
 }
 
 .page-container {
 	background: rgba(33, 32, 56, 0.7);
 	border-radius: 4px;
-	padding: 30px;
+	padding: 20px;
 }
 
 .button {

@@ -9,6 +9,7 @@
 	resize: vertical;
 	min-height: 70px;
 	border: none;
+	border-radius: 0;
 	padding: 8px;
 	color: #fff;
 	background: rgba(255, 255, 255, 0.1);
