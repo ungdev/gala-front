@@ -11,6 +11,12 @@ header .header-content {
 	background: #222145;
 	z-index: 999;
 	box-shadow: 0 0 4px 0 #222145;
+	transition: all .3s;
+}
+
+header .header-content.transparent {
+	box-shadow: none;
+	background: transparent;
 }
 
 header nav {

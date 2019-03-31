@@ -10,8 +10,25 @@ class Header extends React.Component {
 		super(props);
 
 		this.state = {
-			mobileMenuActive: false
+			mobileMenuActive: false,
+			top: true
 		};
+	}
+
+	componentDidMount() {
+		window.addEventListener('scroll', this.scrollHandle);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.scrollHandle);
+	}
+
+	scrollHandle = () => {
+		const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+		this.setState({
+			top: scrollTop === 0
+		});
 	}
 
 	toggleMobileMenu = () => {
@@ -44,7 +61,7 @@ class Header extends React.Component {
 
     return (
 			<header>
-				<div className="header-content">
+				<div className={'header-content' + ((this.state.top && window.location.pathname === '/') ? ' transparent' : '')}>
 					<nav className={this.state.mobileMenuActive ? 'active' : ''}>
 						<div className="mobile-hamburger-menu" onClick={this.toggleMobileMenu}>
 							<div>
