@@ -52,12 +52,14 @@ class Home extends React.Component {
 		this.setCarouselInterval();
 
 		window.addEventListener('scroll', this.scrollHandle, { passive: true });
+		window.addEventListener('touchmove', this.scrollHandle, { passive: true });
 	}
 
 	componentWillUnmount() {
 		this.clearCarouselInterval();
 
 		window.removeEventListener('scroll', this.scrollHandle, { passive: true });
+		window.removeEventListener('touchmove', this.scrollHandle, { passive: true });
 	}
 
 	scrollHandle = () => {
