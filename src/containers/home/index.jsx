@@ -102,11 +102,7 @@ class Home extends React.Component {
 		return (
 			<div id="home">
 				<div className="poster-container">
-					<img
-						src={posterImg}
-						alt=""
-						className="poster"
-					/>
+					<img src={posterImg} alt="" className="poster" />
 
 					<div className={'arrow-icon' + (this.state.top ? ' active' : '')}>
 						<i className="fas fa-arrow-down icon"></i>
