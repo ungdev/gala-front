@@ -20,9 +20,19 @@ export default [
 		url: 'https://idverde.com/'
 	},
 	{
+		name: 'Laser Game Evolution',
+		image: 'lge.jpg',
+		url: 'https://www.lasergame-evolution.com/'
+	},
+	{
 		name: 'Loxam Access',
 		image: 'loxam-access.png',
 		url: 'http://www.loxam-access.com/'
+	},
+	{
+		name: 'Moodyx',
+		image: 'moodyx.png',
+		url: 'https://moodyx.com/'
 	},
 	{
 		name: 'Nigloland',
@@ -45,6 +55,11 @@ export default [
 		url: 'https://premiumautomobiles-troyes.espacevo.fr/'
 	},
 	{
+		name: 'SNCF',
+		image: 'sncf.png',
+		url: 'https://www.sncf.com/fr'
+	},
+	{
 		name: 'SOCOTEC',
 		image: 'socotec.png',
 		url: 'http://www.socotec.com/fr/'
@@ -55,18 +70,13 @@ export default [
 		url: 'http://www.tekliss.com/'
 	},
 	{
-		name: 'UTT',
-		image: 'utt.png',
-		url: 'https://www.utt.fr/'
-	},
-	{
-		name: 'Moodyx',
-		image: 'moodyx.png',
-		url: 'https://moodyx.com/'
-	},
-	{
 		name: 'Troyes Habitat',
 		image: 'troyes_habitat.png',
 		url: 'https://www.troyes-habitat.com'
+	},
+	{
+		name: 'UTT',
+		image: 'utt.png',
+		url: 'https://www.utt.fr/'
 	}
 ];
