@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
+import VideoContainer from '../../components/videoContainer';
+
 import partners from '../../variables/partners';
 import posterImg from '../../assets/poster.png';
 
@@ -117,17 +119,11 @@ class Home extends React.Component {
 					</p>
 
 					<h2 className="centered">Aftermovie Gala UTT 2018</h2>
-					<div className="video-container">
-						<div>
-							<iframe
-								title="Aftermovie Gala UTT 2018"
-								src="https://www.youtube.com/embed/EO_rrd8FfSM?autoplay=0"
-								frameBorder="0"
-								allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture"
-								allowFullScreen
-							></iframe>
-						</div>
-					</div>
+
+					<VideoContainer
+						title="Aftermovie Gala UTT 2018"
+						src="https://www.youtube.com/embed/EO_rrd8FfSM"
+					/>
 				</div>
 
 				<div className="partners">
