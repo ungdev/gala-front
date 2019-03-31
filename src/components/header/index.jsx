@@ -16,11 +16,11 @@ class Header extends React.Component {
 	}
 
 	componentDidMount() {
-		window.addEventListener('scroll', this.scrollHandle);
+		window.addEventListener('scroll', this.scrollHandle, { passive: true });
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('scroll', this.scrollHandle);
+		window.removeEventListener('scroll', this.scrollHandle, { passive: true });
 	}
 
 	scrollHandle = () => {
