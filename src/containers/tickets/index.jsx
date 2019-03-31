@@ -14,11 +14,11 @@ class Tickets extends React.Component {
 	}
 
 	componentDidMount() {
-		window.addEventListener('keydown', this.keydownHandle);
+		window.addEventListener('keydown', this.keydownHandle, { passive: true });
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('keydown', this.keydownHandle);
+		window.removeEventListener('keydown', this.keydownHandle, { passive: true });
 	}
 
 	keydownHandle = (e) => {
