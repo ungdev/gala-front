@@ -41,7 +41,8 @@ header nav ul a {
 	transition: all .3s;
 }
 
-header nav ul a:hover {
+header nav ul a:hover,
+header nav ul a:focus {
 	background: rgba(255, 255, 255, 0.07);
 }
 

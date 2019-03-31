@@ -14,11 +14,11 @@ class Tickets extends React.Component {
 	}
 
 	componentDidMount() {
-		window.addEventListener('keydown', this.keydownHandle);
+		window.addEventListener('keydown', this.keydownHandle, { passive: true });
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('keydown', this.keydownHandle);
+		window.removeEventListener('keydown', this.keydownHandle, { passive: true });
 	}
 
 	keydownHandle = (e) => {
@@ -66,9 +66,9 @@ class Tickets extends React.Component {
 					className={'tickets-window' + (this.state.ticketsWindowActive ? ' active' : '')}
 					onClick={this.closeTicketsWindow}
 				>
-					<div className="tickets-close-button" title="Fermer">
+					<button className="tickets-close-button" title="Fermer">
 						<i className="fas fa-times"></i>
-					</div>
+					</button>
 
 					<div className="tickets-window-spinner">
 						<i className="fas fa-spinner fa-spin"></i>

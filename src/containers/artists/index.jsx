@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Artist from './artist';
+import VideoContainer from '../../components/videoContainer';
 
 import salutCestCoolImg from '../../assets/artists/salutCestCool.jpg';
 import frenchFuseImg from '../../assets/artists/frenchFuse.jpg';
@@ -13,6 +14,12 @@ class Artists extends React.Component {
 			<div className="page-container" id="artists">
 				<h1 className="centered">Artistes</h1>
 				<hr />
+
+				<VideoContainer
+					title="Annonce des artistes 2019"
+					src="https://www.youtube.com/embed/jNQAr9TnaA4"
+					style={{ maxWidth: 700, margin: 'auto' }}
+				/>
 
 				<Artist
 					name="Salut c'est cool"

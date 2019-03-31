@@ -51,13 +51,13 @@ class Gallery extends React.Component {
 			lazyLoadEager: 1
 		});
 
-		window.addEventListener('keydown', this.keydownHandle);
+		window.addEventListener('keydown', this.keydownHandle, { passive: true });
 
 		this.carousel.on('translate.owl.carousel', (e) => this.updateArrows(e.item.index));
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('keydown', this.keydownHandle);
+		window.removeEventListener('keydown', this.keydownHandle, { passive: true });
 	}
 
 	keydownHandle = (e) => {

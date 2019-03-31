@@ -16,11 +16,11 @@ class Header extends React.Component {
 	}
 
 	componentDidMount() {
-		window.addEventListener('scroll', this.scrollHandle);
+		window.addEventListener('scroll', this.scrollHandle, { passive: true });
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('scroll', this.scrollHandle);
+		window.removeEventListener('scroll', this.scrollHandle, { passive: true });
 	}
 
 	scrollHandle = () => {
@@ -34,6 +34,7 @@ class Header extends React.Component {
 	toggleMobileMenu = () => {
 		// Prevent from scrolling when mobile menu is active
 		document.getElementsByTagName('html')[0].style.overflow = this.state.mobileMenuActive ? '' : 'hidden';
+		document.getElementsByTagName('body')[0].style.overflow = this.state.mobileMenuActive ? '' : 'hidden';
 
 		this.setState({
 			mobileMenuActive: !this.state.mobileMenuActive
@@ -42,6 +43,7 @@ class Header extends React.Component {
 
 	closeMobileMenu = () => {
 		document.getElementsByTagName('html')[0].style.overflow = '';
+		document.getElementsByTagName('body')[0].style.overflow = '';
 
 		this.setState({
 			mobileMenuActive: false

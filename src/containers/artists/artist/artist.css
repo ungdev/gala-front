@@ -78,7 +78,8 @@
 	transition: all .3s;
 }
 
-.artist .artist-link:hover {
+.artist .artist-link:hover,
+.artist .artist-link:focus {
 	filter: brightness(85%);
 }
 

@@ -32,7 +32,8 @@
 	transition: all .3s;
 }
 
-#partners .partner[data-name]:hover::after {
+#partners .partner-link:hover .partner[data-name]::after,
+#partners .partner-link:focus .partner[data-name]::after {
 	transform: translate(-50%, 50%);
 	bottom: 50%;
 	opacity: 1;
@@ -49,7 +50,8 @@
 	transition: all .3s;
 }
 
-#partners .partner:hover .partner-image {
+#partners .partner-link:hover .partner-image,
+#partners .partner-link:focus .partner-image {
 	transform: scale(1.05);
 	filter: blur(3px) brightness(0.7);
 }

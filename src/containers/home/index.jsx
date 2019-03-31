@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
+import VideoContainer from '../../components/videoContainer';
+
 import partners from '../../variables/partners';
 import posterImg from '../../assets/poster.png';
 
@@ -40,7 +42,7 @@ class Home extends React.Component {
 				550:  { items: 4 },
 				800:  { items: 5 },
         1000: { items: 6 }
-    	},
+			},
 			loop: true,
 			smartSpeed: 500,
 			onDrag: this.clearCarouselInterval,
@@ -49,13 +51,15 @@ class Home extends React.Component {
 
 		this.setCarouselInterval();
 
-		window.addEventListener('scroll', this.scrollHandle);
+		window.addEventListener('scroll', this.scrollHandle, { passive: true });
+		window.addEventListener('touchmove', this.scrollHandle, { passive: true });
 	}
 
 	componentWillUnmount() {
 		this.clearCarouselInterval();
 
-		window.removeEventListener('scroll', this.scrollHandle);
+		window.removeEventListener('scroll', this.scrollHandle, { passive: true });
+		window.removeEventListener('touchmove', this.scrollHandle, { passive: true });
 	}
 
 	scrollHandle = () => {
@@ -73,13 +77,11 @@ class Home extends React.Component {
 	}
 
 	setCarouselInterval = () => {
-		this.carouselInterval = window.setInterval(this.playCarousel, 2000);
-	}
-
-	playCarousel = () => {
-		if(this.carousel) {
-			this.carousel.trigger('next.owl.carousel', [1200]);
-		}
+		this.carouselInterval = window.setInterval(() => {
+			if(this.carousel) {
+				this.carousel.trigger('next.owl.carousel', [1200]);
+			}
+		}, 2000);
 	}
 
 	carouselPrev = () => {
@@ -117,17 +119,11 @@ class Home extends React.Component {
 					</p>
 
 					<h2 className="centered">Aftermovie Gala UTT 2018</h2>
-					<div className="video-container">
-						<div>
-							<iframe
-								title="Aftermovie Gala UTT 2018"
-								src="https://www.youtube.com/embed/EO_rrd8FfSM?autoplay=0"
-								frameBorder="0"
-								allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture"
-								allowFullScreen
-							></iframe>
-						</div>
-					</div>
+
+					<VideoContainer
+						title="Aftermovie Gala UTT 2018"
+						src="https://www.youtube.com/embed/EO_rrd8FfSM"
+					/>
 				</div>
 
 				<div className="partners">
