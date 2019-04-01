@@ -32,7 +32,6 @@ export default (
 
 		<h2 className="title-decoration">Horaires</h2>
 		<p>Ouverture des portes à 20h. Fin des entrées à 3h. Fin de l'événement à 5h.</p>
-		<p>Pour votre sécurité, les entrées seront fermées avant et pendant le feu d'artifice, soit entre 23h30 et 00h30.</p>
 
 		<h2 className="title-decoration">Sécurité</h2>
 		<p>

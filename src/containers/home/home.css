@@ -120,6 +120,11 @@
 	margin: auto 10px;
 }
 
+#home .owl-carousel .owl-item img {
+	width: calc(100% - 10px);
+	margin: 5px;
+}
+
 @media screen and (max-width: 1000px) {
 	#home .partners-carousel-container {
 		width: calc(100% + 40px);

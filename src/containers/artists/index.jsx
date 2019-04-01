@@ -15,12 +15,6 @@ class Artists extends React.Component {
 				<h1 className="centered">Artistes</h1>
 				<hr />
 
-				<VideoContainer
-					title="Annonce des artistes 2019"
-					src="https://www.youtube.com/embed/jNQAr9TnaA4"
-					style={{ maxWidth: 700, margin: 'auto' }}
-				/>
-
 				<Artist
 					name="Salut c'est cool"
 					image={salutCestCoolImg}
@@ -55,6 +49,12 @@ class Artists extends React.Component {
 					link="https://www.facebook.com/JayStyleOfficiel/"
 					hour=""
 					place="Grande scène"
+				/>
+
+				<VideoContainer
+					title="Annonce des artistes 2019"
+					src="https://www.youtube.com/embed/jNQAr9TnaA4"
+					style={{ maxWidth: 700, margin: '40px auto 20px auto' }}
 				/>
 			</div>
 		);
