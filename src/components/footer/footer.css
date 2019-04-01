@@ -1,12 +1,12 @@
 footer {
 	position: absolute;
-	background: #222145;
+	background: var(--primary-color);
 	color: #fff;
 	width: calc(100% - 40px);
 	padding: 40px 20px;
 	text-align: center;
-	box-shadow: 0 100vh 0 100vh #222145;
-	border-top: 4px solid #eb048b;
+	box-shadow: 0 100vh 0 100vh var(--primary-color);
+	border-top: 4px solid var(--secondary-color);
 }
 
 footer .social-links {

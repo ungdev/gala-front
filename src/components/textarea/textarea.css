@@ -22,7 +22,7 @@
 }
 
 .textarea textarea:focus {
-	box-shadow: 0 3px 0 0 var(--primary-color);
+	box-shadow: 0 3px 0 0 var(--secondary-color);
 }
 
 .textarea-placeholder {
@@ -75,7 +75,7 @@
 	transform: translate(50%, -100%);
 	width: 180px;
 	text-align: center;
-	background: #222145;
+	background: var(--primary-color);
 	padding: 4px 8px;
 	border: 1px solid #fff;
 	border-radius: 2px;
