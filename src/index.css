@@ -93,6 +93,8 @@ hr {
 	color: #fff;
 	text-decoration: none;
 	text-transform: uppercase;
+	border: none;
+	border-radius: 0;
 	font-size: 14px;
 	letter-spacing: 1px;
 	overflow: hidden;

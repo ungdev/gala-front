@@ -31,7 +31,7 @@ export default (
 		<p><strong>Les organisateurs se réservent le droit d'accès.</strong></p>
 
 		<h2 className="title-decoration">Horaires</h2>
-		<p>Ouverture des portes à 20h. Fin des entrées à 3h. Fin de l'événement à 5h.</p>
+		<p>Ouverture des portes à 20h. Fin des entrées à 2h. Fin de l'événement à 5h.</p>
 
 		<h2 className="title-decoration">Sécurité</h2>
 		<p>
