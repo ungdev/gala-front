@@ -115,26 +115,32 @@ class Home extends React.Component {
 				<div className="page-container">
 					<Countdown
 						date="18 May 2019 20:00:00"
-						renderer={(props) => (
-							<div className="countdown">
-								<div className="countdown-item">
-									<div>{props.days}</div>
-									<div>Jours</div>
+						renderer={(props) => {
+							if(!props.days && !props.hours && !props.minutes && !props.seconds) {
+								return null;
+							}
+
+							return (
+								<div className="countdown">
+									<div className="countdown-item">
+										<div>{props.days}</div>
+										<div>Jour{props.days > 1 ? 's' : ''}</div>
+									</div>
+									<div className="countdown-item">
+										<div>{props.hours}</div>
+										<div>Heure{props.hours > 1 ? 's' : ''}</div>
+									</div>
+									<div className="countdown-item">
+										<div>{props.minutes}</div>
+										<div>Minute{props.minutes > 1 ? 's' : ''}</div>
+									</div>
+									<div className="countdown-item">
+										<div>{props.seconds}</div>
+										<div>Seconde{props.seconds > 1 ? 's' : ''}</div>
+									</div>
 								</div>
-								<div className="countdown-item">
-									<div>{props.hours}</div>
-									<div>Heures</div>
-								</div>
-								<div className="countdown-item">
-									<div>{props.minutes}</div>
-									<div>Minutes</div>
-								</div>
-								<div className="countdown-item">
-									<div>{props.seconds}</div>
-									<div>Secondes</div>
-								</div>
-							</div>
-						)}
+							);
+						}}
 					/>
 
 					<p className="justified">
