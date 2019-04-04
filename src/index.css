@@ -8,7 +8,8 @@
 }
 
 :root {
-	--primary-color: #bc167c;
+	--primary-color: #222145;
+	--secondary-color: #bc167c;
 }
 
 html {
@@ -88,10 +89,12 @@ hr {
 	display: inline-block;
 	margin: 10px 0;
 	padding: 14px 20px;
-	background: var(--primary-color);
+	background: var(--secondary-color);
 	color: #fff;
 	text-decoration: none;
 	text-transform: uppercase;
+	border: none;
+	border-radius: 0;
 	font-size: 14px;
 	letter-spacing: 1px;
 	overflow: hidden;
@@ -140,5 +143,5 @@ h2.title-decoration::before {
 	left: 0;
 	width: 4px;
 	height: 100%;
-	background: var(--primary-color);
+	background: var(--secondary-color);
 }

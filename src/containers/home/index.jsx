@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Countdown from 'react-countdown-now';
 import $ from 'jquery';
 
 import VideoContainer from '../../components/videoContainer';
@@ -112,14 +113,45 @@ class Home extends React.Component {
 				</div>
 
 				<div className="page-container">
+					<Countdown
+						date="18 May 2019 20:00:00"
+						renderer={(props) => {
+							if(!props.days && !props.hours && !props.minutes && !props.seconds) {
+								return null;
+							}
+
+							return (
+								<div className="countdown">
+									<div className="countdown-item">
+										<div>{props.days}</div>
+										<div>Jour{props.days > 1 ? 's' : ''}</div>
+									</div>
+									<div className="countdown-item">
+										<div>{props.hours}</div>
+										<div>Heure{props.hours > 1 ? 's' : ''}</div>
+									</div>
+									<div className="countdown-item">
+										<div>{props.minutes}</div>
+										<div>Minute{props.minutes > 1 ? 's' : ''}</div>
+									</div>
+									<div className="countdown-item">
+										<div>{props.seconds}</div>
+										<div>Seconde{props.seconds > 1 ? 's' : ''}</div>
+									</div>
+								</div>
+							);
+						}}
+					/>
+
 					<p className="justified">
 						Le Gala de l’UTT est un soirée de prestige unique en son genre accueillant 3500 participants.
 						Nous revenons en 2019 pour une 23<sup>ème</sup> édition de folie autour de Las Vegas.
 						Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
 					</p>
 
-					<h2 className="centered">Aftermovie Gala UTT 2018</h2>
+					<hr />
 
+					<h2 className="centered">Aftermovie Gala UTT 2018</h2>
 					<VideoContainer
 						title="Aftermovie Gala UTT 2018"
 						src="https://www.youtube.com/embed/EO_rrd8FfSM"

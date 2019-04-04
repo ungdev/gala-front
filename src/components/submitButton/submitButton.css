@@ -1,6 +1,6 @@
 .submit-button {
 	position: relative;
-	background: var(--primary-color);
+	background: var(--secondary-color);
 	color: #fff;
 	cursor: pointer;
 	padding: 14px 20px 14px 44px;
