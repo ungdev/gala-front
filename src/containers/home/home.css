@@ -55,6 +55,32 @@
 	opacity: 0;
 }
 
+#home .countdown {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+}
+
+#home .countdown .countdown-item {
+	flex-grow: 1;
+	font-weight: bold;
+	font-family: 'LemonMilk', arial, sans-serif;
+}
+
+#home .countdown .countdown-item > div {
+	display: block;
+	text-align: center;
+}
+
+#home .countdown .countdown-item > div:nth-child(1) {
+	font-size: 42px;
+}
+
+
+#home .countdown .countdown-item > div:nth-child(2) {
+	color: rgba(255, 255, 255, 0.6);
+}
+
 #home .partners {
 	position: relative;
 	top: 20px;
@@ -133,5 +159,11 @@
 	#home .partners-carousel-arrow-left,
 	#home .partners-carousel-arrow-right {
 		display: none;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	#home .countdown {
+		flex-flow: column wrap;
 	}
 }
