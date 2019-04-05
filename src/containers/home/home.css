@@ -93,7 +93,7 @@
 }
 
 #home .countdown .countdown-item > div:nth-child(1) {
-	font-size: 42px;
+	font-size: 2.6em;
 }
 
 
@@ -182,8 +182,21 @@
 	}
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 460px) {
 	#home .countdown {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	#home .countdown {
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 340px) {
+	#home .countdown {
+		font-size: 14px;
 		flex-flow: column wrap;
 	}
 }
