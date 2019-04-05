@@ -101,15 +101,28 @@ class Home extends React.Component {
 		this.setCarouselInterval();
 	}
 
+	handleArrow = () => {
+		if(!this.state.top) {
+			return;
+		}
+
+		$('html, body').animate({ scrollTop: window.innerHeight - 80 }, 500);
+	}
+
   render() {
 		return (
 			<div id="home">
 				<div className="poster-container">
 					<img src={posterImg} alt="" className="poster" />
 
-					<div className={'arrow-icon' + (this.state.top ? ' active' : '')}>
-						<i className="fas fa-arrow-down icon"></i>
-					</div>
+					<button
+						className={'arrow-button' + (this.state.top ? ' active' : '')}
+						onClick={this.handleArrow}
+					>
+						<div className="arrow-icon">
+							<i className="fas fa-arrow-down icon"></i>
+						</div>
+					</button>
 				</div>
 
 				<div className="page-container">
