@@ -66,6 +66,11 @@
 	font-size: 20px;
 }
 
+.artist .artist-no-informations {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 14px;
+}
+
 .artist .artist-link {
 	display: inline-block;
 	font-size: 0.9em;

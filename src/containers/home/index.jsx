@@ -4,6 +4,7 @@ import Countdown from 'react-countdown-now';
 import $ from 'jquery';
 
 import VideoContainer from '../../components/videoContainer';
+//import Events from './events';
 
 import partners from '../../variables/partners';
 import posterImg from '../../assets/poster.png';
@@ -101,15 +102,28 @@ class Home extends React.Component {
 		this.setCarouselInterval();
 	}
 
+	handleArrow = () => {
+		if(!this.state.top) {
+			return;
+		}
+
+		$('html, body').animate({ scrollTop: window.innerHeight - 80 }, 500);
+	}
+
   render() {
 		return (
 			<div id="home">
 				<div className="poster-container">
 					<img src={posterImg} alt="" className="poster" />
 
-					<div className={'arrow-icon' + (this.state.top ? ' active' : '')}>
-						<i className="fas fa-arrow-down icon"></i>
-					</div>
+					<button
+						className={'arrow-button' + (this.state.top ? ' active' : '')}
+						onClick={this.handleArrow}
+					>
+						<div className="arrow-icon">
+							<i className="fas fa-arrow-down icon"></i>
+						</div>
+					</button>
 				</div>
 
 				<div className="page-container">
@@ -156,6 +170,14 @@ class Home extends React.Component {
 						title="Aftermovie Gala UTT 2018"
 						src="https://www.youtube.com/embed/EO_rrd8FfSM"
 					/>
+
+					{ /*
+					<hr />
+
+					<h2 className="centered">Événements</h2>
+
+					<Events />
+					*/ }
 				</div>
 
 				<div className="partners">

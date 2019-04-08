@@ -25,16 +25,16 @@
 	background: #bc167c;
 }
 
-.notification:before {
+.notification::before {
 	font-family: 'Font Awesome 5 Free';
 	font-weight: bold;
 	margin-right: 10px;
 }
 
-.notification.error:before {
-	content : '\f071';
+.notification.error::before {
+	content: '\f071';
 }
 
-.notification.success:before {
+.notification.success::before {
 	content: '\f00c';
 }

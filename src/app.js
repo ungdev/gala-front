@@ -14,6 +14,7 @@ import Commitments from './containers/commitments';
 import Access from './containers/access';
 import Contact from './containers/contact';
 import Legal from './containers/legal';
+import Privacy from './containers/privacy';
 
 import './index.css';
 
@@ -34,6 +35,7 @@ const App = () => (
 						<Route path="/acces" exact component={Access} />
 						<Route path="/contact" exact component={Contact} />
 						<Route path="/mentions-legales" exact component={Legal} />
+						<Route path="/confidentialite" exact component={Privacy} />
 						<Redirect from="*" to="/" />
 					</Switch>
 				</div>

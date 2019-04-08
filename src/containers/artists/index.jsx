@@ -21,7 +21,7 @@ class Artists extends React.Component {
 					description=""
 					link="https://www.facebook.com/salutcestcool/"
 					hour=""
-					place="Grande scène"
+					place=""
 				/>
 
 				<Artist
@@ -30,7 +30,7 @@ class Artists extends React.Component {
 					description=""
 					link="https://www.facebook.com/FrenchFuse/"
 					hour=""
-					place="Grande scène"
+					place=""
 				/>
 
 				<Artist
@@ -39,7 +39,7 @@ class Artists extends React.Component {
 					description=""
 					link="https://www.facebook.com/125292844188815"
 					hour=""
-					place="Grande scène"
+					place=""
 				/>
 
 				<Artist
@@ -48,7 +48,7 @@ class Artists extends React.Component {
 					description=""
 					link="https://www.facebook.com/JayStyleOfficiel/"
 					hour=""
-					place="Grande scène"
+					place=""
 				/>
 
 				<VideoContainer

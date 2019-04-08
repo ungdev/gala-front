@@ -34,10 +34,34 @@
 	user-select: none;
 }
 
+#home .poster-container .arrow-button {
+	position: absolute;
+	background: none;
+	width: 40px;
+	height: 90px;
+	border: none;
+	outline: none;
+	padding: 0 5px;
+	cursor: pointer;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	color: #fff;
+	transition: all .3s;
+}
+
+#home .poster-container .arrow-button:not(.active) {
+	opacity: 0;
+	cursor: default;
+}
+
+#home .poster-container .arrow-button:hover,
+#home .poster-container .arrow-button:focus {
+	color: #aaa;
+}
+
 #home .poster-container .arrow-icon {
 	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
 	font-size: 26px;
 	height: 30px;
 	width: 30px;
@@ -49,10 +73,6 @@
 #home .poster-container .arrow-icon .icon {
 	opacity: 1;
 	transition: all .3s;
-}
-
-#home .poster-container .arrow-icon:not(.active) .icon {
-	opacity: 0;
 }
 
 #home .countdown {
@@ -73,7 +93,7 @@
 }
 
 #home .countdown .countdown-item > div:nth-child(1) {
-	font-size: 42px;
+	font-size: 2.6em;
 }
 
 
@@ -162,8 +182,21 @@
 	}
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 460px) {
 	#home .countdown {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	#home .countdown {
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 340px) {
+	#home .countdown {
+		font-size: 14px;
 		flex-flow: column wrap;
 	}
 }

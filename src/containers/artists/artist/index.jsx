@@ -26,7 +26,7 @@ const Artist = (props) => (
 				<div className="artist-name">{props.name}</div>
 				{ props.description && <div className="artist-description">{props.description}</div> }
 
-				{ (props.hour || props.place) && <div className="artist-divider"></div> }
+				{ (props.hour || props.place || props.link) && <div className="artist-divider"></div> }
 
 				{ props.hour && (
 					<div className="artist-hour">
@@ -38,6 +38,11 @@ const Artist = (props) => (
 					<div className="artist-place">
 						<i className="fas fa-map-marker-alt icon" title="Emplacement"></i>
 						{props.place}
+					</div>
+				)}
+				{ !props.hour && !props.place && (
+					<div className="artist-no-informations">
+						(L'horaire sera bientôt disponible)
 					</div>
 				)}
 
