@@ -82,10 +82,14 @@ class Artists extends React.Component {
 				<h1 className="centered">Artistes</h1>
 				<hr />
 
-				{ this.artists ? (
+				{ (this.artists && this.artists.length) ? (
 					this.state.artists
 				) : (
-					<div className="loader"><i className="fas fa-spinner fa-spin"></i></div>
+					this.artists === null ? (
+						<div className="artists-loader"><i className="fas fa-spinner fa-spin"></i></div>
+					) : (
+						<div className="no-artists">(Les artistes seront bientôt disponibles)</div>
+					)
 				)}
 
 				<VideoContainer
