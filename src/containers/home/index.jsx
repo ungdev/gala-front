@@ -4,7 +4,7 @@ import Countdown from 'react-countdown-now';
 import $ from 'jquery';
 
 import VideoContainer from '../../components/videoContainer';
-//import Events from './events';
+import Events from './events';
 
 import partners from '../../variables/partners';
 import posterImg from '../../assets/poster.png';
@@ -171,13 +171,11 @@ class Home extends React.Component {
 						src="https://www.youtube.com/embed/EO_rrd8FfSM"
 					/>
 
-					{ /*
 					<hr />
 
 					<h2 className="centered">Événements</h2>
 
 					<Events />
-					*/ }
 				</div>
 
 				<div className="partners">
