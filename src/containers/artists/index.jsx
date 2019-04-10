@@ -1,12 +1,10 @@
 import React from 'react';
-import Axios from 'axios';
 
+import axios from '../../utils/axios';
 import Artist from './artist';
 import VideoContainer from '../../components/videoContainer';
 
 import './artists.css';
-
-const axios = Axios.create({ baseURL: process.env.REACT_APP_API });
 
 class Artists extends React.Component {
 	constructor(props) {

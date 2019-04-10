@@ -1,9 +1,8 @@
 import React from 'react';
-import Axios from 'axios';
 
 import './events.css';
+import axios from '../../../utils/axios';
 
-const axios = Axios.create({ baseURL: process.env.REACT_APP_API });
 
 class Events extends React.Component {
 	constructor(props) {
