@@ -6,7 +6,6 @@ import './artist.css';
  * props : {
  * 	 name: String,
  *   image: String,
- *   description: String,
  *   hour: String,
  *   place: String,
  *   link: String
@@ -24,7 +23,6 @@ const Artist = (props) => (
 			</div>
 			<div className="artist-infos">
 				<div className="artist-name">{props.name}</div>
-				{ props.description && <div className="artist-description">{props.description}</div> }
 
 				{ (props.hour || props.place || props.link) && <div className="artist-divider"></div> }
 
