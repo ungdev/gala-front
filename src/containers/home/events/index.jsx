@@ -1,14 +1,16 @@
 import React from 'react';
 
-import './events.css';
 import axios from '../../../utils/axios';
 
+import './events.css';
 
 class Events extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.events = null;
+		this.state = {
+			events: null
+		};
 
 		this.fetchEvents();
 	}
@@ -35,7 +37,7 @@ class Events extends React.Component {
 				};
 			});
 
-		this.events = events.map((event, i) => (
+		events = events.map((event, i) => (
 			<div className="event" key={i}>
 				<div className="event-dates">
 					<div className="event-start">{event.start}</div>
@@ -50,6 +52,10 @@ class Events extends React.Component {
 				</div>
 			</div>
 		));
+
+		this.setState({
+			events
+		});
 	}
 
 	getDateFormat(date) {
@@ -59,10 +65,14 @@ class Events extends React.Component {
 	render() {
 		return (
 			<div id="events">
-				{ (this.events && this.events.length) ? (
-					this.events
+				{ (this.state.events && this.state.events.length) ? (
+					this.state.events
 				 ) : (
-					 <div className="no-events">(Les événements seront bientôt disponibles)</div>
+					 this.state.events === null ? (
+						 <div className="events-loader"><i className="fas fa-spinner fa-spin"></i></div>
+					 ) : (
+					 	<div className="no-events">(Les événements seront bientôt disponibles)</div>
+					 )
 				 )}
 			</div>
 		);

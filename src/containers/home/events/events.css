@@ -65,6 +65,11 @@
 	margin-right: 5px;
 }
 
+#events .events-loader {
+	text-align: center;
+	font-size: 24px;
+}
+
 #events .no-events {
 	color: rgba(255, 255, 255, 0.7);
 	text-align: center;

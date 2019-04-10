@@ -169,6 +169,20 @@
 #home .owl-carousel .owl-item img {
 	width: calc(100% - 10px);
 	margin: 5px;
+	max-height: 100%;
+}
+
+#home .partners-loader,
+#home .no-partners {
+	position: relative;
+	color: rgba(39, 39, 39, 0.8);
+	text-align: center;
+	margin: 60px 0 20px 0;
+}
+
+#home .partners-loader {
+	font-size: 24px;
+	color: #272727;
 }
 
 @media screen and (max-width: 1000px) {
