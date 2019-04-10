@@ -3,7 +3,40 @@ import { Link } from 'react-router-dom';
 
 import './header.css';
 
-import buttons from '../../variables/header';
+const links = [
+	{
+		title: 'Accueil',
+		path: '/'
+	},
+	{
+		title: 'Galerie',
+		path: '/galerie'
+	},
+	{
+		title: 'Artistes',
+		path: '/artistes'
+	},
+	{
+		title: 'Billetterie',
+		path: '/billetterie'
+	},
+	{
+		title: 'Partenaires',
+		path: '/partenaires'
+	},
+	{
+		title: 'Nos engagements',
+		path: '/nos-engagements'
+	},
+	{
+		title: 'Accès',
+		path: '/acces'
+	},
+	{
+		title: 'Contact',
+		path: '/contact'
+	}
+];
 
 class Header extends React.Component {
 	constructor(props) {
@@ -51,12 +84,12 @@ class Header extends React.Component {
 	}
 
   render() {
-		const navigationLinks = buttons.map((button, i) => {
-			const active = button.path === document.location.pathname;
+		const navigationLinks = links.map((link, i) => {
+			const active = link.path === document.location.pathname;
 
 			return (
-				<Link to={button.path} key={i} className={active ? 'active' : ''} onClick={this.closeMobileMenu}>
-					<li>{button.title}</li>
+				<Link to={link.path} key={i} className={active ? 'active' : ''} onClick={this.closeMobileMenu}>
+					<li>{link.title}</li>
 				</Link>
 			);
 		});

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import axios from '../../utils/axios';
-import partners from '../../variables/partners';
 
 import './partners.css';
 
