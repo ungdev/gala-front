@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 import axios from '../../utils/axios';
 import Artist from './artist';
@@ -48,13 +49,9 @@ class Artists extends React.Component {
 				events = this.events
 					.filter(event => event.artistId === artist.id)
 					.map(event => {
-						const date = new Date(event.start);
-						const hours = date.getHours();
-						const minutes = `${date.getMinutes() < 10 ? '0' : ''}${date.getMinutes()}`;
-
 						return {
 							...event,
-							start: `${hours}h${minutes}`
+							start: moment(event.start).format('HH[h]mm')
 						}
 					});
 			}

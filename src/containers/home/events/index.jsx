@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 import axios from '../../../utils/axios';
 
@@ -26,13 +27,10 @@ class Events extends React.Component {
 				return date1 === date2 ? 0 : (date1 < date2 ? -1 : 1);
 			})
 			.map(event => {
-				const startDate = new Date(event.start);
-				const endDate = new Date(event.end);
-
 				return {
 					...event,
-					start: this.getDateFormat(startDate),
-					end: this.getDateFormat(endDate),
+					start: moment(event.start).format('HH[h ]mm'),
+					end: moment(event.end).format('HH[h ]mm'),
 					image: `${process.env.REACT_APP_API}${event.image}`
 				};
 			});
@@ -56,10 +54,6 @@ class Events extends React.Component {
 		this.setState({
 			events
 		});
-	}
-
-	getDateFormat(date) {
-		return `${date.getHours()}h ${(date.getMinutes() < 10 ? '0' : '')}${date.getMinutes()}`;
 	}
 
 	render() {
