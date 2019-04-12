@@ -32,6 +32,13 @@
 	margin: 0 20px;
 }
 
+#events .event-image img {
+	max-height: 100%;
+	max-width: 100%;
+	display: block;
+	margin: auto;
+}
+
 #events .event-name {
 	margin: 0 0 16px 0;
 }
@@ -56,6 +63,16 @@
 	font-weight: bold;
 	color: var(--secondary-color);
 	margin-right: 5px;
+}
+
+#events .events-loader {
+	text-align: center;
+	font-size: 24px;
+}
+
+#events .no-events {
+	color: rgba(255, 255, 255, 0.7);
+	text-align: center;
 }
 
 @media screen and (max-width: 640px) {

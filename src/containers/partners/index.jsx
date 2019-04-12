@@ -1,6 +1,6 @@
 import React from 'react';
 
-import partners from '../../variables/partners';
+import axios from '../../utils/axios';
 
 import './partners.css';
 
@@ -8,20 +8,28 @@ class Partners extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.partners = [];
+		this.state = {
+			partners: null
+		};
 
-		partners.forEach((partner, i) => {
-			const img = require(`../../assets/partners/${partner.image}`);
+		this.fetchPartners();
+	}
 
-			this.partners.push(
-				<a href={partner.url} className="partner-link" key={i}>
-					<div className="partner" data-name={partner.name}>
-						<div className="partner-image">
-							<img src={img} alt={partner.name} />
-						</div>
+	fetchPartners = async () => {
+		let partners = await axios.get('partners');
+
+		partners = partners.data.map((partner, i) => (
+			<a href={partner.url} className="partner-link" key={i}>
+				<div className="partner" data-name={partner.name}>
+					<div className="partner-image">
+						<img src={`${process.env.REACT_APP_API}${partner.image}`} alt={partner.name} />
 					</div>
-				</a>
-			);
+				</div>
+			</a>
+		));
+
+		this.setState({
+			partners
 		});
 	}
 
@@ -31,9 +39,17 @@ class Partners extends React.Component {
 				<h1 className="centered">Partenaires</h1>
 				<hr />
 
-				<div className="partners-list">
-					{ this.partners }
-				</div>
+				{ (this.state.partners && this.state.partners.length ) ? (
+					<div className="partners-list">
+						{ this.state.partners }
+					</div>
+				) : (
+					this.state.partners === null ? (
+						<div className="partners-loader"><i className="fas fa-spinner fa-spin"></i></div>
+					) : (
+						<div className="no-partners">(Les partenaires seront bientôt disponibles)</div>
+					)
+				)}
 			</div>
 		);
   }
