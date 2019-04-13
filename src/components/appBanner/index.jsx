@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './appBanner.css';
+
 class AppBanner extends React.Component {
 	constructor(props) {
 		super(props);
@@ -16,6 +18,8 @@ class AppBanner extends React.Component {
 			this.setState({
 				display: true
 			});
+
+			alert('beforeinstallprompt');
 		});
 	}
 
