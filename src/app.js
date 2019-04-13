@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
+import AppBanner from './components/appBanner';
 import Header from './components/header';
 import Footer from './components/footer';
 import ScrollToTop from './components/scrollToTop';
@@ -22,6 +23,7 @@ const App = () => (
   <div id="app">
     <Router>
 			<ScrollToTop>
+				<AppBanner />
 				<Header />
 
 				<div id="page">
