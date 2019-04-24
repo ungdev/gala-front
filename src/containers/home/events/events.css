@@ -18,6 +18,7 @@
 #events .event-end {
 	font-family: 'LemonMilk', arial, sans-serif;
 	text-align: right;
+	width: 60px;
 }
 
 #events .event-date-line {
