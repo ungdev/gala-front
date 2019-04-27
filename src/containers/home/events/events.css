@@ -89,6 +89,7 @@
 	#events .event-dates .event-start,
 	#events .event-dates .event-end {
 		text-align: center;
+		width: auto;
 	}
 
 	#events .event-dates .event-date-line {
