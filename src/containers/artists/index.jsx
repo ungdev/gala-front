@@ -26,7 +26,7 @@ class Artists extends React.Component {
 				name={artist.name}
 				image={`${process.env.REACT_APP_API}${artist.image}`}
 				link={artist.link}
-				hour={artist.eventDate ? moment(artist.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').format('HH:mm') : ''}
+				hour={artist.eventDate ? moment(artist.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').format('HH[h]mm') : ''}
 				place={artist.eventPlace}
 				key={i}
 			/>
