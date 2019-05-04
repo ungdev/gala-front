@@ -1,6 +1,6 @@
 .artist {
 	display: flex;
-	max-width: 300px;
+	max-width: 350px;
 	margin: 40px auto 0 auto;
 }
 
@@ -8,16 +8,16 @@
 	margin: auto;
 	display: flex;
 	flex-flow: column wrap;
-	max-width: 100%;
+	width: 100%;
 }
 
 .artist .artist-image {
-	max-width: 300px;
+	max-width: 100%;
 	margin-bottom: -4px;
 }
 
 .artist .artist-infos {
-	width: 260px;
+	width: calc(100% - 40px);
 	padding: 10px 20px;
 	background: rgba(255, 255, 255, 0.07);
 	overflow-x: hidden;
