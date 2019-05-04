@@ -185,14 +185,16 @@
 	color: #272727;
 }
 
-@media screen and (max-width: 1000px) {
-	#home .partners-carousel-container {
-		width: calc(100% + 40px);
-	}
-
+@media screen and (max-width: 1160px) {
 	#home .partners-carousel-arrow-left,
 	#home .partners-carousel-arrow-right {
 		display: none;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	#home .partners-carousel-container {
+		width: calc(100% + 40px);
 	}
 }
 

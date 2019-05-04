@@ -15,58 +15,22 @@ class Artists extends React.Component {
 			artists: null
 		};
 
-		this.artists = null;
-		this.events = null;
-
 		this.fetchArtists();
-		this.fetchEvents();
 	}
 
 	fetchArtists = async () => {
-		const artists = await axios.get('artists');
-		this.artists = artists.data;
+		let artists = await axios.get('artists');
 
-		this.updateArtists();
-	}
-
-	fetchEvents = async () => {
-		const events = await axios.get('events');
-		this.events = events.data;
-
-		this.updateArtists();
-	}
-
-	updateArtists = () => {
-		if(this.artists === null) {
-			return;
-		}
-
-		const artists = this.artists.map((artist, i) => {
-			// Get corresponding events
-			let events = null;
-
-			if(this.events) {
-				events = this.events
-					.filter(event => event.artistId === artist.id)
-					.map(event => {
-						return {
-							...event,
-							start: moment(event.start).format('HH[h]mm')
-						}
-					});
-			}
-
-			return (
-				<Artist
-					name={artist.name}
-					image={`${process.env.REACT_APP_API}${artist.image}`}
-					link={artist.link}
-					hour={(events && events.length) ? events[0].start : ''}
-					place={(events && events.length) ? events[0].place : ''}
-					key={i}
-				/>
-			);
-		}	);
+		artists = artists.data.map((artist, i) => (
+			<Artist
+				name={artist.name}
+				image={`${process.env.REACT_APP_API}${artist.image}`}
+				link={artist.link}
+				hour={artist.eventDate ? moment(artist.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').format('HH[h]mm') : ''}
+				place={artist.eventPlace}
+				key={i}
+			/>
+		));
 
 		this.setState({
 			artists
@@ -79,10 +43,12 @@ class Artists extends React.Component {
 				<h1 className="centered">Artistes</h1>
 				<hr />
 
-				{ (this.artists && this.artists.length) ? (
-					this.state.artists
+				{ (this.state.artists && this.state.artists.length) ? (
+					<div className="artists-container">
+						{this.state.artists}
+					</div>
 				) : (
-					this.artists === null ? (
+					this.state.artists === null ? (
 						<div className="artists-loader"><i className="fas fa-spinner fa-spin"></i></div>
 					) : (
 						<div className="no-artists">(Les artistes seront bientôt disponibles)</div>

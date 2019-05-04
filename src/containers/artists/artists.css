@@ -1,3 +1,9 @@
+#artists .artists-container {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+}
+
 #artists .artists-loader {
 	font-size: 30px;
 	text-align: center;
