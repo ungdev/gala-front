@@ -1,11 +1,10 @@
 .artist {
 	display: flex;
 	max-width: 350px;
-	margin: 40px auto 0 auto;
+	margin: 40px 20px 0 20px;
 }
 
 .artist .artist-container {
-	margin: auto;
 	display: flex;
 	flex-flow: column wrap;
 	width: 100%;

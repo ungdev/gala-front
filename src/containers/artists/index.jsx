@@ -80,7 +80,9 @@ class Artists extends React.Component {
 				<hr />
 
 				{ (this.artists && this.artists.length) ? (
-					this.state.artists
+					<div className="artists-container">
+						{this.state.artists}
+					</div>
 				) : (
 					this.artists === null ? (
 						<div className="artists-loader"><i className="fas fa-spinner fa-spin"></i></div>
