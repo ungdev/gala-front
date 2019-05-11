@@ -174,10 +174,10 @@ class Home extends React.Component {
 
 					<hr />
 
-					<h2 className="centered">Aftermovie Gala UTT 2018</h2>
+					<h2 className="centered">Trailer Gala UTT 2k19<h2>
 					<VideoContainer
-						title="Aftermovie Gala UTT 2018"
-						src="https://www.youtube.com/embed/EO_rrd8FfSM"
+						title="Trailer Gala UTT 2k19"
+						src="https://www.youtube.com/embed/A0xF4nrmdkg"
 					/>
 
 					<hr />
