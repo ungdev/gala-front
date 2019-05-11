@@ -174,7 +174,7 @@ class Home extends React.Component {
 
 					<hr />
 
-					<h2 className="centered">Trailer Gala UTT 2k19<h2>
+					<h2 className="centered">Trailer Gala UTT 2k19</h2>
 					<VideoContainer
 						title="Trailer Gala UTT 2k19"
 						src="https://www.youtube.com/embed/A0xF4nrmdkg"
