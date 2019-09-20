@@ -125,6 +125,12 @@ class Home extends React.Component {
 				<div className="poster-container">
 					<img src={posterImg} alt="" className="poster" />
 
+					<div className="poster-text">
+						Le Gala UTT revient pour une nouvelle édition en 2020.
+						Une équipe est en train de se former mais n'hésitez pas à nous contacter,
+						que vous soyez professionnel, artiste ou que vous vouliez nous rejoindre pour organiser l'événement !
+					</div>
+
 					<button
 						className={'arrow-button' + (this.state.top ? ' active' : '')}
 						onClick={this.handleArrow}
