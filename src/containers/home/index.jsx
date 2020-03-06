@@ -125,11 +125,12 @@ class Home extends React.Component {
 				<div className="poster-container">
 					<img src={posterImg} alt="" className="poster" />
 
-					<div className="poster-text">
-						Le Gala UTT revient pour une nouvelle édition en 2020.
-						Une équipe est en train de se former mais n'hésitez pas à nous contacter,
-						que vous soyez professionnel, artiste ou que vous vouliez nous rejoindre pour organiser l'événement !
-					</div>
+					<div class="poster-text">
+						Toutes les informations concernant l'édition 2020 du gala Cassiopée devraient être disponibles à partir du lundi 9 mars.
+						<div style="font-size: 1.5em;margin-top: 10px;">
+							La <a href="billetweb.fr/cassiopee-gala-utt" style="text-decoration: none;color: #00adb5;font-weight: bold;">billetterie</a> est ouverte !
+							</div>
+						</div>
 
 					<button
 						className={'arrow-button' + (this.state.top ? ' active' : '')}
