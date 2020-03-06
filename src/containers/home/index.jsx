@@ -127,8 +127,8 @@ class Home extends React.Component {
 
 					<div class="poster-text">
 						Toutes les informations concernant l'édition 2020 du gala Cassiopée devraient être disponibles à partir du lundi 9 mars.
-						<div style="font-size: 1.5em;margin-top: 10px;">
-							La <a href="billetweb.fr/cassiopee-gala-utt" style="text-decoration: none;color: #00adb5;font-weight: bold;">billetterie</a> est ouverte !
+						<div style={{'font-size': '1.5em', 'margin-top': '10px'}}>
+							La <a href="billetweb.fr/cassiopee-gala-utt" style={{'text-decoration': 'none','color': '#00adb5','font-weight': 'bold'}}>billetterie</a> est ouverte !
 							</div>
 						</div>
 
