@@ -20,8 +20,8 @@ import Privacy from './containers/privacy';
 import './index.css';
 
 const App = () => (
-  <div id="app">
-    <Router>
+	<div id="app">
+		<Router>
 			<ScrollToTop>
 				<Notifications />
 
@@ -45,8 +45,8 @@ const App = () => (
 
 				<Footer />
 			</ScrollToTop>
-    </Router>
-  </div>
+		</Router>
+	</div>
 );
 
 export default App;

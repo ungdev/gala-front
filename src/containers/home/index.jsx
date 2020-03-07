@@ -23,7 +23,7 @@ class Home extends React.Component {
 
 		this.state = {
 			partners: null,
-			top: true
+			top: true,
 		};
 
 		this.fetchPartners();
@@ -33,30 +33,32 @@ class Home extends React.Component {
 		this.clearCarouselInterval();
 
 		window.removeEventListener('scroll', this.scrollHandle, { passive: true });
-		window.removeEventListener('touchmove', this.scrollHandle, { passive: true });
+		window.removeEventListener('touchmove', this.scrollHandle, {
+			passive: true,
+		});
 	}
 
 	scrollHandle = () => {
 		const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
 		this.setState({
-			top: scrollTop === 0
+			top: scrollTop === 0,
 		});
-	}
+	};
 
 	clearCarouselInterval = () => {
-		if(this.carouselInterval) {
+		if (this.carouselInterval) {
 			window.clearInterval(this.carouselInterval);
 		}
-	}
+	};
 
 	setCarouselInterval = () => {
 		this.carouselInterval = window.setInterval(() => {
-			if(this.carousel) {
+			if (this.carousel) {
 				this.carousel.trigger('next.owl.carousel', [1200]);
 			}
 		}, 2000);
-	}
+	};
 
 	carouselPrev = () => {
 		this.carousel.trigger('prev.owl.carousel', [300]);
@@ -64,7 +66,7 @@ class Home extends React.Component {
 		// Reset carousel interval
 		this.clearCarouselInterval();
 		this.setCarouselInterval();
-	}
+	};
 
 	carouselNext = () => {
 		this.carousel.trigger('next.owl.carousel', [300]);
@@ -72,45 +74,47 @@ class Home extends React.Component {
 		// Reset carousel interval
 		this.clearCarouselInterval();
 		this.setCarouselInterval();
-	}
+	};
 
 	handleArrow = () => {
-		if(!this.state.top) {
+		if (!this.state.top) {
 			return;
 		}
 
 		$('html, body').animate({ scrollTop: window.innerHeight - 80 }, 500);
-	}
+	};
 
 	fetchPartners = async () => {
 		let partners = await axios.get('partners');
 
 		partners = partners.data.map((partner, i) => (
-			<a href={partner.url} key={i}><img src={`${process.env.REACT_APP_API}${partner.image}`} alt={partner.name} /></a>
+			<a href={partner.url} key={i}>
+				<img src={`${process.env.REACT_APP_API}${partner.image}`} alt={partner.name} />
+			</a>
 		));
 
 		this.setState({
-			partners
+			partners,
 		});
 
 		this.createCarousel();
-	}
+	};
 
 	createCarousel() {
 		this.carousel = $('.owl-carousel');
 
 		this.carousel.owlCarousel({
 			responsive: {
-        0:    { items: 2 },
-        400:  { items: 3 },
-				550:  { items: 4 },
-				800:  { items: 5 },
-        1000: { items: 6 }
+				0: { items: 2 },
+				400: { items: 3 },
+				550: { items: 4 },
+				800: { items: 5 },
+				1000: { items: 6 },
 			},
 			loop: true,
 			smartSpeed: 500,
 			onDrag: this.clearCarouselInterval,
-			onDragged: this.setCarouselInterval
+			onDragged: this.setCarouselInterval,
 		});
 
 		this.setCarouselInterval();
@@ -119,16 +123,13 @@ class Home extends React.Component {
 		window.addEventListener('touchmove', this.scrollHandle, { passive: true });
 	}
 
-  render() {
+	render() {
 		return (
 			<div id="home">
 				<div className="poster-container">
 					<img src={posterImg} alt="" className="poster" />
 
-					<button
-						className={'arrow-button' + (this.state.top ? ' active' : '')}
-						onClick={this.handleArrow}
-					>
+					<button className={'arrow-button' + (this.state.top ? ' active' : '')} onClick={this.handleArrow}>
 						<div className="arrow-icon">
 							<i className="fas fa-arrow-down icon"></i>
 						</div>
@@ -139,7 +140,7 @@ class Home extends React.Component {
 					<Countdown
 						date="18 May 2019 20:00:00"
 						renderer={(props) => {
-							if(!props.days && !props.hours && !props.minutes && !props.seconds) {
+							if (!props.days && !props.hours && !props.minutes && !props.seconds) {
 								return null;
 							}
 
@@ -167,18 +168,15 @@ class Home extends React.Component {
 					/>
 
 					<p className="centered">
-						Cassiopée, organisé par l'association Gala UTT, est un soirée de prestige unique en son genre accueillant jusqu'à 3500 participants.
-						Nous revenons en 2020 pour une 24<sup>ème</sup> édition de folie autour des Mille et Une Nuits.
-						Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
+						Cassiopée, organisé par l'association Gala UTT, est un soirée de prestige unique en son genre accueillant
+						jusqu'à 3500 participants. Nous revenons en 2020 pour une 24<sup>ème</sup> édition de folie autour des Mille
+						et Une Nuits. Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
 					</p>
 
 					<hr />
 
 					<h2 className="centered">Trailer Gala UTT 2k19</h2>
-					<VideoContainer
-						title="Trailer Gala UTT 2k19"
-						src="https://www.youtube.com/embed/da9UbOswltE"
-					/>
+					<VideoContainer title="Trailer Gala UTT 2k19" src="https://www.youtube.com/embed/da9UbOswltE" />
 
 					<hr />
 
@@ -192,33 +190,32 @@ class Home extends React.Component {
 
 					<h2>Partenaires</h2>
 
-					{ (this.state.partners && this.state.partners.length) ? (
+					{this.state.partners && this.state.partners.length ? (
 						<React.Fragment>
 							<div className="partners-carousel-container">
 								<i className="partners-carousel-arrow-left fas fa-chevron-left" onClick={this.carouselPrev}></i>
 								<i className="partners-carousel-arrow-right fas fa-chevron-right" onClick={this.carouselNext}></i>
 
-								<div className="owl-carousel partners-carousel">
-									{ this.state.partners }
-								</div>
+								<div className="owl-carousel partners-carousel">{this.state.partners}</div>
 							</div>
 
 							<div className="centered">
-								<Link to="/partenaires" className="button">Tous les partenaires</Link>
+								<Link to="/partenaires" className="button">
+									Tous les partenaires
+								</Link>
 							</div>
 						</React.Fragment>
+					) : this.state.partners === null ? (
+						<div className="partners-loader">
+							<i className="fas fa-spinner fa-spin"></i>
+						</div>
 					) : (
-						this.state.partners === null ? (
-							<div className="partners-loader"><i className="fas fa-spinner fa-spin"></i></div>
-						) : (
-							<div className="no-partners">(Les partenaires seront bientôt disponibles)</div>
-						)
-					)
-					}
+						<div className="no-partners">(Les partenaires seront bientôt disponibles)</div>
+					)}
 				</div>
 			</div>
 		);
-  }
-};
+	}
+}
 
 export default Home;

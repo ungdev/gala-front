@@ -7,8 +7,8 @@ import appStoreImg from '../../assets/app-store.png';
 import './footer.css';
 
 class Footer extends React.Component {
-  render() {
-    return (
+	render() {
+		return (
 			<footer>
 				<div className="store-links">
 					<a href="https://play.google.com/store/apps/details?id=fr.uttnetgroup.gala">
@@ -45,7 +45,7 @@ class Footer extends React.Component {
 				</div>
 			</footer>
 		);
-  }
-};
+	}
+}
 
 export default Footer;

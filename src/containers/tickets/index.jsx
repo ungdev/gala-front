@@ -9,7 +9,7 @@ class Tickets extends React.Component {
 		super(props);
 
 		this.state = {
-			ticketsWindowActive: false
+			ticketsWindowActive: false,
 		};
 	}
 
@@ -18,41 +18,44 @@ class Tickets extends React.Component {
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('keydown', this.keydownHandle, { passive: true });
+		window.removeEventListener('keydown', this.keydownHandle, {
+			passive: true,
+		});
 	}
 
 	keydownHandle = (e) => {
-		if(this.state.ticketsWindowActive) {
-			if(e.keyCode === 27) { // Escape key
+		if (this.state.ticketsWindowActive) {
+			if (e.keyCode === 27) {
+				// Escape key
 				this.closeTicketsWindow();
 			}
 		}
-	}
+	};
 
 	openTicketsWindow = () => {
 		document.getElementsByTagName('html')[0].style.overflow = 'hidden';
 
 		this.setState({
-			ticketsWindowActive: true
+			ticketsWindowActive: true,
 		});
-	}
+	};
 
 	closeTicketsWindow = () => {
 		document.getElementsByTagName('html')[0].style.overflow = '';
 
 		this.setState({
-			ticketsWindowActive: false
+			ticketsWindowActive: false,
 		});
-	}
+	};
 
-  render() {
-    return (
+	render() {
+		return (
 			<div className="page-container" id="tickets">
 				<h1 className="centered">Billetterie</h1>
 				<hr />
 
 				<br />
-				{ Conditions }
+				{Conditions}
 
 				<br />
 				{/*<button
@@ -65,11 +68,17 @@ class Tickets extends React.Component {
 				*/}
 
 				<div id="ticketsButton">
-					<a href="https://www.billetweb.fr/shop.php?event=cassiopee-gala-utt" onClick="var w=window.open('https://www.billetweb.fr/shop.php?event=cassiopee-gala-utt', 'Reserver', 'width=650, height=600, top=100, left=100, toolbar=no, resizable=yes, scrollbars=yes, status=no'); w.focus(); return false;">
-						<img width="200px" src="https://www.billetweb.fr/images/buttons/acheter_blanc.png" alt="bouton billetterie"/>
+					<a
+						href="https://www.billetweb.fr/shop.php?event=cassiopee-gala-utt"
+						onClick="var w=window.open('https://www.billetweb.fr/shop.php?event=cassiopee-gala-utt', 'Reserver', 'width=650, height=600, top=100, left=100, toolbar=no, resizable=yes, scrollbars=yes, status=no'); w.focus(); return false;">
+						<img
+							width="200px"
+							src="https://www.billetweb.fr/images/buttons/acheter_blanc.png"
+							alt="bouton billetterie"
+						/>
 					</a>
 				</div>
-				
+
 				{/*
 				<div
 					className={'tickets-window' + (this.state.ticketsWindowActive ? ' active' : '')}
@@ -89,10 +98,9 @@ class Tickets extends React.Component {
 					/>
 				</div>
 				*/}
-				 
 			</div>
 		);
-  }
-};
+	}
+}
 
 export default Tickets;

@@ -8,7 +8,7 @@ const LazyloadImage = (props) => (
 		<div className="lazyloadimage-placeholder"></div>
 
 		<FadeIn duration={300}>
-			{onload => (
+			{(onload) => (
 				<img
 					src={props.src}
 					onLoad={(e) => {

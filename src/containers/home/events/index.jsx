@@ -10,7 +10,7 @@ class Events extends React.Component {
 		super(props);
 
 		this.state = {
-			events: null
+			events: null,
 		};
 
 		this.fetchEvents();
@@ -24,14 +24,14 @@ class Events extends React.Component {
 				const date1 = new Date(event1.start);
 				const date2 = new Date(event2.start);
 
-				return date1 === date2 ? 0 : (date1 < date2 ? -1 : 1);
+				return date1 === date2 ? 0 : date1 < date2 ? -1 : 1;
 			})
-			.map(event => {
+			.map((event) => {
 				return {
 					...event,
 					start: moment(event.start).format('HH[h ]mm'),
 					end: moment(event.end).format('HH[h ]mm'),
-					image: `${process.env.REACT_APP_API}${event.image}`
+					image: `${process.env.REACT_APP_API}${event.image}`,
 				};
 			});
 
@@ -42,7 +42,9 @@ class Events extends React.Component {
 					<div className="event-date-line"></div>
 					<div className="event-end">{event.end}</div>
 				</div>
-				<div className="event-image"><img src={event.image} alt="" /></div>
+				<div className="event-image">
+					<img src={event.image} alt="" />
+				</div>
 				<div className="event-content">
 					<h3 className="event-name">{event.name}</h3>
 					<div className="event-place">{event.place}</div>
@@ -52,22 +54,22 @@ class Events extends React.Component {
 		));
 
 		this.setState({
-			events
+			events,
 		});
-	}
+	};
 
 	render() {
 		return (
 			<div id="events">
-				{ (this.state.events && this.state.events.length) ? (
+				{this.state.events && this.state.events.length ? (
 					this.state.events
-				 ) : (
-					 this.state.events === null ? (
-						 <div className="events-loader"><i className="fas fa-spinner fa-spin"></i></div>
-					 ) : (
-					 	<div className="no-events">(Les événements seront bientôt disponibles)</div>
-					 )
-				 )}
+				) : this.state.events === null ? (
+					<div className="events-loader">
+						<i className="fas fa-spinner fa-spin"></i>
+					</div>
+				) : (
+					<div className="no-events">(Les événements seront bientôt disponibles)</div>
+				)}
 			</div>
 		);
 	}

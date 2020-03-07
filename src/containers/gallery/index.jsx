@@ -23,18 +23,18 @@ class Gallery extends React.Component {
 			this.images.push(
 				<div className="image-container" key={i}>
 					<LazyloadImage src={image} onClick={() => this.openViewer(i)} />
-				</div>
+				</div>,
 			);
 
 			this.carouselImages.push(
-				<img className="owl-lazy" data-src={image} onClick={this.cancelOutsideClick} key={i} alt="" />
+				<img className="owl-lazy" data-src={image} onClick={this.cancelOutsideClick} key={i} alt="" />,
 			);
 		});
 
 		this.state = {
 			viewerActive: false,
 			arrowLeftActive: true,
-			arrowRightActive: true
+			arrowRightActive: true,
 		};
 
 		this.outsideClickEnabled = true;
@@ -48,7 +48,7 @@ class Gallery extends React.Component {
 			margin: 20,
 			smartSpeed: 400,
 			lazyLoad: true,
-			lazyLoadEager: 1
+			lazyLoadEager: 1,
 		});
 
 		window.addEventListener('keydown', this.keydownHandle, { passive: true });
@@ -57,133 +57,125 @@ class Gallery extends React.Component {
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('keydown', this.keydownHandle, { passive: true });
+		window.removeEventListener('keydown', this.keydownHandle, {
+			passive: true,
+		});
 	}
 
 	keydownHandle = (e) => {
-		if(this.state.viewerActive) {
-			if(e.keyCode === 27) { // Escape key
+		if (this.state.viewerActive) {
+			if (e.keyCode === 27) {
+				// Escape key
 				this.closeViewer();
-			}
-			else if(e.keyCode === 37) { // Left arrow
+			} else if (e.keyCode === 37) {
+				// Left arrow
 				this.previousImage();
-			}
-			else if(e.keyCode === 39) { // Right arrow
+			} else if (e.keyCode === 39) {
+				// Right arrow
 				this.nextImage();
 			}
 		}
-	}
+	};
 
 	openViewer = (i) => {
 		this.carousel.trigger('to.owl.carousel', [i, 0]);
 
 		this.setState({
-			viewerActive: true
+			viewerActive: true,
 		});
 
 		document.getElementsByTagName('html')[0].style.overflow = 'hidden';
 
 		this.updateArrows(i);
-	}
+	};
 
 	closeViewer = () => {
 		this.setState({
-			viewerActive: false
+			viewerActive: false,
 		});
 
 		document.getElementsByTagName('html')[0].style.overflow = '';
-	}
+	};
 
 	arrowLeftClick = () => {
 		this.previousImage();
 		this.cancelOutsideClick();
-	}
+	};
 
 	arrowRightClick = () => {
 		this.nextImage();
 		this.cancelOutsideClick();
-	}
+	};
 
 	previousImage = () => {
 		this.carousel.trigger('prev.owl.carousel', [250]);
-	}
+	};
 
 	nextImage = () => {
 		this.carousel.trigger('next.owl.carousel', [250]);
-	}
+	};
 
 	updateArrows = (i) => {
-		if(i === 0) {
+		if (i === 0) {
 			this.setState({
-				arrowLeftActive: false
+				arrowLeftActive: false,
 			});
-		}
-		else {
+		} else {
 			this.setState({
-				arrowLeftActive: true
+				arrowLeftActive: true,
 			});
 		}
 
-		if(i === this.carouselImages.length - 1) {
+		if (i === this.carouselImages.length - 1) {
 			this.setState({
-				arrowRightActive: false
+				arrowRightActive: false,
+			});
+		} else {
+			this.setState({
+				arrowRightActive: true,
 			});
 		}
-		else {
-			this.setState({
-				arrowRightActive: true
-			});
-		}
-	}
+	};
 
 	cancelOutsideClick = () => {
 		this.outsideClickEnabled = false;
-	}
+	};
 
 	checkOutsideClick = () => {
-		if(this.outsideClickEnabled) {
+		if (this.outsideClickEnabled) {
 			this.closeViewer();
-		}
-		else {
+		} else {
 			this.outsideClickEnabled = true;
 		}
-	}
+	};
 
 	render() {
-    return (
+		return (
 			<div className="page-container" id="gallery">
 				<h1 className="centered">Galerie</h1>
 				<hr />
 
-				<div className="images-container">
-					{ this.images }
-				</div>
+				<div className="images-container">{this.images}</div>
 
-				<div className={'viewer-container' + (this.state.viewerActive ? ' active' : '')} onClick={this.checkOutsideClick}>
+				<div
+					className={'viewer-container' + (this.state.viewerActive ? ' active' : '')}
+					onClick={this.checkOutsideClick}>
 					<div
 						className={'viewer-carousel-arrow-left' + (this.state.arrowLeftActive ? '' : ' disabled')}
 						title="Photo précédente"
-						onClick={this.arrowLeftClick}
-					></div>
+						onClick={this.arrowLeftClick}></div>
 					<div
 						className={'viewer-carousel-arrow-right' + (this.state.arrowRightActive ? '' : ' disabled')}
 						title="Photo suivante"
-						onClick={this.arrowRightClick}
-					></div>
+						onClick={this.arrowRightClick}></div>
 
-					<div className="viewer-carousel owl-carousel">
-						{ this.carouselImages }
-					</div>
+					<div className="viewer-carousel owl-carousel">{this.carouselImages}</div>
 
-					<div
-						className="viewer-close"
-						title="Fermer"
-						onClick={this.closeViewer}
-					></div>
+					<div className="viewer-close" title="Fermer" onClick={this.closeViewer}></div>
 				</div>
 			</div>
 		);
-  }
-};
+	}
+}
 
 export default Gallery;

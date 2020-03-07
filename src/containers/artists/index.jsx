@@ -12,7 +12,7 @@ class Artists extends React.Component {
 		super(props);
 
 		this.state = {
-			artists: null
+			artists: null,
 		};
 
 		this.fetchArtists();
@@ -33,9 +33,9 @@ class Artists extends React.Component {
 		));
 
 		this.setState({
-			artists
+			artists,
 		});
-	}
+	};
 
 	render() {
 		return (
@@ -43,16 +43,14 @@ class Artists extends React.Component {
 				<h1 className="centered">Artistes</h1>
 				<hr />
 
-				{ (this.state.artists && this.state.artists.length) ? (
-					<div className="artists-container">
-						{this.state.artists}
+				{this.state.artists && this.state.artists.length ? (
+					<div className="artists-container">{this.state.artists}</div>
+				) : this.state.artists === null ? (
+					<div className="artists-loader">
+						<i className="fas fa-spinner fa-spin"></i>
 					</div>
 				) : (
-					this.state.artists === null ? (
-						<div className="artists-loader"><i className="fas fa-spinner fa-spin"></i></div>
-					) : (
-						<div className="no-artists">(Les artistes seront bientôt disponibles)</div>
-					)
+					<div className="no-artists">(Les artistes seront bientôt disponibles)</div>
 				)}
 
 				<VideoContainer

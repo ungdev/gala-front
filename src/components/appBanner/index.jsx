@@ -7,7 +7,7 @@ class AppBanner extends React.Component {
 		super(props);
 
 		this.state = {
-			display: false
+			display: false,
 		};
 	}
 
@@ -16,7 +16,7 @@ class AppBanner extends React.Component {
 			e.preventDefault();
 
 			this.setState({
-				display: true
+				display: true,
 			});
 
 			alert('beforeinstallprompt');
@@ -24,15 +24,11 @@ class AppBanner extends React.Component {
 	}
 
 	render() {
-		if(!this.state.display) {
+		if (!this.state.display) {
 			return null;
 		}
 
-		return (
-			<div className="app-banner">
-				App Banner
-			</div>
-		);
+		return <div className="app-banner">App Banner</div>;
 	}
 }
 

@@ -11,8 +11,7 @@ export default (props) => (
 					src={props.src}
 					frameBorder="0"
 					allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture"
-					allowFullScreen
-				></iframe>
+					allowFullScreen></iframe>
 			</div>
 		</div>
 	</div>

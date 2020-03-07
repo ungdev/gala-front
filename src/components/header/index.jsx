@@ -6,36 +6,36 @@ import './header.css';
 const links = [
 	{
 		title: 'Accueil',
-		path: '/'
+		path: '/',
 	},
 	{
 		title: 'Galerie',
-		path: '/galerie'
+		path: '/galerie',
 	},
 	{
 		title: 'Artistes',
-		path: '/artistes'
+		path: '/artistes',
 	},
 	{
 		title: 'Billetterie',
-		path: '/billetterie'
+		path: '/billetterie',
 	},
 	{
 		title: 'Partenaires',
-		path: '/partenaires'
+		path: '/partenaires',
 	},
 	{
 		title: 'Nos engagements',
-		path: '/nos-engagements'
+		path: '/nos-engagements',
 	},
 	{
 		title: 'Accès',
-		path: '/acces'
+		path: '/acces',
 	},
 	{
 		title: 'Contact',
-		path: '/contact'
-	}
+		path: '/contact',
+	},
 ];
 
 class Header extends React.Component {
@@ -44,7 +44,7 @@ class Header extends React.Component {
 
 		this.state = {
 			mobileMenuActive: false,
-			top: true
+			top: true,
 		};
 	}
 
@@ -60,9 +60,9 @@ class Header extends React.Component {
 		const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
 		this.setState({
-			top: scrollTop === 0
+			top: scrollTop === 0,
 		});
-	}
+	};
 
 	toggleMobileMenu = () => {
 		// Prevent from scrolling when mobile menu is active
@@ -70,20 +70,20 @@ class Header extends React.Component {
 		document.getElementsByTagName('body')[0].style.overflow = this.state.mobileMenuActive ? '' : 'hidden';
 
 		this.setState({
-			mobileMenuActive: !this.state.mobileMenuActive
+			mobileMenuActive: !this.state.mobileMenuActive,
 		});
-	}
+	};
 
 	closeMobileMenu = () => {
 		document.getElementsByTagName('html')[0].style.overflow = '';
 		document.getElementsByTagName('body')[0].style.overflow = '';
 
 		this.setState({
-			mobileMenuActive: false
+			mobileMenuActive: false,
 		});
-	}
+	};
 
-  render() {
+	render() {
 		const navigationLinks = links.map((link, i) => {
 			const active = link.path === document.location.pathname;
 
@@ -96,7 +96,7 @@ class Header extends React.Component {
 
 		const transparent = this.state.top && window.location.pathname === '/' && !this.state.mobileMenuActive;
 
-    return (
+		return (
 			<header>
 				<div className={'header-content' + (transparent ? ' transparent' : '')}>
 					<nav className={this.state.mobileMenuActive ? 'active' : ''}>
@@ -108,14 +108,12 @@ class Header extends React.Component {
 							</div>
 						</div>
 
-						<ul>
-							{ navigationLinks }
-						</ul>
+						<ul>{navigationLinks}</ul>
 					</nav>
 				</div>
 			</header>
 		);
-  }
-};
+	}
+}
 
 export default Header;

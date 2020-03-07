@@ -7,14 +7,14 @@ class Notification extends React.Component {
 		super(props);
 
 		this.state = {
-			status: null
+			status: null,
 		};
 	}
 
 	componentDidUpdate(prevProps) {
-		if(this.props.status !== prevProps.status) {
+		if (this.props.status !== prevProps.status) {
 			this.setState({
-				status: this.props.status
+				status: this.props.status,
 			});
 
 			// Clear previous timeout
@@ -23,8 +23,8 @@ class Notification extends React.Component {
 			// Set new timeout
 			this.timeout = setTimeout(() => {
 				this.setState({
-					status: null
-				})
+					status: null,
+				});
 			}, 3000);
 		}
 	}
