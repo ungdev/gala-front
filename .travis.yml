@@ -21,7 +21,7 @@ deploy:
     server: $OPENSHIFT_SERVER
     project: gala
     app:
-      master: gala-website-prod
-      dev: gala-website-dev
+      master: gala-website-front-prod
+      dev: gala-website-front-dev
     token: $OPENSHIFT_TOKEN
     edge: true
