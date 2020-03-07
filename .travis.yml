@@ -14,7 +14,7 @@ script:
   - yarn
 
 notifications:
-  slack: $SLACK_TOKEN
+  slack: gala-utt:vVVBOZLgv9F8lMpJz67eYCym
 
 deploy:
   - provider: openshift
