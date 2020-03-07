@@ -56,12 +56,13 @@ class Tickets extends React.Component {
 
 				<button
 					className="tickets-button button"
-					onClick={this.openTicketsWindow}
+					// onClick={this.openTicketsWindow}
 				>
-					<i className="fas fa-ticket-alt icon"></i>
-					Accéder à la billetterie
+					{ /* <i className="fas fa-ticket-alt icon"></i> */ }
+					La billetterie est fermée
 				</button>
 
+				{ /*
 				<div
 					className={'tickets-window' + (this.state.ticketsWindowActive ? ' active' : '')}
 					onClick={this.closeTicketsWindow}
@@ -79,6 +80,7 @@ class Tickets extends React.Component {
 						src="https://www.billetweb.fr/shop.php?event=gala-utt-2019"
 					/>
 				</div>
+				*/ }
 			</div>
 		);
   }

@@ -125,6 +125,13 @@ class Home extends React.Component {
 				<div className="poster-container">
 					<img src={posterImg} alt="" className="poster" />
 
+					<div class="poster-text">
+						Toutes les informations concernant l'édition 2020 du gala Cassiopée devraient être disponibles à partir du lundi 9 mars.
+						<div style={{'font-size': '1.5em', 'margin-top': '10px'}}>
+							La <a href="https://billetweb.fr/cassiopee-gala-utt" style={{'text-decoration': 'none','color': '#00adb5','font-weight': 'bold'}}>billetterie</a> est ouverte !
+							</div>
+						</div>
+
 					<button
 						className={'arrow-button' + (this.state.top ? ' active' : '')}
 						onClick={this.handleArrow}
@@ -174,10 +181,10 @@ class Home extends React.Component {
 
 					<hr />
 
-					<h2 className="centered">Aftermovie Gala UTT 2018</h2>
+					<h2 className="centered">Trailer Gala UTT 2k19</h2>
 					<VideoContainer
-						title="Aftermovie Gala UTT 2018"
-						src="https://www.youtube.com/embed/EO_rrd8FfSM"
+						title="Trailer Gala UTT 2k19"
+						src="https://www.youtube.com/embed/A0xF4nrmdkg"
 					/>
 
 					<hr />
