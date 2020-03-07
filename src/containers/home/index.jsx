@@ -6,7 +6,7 @@ import $ from 'jquery';
 import axios from '../../utils/axios';
 import VideoContainer from '../../components/videoContainer';
 import Events from './events';
-import posterImg from '../../assets/poster.png';
+import posterImg from '../../assets/new-poster.png';
 
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './home.css';
@@ -125,13 +125,6 @@ class Home extends React.Component {
 				<div className="poster-container">
 					<img src={posterImg} alt="" className="poster" />
 
-					<div class="poster-text">
-						Toutes les informations concernant l'édition 2020 du gala Cassiopée devraient être disponibles à partir du lundi 9 mars.
-						<div style={{'font-size': '1.5em', 'margin-top': '10px'}}>
-							La <a href="https://billetweb.fr/cassiopee-gala-utt" style={{'text-decoration': 'none','color': '#00adb5','font-weight': 'bold'}}>billetterie</a> est ouverte !
-							</div>
-						</div>
-
 					<button
 						className={'arrow-button' + (this.state.top ? ' active' : '')}
 						onClick={this.handleArrow}
@@ -174,8 +167,8 @@ class Home extends React.Component {
 					/>
 
 					<p className="centered">
-						Le Gala de l’UTT est un soirée de prestige unique en son genre accueillant jusqu'à 3500 participants.
-						Nous revenons en 2019 pour une 23<sup>ème</sup> édition de folie autour de Las Vegas.
+						Cassiopée, organisé par l'association Gala UTT, est un soirée de prestige unique en son genre accueillant jusqu'à 3500 participants.
+						Nous revenons en 2020 pour une 24<sup>ème</sup> édition de folie autour des Mille et Une Nuits.
 						Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
 					</p>
 
@@ -184,7 +177,7 @@ class Home extends React.Component {
 					<h2 className="centered">Trailer Gala UTT 2k19</h2>
 					<VideoContainer
 						title="Trailer Gala UTT 2k19"
-						src="https://www.youtube.com/embed/A0xF4nrmdkg"
+						src="https://www.youtube.com/embed/da9UbOswltE"
 					/>
 
 					<hr />

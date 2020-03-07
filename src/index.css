@@ -13,7 +13,7 @@
 }
 
 html {
-	background: #282660 url('./assets/background.png');
+	background: #282660 url('./assets/new-background.png');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -144,4 +144,10 @@ h2.title-decoration::before {
 	width: 4px;
 	height: 100%;
 	background: var(--secondary-color);
+}
+
+#ticketsButton{
+	display: block;
+	margin: auto;
+	text-align: center;
 }

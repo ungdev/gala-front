@@ -57,7 +57,7 @@ class Artists extends React.Component {
 
 				<VideoContainer
 					title="Annonce des artistes 2019"
-					src="https://www.youtube.com/embed/jNQAr9TnaA4"
+					src="https://www.youtube.com/embed/OqdO92_fBJM"
 					style={{ maxWidth: 700, margin: '40px auto 20px auto' }}
 				/>
 			</div>
