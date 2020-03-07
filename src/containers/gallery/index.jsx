@@ -5,6 +5,7 @@ import LazyloadImage from '../../components/lazyloadImage';
 
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './gallery.css';
+import axios from '../../utils/axios';
 
 window.jQuery = $;
 require('owl.carousel2');
@@ -13,34 +14,43 @@ class Gallery extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.images = [];
-		this.carouselImages = [];
-
-		const context = require.context('../../assets/gallery', false, /\.(jpe?g)$/i);
-		const imagesUrl = context.keys().map(context);
-
-		imagesUrl.forEach((image, i) => {
-			this.images.push(
-				<div className="image-container" key={i}>
-					<LazyloadImage src={image} onClick={() => this.openViewer(i)} />
-				</div>,
-			);
-
-			this.carouselImages.push(
-				<img className="owl-lazy" data-src={image} onClick={this.cancelOutsideClick} key={i} alt="" />,
-			);
-		});
-
 		this.state = {
+			images: [],
+			carouselImages: [],
 			viewerActive: false,
 			arrowLeftActive: true,
 			arrowRightActive: true,
 		};
 
 		this.outsideClickEnabled = true;
+
+		this.fetchGallery();
 	}
 
-	componentDidMount() {
+	fetchGallery = async () => {
+		const uploads = await axios.get('uploads/gallery');
+		const imagesUrl = uploads.data.map((name) => process.env.REACT_APP_API + name);
+
+		const images = [];
+		const carouselImages = [];
+
+		imagesUrl.forEach((image, i) => {
+			images.push(
+				<div className="image-container" key={i}>
+					<LazyloadImage src={image} onClick={() => this.openViewer(i)} />
+				</div>,
+			);
+
+			carouselImages.push(
+				<img className="owl-lazy" data-src={image} onClick={this.cancelOutsideClick} key={i} alt="" />,
+			);
+		});
+
+		this.setState({
+			images,
+			carouselImages,
+		});
+
 		this.carousel = $('.owl-carousel');
 
 		this.carousel.owlCarousel({
@@ -54,7 +64,7 @@ class Gallery extends React.Component {
 		window.addEventListener('keydown', this.keydownHandle, { passive: true });
 
 		this.carousel.on('translate.owl.carousel', (e) => this.updateArrows(e.item.index));
-	}
+	};
 
 	componentWillUnmount() {
 		window.removeEventListener('keydown', this.keydownHandle, {
@@ -126,7 +136,7 @@ class Gallery extends React.Component {
 			});
 		}
 
-		if (i === this.carouselImages.length - 1) {
+		if (i === this.state.carouselImages.length - 1) {
 			this.setState({
 				arrowRightActive: false,
 			});
@@ -155,24 +165,32 @@ class Gallery extends React.Component {
 				<h1 className="centered">Galerie</h1>
 				<hr />
 
-				<div className="images-container">{this.images}</div>
+				{this.state.images.length > 0 ? (
+					<>
+						<div className="images-container">{this.state.images}</div>
 
-				<div
-					className={'viewer-container' + (this.state.viewerActive ? ' active' : '')}
-					onClick={this.checkOutsideClick}>
-					<div
-						className={'viewer-carousel-arrow-left' + (this.state.arrowLeftActive ? '' : ' disabled')}
-						title="Photo précédente"
-						onClick={this.arrowLeftClick}></div>
-					<div
-						className={'viewer-carousel-arrow-right' + (this.state.arrowRightActive ? '' : ' disabled')}
-						title="Photo suivante"
-						onClick={this.arrowRightClick}></div>
+						<div
+							className={'viewer-container' + (this.state.viewerActive ? ' active' : '')}
+							onClick={this.checkOutsideClick}>
+							<div
+								className={'viewer-carousel-arrow-left' + (this.state.arrowLeftActive ? '' : ' disabled')}
+								title="Photo précédente"
+								onClick={this.arrowLeftClick}></div>
+							<div
+								className={'viewer-carousel-arrow-right' + (this.state.arrowRightActive ? '' : ' disabled')}
+								title="Photo suivante"
+								onClick={this.arrowRightClick}></div>
 
-					<div className="viewer-carousel owl-carousel">{this.carouselImages}</div>
+							<div className="viewer-carousel owl-carousel">{this.state.carouselImages}</div>
 
-					<div className="viewer-close" title="Fermer" onClick={this.closeViewer}></div>
-				</div>
+							<div className="viewer-close" title="Fermer" onClick={this.closeViewer}></div>
+						</div>
+					</>
+				) : (
+					<div className="artists-loader">
+						<i className="fas fa-spinner fa-spin"></i>
+					</div>
+				)}
 			</div>
 		);
 	}
