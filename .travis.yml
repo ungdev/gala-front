@@ -1,0 +1,27 @@
+language: node_js
+
+node_js:
+  - 13
+
+branches:
+  only:
+    - master
+    - dev
+
+cache: yarn
+
+script:
+  - yarn
+
+notifications:
+  slack: $SLACK_TOKEN
+
+deploy:
+  - provider: openshift
+    server: $OPENSHIFT_SERVER
+    project: gala
+    app:
+      master: gala-website-prod
+      dev: gala-website-dev
+    token: $OPENSHIFT_TOKEN
+    edge: true
