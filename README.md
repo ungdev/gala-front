@@ -1,6 +1,6 @@
 # Gala UTT
 
-[![Build Status](https://travis-ci.org/ungdev/gala.utt.fr.svg?branch=master)](https://travis-ci.org/ungdev/gala.utt.fr)
+[![Build Status](https://travis-ci.org/ungdev/gala.utt.fr.svg?branch=dev)](https://travis-ci.org/ungdev/gala.utt.fr)
 
 ## Requirements
 
