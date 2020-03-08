@@ -85,12 +85,14 @@ class Header extends React.Component {
       const active = link.path === document.location.pathname;
 
       return (
-        <Link to={link.path} key={i} className={active ? 'active' : ''} onClick={this.closeMobileMenu} id={link.id && `nav-${link.id}-link`}>
+        <Link
+          to={link.path}
+          key={i}
+          className={active ? 'active' : ''}
+          onClick={this.closeMobileMenu}
+          id={link.id && `nav-${link.id}-link`}>
           {/* .normalize("NFD").replace(/[\u0300-\u036f]/g is used to remove accents */}
-          <li
-            id={link.id && `nav-${link.id}-text`}>
-            {link.title}
-          </li>
+          <li id={link.id && `nav-${link.id}-text`}>{link.title}</li>
         </Link>
       );
     });
