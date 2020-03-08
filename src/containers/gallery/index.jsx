@@ -28,7 +28,7 @@ class Gallery extends React.Component {
   }
 
   fetchGallery = async () => {
-    const uploads = await axios.get('uploads/gallery');
+    const uploads = await axios.get('gallery');
     const imagesUrl = uploads.data.map((name) => process.env.REACT_APP_API + name);
 
     const images = [];
