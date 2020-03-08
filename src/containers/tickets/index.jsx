@@ -34,7 +34,6 @@ class Tickets extends React.Component {
 
   openTicketsWindow = () => {
     document.getElementsByTagName('html')[0].style.overflow = 'hidden';
-
     this.setState({
       ticketsWindowActive: true,
     });
@@ -42,7 +41,6 @@ class Tickets extends React.Component {
 
   closeTicketsWindow = () => {
     document.getElementsByTagName('html')[0].style.overflow = '';
-
     this.setState({
       ticketsWindowActive: false,
     });
@@ -58,46 +56,26 @@ class Tickets extends React.Component {
         {Conditions}
 
         <br />
-        {/*<button
-					className="tickets-button button"
-					// onClick={this.openTicketsWindow}
-				>
-					{ //<i className="fas fa-ticket-alt icon"></i>  }
-					La billetterie est fermée
-				</button>
-				*/}
+        <button className="tickets-button button" onClick={this.openTicketsWindow}>
+          Achetez vos billets
+        </button>
 
-        <div id="ticketsButton">
-          <a
-            href="https://www.billetweb.fr/shop.php?event=cassiopee-gala-utt"
-            onClick="var w=window.open('https://www.billetweb.fr/shop.php?event=cassiopee-gala-utt', 'Reserver', 'width=650, height=600, top=100, left=100, toolbar=no, resizable=yes, scrollbars=yes, status=no'); w.focus(); return false;">
-            <img
-              width="200px"
-              src="https://www.billetweb.fr/images/buttons/acheter_blanc.png"
-              alt="bouton billetterie"
-            />
-          </a>
+        <div
+          className={'tickets-window' + (this.state.ticketsWindowActive ? ' active' : '')}
+          onClick={this.closeTicketsWindow}>
+          <button className="tickets-close-button" title="Fermer">
+            <i className="fas fa-times"></i>
+          </button>
+
+          <div className="tickets-window-spinner">
+            <i className="fas fa-spinner fa-spin"></i>
+          </div>
+
+          <iframe
+            title="Billetterie Cassiopée - Gala UTT"
+            src="https://www.billetweb.fr/shop.php?event=cassiopee-gala-utt"
+          />
         </div>
-
-        {/*
-				<div
-					className={'tickets-window' + (this.state.ticketsWindowActive ? ' active' : '')}
-					onClick={this.closeTicketsWindow}
-				>
-					<button className="tickets-close-button" title="Fermer">
-						<i className="fas fa-times"></i>
-					</button>
-
-					<div className="tickets-window-spinner">
-						<i className="fas fa-spinner fa-spin"></i>
-					</div>
-
-					<iframe
-						title="Billetterie Cassiopée - Gala UTT"
-						src="https://www.billetweb.fr/shop.php?event=cassiopee-gala-utt"
-					/>
-				</div>
-				*/}
       </div>
     );
   }
