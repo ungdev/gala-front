@@ -1,5 +1,6 @@
 footer {
-	position: absolute;
+	position: fixed;
+	bottom: 0px;
 	background: var(--primary-color);
 	color: #fff;
 	width: calc(100% - 40px);
