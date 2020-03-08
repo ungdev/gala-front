@@ -13,25 +13,6 @@ class Tickets extends React.Component {
     };
   }
 
-  componentDidMount() {
-    window.addEventListener('keydown', this.keydownHandle, { passive: true });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.keydownHandle, {
-      passive: true,
-    });
-  }
-
-  keydownHandle = (e) => {
-    if (this.state.ticketsWindowActive) {
-      if (e.keyCode === 27) {
-        // Escape key
-        this.closeTicketsWindow();
-      }
-    }
-  };
-
   openTicketsWindow = () => {
     document.getElementsByTagName('html')[0].style.overflow = 'hidden';
     this.setState({
