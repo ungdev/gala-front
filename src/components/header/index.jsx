@@ -5,16 +5,12 @@ import './header.css';
 
 const links = [
   {
-    title: 'Accueil',
+    title: 'Cassiopée',
     path: '/',
   },
   {
-    title: 'Galerie',
-    path: '/galerie',
-  },
-  {
-    title: 'Artistes',
-    path: '/artistes',
+    title: 'Programme',
+    path: '/programme',
   },
   {
     title: 'Billetterie',
@@ -25,12 +21,12 @@ const links = [
     path: '/partenaires',
   },
   {
-    title: 'Nos engagements',
-    path: '/nos-engagements',
+    title: 'Galerie',
+    path: '/galerie',
   },
   {
-    title: 'Accès',
-    path: '/acces',
+    title: 'Infos',
+    path: '/informations',
   },
   {
     title: 'Contact',
@@ -89,7 +85,14 @@ class Header extends React.Component {
 
       return (
         <Link to={link.path} key={i} className={active ? 'active' : ''} onClick={this.closeMobileMenu}>
-          <li>{link.title}</li>
+          {/* .normalize("NFD").replace(/[\u0300-\u036f]/g is used to remove accents */}
+          <li
+            id={`header-${link.title
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')}`}>
+            {link.title}
+          </li>
         </Link>
       );
     });
@@ -101,6 +104,7 @@ class Header extends React.Component {
         <div className={'header-content' + (transparent ? ' transparent' : '')}>
           <nav className={this.state.mobileMenuActive ? 'active' : ''}>
             <div className="mobile-hamburger-menu" onClick={this.toggleMobileMenu}>
+              {/* Cross symbol */}
               <div>
                 <span></span>
                 <span></span>

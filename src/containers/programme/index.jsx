@@ -5,9 +5,9 @@ import axios from '../../utils/axios';
 import Artist from './artist';
 import VideoContainer from '../../components/videoContainer';
 
-import './artists.css';
+import './programme.css';
 
-class Artists extends React.Component {
+class Programme extends React.Component {
   constructor(props) {
     super(props);
 
@@ -63,4 +63,4 @@ class Artists extends React.Component {
   }
 }
 
-export default Artists;
+export default Programme;

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './access.css';
+import './informations.css';
 
-class Access extends React.Component {
+class Informations extends React.Component {
   render() {
     return (
-      <div className="page-container" id="access">
+      <div className="page-container" id="informations">
         <h1 className="centered">Accès</h1>
         <hr />
 
@@ -103,4 +103,4 @@ class Access extends React.Component {
   }
 }
 
-export default Access;
+export default Informations;
