@@ -5,10 +5,6 @@ import './header.css';
 
 const links = [
   {
-    title: 'Cassiopée',
-    path: '/',
-  },
-  {
     title: 'Programme',
     path: '/programme',
   },
@@ -19,6 +15,11 @@ const links = [
   {
     title: 'Partenaires',
     path: '/partenaires',
+  },
+  {
+    title: 'Cassiopée',
+    path: '/',
+    id: 'home',
   },
   {
     title: 'Galerie',
@@ -84,13 +85,10 @@ class Header extends React.Component {
       const active = link.path === document.location.pathname;
 
       return (
-        <Link to={link.path} key={i} className={active ? 'active' : ''} onClick={this.closeMobileMenu}>
+        <Link to={link.path} key={i} className={active ? 'active' : ''} onClick={this.closeMobileMenu} id={link.id && `nav-${link.id}-link`}>
           {/* .normalize("NFD").replace(/[\u0300-\u036f]/g is used to remove accents */}
           <li
-            id={`header-${link.title
-              .toLowerCase()
-              .normalize('NFD')
-              .replace(/[\u0300-\u036f]/g, '')}`}>
+            id={link.id && `nav-${link.id}-text`}>
             {link.title}
           </li>
         </Link>
