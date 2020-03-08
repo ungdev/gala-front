@@ -168,7 +168,7 @@ class Home extends React.Component {
 					/>
 
 					<p className="centered">
-						Cassiopée, organisé par l'association Gala UTT, est un soirée de prestige unique en son genre accueillant
+						Cassiopée, organisé par l'association Gala UTT, est une soirée de prestige unique en son genre accueillant
 						jusqu'à 3500 participants. Nous revenons en 2020 pour une 24<sup>ème</sup> édition de folie autour des Mille
 						et Une Nuits. Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
 					</p>
