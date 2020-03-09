@@ -1,8 +1,10 @@
 # Gala UTT
 
+[![Build Status](https://travis-ci.org/ungdev/gala.utt.fr.svg?branch=dev)](https://travis-ci.org/ungdev/gala.utt.fr)
+
 ## Requirements
 
-* [yarn](https://yarnpkg.com/)
+- [yarn](https://yarnpkg.com/)
 
 ## Installation
 

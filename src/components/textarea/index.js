@@ -11,11 +11,7 @@ const Textarea = (props) => {
 	return (
 		<div className={props.className}>
 			<div className="textarea">
-				<TextareaAutosize
-					onChange={(e) => props.onChange(e.target.value)}
-					value={props.value}
-					id={`textarea-${id}`}
-				/>
+				<TextareaAutosize onChange={(e) => props.onChange(e.target.value)} value={props.value} id={`textarea-${id}`} />
 
 				<label htmlFor={`textarea-${id}`} className="textarea-placeholder">
 					{props.placeholder}
@@ -28,6 +24,6 @@ const Textarea = (props) => {
 			</div>
 		</div>
 	);
-}
+};
 
 export default Textarea;

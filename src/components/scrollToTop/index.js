@@ -5,13 +5,13 @@ class ScrollToTop extends React.Component {
 		document.getElementsByTagName('html')[0].scrollTop = 0;
 	}
 
-  componentDidUpdate() {
+	componentDidUpdate() {
 		document.getElementsByTagName('html')[0].scrollTop = 0;
-  }
+	}
 
-  render() {
-    return this.props.children || null;
-  }
+	render() {
+		return this.props.children || null;
+	}
 }
 
 export default ScrollToTop;

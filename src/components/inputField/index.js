@@ -8,10 +8,7 @@ const InputField = (props) => {
 	const id = lastGeneratedId++;
 
 	return (
-		<div
-			className={props.className}
-			style={{ display: 'inline-block' }}
-		>
+		<div className={props.className} style={{ display: 'inline-block' }}>
 			<div className="input-field">
 				<input
 					type="text"

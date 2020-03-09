@@ -1,0 +1,30 @@
+#informations .plan-container {
+	width: 100%;
+	position: relative;
+	padding-top: 50%;
+	min-height: 350px;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+#informations .plan-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#informations p {
+	text-align: justify;
+}
+
+#informations .access-list {
+	padding-left: 20px;
+	list-style: none;
+}
+
+#informations .access-list > li > i {
+	margin-right: 10px;
+}

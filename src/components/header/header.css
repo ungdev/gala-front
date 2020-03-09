@@ -72,6 +72,7 @@ header nav ul li {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: #fff;
+	width: 8em;
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
@@ -134,6 +135,8 @@ header nav ul a.active li {
 	}
 
 	header nav ul {
+	  display: flex;
+	  flex-direction: column;
 		position: absolute;
 		top: 70px;
 		left: 0;
@@ -164,6 +167,14 @@ header nav ul a.active li {
 		transition: all .3s;
 	}
 
+  header nav ul li {
+    width: auto;
+  }
+
+  #nav-home-link {
+    order: -1;
+  }
+
 	header nav ul a {
 		display: block;
 		height: 50px;
@@ -184,4 +195,8 @@ header nav ul a.active li {
 		width: 10px;
 		height: 100%;
 	}
+}
+
+#header-home {
+  font-weight: bold;
 }

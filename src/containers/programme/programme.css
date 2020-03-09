@@ -1,0 +1,16 @@
+#artists .artists-container {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+}
+
+#artists .artists-loader {
+	font-size: 30px;
+	text-align: center;
+	margin-top: 30px;
+}
+
+#artists .no-artists {
+	color: rgba(255, 255, 255, 0.7);
+	text-align: center;
+}
