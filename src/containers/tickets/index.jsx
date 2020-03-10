@@ -13,20 +13,6 @@ class Tickets extends React.Component {
     };
   }
 
-  openTicketsWindow = () => {
-    document.getElementsByTagName('html')[0].style.overflow = 'hidden';
-    this.setState({
-      ticketsWindowActive: true,
-    });
-  };
-
-  closeTicketsWindow = () => {
-    document.getElementsByTagName('html')[0].style.overflow = '';
-    this.setState({
-      ticketsWindowActive: false,
-    });
-  };
-
   render() {
     return (
       <div className="page-container" id="tickets">
@@ -37,26 +23,11 @@ class Tickets extends React.Component {
         {Conditions}
 
         <br />
-        <button className="tickets-button button" onClick={this.openTicketsWindow}>
+
+        <a className="tickets-button button" href="https://www.billetweb.fr/cassiopee-gala-utt" target="_blank" rel="noopener noreferrer">
           Achetez vos billets
-        </button>
+        </a>
 
-        <div
-          className={'tickets-window' + (this.state.ticketsWindowActive ? ' active' : '')}
-          onClick={this.closeTicketsWindow}>
-          <button className="tickets-close-button" title="Fermer">
-            <i className="fas fa-times"></i>
-          </button>
-
-          <div className="tickets-window-spinner">
-            <i className="fas fa-spinner fa-spin"></i>
-          </div>
-
-          <iframe
-            title="Billetterie Cassiopée - Gala UTT"
-            src="https://www.billetweb.fr/shop.php?event=cassiopee-gala-utt"
-          />
-        </div>
       </div>
     );
   }
