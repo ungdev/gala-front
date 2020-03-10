@@ -26,8 +26,8 @@ const links = [
     path: '/galerie',
   },
   {
-    title: 'Infos',
-    path: '/informations',
+    title: 'Accès',
+    path: '/access',
   },
   {
     title: 'Contact',

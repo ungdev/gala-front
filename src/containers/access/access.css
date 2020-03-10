@@ -1,4 +1,4 @@
-#informations .plan-container {
+#access .plan-container {
 	width: 100%;
 	position: relative;
 	padding-top: 50%;
@@ -7,7 +7,7 @@
 	background: rgba(255, 255, 255, 0.2);
 }
 
-#informations .plan-container iframe {
+#access .plan-container iframe {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -16,15 +16,15 @@
 	height: 100%;
 }
 
-#informations p {
+#access p {
 	text-align: justify;
 }
 
-#informations .access-list {
+#access .access-list {
 	padding-left: 20px;
 	list-style: none;
 }
 
-#informations .access-list > li > i {
+#access .access-list > li > i {
 	margin-right: 10px;
 }
