@@ -5,8 +5,8 @@ import './header.css';
 
 const links = [
   {
-    title: 'Artistes',
-    path: '/artistes',
+    title: 'Programme',
+    path: '/program',
   },
   {
     title: 'Billetterie',

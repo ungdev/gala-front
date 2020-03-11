@@ -29,7 +29,7 @@ const App = () => (
 				<div id="page">
 					<Switch>
 						<Route path="/" exact component={Home} />
-						<Route path="/artistes" exact component={Programme} />
+						<Route path="/program" exact component={Programme} />
 						<Route path="/billetterie" exact component={Tickets} />
 						<Route path="/partenaires" exact component={Partners} />
 						<Route path="/galerie" exact component={Gallery} />
