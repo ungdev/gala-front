@@ -60,22 +60,22 @@ class Programme extends React.Component {
         <br />
         <div id="eat">
           <h1 className="centered">Espaces à thème</h1>
-            <div className="centered">A venir</div>
           <hr />
+          <div className="centered">A venir</div>
         </div>
         
         <br />
         <div id="animations">
           <h1 className="centered">Animations</h1>
-            <Events />
           <hr />
+          <Events />
         </div>
 
         <br />
         <div id="restauration">
           <h1 className="centered">Restauration</h1>
-            <div className="centered">A venir</div>
           <hr />
+          <div className="centered">A venir</div>
         </div>
       </div>
 
