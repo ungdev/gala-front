@@ -3,7 +3,8 @@ import moment from 'moment';
 
 import axios from '../../utils/axios';
 import Artist from './artist';
-import VideoContainer from '../../components/videoContainer';
+import Events from './events';
+
 
 import './programme.css';
 
@@ -39,26 +40,45 @@ class Programme extends React.Component {
 
   render() {
     return (
-      <div className="page-container" id="artists">
-        <h1 className="centered">Artistes</h1>
-        <hr />
+      <div className="page-container">
+        <div id="artists">
+          <h1 className="centered">Artistes</h1>
+          <hr />
 
-        {this.state.artists && this.state.artists.length ? (
-          <div className="artists-container">{this.state.artists}</div>
-        ) : this.state.artists === null ? (
-          <div className="artists-loader">
-            <i className="fas fa-spinner fa-spin"></i>
-          </div>
-        ) : (
-          <div className="no-artists">(Les artistes seront bientôt disponibles)</div>
-        )}
+          {this.state.artists && this.state.artists.length ? (
+            <div className="artists-container">{this.state.artists}</div>
+            ) : this.state.artists === null ? (
+              <div className="artists-loader">
+                <i className="fas fa-spinner fa-spin"></i>
+              </div>
+            ) : (
+              <div className="no-artists">(Les artistes seront bientôt disponibles)</div>
+            )}
 
-        <VideoContainer
-          title="Annonce des artistes 2019"
-          src="https://www.youtube.com/embed/OqdO92_fBJM"
-          style={{ maxWidth: 700, margin: '40px auto 20px auto' }}
-        />
+        </div>
+        
+        <br />
+        <div id="eat">
+          <h1 className="centered">Espaces à thème</h1>
+            <div className="centered">A venir</div>
+          <hr />
+        </div>
+        
+        <br />
+        <div id="animations">
+          <h1 className="centered">Animations</h1>
+            <Events />
+          <hr />
+        </div>
+
+        <br />
+        <div id="restauration">
+          <h1 className="centered">Restauration</h1>
+            <div className="centered">A venir</div>
+          <hr />
+        </div>
       </div>
+
     );
   }
 }
