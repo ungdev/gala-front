@@ -136,8 +136,23 @@ class Home extends React.Component {
         </div>
 
         <div className="page-container">
+
+          <div className="poster-text">
+            <h1>IMPORTANT</h1>
+            La France traversant une situation exceptionnelle liée à la pandémie du #Covid19, et suite aux récentes annonces présidentielles et gouvernementales, c'est avec un grand regret que nous vous annonçons que l'événement Cassiopée 2020 n'aura pas lieu.<br/>
+            Nous tiendrons informés prochainement les personnes ayant pris leur place des modalités de remboursement.<br/>
+            <br/>
+            Nous remercions chaleureusement tous ceux ayant contribué au projet, qu'ils soient membres de l'organiation, partenaires, artistes ou encore prestataires.
+            <br/>
+            Le projet Cassiopée prend un coup mais ne s'arrête pas, l'engouement derrière Cassiopée 2020 montre l'intérêt que le public porte pour les événements culturels étudiants dans la région Grand-Est, à Troyes. Celui-ci permettra, nous l'espérons, à Cassiopée 2021 de rencontrer le succès qu'il mérite.<br/>
+            <br/>
+            Nous vous tiendrons au courant de la suite des événements prochainement !<br/>
+            <br/>
+            L'équipe Cassiopée 2020<br/>
+          </div>
+
           <Countdown
-            date="16 May 2020 20:00:00"
+            date="16 May 2019 20:00:00"
             renderer={(props) => {
               if (!props.days && !props.hours && !props.minutes && !props.seconds) {
                 return null;

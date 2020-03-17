@@ -26,18 +26,18 @@
 	width: 100%;
 }
 
-#home .poster-container .poster-text {
-	position: absolute;
-	top: calc(50% - 40px);
-	left: 0;
-	transform: translateY(-50%);
+h1 {
+	text-align: center;
+}
+
+.poster-text {
 	max-width: 100%;
 	margin: 20px;
 	padding: 14px 20px;
 	font-size: 1.1em;
 	line-height: 1.6em;
 	color: #fff;
-	text-align: center;
+	text-align: justify;
 	background: #bc167cd9;
 	box-shadow: 0 2px 10px #000;
 }
