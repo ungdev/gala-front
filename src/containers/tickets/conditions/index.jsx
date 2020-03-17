@@ -16,12 +16,12 @@ export default (
       <li>Costume</li>
       <li>Chemise</li>
       <li>Pantalon en toile</li>
-      <li>Chaussures de ville</li>
+      <li>Chaussures propres</li>
     </ul>
     <p>Sont prohibés :</p>
     <ul>
       <li>Jeans</li>
-      <li>Survêtements</li>
+      <li>Survêtements (Eh oui mamène désolé !!)</li>
       <li>Chaussures de sport (baskets)</li>
     </ul>
     <p>
@@ -37,7 +37,7 @@ export default (
       de pouvoir entrer au sein de l'événement (les places étant nominatives).
     </p>
     <p>
-      Veuillez noter que l'entrée est <strong>interdite aux mineurs</strong>, même avec autorisation d'un responsable
+      Veuillez noter que l'entrée est <strong>interdite aux mineurs</strong> hors UTT, même avec autorisation d'un responsable
       légal.
     </p>
     <p>

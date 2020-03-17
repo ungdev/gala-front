@@ -11,7 +11,7 @@ import Programme from './containers/programme';
 import Tickets from './containers/tickets';
 import Partners from './containers/partners';
 import Gallery from './containers/gallery';
-import Informations from './containers/informations';
+import access from './containers/access';
 import Contact from './containers/contact';
 import Legal from './containers/legal';
 import Privacy from './containers/privacy';
@@ -29,11 +29,11 @@ const App = () => (
 				<div id="page">
 					<Switch>
 						<Route path="/" exact component={Home} />
-						<Route path="/artistes" exact component={Programme} />
+						<Route path="/program" exact component={Programme} />
 						<Route path="/billetterie" exact component={Tickets} />
 						<Route path="/partenaires" exact component={Partners} />
 						<Route path="/galerie" exact component={Gallery} />
-						<Route path="/informations" exact component={Informations} />
+						<Route path="/access" exact component={access} />
 						<Route path="/contact" exact component={Contact} />
 						<Route path="/mentions-legales" exact component={Legal} />
 						<Route path="/confidentialite" exact component={Privacy} />

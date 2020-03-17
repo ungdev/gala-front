@@ -5,7 +5,6 @@ import $ from 'jquery';
 
 import axios from '../../utils/axios';
 import VideoContainer from '../../components/videoContainer';
-import Events from './events';
 import posterImg from '../../assets/new-poster.png';
 
 import 'owl.carousel2/dist/assets/owl.carousel.css';
@@ -137,8 +136,23 @@ class Home extends React.Component {
         </div>
 
         <div className="page-container">
+
+          <div className="poster-text">
+            <h1>IMPORTANT</h1>
+            La France traversant une situation exceptionnelle liée à la pandémie du #Covid19, et suite aux récentes annonces présidentielles et gouvernementales, c'est avec un grand regret que nous vous annonçons que l'événement Cassiopée 2020 n'aura pas lieu.<br/>
+            Nous tiendrons informés prochainement les personnes ayant pris leur place des modalités de remboursement.<br/>
+            <br/>
+            Nous remercions chaleureusement tous ceux ayant contribué au projet, qu'ils soient membres de l'organiation, partenaires, artistes ou encore prestataires.
+            <br/>
+            Le projet Cassiopée prend un coup mais ne s'arrête pas, l'engouement derrière Cassiopée 2020 montre l'intérêt que le public porte pour les événements culturels étudiants dans la région Grand-Est, à Troyes. Celui-ci permettra, nous l'espérons, à Cassiopée 2021 de rencontrer le succès qu'il mérite.<br/>
+            <br/>
+            Nous vous tiendrons au courant de la suite des événements prochainement !<br/>
+            <br/>
+            L'équipe Cassiopée 2020<br/>
+          </div>
+
           <Countdown
-            date="18 May 2019 20:00:00"
+            date="16 May 2019 20:00:00"
             renderer={(props) => {
               if (!props.days && !props.hours && !props.minutes && !props.seconds) {
                 return null;
@@ -167,22 +181,26 @@ class Home extends React.Component {
             }}
           />
 
-          <p className="centered">
+          <br />
+
+          {/*<p className="centered">
             Cassiopée, organisé par l'association Gala UTT, est une soirée de prestige unique en son genre accueillant
-            jusqu'à 3500 participants. Nous revenons en 2020 pour une 24<sup>ème</sup> édition de folie autour des Mille
+            jusqu'à 3500 participants. Nous revenons le <b>16 mai 2020</b> pour une 24<sup>ème</sup> édition de folie autour des Mille
             et Une Nuits. Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
-          </p>
+          </p>*/}
 
           <hr />
 
-          <h2 className="centered">Trailer Gala UTT 2k19</h2>
-          <VideoContainer title="Trailer Gala UTT 2k19" src="https://www.youtube.com/embed/da9UbOswltE" />
+          <h2 className="centered">Annonce artistes Cassiopée 2020</h2>
+          <VideoContainer title="Annonce des artistes Cassiopée 2020" src="https://www.youtube.com/embed/OqdO92_fBJM" />
 
-          <hr />
+          <div className="centered">
+            <Link to="/program" className="button">
+              Tous les artistes
+            </Link>
+          </div>
 
-          <h2 className="centered">Événements</h2>
 
-          <Events />
         </div>
 
         <div className="partners">
@@ -210,8 +228,8 @@ class Home extends React.Component {
               <i className="fas fa-spinner fa-spin"></i>
             </div>
           ) : (
-            <div className="no-partners">(Les partenaires seront bientôt disponibles)</div>
-          )}
+                <div className="no-partners">(Les partenaires seront bientôt disponibles)</div>
+              )}
         </div>
       </div>
     );
