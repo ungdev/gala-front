@@ -183,11 +183,11 @@ class Home extends React.Component {
 
           <br />
 
-          <p className="centered">
+          {/*<p className="centered">
             Cassiopée, organisé par l'association Gala UTT, est une soirée de prestige unique en son genre accueillant
             jusqu'à 3500 participants. Nous revenons le <b>16 mai 2020</b> pour une 24<sup>ème</sup> édition de folie autour des Mille
             et Une Nuits. Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
-          </p>
+          </p>*/}
 
           <hr />
 
