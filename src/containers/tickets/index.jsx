@@ -24,9 +24,17 @@ class Tickets extends React.Component {
 
         <br />
 
-        <a className="tickets-button button" href="https://www.billetweb.fr/cassiopee-gala-utt" target="_blank" rel="noopener noreferrer">
+        {/* <a className="tickets-button button" href="https://www.billetweb.fr/cassiopee-gala-utt" target="_blank" rel="noopener noreferrer">
           Achetez vos billets
-        </a>
+    </a>*/}
+
+        <button
+					className="tickets-button button"
+					// onClick={this.openTicketsWindow}
+				>
+					{ /* <i className="fas fa-ticket-alt icon"></i> */ }
+					La billetterie est fermée
+				</button>
 
       </div>
     );
