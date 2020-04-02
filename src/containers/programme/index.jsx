@@ -30,6 +30,7 @@ class Programme extends React.Component {
         hour={artist.eventDate ? moment(artist.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').format('HH[h]mm') : ''}
         place={artist.eventPlace}
         key={i}
+        number={i}
       />
     ));
 
