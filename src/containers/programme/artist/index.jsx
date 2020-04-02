@@ -39,7 +39,7 @@ const Artist = (props) => {
                     </div>
                   )}
                   {!props.hour && !props.place && (
-                    <div className="artist-no-informations">(L'horaire sera bientôt disponible)</div>
+                    <div className="artist-no-informations">(L'horaire n'est pas disponible)</div>
                   )}
 
                   {props.link && (
@@ -72,7 +72,7 @@ const Artist = (props) => {
                     </div>
                   )}
                   {!props.hour && !props.place && (
-                    <div className="artist-no-informations">(L'horaire sera bientôt disponible)</div>
+                    <div className="artist-no-informations">(L'horaire n'est pas disponible)</div>
                   )}
 
                   {props.link && (
