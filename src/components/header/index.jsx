@@ -17,6 +17,10 @@ const links = [
     path: '/partenaires',
   },
   {
+    title: 'Engagements',
+    path: '/engagements',
+  },
+  {
     title: 'Cassiopée',
     path: '/',
     id: 'home',
