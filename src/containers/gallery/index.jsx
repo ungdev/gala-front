@@ -190,7 +190,7 @@ class Gallery extends React.Component {
           /*<div className="artists-loader">
             <i className="fas fa-spinner fa-spin"></i>
           </div>*/
-          <div id="no-image" className="centered">(Les images ne sont disponibles)</div>
+          <div id="no-image" className="centered">(Les images ne sont pas disponibles)</div>
         )}
       </div>
     );
