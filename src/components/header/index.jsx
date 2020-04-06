@@ -5,6 +5,11 @@ import './header.css';
 
 const links = [
   {
+    title: 'Accueil',
+    path: '/',
+    id: 'home',
+  },
+  {
     title: 'Programme',
     path: '/program',
   },
@@ -19,11 +24,6 @@ const links = [
   {
     title: 'Engagements',
     path: '/engagements',
-  },
-  {
-    title: 'Cassiopée',
-    path: '/',
-    id: 'home',
   },
   {
     title: 'Galerie',
