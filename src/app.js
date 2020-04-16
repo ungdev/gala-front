@@ -15,6 +15,7 @@ import access from './containers/access';
 import Contact from './containers/contact';
 import Legal from './containers/legal';
 import Privacy from './containers/privacy';
+import Engagements from './containers/engagements';
 
 import './index.css';
 
@@ -32,6 +33,7 @@ const App = () => (
 						<Route path="/program" exact component={Programme} />
 						<Route path="/billetterie" exact component={Tickets} />
 						<Route path="/partenaires" exact component={Partners} />
+						<Route path="/engagements" exact component={Engagements} />
 						<Route path="/galerie" exact component={Gallery} />
 						<Route path="/access" exact component={access} />
 						<Route path="/contact" exact component={Contact} />

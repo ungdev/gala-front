@@ -30,6 +30,7 @@ class Programme extends React.Component {
         hour={artist.eventDate ? moment(artist.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').format('HH[h]mm') : ''}
         place={artist.eventPlace}
         key={i}
+        number={i}
       />
     ));
 
@@ -41,29 +42,40 @@ class Programme extends React.Component {
   render() {
     return (
       <div className="page-container">
+        <div className="sidenav">
+          <a href="#artists">Artistes</a>
+          <div className="vertical-line"></div>
+          <a href="#eat">EAT</a>
+          <div className="vertical-line"></div>
+          <a href="#animations">Animations</a>
+          <div className="vertical-line"></div>
+          <a href="#restauration">Restauration</a>
+        </div>
+
+
         <div id="artists">
           <h1 className="centered">Artistes</h1>
           <hr />
 
           {this.state.artists && this.state.artists.length ? (
             <div className="artists-container">{this.state.artists}</div>
-            ) : this.state.artists === null ? (
-              <div className="artists-loader">
-                <i className="fas fa-spinner fa-spin"></i>
-              </div>
-            ) : (
-              <div className="no-artists">(Les artistes seront bientôt disponibles)</div>
-            )}
+          ) : this.state.artists === null ? (
+            <div className="artists-loader">
+              <i className="fas fa-spinner fa-spin"></i>
+            </div>
+          ) : (
+                <div className="no-artists">(Les artistes seront bientôt disponibles)</div>
+              )}
 
         </div>
-        
+
         <br />
         <div id="eat">
           <h1 className="centered">Espaces à thème</h1>
           <hr />
           <div className="centered">A venir</div>
         </div>
-        
+
         <br />
         <div id="animations">
           <h1 className="centered">Animations</h1>
