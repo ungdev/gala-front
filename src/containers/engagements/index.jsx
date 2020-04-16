@@ -58,8 +58,8 @@ class Engagements extends React.Component {
                     <br />
                     Avec 500 bénévoles actifs, l'association accompagne les personnes en souffrance, sensibilise les collégiens à l'isolement pour prévenir des situations de décrochage et accompagne les personnes en sortie d'hospitalisation.
                     <br />
-                    L'association travaille actuellement à l'ouverture d'une nouvelle antenne à Troyes. Elle recherche donc des bénévoles. Si vous souhaitez les aider, même occasionnel, n'hésitez pas à les contacter sur leur site Web.
-                    Si vous souffrez vous-même d'isolement, Astrée est là pour voir accompagner, vous pouvez également les contacter sur leur site Web.
+                    L'association travaille actuellement à l'ouverture d'une nouvelle antenne à Troyes. Elle recherche donc des bénévoles. Si vous souhaitez les aider, même occasionnellement, n'hésitez pas à les contacter sur leur site Web.
+                    Si vous souffrez vous-même d'isolement, Astrée est là pour vous accompagner, vous pouvez également les contacter sur leur site Web.
                     
                 </p>
                 <p>
@@ -74,7 +74,7 @@ class Engagements extends React.Component {
 
                 <h2 className="title-decoration">Environnement</h2>
                 <p>
-                    L'aspect environnemental prend une impotrance grandissante dans la société d'aujourd'hui, et dans notre événement aussi.
+                    L'aspect environnemental prend une importance grandissante dans la société d'aujourd'hui, et dans notre événement aussi.
                     Une part de plus en plus conséquente de notre budget est ainsi allouée à cette composante.
                     Que cela soit avant, pendant ou après notre événement, nous mettons en place toujours plus de dispositifs de réduction, de tri et de valorisations des déchets.
                 </p>
