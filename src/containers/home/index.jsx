@@ -5,7 +5,7 @@ import $ from 'jquery';
 
 import axios from '../../utils/axios';
 import VideoContainer from '../../components/videoContainer';
-import posterImg from '../../assets/new-poster.png';
+import posterImg from '../../assets/Logo_2021_cassiopée.png';
 
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './home.css';
@@ -130,7 +130,8 @@ class Home extends React.Component {
 
           <button className={'arrow-button' + (this.state.top ? ' active' : '')} onClick={this.handleArrow}>
             <div className="arrow-icon">
-              <i className="fas fa-arrow-down icon"></i>
+            <i class="fas fa-chevron-down"></i>
+
             </div>
           </button>
         </div>
@@ -138,21 +139,17 @@ class Home extends React.Component {
         <div className="page-container">
 
           <div className="poster-text">
-            <h1>IMPORTANT</h1>
-            La France traversant une situation exceptionnelle liée à la pandémie du #Covid19, et suite aux récentes annonces présidentielles et gouvernementales, c'est avec un grand regret que nous vous annonçons que l'événement Cassiopée 2020 n'aura pas lieu.<br/>
-            Nous tiendrons informés prochainement les personnes ayant pris leur place des modalités de remboursement.<br/>
-            <br/>
-            Nous remercions chaleureusement tous ceux ayant contribué au projet, qu'ils soient membres de l'organiation, partenaires, artistes ou encore prestataires.
-            <br/>
-            Le projet Cassiopée prend un coup mais ne s'arrête pas, l'engouement derrière Cassiopée 2020 montre l'intérêt que le public porte pour les événements culturels étudiants dans la région Grand-Est, à Troyes. Celui-ci permettra, nous l'espérons, à Cassiopée 2021 de rencontrer le succès qu'il mérite.<br/>
-            <br/>
-            Nous vous tiendrons au courant de la suite des événements prochainement !<br/>
-            <br/>
-            L'équipe Cassiopée 2020<br/>
+            <h1>À propos de Cassiopée</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Cras tincidunt lobortis feugiat vivamus at augue. Elit at imperdiet dui accumsan sit amet nulla facilisi. Malesuada proin libero nunc consequat. Sit amet aliquam id diam maecenas ultricies mi eget mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Vitae tortor condimentum lacinia quis vel eros donec ac odio. In fermentum posuere urna nec tincidunt praesent semper. Et egestas quis ipsum suspendisse ultrices gravida. Viverra suspendisse potenti nullam ac tortor vitae. Aenean euismod elementum nisi quis eleifend. Quis eleifend quam adipiscing vitae. Amet luctus venenatis lectus magna fringilla urna. Vel fringilla est ullamcorper eget nulla facilisi. Cursus eget nunc scelerisque viverra mauris in aliquam sem. Pharetra vel turpis nunc eget lorem dolor sed viverra. Sit amet cursus sit amet dictum sit amet justo.
+
+                Hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Scelerisque eleifend donec pretium vulputate. Morbi blandit cursus risus at ultrices. Sapien faucibus et molestie ac feugiat sed lectus vestibulum. Sed libero enim sed faucibus turpis. Integer vitae justo eget magna fermentum. Enim diam vulputate ut pharetra sit amet. Leo vel fringilla est ullamcorper eget nulla. Massa tempor nec feugiat nisl pretium fusce. Mauris ultrices eros in cursus turpis. Suspendisse potenti nullam ac tortor vitae. Molestie a iaculis at erat pellentesque adipiscing commodo elit at. Lorem ipsum dolor sit amet consectetur. Risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit. Felis donec et odio pellentesque diam. Viverra ipsum nunc aliquet bibendum. Nullam ac tortor vitae purus faucibus ornare.
+
+                Sed ullamcorper morbi tincidunt ornare. A arcu cursus vitae congue. Aenean sed adipiscing diam donec adipiscing tristique risus nec. Tellus at urna condimentum mattis. Augue eget arcu dictum varius duis at consectetur. Volutpat sed cras ornare arcu dui. Donec ac odio tempor orci dapibus ultrices in iaculis. Risus sed vulputate odio ut. Tortor aliquam nulla facilisi cras fermentum. Consequat nisl vel pretium lectus. Interdum consectetur libero id faucibus nisl tincidunt eget. Laoreet sit amet cursus sit amet. Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam. Turpis in eu mi bibendum. In ornare quam viverra orci sagittis. Euismod nisi porta lorem mollis.</p>
           </div>
 
           <Countdown
-            date="16 May 2019 20:00:00"
+            date="05 June 2021 20:00:00"
             renderer={(props) => {
               if (!props.days && !props.hours && !props.minutes && !props.seconds) {
                 return null;
@@ -183,30 +180,12 @@ class Home extends React.Component {
 
           <br />
 
-          {/*<p className="centered">
-            Cassiopée, organisé par l'association Gala UTT, est une soirée de prestige unique en son genre accueillant
-            jusqu'à 3500 participants. Nous revenons le <b>16 mai 2020</b> pour une 24<sup>ème</sup> édition de folie autour des Mille
-            et Une Nuits. Les locaux de l’UTT seront de nouveau transformés afin de vous faire vivre une nuit magique.
-          </p>*/}
-
-          <hr />
-
-          <h2 className="centered">Annonce artistes Cassiopée 2020</h2>
-          <VideoContainer title="Annonce des artistes Cassiopée 2020" src="https://www.youtube.com/embed/OqdO92_fBJM" />
-
-          <div className="centered">
-            <Link to="/program" className="button">
-              Tous les artistes
-            </Link>
-          </div>
-
-
         </div>
 
         <div className="partners">
           <div className="partners-background"></div>
 
-          <h2>Partenaires</h2>
+          <h2>Nos Partenaires</h2>
 
           {this.state.partners && this.state.partners.length ? (
             <React.Fragment>

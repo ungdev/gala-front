@@ -3,29 +3,28 @@
 /* --------------- */
 
 @font-face {
-	font-family: 'LemonMilk';
-	src: url(./assets/fonts/LemonMilk.otf);
+	font-family: 'Fundamental';
+	src: url(./assets/fonts/Fundamental\ Brigade\ Condensed.ttf);
 }
 
 :root {
 	--primary-color: #222145;
 	--secondary-color: #bc167c;
+	height: 100%;
 }
 
 html {
-	background: #282660 url('./assets/new-background.png');
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background: radial-gradient(at top right,#43B9D5 0%, #22749C 100%);
 	font-family: 'Roboto', arial, sans-serif;
 	font-size: 16px;
+	height: 100%;
 }
 
 html, body {
 	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
+	height: 100%;
 }
 
 ::selection {
@@ -45,19 +44,40 @@ img, iframe {
 	max-width: 100%;
 }
 
-h1, h2, h3 {
-	font-family: 'LemonMilk', arial, sans-serif;
+h1 {
+	font-family: 'Fundamental', arial, sans-serif;
 	text-transform: uppercase;
+	font-size: 54pt;
+	color: #083E60;
+	margin: 0;
+}
+
+h2, h3 {
+	font-family: 'Fundamental', arial, sans-serif;
+	text-transform: uppercase;
+	font-size: 36pt;
+	text-align: left;
+	color: #083E60;
+}
+
+p {
+	font-family: 'Fundamental', arial, sans-serif;
+	font-size: 22pt;
+	color: #0A3D60;
+	text-align: justify;
 }
 
 hr {
-	height: 4px;
+	height: 2px;
 	width: 400px;
 	max-width: 100%;
-	background: linear-gradient(to right, transparent, #eb048b 50%, transparent);
+	background: radial-gradient( #22749C 0%, transparent);
 	border: none;
 	margin: 20px auto;
+
+	
 }
+
 
 /* ------------ */
 /* --- Misc --- */
@@ -73,15 +93,8 @@ hr {
 
 #page {
 	color: #fff;
-	max-width: 1056px;
 	margin: 0 auto;
 	padding: 20px 10px;
-}
-
-.page-container {
-	background: rgba(33, 32, 56, 0.7);
-	border-radius: 4px;
-	padding: 20px;
 }
 
 .button {
@@ -89,7 +102,7 @@ hr {
 	display: inline-block;
 	margin: 10px 0;
 	padding: 14px 20px;
-	background: var(--secondary-color);
+	background: #083E60;
 	color: #fff;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -129,21 +142,7 @@ hr {
 
 h2.title-decoration {
 	position: relative;
-	margin: 50px 0 20px 0;
-	padding-left: 15px;
-	font-weight: 100;
 	letter-spacing: 1px;
-}
-
-h2.title-decoration::before {
-	content: '';
-	position: absolute;
-	display: inline-block;
-	top: 0;
-	left: 0;
-	width: 4px;
-	height: 100%;
-	background: var(--secondary-color);
 }
 
 #ticketsButton{

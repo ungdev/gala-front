@@ -2,13 +2,17 @@ import React from 'react';
 
 export default (
   <React.Fragment>
-    <div className="centered">
-      <strong>Veuillez lire attentivement les conditions d'entrée avant d'acheter votre billet.</strong>
+<div className="billetterie_container">
+<div className="centered">
+      <h1 className="centered">Billetterie</h1>
+      <hr />
     </div>
+
+    <p className="centered">Veuillez lire attentivement les conditions d'entrée avant d'acheter votre billet.</p>
 
     <h2 className="title-decoration">Vêtements</h2>
     <p>
-      Une tenue de Gala est <strong>exigée</strong>. Un vestiaire gratuit sera mis à votre disposition toute la soirée.
+      Une tenue de Gala est exigée. Un vestiaire gratuit sera mis à votre disposition toute la soirée.
     </p>
     <p>Sont autorisés :</p>
     <ul>
@@ -54,5 +58,13 @@ export default (
       <strong>Une fouille sera réalisée avant toute entrée</strong>, provoquant la confiscation de tout matériel pouvant
       poser un problème de sécurité (rasoir, aérosol, ...).
     </p>
+    <button
+					className="tickets-button button"
+					// onClick={this.openTicketsWindow}
+				>
+					{ /* <i className="fas fa-ticket-alt icon"></i> */ }
+					La billetterie est fermée
+				</button>
+</div>
   </React.Fragment>
 );
