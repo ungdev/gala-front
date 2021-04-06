@@ -7,6 +7,10 @@
 	src: url(./assets/fonts/Fundamental\ Brigade\ Condensed.ttf);
 }
 
+#root {
+	height: 100vh;
+}
+
 :root {
 	--primary-color: #222145;
 	--secondary-color: #bc167c;
@@ -91,10 +95,17 @@ hr {
 	text-align: justify;
 }
 
+#app {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
 #page {
 	color: #fff;
 	margin: 0 auto;
 	padding: 20px 10px;
+	flex-grow: 1;
 }
 
 .button {
