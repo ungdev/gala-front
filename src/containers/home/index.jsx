@@ -5,7 +5,7 @@ import $ from 'jquery';
 
 import axios from '../../utils/axios';
 import VideoContainer from '../../components/videoContainer';
-import posterImg from '../../assets/Logo_2021_cassiopée.png';
+import posterImg from '../../assets/Logo_day_edition.png';
 
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './home.css';
