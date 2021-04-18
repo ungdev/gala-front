@@ -40,16 +40,16 @@ class access extends React.Component {
         </p>
         <ul className="access-list">
           <li>
-            <i className="fas fa-angle-right"></i>Autoroute A5 : sortie n°20 (Sainte Savine)
+            Autoroute A5 : sortie n°20 (Sainte Savine)
           </li>
           <li>
-            <i className="fas fa-angle-right"></i>N60 direction Troyes
+            N60 direction Troyes
           </li>
           <li>
-            <i className="fas fa-angle-right"></i>Rocade de contournement
+            Rocade de contournement
           </li>
           <li>
-            <i className="fas fa-angle-right"></i>Suivre Technopole de l’Aube
+            Suivre Technopole de l’Aube
           </li>
         </ul>
 
@@ -58,16 +58,16 @@ class access extends React.Component {
         </p>
         <ul className="access-list">
           <li>
-            <i className="fas fa-angle-right"></i>Autoroute A26 : sortie n°21 (Saint Thibault)
+            Autoroute A26 : sortie n°21 (Saint Thibault)
           </li>
           <li>
-            <i className="fas fa-angle-right"></i>N71 direction Troyes
+            N71 direction Troyes
           </li>
           <li>
-            <i className="fas fa-angle-right"></i>Rocade de contournement
+            Rocade de contournement
           </li>
           <li>
-            <i className="fas fa-angle-right"></i>Suivre Technopole de l’Aube
+            Suivre Technopole de l’Aube
           </li>
         </ul>
 
@@ -76,16 +76,16 @@ class access extends React.Component {
         </p>
         <ul className="access-list">
           <li>
-            <i className="fas fa-angle-right"></i>Autoroute A5 : sortie n°21 (Saint Thibault)
+            Autoroute A5 : sortie n°21 (Saint Thibault)
           </li>
           <li>
-            <i className="fas fa-angle-right"></i>N71 direction Troyes
+            N71 direction Troyes
           </li>
           <li>
-            <i className="fas fa-angle-right"></i>Rocade de contournement
+            Rocade de contournement
           </li>
           <li>
-            <i className="fas fa-angle-right"></i>Suivre Technopole de l’Aube
+            Suivre Technopole de l’Aube
           </li>
         </ul>
 

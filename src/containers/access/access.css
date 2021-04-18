@@ -29,10 +29,9 @@
 }
 
 #access .access-list {
-	padding-left: 20px;
-	list-style: none;
+	padding-left: 40px;
 }
 
-#access .access-list > li > i {
+#access .access-list > li  {
 	margin-right: 10px;
 }
