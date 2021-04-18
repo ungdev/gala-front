@@ -10,9 +10,6 @@ import posterImg from '../../assets/Logo_day_edition.png';
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import './home.css';
 
-window.jQuery = $;
-require('owl.carousel2');
-
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -88,7 +85,7 @@ class Home extends React.Component {
 
     partners = partners.data.map((partner, i) => (
       <a href={partner.url} key={i}>
-        <img src={`${process.env.REACT_APP_API}${partner.image}`} alt={partner.name} />
+        <img src={`${import.meta.env.VITE_APP_API}${partner.image}`} alt={partner.name} />
       </a>
     ));
 
