@@ -41,18 +41,7 @@ class Programme extends React.Component {
 
   render() {
     return (
-      <div className="page-container">
-        <div className="sidenav">
-          <a href="#artists">Artistes</a>
-          <div className="vertical-line"></div>
-          <a href="#eat">EAT</a>
-          <div className="vertical-line"></div>
-          <a href="#animations">Animations</a>
-          <div className="vertical-line"></div>
-          <a href="#restauration">Restauration</a>
-        </div>
-
-
+      <div className="page-container" id="program">
         <div id="artists">
           <h1 className="centered">Artistes</h1>
           <hr />
