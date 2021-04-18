@@ -3,163 +3,163 @@
 /* --------------- */
 
 @font-face {
-	font-family: 'Fundamental';
-	src: url(./assets/fonts/Fundamental\ Brigade.ttf);
+  font-family: 'Fundamental';
+  src: url(./fonts/Fundamental\ Brigade.ttf);
 }
 
 #root {
-	height: 100vh;
+  height: 100vh;
 }
 
 :root {
-	--primary-color: #222145;
-	--secondary-color: #bc167c;
-	height: 100%;
+  --primary-color: #222145;
+  --secondary-color: #bc167c;
+  height: 100%;
 }
 
 html {
-	background: radial-gradient(at top right,#43B9D5 0%, #22749C 100%);
-	font-family: 'Roboto', arial, sans-serif;
-	font-size: 16px;
-	height: 100%;
+  background: radial-gradient(at top right, #43b9d5 0%, #22749c 100%);
+  font-family: 'Roboto', arial, sans-serif;
+  font-size: 16px;
+  height: 100%;
 }
 
-html, body {
-	overflow-x: hidden;
-	margin: 0;
-	padding: 0;
-	height: 100%;
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 ::selection {
-	background: #adadad;
-	color: #fff;
+  background: #adadad;
+  color: #fff;
 }
 
 img::selection {
-	background: #adadad;
+  background: #adadad;
 }
 
 a {
-	outline: none;
+  outline: none;
 }
 
-img, iframe {
-	max-width: 100%;
+img,
+iframe {
+  max-width: 100%;
 }
 
 h1 {
-	font-family: 'Fundamental', arial, sans-serif;
-	text-transform: uppercase;
-	font-size: 54pt;
-	font-weight: normal;
-	color: #083E60;
-	margin: 0;
+  font-family: 'Fundamental', arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 54pt;
+  font-weight: normal;
+  color: #083e60;
+  margin: 0;
 }
 
-h2, h3 {
-	font-family: 'Fundamental', arial, sans-serif;
-	text-transform: uppercase;
-	font-size: 36pt;
-	text-align: left;
-	color: #083E60;
+h2,
+h3 {
+  font-family: 'Fundamental', arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 36pt;
+  text-align: left;
+  color: #083e60;
 }
 
 p {
-	font-family: 'Fundamental', arial, sans-serif;
-	font-size: 22pt;
-	color: #0A3D60;
-	text-align: justify;
+  font-family: 'Fundamental', arial, sans-serif;
+  font-size: 22pt;
+  color: #0a3d60;
+  text-align: justify;
 }
 
 hr {
-	height: 2px;
-	width: 400px;
-	max-width: 100%;
-	background: radial-gradient( #22749C 0%, transparent);
-	border: none;
-	margin: 20px auto;
-
-	
+  height: 2px;
+  width: 400px;
+  max-width: 100%;
+  background: radial-gradient(#22749c 0%, transparent);
+  border: none;
+  margin: 20px auto;
 }
-
 
 /* ------------ */
 /* --- Misc --- */
 /* ------------ */
 
 .centered {
-	text-align: center;
+  text-align: center;
 }
 
 .justified {
-	text-align: justify;
+  text-align: justify;
 }
 
 #app {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
 #page {
-	color: #fff;
-	margin: 0 auto;
-	padding: 20px 10px;
-	flex-grow: 1;
+  color: #fff;
+  margin: 0 auto;
+  padding: 20px 10px;
+  flex-grow: 1;
 }
 
 .button {
-	position: relative;
-	display: inline-block;
-	margin: 10px 0;
-	padding: 14px 20px;
-	background: #083E60;
-	color: #fff;
-	text-decoration: none;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 0;
-	font-size: 14px;
-	letter-spacing: 1px;
-	overflow: hidden;
-	cursor: pointer;
-	outline: none;
-	transition: all .3s;
+  position: relative;
+  display: inline-block;
+  margin: 10px 0;
+  padding: 14px 20px;
+  background: #083e60;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
 }
 
 .button::before {
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: calc(-30% - 20px);
-	height: 100%;
-	width: 100%;
-	background: rgba(50, 50, 50, 0.2);
-	clip-path: polygon(0 0, 30% 0, calc(30% + 20px) 100%, 0% 100%);
-	z-index: 1;
-	transition: all .3s;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(-30% - 20px);
+  height: 100%;
+  width: 100%;
+  background: rgba(50, 50, 50, 0.2);
+  clip-path: polygon(0 0, 30% 0, calc(30% + 20px) 100%, 0% 100%);
+  z-index: 1;
+  transition: all 0.3s;
 }
 
 .button:hover,
 .button:focus {
-	filter: brightness(0.9);
+  filter: brightness(0.9);
 }
 
 .button:hover::before,
 .button:focus::before {
-	left: 0;
+  left: 0;
 }
 
 h2.title-decoration {
-	position: relative;
-	letter-spacing: 1px;
+  position: relative;
+  letter-spacing: 1px;
 }
 
-#ticketsButton{
-	display: block;
-	margin: auto;
-	text-align: center;
+#ticketsButton {
+  display: block;
+  margin: auto;
+  text-align: center;
 }
