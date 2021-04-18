@@ -26,7 +26,7 @@ const links = [
     path: '/engagements',
   },
   {
-    title: 'Galerie',
+    title: 'Info COVID',
     path: '/galerie',
   },
   {

@@ -162,7 +162,7 @@ class Gallery extends React.Component {
   render() {
     return (
       <div className="page-container" id="gallery">
-        <h1 className="centered">Galerie</h1>
+        <h1 className="centered">Infos COVID</h1>
         <hr />
 
         {this.state.images.length > 0 ? (
