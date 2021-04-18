@@ -52,6 +52,7 @@ h1 {
 	font-family: 'Fundamental', arial, sans-serif;
 	text-transform: uppercase;
 	font-size: 54pt;
+  text-align: center;
 	font-weight: normal;
 	color: var(--secondary-color);
 	margin: 0;
@@ -79,10 +80,11 @@ hr {
 	background: radial-gradient( #22749C 0%, transparent);
 	border: none;
 	margin: 20px auto;
-
-
 }
 
+small {
+  font-size: 13px;
+}
 
 /* ------------ */
 /* --- Misc --- */
@@ -108,6 +110,7 @@ hr {
 	margin: 0 auto;
 	padding: 20px 10px;
 	flex-grow: 1;
+  width: calc(100% - 20px);
 }
 
 .button {

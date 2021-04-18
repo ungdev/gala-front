@@ -14,38 +14,23 @@ footer .social-links a {
 	display: inline-block;
 	margin: 3px;
 	color: #fff;
-	width: 40px;
-	height: 40px;
-	font-size: 1.3em;
+	width: 46px;
+	height: 46px;
+	font-size: 1.6em;
 	border-radius: 50%;
-	border: 2px solid transparent;
+	border: 3px solid transparent;
 	transition: all .3s;
 }
 
 footer .social-links a:hover,
 footer .social-links a:focus {
-	border: 2px solid #fff;
+	border-color: #fff;
 }
 
 footer .social-links i {
 	position: relative;
 	top: 50%;
 	transform: translateY(calc(-50% - 1px));
-}
-
-footer .social-facebook:hover,
-footer .social-facebook:focus {
-	color: #4267b2;
-}
-
-footer .social-twitter:hover,
-footer .social-twitter:focus {
-	color: #1da1f2;
-}
-
-footer .social-youtube:hover,
-footer .social-youtube:focus {
-	color: #f00;
 }
 
 footer .social-contact {
@@ -84,12 +69,8 @@ footer .store-links .store-image {
 	background: #fff;
 }
 
-footer .copyright {
-	font-size: 13px;
-}
-
 footer .copyright i {
-	font-size: 11px;
+	font-size: 0.85em;
 	margin-right: 3px;
 }
 
@@ -98,7 +79,6 @@ footer .links {
 }
 
 footer .links a {
-	font-size: 13px;
 	text-decoration: none;
 	border-bottom: 1px solid transparent;
 	color: #fff;
