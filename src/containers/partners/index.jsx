@@ -11,7 +11,9 @@ class Partners extends React.Component {
     this.state = {
       partners: null,
     };
+  }
 
+  componentDidMount() {
     this.fetchPartners();
   }
 

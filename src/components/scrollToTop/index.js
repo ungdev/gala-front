@@ -1,17 +1,25 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class ScrollToTop extends React.Component {
-	componentDidMount() {
-		document.getElementsByTagName('html')[0].scrollTop = 0;
-	}
+  constructor(props) {
+    super(props);
 
-	componentDidUpdate() {
-		document.getElementsByTagName('html')[0].scrollTop = 0;
-	}
+    this.unlisten = () => {};
+  }
+
+  componentDidMount() {
+    this.unlisten = this.props.history.listen((location, action) => {
+      document.getElementsByTagName('body')[0].scrollTop = 0;
+    });
+  }
+  componentWillUnmount() {
+      this.unlisten();
+  }
 
 	render() {
 		return this.props.children || null;
 	}
 }
 
-export default ScrollToTop;
+export default withRouter(ScrollToTop);

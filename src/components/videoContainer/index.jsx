@@ -2,7 +2,7 @@ import React from 'react';
 
 import './videoContainer.css';
 
-export default (props) => (
+const VideoContainer = (props) => (
   <div className="video-container" style={props.style}>
     <div className="video-container-ratio">
       <div className="video-container-full">
@@ -16,3 +16,5 @@ export default (props) => (
     </div>
   </div>
 );
+
+export default VideoContainer;

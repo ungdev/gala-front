@@ -4,7 +4,6 @@ import Countdown from 'react-countdown';
 import $ from 'jquery';
 
 import axios from '../../utils/axios';
-import VideoContainer from '../../components/videoContainer';
 import posterImg from '../../assets/Logo_day_edition.png';
 
 import 'owl.carousel2/dist/assets/owl.carousel.css';
@@ -130,7 +129,7 @@ class Home extends React.Component {
 
           <button className={'arrow-button' + (this.state.top ? ' active' : '')} onClick={this.handleArrow}>
             <div className="arrow-icon">
-              <i class="fas fa-chevron-down"></i>
+              <i className="fas fa-chevron-down"></i>
             </div>
           </button>
         </div>
