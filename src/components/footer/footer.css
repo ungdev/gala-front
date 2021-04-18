@@ -3,6 +3,7 @@ footer {
 	width: calc(100% - 40px);
 	padding: 34px 20px 20px 20px;
 	text-align: center;
+	margin-top: 30px;
 }
 
 footer .social-links {

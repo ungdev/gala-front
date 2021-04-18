@@ -19,8 +19,8 @@ header .header-content.transparent {
 }
 
 header nav {
-	font-size: 18pt;
 	height: 100%;
+	font-size: 14pt;
 }
 
 header nav ul {
