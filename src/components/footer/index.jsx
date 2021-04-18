@@ -37,7 +37,7 @@ class Footer extends React.Component {
         </div>
 
         <div className="copyright">
-          <i className="far fa-copyright"></i>Tous droits réservés - Gala UTT 2020
+          <i className="far fa-copyright"></i>Tous droits réservés - Gala UTT 2021
         </div>
 
         <div className="links">
