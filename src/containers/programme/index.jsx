@@ -43,7 +43,7 @@ class Programme extends React.Component {
     return (
       <div className="page-container" id="program">
         <div id="artists">
-          <h1 className="centered">Artistes</h1>
+          <h1>Artistes</h1>
           <hr />
 
           {this.state.artists && this.state.artists.length ? (
@@ -60,21 +60,21 @@ class Programme extends React.Component {
 
         <br />
         <div id="eat">
-          <h1 className="centered">Espaces à thème</h1>
+          <h1>Espaces à thème</h1>
           <hr />
           <div className="centered">A venir</div>
         </div>
 
         <br />
         <div id="animations">
-          <h1 className="centered">Animations</h1>
+          <h1>Animations</h1>
           <hr />
           <Events />
         </div>
 
         <br />
         <div id="restauration">
-          <h1 className="centered">Restauration</h1>
+          <h1>Restauration</h1>
           <hr />
           <div className="centered">A venir</div>
         </div>

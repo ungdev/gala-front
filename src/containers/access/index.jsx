@@ -6,7 +6,7 @@ class access extends React.Component {
   render() {
     return (
       <div className="page-container" id="access">
-        <h1 className="centered">Accès</h1>
+        <h1>Accès</h1>
         <hr />
 
         <div className="plan-container">

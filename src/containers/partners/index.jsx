@@ -36,7 +36,7 @@ class Partners extends React.Component {
   render() {
     return (
       <div className="page-container" id="partners">
-        <h1 className="centered">Partenaires</h1>
+        <h1>Partenaires</h1>
         <hr />
 
         {this.state.partners && this.state.partners.length ? (

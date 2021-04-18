@@ -4,7 +4,7 @@ import FadeIn from 'react-lazyload-fadein';
 import './lazyloadimage.css';
 
 const LazyloadImage = (props) => (
-	<div style={{ position: 'relative' }}>
+	<div className={`lazyloadimage ${props.className || ''}`}>
 		<div className="lazyloadimage-placeholder"></div>
 
 		<FadeIn duration={300}>

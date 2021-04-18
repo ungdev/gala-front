@@ -8,7 +8,7 @@ class Covid19 extends React.Component {
       <div className="page-container" id="covid-19">
         <div className="billetterie_container">
           <div className="centered">
-            <h1 className="centered">Infos COVID-19</h1>
+            <h1>Infos COVID-19</h1>
             <hr />
           </div>
 

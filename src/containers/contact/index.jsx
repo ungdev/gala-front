@@ -112,7 +112,7 @@ class Contact extends React.Component {
   render() {
     return (
       <div className="page-container" id="contact">
-        <h1 className="centered">Contact</h1>
+        <h1>Contact</h1>
         <hr />
 
         <Notification status={this.state.notificationStatus}>{this.state.notificationText}</Notification>

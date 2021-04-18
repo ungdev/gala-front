@@ -6,7 +6,7 @@ class Legal extends React.Component {
   render() {
     return (
       <div className="page-container" id="legal">
-        <h1 className="centered">Mentions légales</h1>
+        <h1>Mentions légales</h1>
         <hr />
 
         <h2 className="title-decoration">1. Présentation du site web</h2>

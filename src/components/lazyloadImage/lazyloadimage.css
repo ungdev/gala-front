@@ -1,4 +1,8 @@
-.lazyloadimage-placeholder {
+.lazyloadimage {
+  position: relative;
+}
+
+.lazyloadimage .lazyloadimage-placeholder {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -8,6 +12,6 @@
 	transition: all .3s;
 }
 
-.lazyloadimage-placeholder.disabled {
+.lazyloadimage .lazyloadimage-placeholder.disabled {
 	opacity: 0;
 }

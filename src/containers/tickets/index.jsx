@@ -8,7 +8,7 @@ class Tickets extends React.Component {
       <div className="page-container" id="tickets">
         <div className="billetterie_container">
           <div className="centered">
-            <h1 className="centered">Billetterie</h1>
+            <h1>Billetterie</h1>
             <hr />
           </div>
 

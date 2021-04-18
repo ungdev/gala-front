@@ -21,7 +21,7 @@
 	box-shadow: 0 3px 0 0 var(--secondary-color);
 }
 
-.input-field-placeholder {
+.input-field .input-field-placeholder {
 	position: absolute;
 	top: 50%;
 	left: 0;
@@ -33,7 +33,7 @@
 	transition: all .3s;
 }
 
-.input-field-placeholder label {
+.input-field .input-field-placeholder label {
 	cursor: text;
 }
 
