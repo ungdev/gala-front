@@ -20,8 +20,8 @@ const InputField = (props) => {
         {props.placeholder}
       </label>
 
-      <div className={'input-field-error' + (props.error ? ' active' : '')}>
-        <i className="fas fa-exclamation-triangle error-icon"></i>
+      <div className={`input-field-error${props.error ? ' active' : ''}`}>
+        <i className="fas fa-exclamation-triangle error-icon" />
         <div className="error-content">{props.error}</div>
       </div>
     </span>

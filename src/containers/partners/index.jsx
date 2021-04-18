@@ -45,7 +45,7 @@ class Partners extends React.Component {
           <div className="partners-list">{this.state.partners}</div>
         ) : this.state.partners === null ? (
           <div className="partners-loader">
-            <i className="fas fa-spinner fa-spin"></i>
+            <i className="fas fa-spinner fa-spin" />
           </div>
         ) : (
           <div className="no-partners">(Les partenaires seront bientôt disponibles)</div>

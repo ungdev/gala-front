@@ -1,7 +1,7 @@
 import React from 'react';
-import logoAstree from '../../../src/assets/logo-astree.jpg';
-import logoAnpaa from '../../../src/assets/logo-anpaa-10.png';
-import logoRevivre from '../../../src/assets/logo-revivre.jpg';
+import logoAstree from '../../assets/logo-astree.jpg';
+import logoAnpaa from '../../assets/logo-anpaa-10.png';
+import logoRevivre from '../../assets/logo-revivre.jpg';
 
 import './commitments.css';
 

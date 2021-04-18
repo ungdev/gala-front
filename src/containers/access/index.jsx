@@ -14,7 +14,8 @@ class access extends React.Component {
             title="Plan accès Gala UTT"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5311.667167902067!2d4.064695!3d48.267577!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x42148ce859fa2d02!2sUniversit%C3%A9+de+Technologie+de+Troyes!5e0!3m2!1sfr!2sde!4v1547220645001"
             frameBorder="0"
-            allowFullScreen></iframe>
+            allowFullScreen
+          />
         </div>
 
         <h2 className="title-decoration">Navettes depuis le centre ville de Troyes</h2>

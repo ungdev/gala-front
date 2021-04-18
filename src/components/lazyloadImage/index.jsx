@@ -5,7 +5,7 @@ import './lazyloadimage.css';
 
 const LazyloadImage = (props) => (
   <div className={`lazyloadimage ${props.className || ''}`}>
-    <div className="lazyloadimage-placeholder"></div>
+    <div className="lazyloadimage-placeholder" />
 
     <FadeIn duration={300}>
       {(onload) => (

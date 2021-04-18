@@ -34,11 +34,11 @@ class SubmitButton extends React.Component {
     return (
       <div className={this.props.className}>
         <button
-          className={'submit-button ' + (this.state.status !== null ? this.state.status : 'icon')}
+          className={`submit-button ${this.state.status !== null ? this.state.status : 'icon'}`}
           onClick={this.click}>
-          <i className="far fa-paper-plane submit-button-icon"></i>
-          <i className="fas fa-spinner fa-spin submit-button-loading"></i>
-          <i className="fas fa-check submit-button-success"></i>
+          <i className="far fa-paper-plane submit-button-icon" />
+          <i className="fas fa-spinner fa-spin submit-button-loading" />
+          <i className="fas fa-check submit-button-success" />
           Envoyer
         </button>
       </div>

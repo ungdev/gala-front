@@ -49,7 +49,7 @@ class Program extends React.Component {
             <div className="artists-container">{this.state.artists}</div>
           ) : this.state.artists === null ? (
             <div className="artists-loader">
-              <i className="fas fa-spinner fa-spin"></i>
+              <i className="fas fa-spinner fa-spin" />
             </div>
           ) : (
             <div className="no-artists">(Les artistes seront bientôt disponibles)</div>

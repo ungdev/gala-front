@@ -31,7 +31,7 @@ class Contact extends React.Component {
   }
 
   checkFields = () => {
-    let errors = {
+    const errors = {
       name: '',
       email: '',
       message: '',
@@ -53,13 +53,12 @@ class Contact extends React.Component {
 
     if (!errors.name && !errors.email && !errors.message) {
       return true;
-    } else {
-      this.setState({
-        errorFields: errors,
-      });
-
-      return false;
     }
+    this.setState({
+      errorFields: errors,
+    });
+
+    return false;
   };
 
   submit = async () => {

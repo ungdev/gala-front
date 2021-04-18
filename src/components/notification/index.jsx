@@ -31,7 +31,7 @@ class Notification extends React.Component {
 
   render() {
     return (
-      <div onClick={() => this.setState({ status: null })} className={'notification ' + (this.state.status || '')}>
+      <div onClick={() => this.setState({ status: null })} className={`notification ${this.state.status || ''}`}>
         {this.props.children}
       </div>
     );

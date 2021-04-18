@@ -13,6 +13,7 @@ class ScrollToTop extends React.Component {
       document.getElementsByTagName('body')[0].scrollTop = 0;
     });
   }
+
   componentWillUnmount() {
     this.unlisten();
   }

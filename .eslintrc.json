@@ -1,5 +1,5 @@
 {
-  "extends": ["plugin:react/recommended", "plugin:import/errors", "plugin:import/warnings", "prettier"],
+  "extends": ["airbnb", "plugin:react/recommended", "plugin:import/errors", "plugin:import/warnings", "prettier"],
   "plugins": ["prettier"],
   "parser": "babel-eslint",
   "env": {
@@ -22,7 +22,19 @@
     "arrow-body-style": "warn",
     "no-underscore-dangle": ["error", { "allow": ["_id"] }],
     "default-case": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+
+    // Remove because no react hooks, remove them if you are motivated to fix lots of file
+    "no-nested-ternary": "off",
+    "react/prefer-stateless-function": "off",
+    "react/destructuring-assignment": "off",
+    "react/button-has-type": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "react/no-access-state-in-setstate": "warn",
+    "react/no-did-update-set-state": "warn",
+    "jsx-a11y/no-noninteractive-element-interactions": "warn",
+    "no-plusplus": "off"
   },
   "settings": {
     "react": {
