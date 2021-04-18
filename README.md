@@ -9,32 +9,33 @@
 ## Installation
 
 ```
+# Clone the repository from GitHub
 git clone git@github.com:ungdev/gala.utt.fr.git
 # or
 git clone https://github.com/ungdev/gala.utt.fr.git
 
+# Go inside the repository
 cd gala.utt.fr
+
+# Download and install the dependencies
 yarn
 ```
 
 ## Configuration
 
 ```
-# copy env file for all environments
-cp .env .env.local
-# makes your changes in .env.local, which will not be pushed
-nano .env.local
+# Create your env file (.env) from the template (.env.example)
+# And edit your variables in .env, that will not be pushed
+cp .env.example .env
 ```
 
 ## Commands
 
 ```
-yarn dev    # development server
-yarn build  # build production assets
-yarn start  # static server
-yarn serve  # pm2 static server (load balancing)
-yarn reload # pm2 hot reload
-yarn lint   # prettier lint
+yarn dev      # launch development server
+yarn build    # build production server
+yarn start    # launch production server
+yarn prettify # prettify the source code
 ```
 
 ## Structure
@@ -54,8 +55,5 @@ gala.utt.fr/
 │   ├── index.js                     # entry point
 │   └── serviceWorker.js             # generated file for PWA
 ├── .editorconfig                 # define editor options
-├── .env                          # global configuration
-├── .env.local                    # override global configuration (not pushed to repository)
-├── .env.development              # development configuration
-└── .env.development.local        # override development configuration (not pushed to repository)
+└── .env                          # environment variables
 ```
