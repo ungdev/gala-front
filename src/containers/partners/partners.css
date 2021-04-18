@@ -39,6 +39,14 @@
 	opacity: 1;
 }
 
+#partners {
+	background-color: rgba(198, 233, 250, 0.6);
+	margin: auto;
+	max-width: 1220px;
+	height: 100%;
+	padding: 30px 15px 15px 30px;
+}
+
 #partners .partner .partner-image {
 	display: flex;
 	width: calc(100% - 20px);
