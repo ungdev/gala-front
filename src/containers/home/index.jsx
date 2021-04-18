@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Countdown from 'react-countdown-now';
+import Countdown from 'react-countdown';
 import $ from 'jquery';
 
 import axios from '../../utils/axios';
