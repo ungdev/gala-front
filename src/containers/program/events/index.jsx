@@ -31,7 +31,7 @@ class Events extends React.Component {
           ...event,
           start: moment(event.start).format('HH[h ]mm'),
           end: moment(event.end).format('HH[h ]mm'),
-          image: `${process.env.REACT_APP_API}${event.image}`,
+          image: `${import.meta.env.VITE_API_URL}${event.image}`,
         };
       });
 

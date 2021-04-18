@@ -24,7 +24,7 @@ class Program extends React.Component {
     artists = artists.data.map((artist, i) => (
       <Artist
         name={artist.name}
-        image={`${process.env.REACT_APP_API}${artist.image}`}
+        image={`${import.meta.env.VITE_API_URL}${artist.image}`}
         link={artist.link}
         hour={artist.eventDate ? moment(artist.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').format('HH[h]mm') : ''}
         place={artist.eventPlace}
@@ -52,9 +52,8 @@ class Program extends React.Component {
               <i className="fas fa-spinner fa-spin"></i>
             </div>
           ) : (
-                <div className="no-artists">(Les artistes seront bientôt disponibles)</div>
-              )}
-
+            <div className="no-artists">(Les artistes seront bientôt disponibles)</div>
+          )}
         </div>
 
         <br />
@@ -78,7 +77,6 @@ class Program extends React.Component {
           <div className="centered">A venir</div>
         </div>
       </div>
-
     );
   }
 }
