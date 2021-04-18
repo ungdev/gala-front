@@ -11,7 +11,7 @@ const links = [
   },
   {
     title: 'Programme',
-    path: '/program',
+    path: '/programme',
   },
   {
     title: 'Billetterie',
@@ -31,7 +31,7 @@ const links = [
   },
   {
     title: 'Accès',
-    path: '/access',
+    path: '/acces',
   },
   {
     title: 'Contact',

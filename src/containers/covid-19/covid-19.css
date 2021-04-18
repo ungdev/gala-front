@@ -1,11 +1,11 @@
-.billetterie_container {
+#covid-19 .billetterie_container {
   background-color: rgba(198, 233, 250, 0.6);
   margin: auto;
   max-width: 1220px;
   padding: 15px 30px 15px 30px;
 }
 
-.billetterie_container ul li {
+#covid-19 .billetterie_container ul li {
   font-family: 'Fundamental', arial, sans-serif;
 	font-size: 22pt;
 	color: #0A3D60;

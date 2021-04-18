@@ -5,10 +5,9 @@ import axios from '../../utils/axios';
 import Artist from './artist';
 import Events from './events';
 
+import './program.css';
 
-import './programme.css';
-
-class Programme extends React.Component {
+class Program extends React.Component {
   constructor(props) {
     super(props);
 
@@ -84,4 +83,4 @@ class Programme extends React.Component {
   }
 }
 
-export default Programme;
+export default Program;

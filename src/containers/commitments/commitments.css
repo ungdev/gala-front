@@ -1,28 +1,29 @@
-#access {
+#commitments {
     background-color: rgba(198, 233, 250, 0.6);
     margin: auto;
     max-width: 1220px;
     padding: 15px 30px 15px 30px;
 }
 
-a {
+#commitments a {
     color: var(--secondary-color);
 }
 
-.supported-association img {
+#commitments .supported-association img {
     height: 30%;
     display: block;
     margin-right: auto;
     margin-left: auto;
 }
 
-.prevention-images {
+#commitments .prevention-images {
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
- #img-anpaa, #img-revivre {
+
+#commitments #img-anpaa, #img-revivre {
      height: 100px;
      padding-left: 15px;
      padding-right: 15px;

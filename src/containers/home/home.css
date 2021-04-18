@@ -26,11 +26,7 @@
 	width: 100%;
 }
 
-h1 {
-	text-align: center;
-}
-
-.poster-text {
+#home .poster-text {
 	max-width: 1220px;
 	margin: auto;
 	margin-bottom: 30px;
@@ -42,7 +38,7 @@ h1 {
 	text-align: left;
 }
 
-.poster-text h1 {
+#home .poster-text h1 {
 	margin-bottom: 40px;
 }
 
@@ -71,7 +67,7 @@ h1 {
 	transition: all .3s;
 }
 
-.poster-container img {
+#home .poster-container img {
 	width: 55%;
 }
 

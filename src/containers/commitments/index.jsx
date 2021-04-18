@@ -3,12 +3,12 @@ import logoAstree from '../../../src/assets/logo-astree.jpg';
 import logoAnpaa from '../../../src/assets/logo-anpaa-10.png';
 import logoRevivre from '../../../src/assets/logo-revivre.jpg';
 
-import './engagements.css';
+import './commitments.css';
 
-class Engagements extends React.Component {
+class Commitments extends React.Component {
   render() {
     return (
-      <div className="page-container" id="access">
+      <div className="page-container" id="commitments">
         <h1>Engagements</h1>
         <hr />
         <h2 className="title-decoration">Prévention</h2>
@@ -94,4 +94,4 @@ class Engagements extends React.Component {
   }
 }
 
-export default Engagements;
+export default Commitments;
