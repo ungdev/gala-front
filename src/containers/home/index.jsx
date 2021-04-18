@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Countdown from 'react-countdown-now';
+import Countdown from 'react-countdown';
 import $ from 'jquery';
 
 import axios from '../../utils/axios';
@@ -85,7 +85,7 @@ class Home extends React.Component {
 
     partners = partners.data.map((partner, i) => (
       <a href={partner.url} key={i}>
-        <img src={`${import.meta.env.VITE_APP_API}${partner.image}`} alt={partner.name} />
+        <img src={`${import.meta.env.VITE_API_URL}${partner.image}`} alt={partner.name} />
       </a>
     ));
 
@@ -127,7 +127,7 @@ class Home extends React.Component {
 
           <button className={'arrow-button' + (this.state.top ? ' active' : '')} onClick={this.handleArrow}>
             <div className="arrow-icon">
-              <i class="fas fa-chevron-down"></i>
+              <i className="fas fa-chevron-down"></i>
             </div>
           </button>
         </div>

@@ -22,7 +22,7 @@ class Partners extends React.Component {
       <a href={partner.url} className="partner-link" key={i}>
         <div className="partner" data-name={partner.name}>
           <div className="partner-image">
-            <img src={`${import.meta.env.VITE_APP_API}${partner.image}`} alt={partner.name} />
+            <img src={`${import.meta.env.VITE_API_URL}${partner.image}`} alt={partner.name} />
           </div>
         </div>
       </a>

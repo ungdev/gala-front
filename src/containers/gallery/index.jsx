@@ -8,7 +8,6 @@ import './gallery.css';
 import axios from '../../utils/axios';
 
 window.jQuery = $;
-import 'owl.carousel2';
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -29,7 +28,7 @@ class Gallery extends React.Component {
 
   fetchGallery = async () => {
     const uploads = await axios.get('gallery');
-    const imagesUrl = uploads.data.map((name) => import.meta.env.VITE_APP_API + name);
+    const imagesUrl = uploads.data.map((name) => import.meta.env.VITE_API_URL + name);
 
     const images = [];
     const carouselImages = [];
