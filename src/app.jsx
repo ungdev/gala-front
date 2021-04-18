@@ -20,33 +20,33 @@ import Commitments from './containers/commitments';
 import './index.css';
 
 const App = () => (
-	<div id="app">
-		<Router>
-			<ScrollToTop>
-				<Notifications />
+  <div id="app">
+    <Router>
+      <ScrollToTop>
+        <Notifications />
 
-				<Header />
+        <Header />
 
-				<div id="page">
-					<Switch>
-						<Route path="/" exact component={Home} />
-						<Route path="/programme" exact component={Program} />
-						<Route path="/billetterie" exact component={Tickets} />
-						<Route path="/partenaires" exact component={Partners} />
-						<Route path="/engagements" exact component={Commitments} />
-						<Route path="/covid-19" exact component={Covid19} />
-						<Route path="/acces" exact component={access} />
-						<Route path="/contact" exact component={Contact} />
-						<Route path="/mentions-legales" exact component={Legal} />
-						<Route path="/confidentialite" exact component={Privacy} />
-						<Redirect from="*" to="/" />
-					</Switch>
-				</div>
+        <div id="page">
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/programme" exact component={Program} />
+            <Route path="/billetterie" exact component={Tickets} />
+            <Route path="/partenaires" exact component={Partners} />
+            <Route path="/engagements" exact component={Commitments} />
+            <Route path="/covid-19" exact component={Covid19} />
+            <Route path="/acces" exact component={access} />
+            <Route path="/contact" exact component={Contact} />
+            <Route path="/mentions-legales" exact component={Legal} />
+            <Route path="/confidentialite" exact component={Privacy} />
+            <Redirect from="*" to="/" />
+          </Switch>
+        </div>
 
-				<Footer />
-			</ScrollToTop>
-		</Router>
-	</div>
+        <Footer />
+      </ScrollToTop>
+    </Router>
+  </div>
 );
 
 export default App;

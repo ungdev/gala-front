@@ -26,14 +26,12 @@ class Events extends React.Component {
 
         return date1 === date2 ? 0 : date1 < date2 ? -1 : 1;
       })
-      .map((event) => {
-        return {
-          ...event,
-          start: moment(event.start).format('HH[h ]mm'),
-          end: moment(event.end).format('HH[h ]mm'),
-          image: `${import.meta.env.VITE_API_URL}${event.image}`,
-        };
-      });
+      .map((event) => ({
+        ...event,
+        start: moment(event.start).format('HH[h ]mm'),
+        end: moment(event.end).format('HH[h ]mm'),
+        image: `${import.meta.env.VITE_API_URL}${event.image}`,
+      }));
 
     events = events.map((event, i) => (
       <div className="event" key={i}>

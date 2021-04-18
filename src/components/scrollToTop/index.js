@@ -9,17 +9,17 @@ class ScrollToTop extends React.Component {
   }
 
   componentDidMount() {
-    this.unlisten = this.props.history.listen((location, action) => {
+    this.unlisten = this.props.history.listen(() => {
       document.getElementsByTagName('body')[0].scrollTop = 0;
     });
   }
   componentWillUnmount() {
-      this.unlisten();
+    this.unlisten();
   }
 
-	render() {
-		return this.props.children || null;
-	}
+  render() {
+    return this.props.children || null;
+  }
 }
 
 export default withRouter(ScrollToTop);

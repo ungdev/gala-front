@@ -39,54 +39,30 @@ class access extends React.Component {
           <strong>Depuis Paris</strong>
         </p>
         <ul className="access-list">
-          <li>
-            Autoroute A5 : sortie n°20 (Sainte Savine)
-          </li>
-          <li>
-            N60 direction Troyes
-          </li>
-          <li>
-            Rocade de contournement
-          </li>
-          <li>
-            Suivre Technopole de l’Aube
-          </li>
+          <li>Autoroute A5 : sortie n°20 (Sainte Savine)</li>
+          <li>N60 direction Troyes</li>
+          <li>Rocade de contournement</li>
+          <li>Suivre Technopole de l’Aube</li>
         </ul>
 
         <p>
           <strong>Depuis Reims</strong>
         </p>
         <ul className="access-list">
-          <li>
-            Autoroute A26 : sortie n°21 (Saint Thibault)
-          </li>
-          <li>
-            N71 direction Troyes
-          </li>
-          <li>
-            Rocade de contournement
-          </li>
-          <li>
-            Suivre Technopole de l’Aube
-          </li>
+          <li>Autoroute A26 : sortie n°21 (Saint Thibault)</li>
+          <li>N71 direction Troyes</li>
+          <li>Rocade de contournement</li>
+          <li>Suivre Technopole de l’Aube</li>
         </ul>
 
         <p>
           <strong>Depuis Dijon</strong>
         </p>
         <ul className="access-list">
-          <li>
-            Autoroute A5 : sortie n°21 (Saint Thibault)
-          </li>
-          <li>
-            N71 direction Troyes
-          </li>
-          <li>
-            Rocade de contournement
-          </li>
-          <li>
-            Suivre Technopole de l’Aube
-          </li>
+          <li>Autoroute A5 : sortie n°21 (Saint Thibault)</li>
+          <li>N71 direction Troyes</li>
+          <li>Rocade de contournement</li>
+          <li>Suivre Technopole de l’Aube</li>
         </ul>
 
         <p>
