@@ -16,7 +16,6 @@ class Tickets extends React.Component {
   render() {
     return (
       <div className="page-container" id="tickets">
-
         <br />
         {Conditions}
 
@@ -25,7 +24,6 @@ class Tickets extends React.Component {
         {/* <a className="tickets-button button" href="https://www.billetweb.fr/cassiopee-gala-utt" target="_blank" rel="noopener noreferrer">
           Achetez vos billets
     </a>*/}
-
       </div>
     );
   }

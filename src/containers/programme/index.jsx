@@ -5,7 +5,6 @@ import axios from '../../utils/axios';
 import Artist from './artist';
 import Events from './events';
 
-
 import './programme.css';
 
 class Programme extends React.Component {
@@ -53,9 +52,8 @@ class Programme extends React.Component {
               <i className="fas fa-spinner fa-spin"></i>
             </div>
           ) : (
-                <div className="no-artists">(Les artistes seront bientôt disponibles)</div>
-              )}
-
+            <div className="no-artists">(Les artistes seront bientôt disponibles)</div>
+          )}
         </div>
 
         <br />
@@ -79,7 +77,6 @@ class Programme extends React.Component {
           <div className="centered">A venir</div>
         </div>
       </div>
-
     );
   }
 }
