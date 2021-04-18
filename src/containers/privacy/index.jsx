@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './privacy.css';
-
 class Privacy extends React.Component {
   render() {
     return (
