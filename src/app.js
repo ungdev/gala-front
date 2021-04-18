@@ -10,7 +10,7 @@ import Home from './containers/home';
 import Programme from './containers/programme';
 import Tickets from './containers/tickets';
 import Partners from './containers/partners';
-import Gallery from './containers/gallery';
+import Covid19 from './containers/covid-19';
 import access from './containers/access';
 import Contact from './containers/contact';
 import Legal from './containers/legal';
@@ -34,7 +34,7 @@ const App = () => (
 						<Route path="/billetterie" exact component={Tickets} />
 						<Route path="/partenaires" exact component={Partners} />
 						<Route path="/engagements" exact component={Engagements} />
-						<Route path="/galerie" exact component={Gallery} />
+						<Route path="/covid-19" exact component={Covid19} />
 						<Route path="/access" exact component={access} />
 						<Route path="/contact" exact component={Contact} />
 						<Route path="/mentions-legales" exact component={Legal} />
