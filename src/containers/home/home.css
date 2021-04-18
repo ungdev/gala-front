@@ -148,7 +148,6 @@ h1 {
 	top: 0;
 	left: 50%;
 	transform: translate(-50%);
-	color: #272727;
 }
 
 #home .partners-carousel-container {
@@ -162,7 +161,7 @@ h1 {
 #home .partners-carousel-arrow-right {
 	position: absolute;
 	top: 50%;
-	color: #444;
+	color: #083E60;
 	font-size: 50px;
 	padding: 20px;
 	cursor: pointer;
