@@ -26,20 +26,18 @@ class Events extends React.Component {
 
         return date1 === date2 ? 0 : date1 < date2 ? -1 : 1;
       })
-      .map((event) => {
-        return {
-          ...event,
-          start: moment(event.start).format('HH[h ]mm'),
-          end: moment(event.end).format('HH[h ]mm'),
-          image: `${import.meta.env.VITE_API_URL}${event.image}`,
-        };
-      });
+      .map((event) => ({
+        ...event,
+        start: moment(event.start).format('HH[h ]mm'),
+        end: moment(event.end).format('HH[h ]mm'),
+        image: `${import.meta.env.VITE_API_URL}${event.image}`,
+      }));
 
     events = events.map((event, i) => (
       <div className="event" key={i}>
         <div className="event-dates">
           <div className="event-start">{event.start}</div>
-          <div className="event-date-line"></div>
+          <div className="event-date-line" />
           <div className="event-end">{event.end}</div>
         </div>
         <div className="event-image">
@@ -65,7 +63,7 @@ class Events extends React.Component {
           this.state.events
         ) : this.state.events === null ? (
           <div className="events-loader">
-            <i className="fas fa-spinner fa-spin"></i>
+            <i className="fas fa-spinner fa-spin" />
           </div>
         ) : (
           <div className="no-events">(Les événements seront bientôt disponibles)</div>

@@ -126,9 +126,9 @@ class Home extends React.Component {
         <div className="poster-container">
           <img src={posterImg} alt="" className="poster" />
 
-          <button className={'arrow-button' + (this.state.top ? ' active' : '')} onClick={this.handleArrow}>
+          <button className={`arrow-button${this.state.top ? ' active' : ''}`} onClick={this.handleArrow}>
             <div className="arrow-icon">
-              <i className="fas fa-chevron-down"></i>
+              <i className="fas fa-chevron-down" />
             </div>
           </button>
         </div>
@@ -205,10 +205,10 @@ class Home extends React.Component {
           <h2>Nos Partenaires</h2>
 
           {this.state.partners && this.state.partners.length ? (
-            <React.Fragment>
+            <>
               <div className="partners-carousel-container">
-                <i className="partners-carousel-arrow-left fas fa-chevron-left" onClick={this.carouselPrev}></i>
-                <i className="partners-carousel-arrow-right fas fa-chevron-right" onClick={this.carouselNext}></i>
+                <i className="partners-carousel-arrow-left fas fa-chevron-left" onClick={this.carouselPrev} />
+                <i className="partners-carousel-arrow-right fas fa-chevron-right" onClick={this.carouselNext} />
 
                 <div className="owl-carousel partners-carousel">{this.state.partners}</div>
               </div>
@@ -218,10 +218,10 @@ class Home extends React.Component {
                   Tous les partenaires
                 </Link>
               </div>
-            </React.Fragment>
+            </>
           ) : this.state.partners === null ? (
             <div className="partners-loader">
-              <i className="fas fa-spinner fa-spin"></i>
+              <i className="fas fa-spinner fa-spin" />
             </div>
           ) : (
             <div className="no-partners">(Les partenaires seront bientôt disponibles)</div>

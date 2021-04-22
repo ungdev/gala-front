@@ -56,12 +56,10 @@ class Tickets extends React.Component {
           <h2 className="title-decoration">Sécurité</h2>
           <p>
             Les dispositifs dangereux tels que les armes à feu ou les armes blanches sont interdits à l'intérieur du
-            Gala, sans exception. <strong>Une fouille sera réalisée avant toute entrée</strong>, provoquant la confiscation
-            de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
+            Gala, sans exception. <strong>Une fouille sera réalisée avant toute entrée</strong>, provoquant la
+            confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
           </p>
-          <button className="tickets-button button">
-            La billetterie est fermée
-          </button>
+          <button className="tickets-button button">La billetterie est fermée</button>
         </div>
       </div>
     );

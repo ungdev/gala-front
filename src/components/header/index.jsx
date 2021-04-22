@@ -105,14 +105,14 @@ class Header extends React.Component {
 
     return (
       <header>
-        <div className={'header-content' + (transparent ? ' transparent' : '')}>
+        <div className={`header-content${transparent ? ' transparent' : ''}`}>
           <nav className={this.state.mobileMenuActive ? 'active' : ''}>
             <div className="mobile-hamburger-menu" onClick={this.toggleMobileMenu}>
               {/* Cross symbol */}
               <div>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span />
+                <span />
+                <span />
               </div>
             </div>
 

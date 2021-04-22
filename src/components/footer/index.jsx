@@ -22,20 +22,21 @@ class Footer extends React.Component {
 
         <div className="social-links">
           <a className="social-facebook" href="https://www.facebook.com/gala.utt">
-            <i className="fab fa-facebook-f"></i>
+            <i className="fab fa-facebook-f" />
           </a>
           <a className="social-youtube" href="https://www.youtube.com/channel/UCLprjLc5CJMNUjSolrTyu4g">
-            <i className="fab fa-youtube"></i>
+            <i className="fab fa-youtube" />
           </a>
           <Link className="social-contact" to="/contact">
-            <i className="far fa-envelope"></i>
-            <i className="far fa-envelope-open open"></i>
+            <i className="far fa-envelope" />
+            <i className="far fa-envelope-open open" />
           </Link>
         </div>
 
         <small>
           <div className="copyright">
-            <i className="far fa-copyright"></i>Tous droits réservés - Gala UTT 2021
+            <i className="far fa-copyright" />
+            Tous droits réservés - Gala UTT 2021
           </div>
 
           <div className="links">

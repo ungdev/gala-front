@@ -5,10 +5,10 @@ import './inputField.css';
 let lastGeneratedId = 0;
 
 const InputField = (props) => {
-	const id = lastGeneratedId++;
+  const id = lastGeneratedId++;
 
-	return (
-		<span className={`input-field ${props.className || ''}`}>
+  return (
+    <span className={`input-field ${props.className || ''}`}>
       <input
         type="text"
         onChange={(e) => props.onChange(e.target.value)}
@@ -20,12 +20,12 @@ const InputField = (props) => {
         {props.placeholder}
       </label>
 
-      <div className={'input-field-error' + (props.error ? ' active' : '')}>
-        <i className="fas fa-exclamation-triangle error-icon"></i>
+      <div className={`input-field-error${props.error ? ' active' : ''}`}>
+        <i className="fas fa-exclamation-triangle error-icon" />
         <div className="error-content">{props.error}</div>
       </div>
-		</span>
-	);
+    </span>
+  );
 };
 
 export default InputField;
