@@ -1,3 +1,14 @@
+#access {
+  max-width: 1220px;
+	margin: auto;
+	margin-bottom: 30px;
+	padding: 40px 20px 10px 20px;
+	line-height: 1.6em;
+	color: #fff;
+	background-color: rgba(198,233,250,0.6);
+	text-align: left;
+}
+
 #access .plan-container {
   width: 100%;
   position: relative;

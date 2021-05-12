@@ -1,17 +1,29 @@
 #contact {
+	max-width: 1220px;
+	height: 100%;
+	margin: auto;
+	margin-bottom: 30px;
+	padding: 40px 20px 10px 20px;
+	line-height: 1.6em;
+	color: #fff;
+	background-color: rgba(198,233,250,0.6);
+	text-align: left;
+}
+
+#contact .content {
 	max-width: 500px;
 	margin: auto;
 }
 
-#contact .contact-name-field {
+#contact .content .contact-name-field {
 	margin-right: 20px;
 }
 
-#contact .contact-textarea {
+#contact .content .contact-textarea {
 	width: 100%;
 }
 
-#contact .contact-submit-button {
+#contact .content .contact-submit-button {
 	margin-top: 30px;
 	text-align: right;
 }

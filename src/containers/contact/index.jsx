@@ -111,6 +111,7 @@ class Contact extends React.Component {
   render() {
     return (
       <div className="page-container" id="contact">
+        <div className="content">
         <h1>Contact</h1>
         <hr />
 
@@ -155,6 +156,7 @@ class Contact extends React.Component {
         />
 
         <SubmitButton className="contact-submit-button" onClick={this.submit} status={this.state.buttonStatus} />
+        </div>
       </div>
     );
   }
