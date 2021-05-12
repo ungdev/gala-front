@@ -13,10 +13,17 @@
 #contact .content {
 	max-width: 500px;
 	margin: auto;
+	display: flex;
+	flex-direction: column;
 }
 
-#contact .content .contact-name-field {
-	margin-right: 20px;
+#contact .content #input_fields {
+	display: flex;
+	justify-content: space-between;
+}
+
+#contact .content #input_fields #input-field-2 {
+	width: 100%;
 }
 
 #contact .content .contact-textarea {

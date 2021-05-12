@@ -116,7 +116,7 @@ class Contact extends React.Component {
         <hr />
 
         <Notification status={this.state.notificationStatus}>{this.state.notificationText}</Notification>
-
+        <div id="input_fields">
         <InputField
           placeholder="Nom"
           className="contact-name-field"
@@ -132,6 +132,7 @@ class Contact extends React.Component {
 
         <InputField
           placeholder="Email"
+          className="contact-name-field"
           onChange={(email) =>
             this.setState({
               email,
@@ -141,6 +142,7 @@ class Contact extends React.Component {
           value={this.state.email}
           error={this.state.errorFields.email}
         />
+        </div>
 
         <Textarea
           placeholder="Message"
