@@ -5,7 +5,7 @@
 	cursor: pointer;
 	padding: 14px 20px 14px 44px;
 	outline: none;
-	font-size: 16px;
+	font-size: inherit;
 	font-family: 'Roboto', arial, sans-serif;
 	border: none;
 	border-radius: 0;

@@ -13,7 +13,7 @@
 	padding: 8px;
 	color: #fff;
 	background: rgba(255, 255, 255, 0.1);
-	font-size: 16px;
+	font-size: inherit;
 	font-family: 'Roboto', arial, sans-serif;
 	width: calc(100% - 16px);
 	outline: none;
@@ -43,7 +43,7 @@
 .textarea textarea:not(:empty) + .textarea-placeholder,
 .textarea textarea:focus + .textarea-placeholder {
 	top: -18px;
-	font-size: 13px;
+	font-size: 12px;
 	left: -8px;
 	cursor: default;
 }
