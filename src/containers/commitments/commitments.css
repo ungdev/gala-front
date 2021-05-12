@@ -9,6 +9,10 @@
     color: var(--secondary-color);
 }
 
+#commitments li {
+    color: #083e60;
+}
+
 #commitments .supported-association img {
     height: 30%;
     display: block;
