@@ -167,37 +167,15 @@ class Home extends React.Component {
           <div className="poster-text">
             <h1>À propos de Cassiopée</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
+            Cassiopée Day Edition est un événement géré par l'association Gala UTT de l'Université de Technologie de Troyes qui organise tous les ans une soirée incontournable dans le Grand Est.
             </p>
             <p>
-              Cras tincidunt lobortis feugiat vivamus at augue. Elit at imperdiet dui accumsan sit amet nulla facilisi.
-              Malesuada proin libero nunc consequat. Sit amet aliquam id diam maecenas ultricies mi eget mauris.
-              Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Vitae tortor condimentum
-              lacinia quis vel eros donec ac odio. In fermentum posuere urna nec tincidunt praesent semper. Et egestas
-              quis ipsum suspendisse ultrices gravida. Viverra suspendisse potenti nullam ac tortor vitae. Aenean
-              euismod elementum nisi quis eleifend. Quis eleifend quam adipiscing vitae. Amet luctus venenatis lectus
-              magna fringilla urna. Vel fringilla est ullamcorper eget nulla facilisi. Cursus eget nunc scelerisque
-              viverra mauris in aliquam sem. Pharetra vel turpis nunc eget lorem dolor sed viverra. Sit amet cursus sit
-              amet dictum sit amet justo. Hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit
-              ullamcorper. Scelerisque eleifend donec pretium vulputate. Morbi blandit cursus risus at ultrices. Sapien
-              faucibus et molestie ac feugiat sed lectus vestibulum. Sed libero enim sed faucibus turpis. Integer vitae
-              justo eget magna fermentum. Enim diam vulputate ut pharetra sit amet. Leo vel fringilla est ullamcorper
-              eget nulla. Massa tempor nec feugiat nisl pretium fusce. Mauris ultrices eros in cursus turpis.
-              Suspendisse potenti nullam ac tortor vitae. Molestie a iaculis at erat pellentesque adipiscing commodo
-              elit at. Lorem ipsum dolor sit amet consectetur. Risus at ultrices mi tempus imperdiet nulla malesuada
-              pellentesque elit. Felis donec et odio pellentesque diam. Viverra ipsum nunc aliquet bibendum. Nullam ac
-              tortor vitae purus faucibus ornare. Sed ullamcorper morbi tincidunt ornare. A arcu cursus vitae congue.
-              Aenean sed adipiscing diam donec adipiscing tristique risus nec. Tellus at urna condimentum mattis. Augue
-              eget arcu dictum varius duis at consectetur. Volutpat sed cras ornare arcu dui. Donec ac odio tempor orci
-              dapibus ultrices in iaculis. Risus sed vulputate odio ut. Tortor aliquam nulla facilisi cras fermentum.
-              Consequat nisl vel pretium lectus. Interdum consectetur libero id faucibus nisl tincidunt eget. Laoreet
-              sit amet cursus sit amet. Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam. Turpis
-              in eu mi bibendum. In ornare quam viverra orci sagittis. Euismod nisi porta lorem mollis.
+            Cette année Cassiopée aura lieu sous un format exceptionnel et gratuit, réunissant tous types d'invités pour un après-midi de concerts et de découvertes sur le thème d'Atlantide entre 14h30 et 19h !
             </p>
+            <p>
+            Trois scènes étudiantes, deux stands de restauration, un stand de champagne et deux animations originales, cet évènement ne pourra que vous séduire…
+            </p>
+
           </div>
         </div>
 
