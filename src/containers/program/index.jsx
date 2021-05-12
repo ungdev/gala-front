@@ -57,11 +57,6 @@ class Program extends React.Component {
         </div>
 
         <br />
-        <div id="eat">
-          <h1>Espaces à thème</h1>
-          <hr />
-          <div className="centered">A venir</div>
-        </div>
 
         <br />
         <div id="animations">
