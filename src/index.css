@@ -4,7 +4,7 @@
 
 @font-face {
 	font-family: 'Fundamental';
-	src: url(/fonts/Fundamental\ Brigade.ttf);
+	src: url('/fonts/Fundamental-Brigade.ttf');
 }
 
 #root {
