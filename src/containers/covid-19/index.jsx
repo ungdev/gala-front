@@ -26,7 +26,10 @@ class Covid19 extends React.Component {
             <li>Communication régulière avec les autorités locales.</li>
           </ul>
 
-          <p>Les masques seront obligatoires dans toute l’enceinte de l'événement et les gestes barrières devront être respectés.</p>
+          <p>
+            Les masques seront obligatoires dans toute l’enceinte de l'événement et les gestes barrières devront être
+            respectés.
+          </p>
         </div>
       </div>
     );

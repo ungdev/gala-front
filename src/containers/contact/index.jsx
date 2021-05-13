@@ -112,52 +112,52 @@ class Contact extends React.Component {
     return (
       <div className="page-container" id="contact">
         <div className="content">
-        <h1>Contact</h1>
-        <hr />
+          <h1>Contact</h1>
+          <hr />
 
-        <Notification status={this.state.notificationStatus}>{this.state.notificationText}</Notification>
-        <div id="input_fields">
-        <InputField
-          placeholder="Nom"
-          className="contact-name-field"
-          onChange={(name) =>
-            this.setState({
-              name,
-              errorFields: { ...this.state.errorFields, name: '' },
-            })
-          }
-          value={this.state.name}
-          error={this.state.errorFields.name}
-        />
+          <Notification status={this.state.notificationStatus}>{this.state.notificationText}</Notification>
+          <div id="input_fields">
+            <InputField
+              placeholder="Nom"
+              className="contact-name-field"
+              onChange={(name) =>
+                this.setState({
+                  name,
+                  errorFields: { ...this.state.errorFields, name: '' },
+                })
+              }
+              value={this.state.name}
+              error={this.state.errorFields.name}
+            />
 
-        <InputField
-          placeholder="Email"
-          className="contact-name-field"
-          onChange={(email) =>
-            this.setState({
-              email,
-              errorFields: { ...this.state.errorFields, email: '' },
-            })
-          }
-          value={this.state.email}
-          error={this.state.errorFields.email}
-        />
-        </div>
+            <InputField
+              placeholder="Email"
+              className="contact-name-field"
+              onChange={(email) =>
+                this.setState({
+                  email,
+                  errorFields: { ...this.state.errorFields, email: '' },
+                })
+              }
+              value={this.state.email}
+              error={this.state.errorFields.email}
+            />
+          </div>
 
-        <Textarea
-          placeholder="Message"
-          className="contact-textarea"
-          onChange={(message) =>
-            this.setState({
-              message,
-              errorFields: { ...this.state.errorFields, message: '' },
-            })
-          }
-          value={this.state.message}
-          error={this.state.errorFields.message}
-        />
+          <Textarea
+            placeholder="Message"
+            className="contact-textarea"
+            onChange={(message) =>
+              this.setState({
+                message,
+                errorFields: { ...this.state.errorFields, message: '' },
+              })
+            }
+            value={this.state.message}
+            error={this.state.errorFields.message}
+          />
 
-        <SubmitButton className="contact-submit-button" onClick={this.submit} status={this.state.buttonStatus} />
+          <SubmitButton className="contact-submit-button" onClick={this.submit} status={this.state.buttonStatus} />
         </div>
       </div>
     );
