@@ -12,52 +12,28 @@ class Tickets extends React.Component {
             <hr />
           </div>
 
-          <p className="centered">Veuillez lire attentivement les conditions d'entrée avant d'acheter votre billet.</p>
+          <p className="centered">
+            Veuillez lire attentivement les conditions d'entrée avant de vous inscrire.
+            Afin de respecter une jauge de 1000 participants, l’inscription gratuite est obligatoire pour accéder à l’événement.
+          </p>
 
           <h2 className="title-decoration">Vêtements</h2>
-          <p>Une tenue de Gala est exigée. Un vestiaire gratuit sera mis à votre disposition toute la soirée.</p>
-          <p>Sont autorisés :</p>
-          <ul>
-            <li>Robe de soirée ou tailleur</li>
-            <li>Costume</li>
-            <li>Chemise</li>
-            <li>Pantalon en toile</li>
-            <li>Chaussures propres</li>
-          </ul>
-          <p>Sont prohibés :</p>
-          <ul>
-            <li>Jeans</li>
-            <li>Survêtements (Eh oui mamène désolé !!)</li>
-            <li>Chaussures de sport (baskets)</li>
-          </ul>
-          <p>
-            <strong>
-              Toute personne ne respectant pas le code vestimentaire de la soirée pourra se voir refuser l'entrée par
-              les organisateurs.
-            </strong>
-          </p>
+          <p>Venez comme vous êtes, sans oublier votre masque !</p>
 
           <h2 className="title-decoration">Identité</h2>
           <p>
-            Une pièce d'identité (permis de conduire, carte d'identité ou passeport) ainsi que le billet sont
-            nécessaires afin de pouvoir entrer au sein de l'événement (les places étant nominatives).
-          </p>
-          <p>
-            Veuillez noter que l'entrée est <strong>interdite aux mineurs</strong> hors UTT, même avec autorisation d'un
-            responsable légal.
+            Une pièce d'identité (permis de conduire, carte d'identité ou passeport) est nécessaire afin de pouvoir entrer au sein de l'événement, les places étant nominatives.
           </p>
           <p>
             <strong>Les organisateurs se réservent le droit d'accès.</strong>
           </p>
 
           <h2 className="title-decoration">Horaires</h2>
-          <p>Ouverture des portes à 20h. Fin des entrées à 2h. Fin de l'événement à 5h.</p>
+          <p>Ouverture de l’événement à 14h30. Début des concerts à 15h. Fermeture de l’événement à 19h.</p>
 
           <h2 className="title-decoration">Sécurité</h2>
           <p>
-            Les dispositifs dangereux tels que les armes à feu ou les armes blanches sont interdits à l'intérieur du
-            Gala, sans exception. <strong>Une fouille sera réalisée avant toute entrée</strong>, provoquant la
-            confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
+            Les dispositifs dangereux tels que les armes à feu, les armes blanches ou les objets contondants sont interdits à l'intérieur du Gala, sans exception. <strong>Une fouille sera réalisée avant toute entrée</strong>, provoquant la confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
           </p>
           <button className="tickets-button button">La billetterie est fermée</button>
         </div>

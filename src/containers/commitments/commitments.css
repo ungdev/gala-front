@@ -10,7 +10,9 @@
 }
 
 #commitments li {
-    color: #083e60;
+  font-family: 'Fundamental', arial, sans-serif;
+	color: #0A3D60;
+	text-align: justify;
 }
 
 #commitments .supported-association img {

@@ -20,7 +20,7 @@
 html {
 	background: radial-gradient(at top right,#43B9D5 0%, #22749C 100%);
 	font-family: 'Roboto', arial, sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	height: 100%;
 }
 
@@ -67,7 +67,6 @@ h2, h3 {
 
 p {
 	font-family: 'Fundamental', arial, sans-serif;
-	font-size: 18px;
 	color: #0A3D60;
 	text-align: justify;
 }

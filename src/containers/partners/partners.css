@@ -26,7 +26,6 @@
 	color: #fff;
 	opacity: 0;
 	background: var(--secondary-color);
-	font-size: 18px;
 	padding: 10px 15px;
 	transition: all .3s;
 }
