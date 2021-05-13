@@ -1,21 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Countdown from 'react-countdown';
-import $ from 'jquery';
+import OwlCarousel from 'react-owl-carousel';
 
 import axios from '../../utils/axios';
 import posterImg from '../../assets/Logo_day_edition.png';
 
-import 'owl.carousel2/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.carousel.css';
 import './home.css';
-
-window.jQuery = $;
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.carousel = null;
+    this.carouselRef = React.createRef();
     this.carouselInterval = null;
 
     this.state = {
@@ -24,6 +22,11 @@ class Home extends React.Component {
     };
 
     this.fetchPartners();
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.scrollHandle, { passive: true });
+    window.addEventListener('touchmove', this.scrollHandle, { passive: true });
   }
 
   componentWillUnmount() {
@@ -46,19 +49,22 @@ class Home extends React.Component {
   clearCarouselInterval = () => {
     if (this.carouselInterval) {
       window.clearInterval(this.carouselInterval);
+      this.carouselInterval = null;
     }
   };
 
   setCarouselInterval = () => {
-    this.carouselInterval = window.setInterval(() => {
-      if (this.carousel) {
-        this.carousel.trigger('next.owl.carousel', [1200]);
-      }
-    }, 2000);
+    if (!this.carouselInterval) {
+      this.carouselInterval = window.setInterval(() => {
+        if (this.carouselRef.current) {
+          this.carouselRef.current.next(1200);
+        }
+      }, 2000);
+    }
   };
 
   carouselPrev = () => {
-    this.carousel.trigger('prev.owl.carousel', [300]);
+    this.carouselRef.current.prev(300);
 
     // Reset carousel interval
     this.clearCarouselInterval();
@@ -66,7 +72,7 @@ class Home extends React.Component {
   };
 
   carouselNext = () => {
-    this.carousel.trigger('next.owl.carousel', [300]);
+    this.carouselRef.current.next(300);
 
     // Reset carousel interval
     this.clearCarouselInterval();
@@ -93,34 +99,9 @@ class Home extends React.Component {
     this.setState({
       partners,
     });
-
-    this.createCarousel();
   };
 
-  createCarousel() {
-    this.carousel = $('.owl-carousel');
-
-    this.carousel.owlCarousel({
-      responsive: {
-        0: { items: 2 },
-        400: { items: 3 },
-        550: { items: 4 },
-        800: { items: 5 },
-        1000: { items: 6 },
-      },
-      loop: true,
-      smartSpeed: 500,
-      onDrag: this.clearCarouselInterval,
-      onDragged: this.setCarouselInterval,
-    });
-
-    this.setCarouselInterval();
-
-    window.addEventListener('scroll', this.scrollHandle, { passive: true });
-    window.addEventListener('touchmove', this.scrollHandle, { passive: true });
-  }
-
-  render() {
+  render = () => {
     return (
       <div id="home">
         <div className="poster-container">
@@ -188,7 +169,24 @@ class Home extends React.Component {
                 <i className="partners-carousel-arrow-left fas fa-chevron-left" onClick={this.carouselPrev} />
                 <i className="partners-carousel-arrow-right fas fa-chevron-right" onClick={this.carouselNext} />
 
-                <div className="owl-carousel partners-carousel">{this.state.partners}</div>
+                <OwlCarousel
+                  responsive={{
+                    0: { items: 2 },
+                    400: { items: 3 },
+                    550: { items: 4 },
+                    800: { items: 5 },
+                    1000: { items: 6 },
+                  }}
+                  loop={true}
+                  smartSpeed={500}
+                  onLoad={this.setCarouselInterval}
+                  onDrag={this.clearCarouselInterval}
+                  onDragged={this.setCarouselInterval}
+                  className="partners-carousel"
+                  ref={this.carouselRef}
+                >
+                  {this.state.partners}
+                </OwlCarousel>
               </div>
 
               <div className="centered">
