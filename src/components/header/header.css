@@ -35,7 +35,7 @@ header nav ul a {
 	position: relative;
 	display: inline-block;
 	text-decoration: none;
-	background: rgba(9,78,111,0.6);
+	background: #1f7594;
 	font-family: 'Fundamental';
 	height: 100%;
 	padding: 0 10px;

@@ -8,7 +8,7 @@
 	border: none;
 	border-radius: 0;
 	padding: 8px;
-	color: #fff;
+	color: var(--secondary-color);
 	background: rgba(255, 255, 255, 0.1);
 	font-size: inherit;
 	font-family: 'Roboto', arial, sans-serif;
@@ -26,7 +26,7 @@
 	top: 50%;
 	left: 0;
 	transform: translate(0, -50%);
-	color: #cecece;
+	color: var(--secondary-color);
 	padding: 0 8px;
 	user-select: none;
 	cursor: text;
