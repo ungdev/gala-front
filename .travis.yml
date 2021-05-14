@@ -3,7 +3,7 @@ node_js:
   - 14
 branches:
   only:
-    - prod
+    - master
     - dev
 cache: yarn
 script:
@@ -16,7 +16,7 @@ deploy:
     server: '$OPENSHIFT_SERVER'
     project: gala
     app:
-      prod: gala-website-front-prod
+      master: gala-website-front-prod
       dev: gala-website-front-dev
     token: '$OPENSHIFT_TOKEN'
     edge: true
