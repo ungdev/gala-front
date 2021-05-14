@@ -11,7 +11,7 @@ const links = [
   },
   {
     title: 'Programme',
-    path: '/program',
+    path: '/programme',
   },
   {
     title: 'Billetterie',
@@ -26,12 +26,12 @@ const links = [
     path: '/engagements',
   },
   {
-    title: 'Galerie',
-    path: '/galerie',
+    title: 'COVID-19',
+    path: '/covid-19',
   },
   {
     title: 'Accès',
-    path: '/access',
+    path: '/acces',
   },
   {
     title: 'Contact',
@@ -105,14 +105,14 @@ class Header extends React.Component {
 
     return (
       <header>
-        <div className={'header-content' + (transparent ? ' transparent' : '')}>
+        <div className={`header-content${transparent ? ' transparent' : ''}`}>
           <nav className={this.state.mobileMenuActive ? 'active' : ''}>
             <div className="mobile-hamburger-menu" onClick={this.toggleMobileMenu}>
               {/* Cross symbol */}
               <div>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span />
+                <span />
+                <span />
               </div>
             </div>
 

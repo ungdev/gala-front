@@ -22,7 +22,7 @@
 }
 
 .notification.success {
-	background: #bc167c;
+	background: var(--secondary-color);
 }
 
 .notification::before {

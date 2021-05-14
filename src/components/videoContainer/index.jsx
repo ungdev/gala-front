@@ -2,7 +2,7 @@ import React from 'react';
 
 import './videoContainer.css';
 
-export default (props) => (
+const VideoContainer = (props) => (
   <div className="video-container" style={props.style}>
     <div className="video-container-ratio">
       <div className="video-container-full">
@@ -11,8 +11,11 @@ export default (props) => (
           src={props.src}
           frameBorder="0"
           allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture"
-          allowFullScreen></iframe>
+          allowFullScreen
+        />
       </div>
     </div>
   </div>
 );
+
+export default VideoContainer;

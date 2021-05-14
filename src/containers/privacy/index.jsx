@@ -1,12 +1,10 @@
 import React from 'react';
 
-import './privacy.css';
-
 class Privacy extends React.Component {
   render() {
     return (
       <div className="page-container" id="privacy">
-        <h1 className="centered">Politique de confidentialité</h1>
+        <h1>Politique de confidentialité</h1>
         <hr />
 
         <p>

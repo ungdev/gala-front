@@ -8,9 +8,9 @@
 	border: none;
 	border-radius: 0;
 	padding: 8px;
-	color: #fff;
+	color: var(--secondary-color);
 	background: rgba(255, 255, 255, 0.1);
-	font-size: 16px;
+	font-size: inherit;
 	font-family: 'Roboto', arial, sans-serif;
 	outline: none;
 	box-shadow: 0 1px 0 0 #707070;
@@ -21,26 +21,26 @@
 	box-shadow: 0 3px 0 0 var(--secondary-color);
 }
 
-.input-field-placeholder {
+.input-field .input-field-placeholder {
 	position: absolute;
 	top: 50%;
 	left: 0;
 	transform: translate(0, -50%);
-	color: #cecece;
+	color: var(--secondary-color);
 	padding: 0 8px;
 	user-select: none;
 	cursor: text;
 	transition: all .3s;
 }
 
-.input-field-placeholder label {
+.input-field .input-field-placeholder label {
 	cursor: text;
 }
 
 .input-field input:not([value=""]) + .input-field-placeholder,
 .input-field input:focus + .input-field-placeholder {
 	top: -12px;
-	font-size: 13px;
+	font-size: 12px;
 	left: -8px;
 	cursor: default;
 }

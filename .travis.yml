@@ -1,22 +1,22 @@
 language: node_js
 node_js:
-- 13
+  - 14
 branches:
   only:
-  - prod
-  - dev
+    - prod
+    - dev
 cache: yarn
 script:
-- yarn
+  - yarn lint
 notifications:
   slack:
-    secure: UpjpGwr8ssAI8ZDdpo0YK4B02d9pXpR01bDg1osOpyu7tf6H0fI+yr6Y3sPpRkhaA1AtaCbL/Kl0tUtneMtaVqhvbPkmKIVpkEU/nwOp+ZUUbsMgKdlKhrX0R+9sOek9GoNoumx6eNVIqQEdYfg7YEkpZXaH5/MJYTrJ8q98NiwMfLnqJ0ZsJYTUTTyQ06YkPaJunxTxe3tXfISj2O9u2WxOYSchpllU1s/PQy4A8y6eDKCNcZ0M9L7KCbkYuxw0hLWXJu59FyUAWHUl8VW32+fkEUUixW5L69vHJKlHrSnzBsIxRKAYMK88wEPA2cOQBt8Q6YXvUQrdB4Vw4RjZcWg5QxE2oxZqDp65SBz6dRAsky8QtCt9HaTHbwJ6UuxH9NXLL+7Ay7NUsfcM+cBs/xXCQ9FZsgDC4hrRohCNZH+jiL657J8ahjBb1AxvxeFBbBAYSYNSwhQWPAgXqAaJHSDcGpek1UMqaLefn7q4xg+UD6QH+mDpJJ+L45Nr8WRv/W+pt/wUCmNsdg/Oi32PRV+nyxW8IN5hn+KnB0ypwiniKQmuiwXh1Id6g/NZ2w9AKYkI4AwpXAvnDz8L75At6zXflleyVQG6ztjV6+K4EP6PH7wqmOV6ymlxlTueqRDwWi+zcZKg/FizvXcBkpn4k02xNBB56Q8WIxO2BgSIUag=
+    secure: nw05uowqXTDTwcKofxfWKky5VrbEJ6fOK5zeox8l5hJkL4Xby6QCWAueoAWLo1xqchV4xLJb4GEGzejUeXKA1XX0KhHQzehYJYJSrpLmy3uVWb9WOe382+uPEFLX/jibeOKX18iFCRcBrC7myKigdAIfkBu7NuNoc7dC+Ep4ii1rGL2pj1XD7NTVGIqjEcXILlxdRhGU14+UtcqqinNtHDyGwF3htt/PZhZ5lQ6Xetzzy/vTXMQ/EuItvaXPGj+HSjN45HoJxCvG4a7D53/gQvOENI8F9j8KUKqoxP2x0higTSVF+f/0viWwOzE+fHnmKZ4LXP9WzGn934IVzmfhP48dmoL+rJ8WZXH9DQL6jpGnAviLpwquQWJ4c3nZJQunnTNM7fbYaLgwUq9qFe79HfGPcP8Xr/thw3HWkmb4NWp+eym/ZA5+OlTsglL0+2S/Qv9zPup7ik8Ne7VXpJ52b96Ql9XQzqn1E4tslZIfrB/6mmqTMYoJx4BVntUjD+YxiRjALsIAre2M4hcmwW01gRqRAW2kjpOY3lbvgWJl2Sgbe8SMyjsyM1iCGqdIVPJMAA6xyOJMgtfyCYu0m2cWArn46PzyU57bsgkRe+nf6C4tKg520JfcB3xe2MGbXjJUq/JfmIzvAzI5jdSIzfAjh7lAWVCP76WxNNW/pcm62fc=
 deploy:
-- provider: openshift
-  server: "$OPENSHIFT_SERVER"
-  project: gala
-  app:
-    prod: gala-website-front-prod
-    dev: gala-website-front-dev
-  token: "$OPENSHIFT_TOKEN"
-  edge: true
+  - provider: openshift
+    server: '$OPENSHIFT_SERVER'
+    project: gala
+    app:
+      prod: gala-website-front-prod
+      dev: gala-website-front-dev
+    token: '$OPENSHIFT_TOKEN'
+    edge: true

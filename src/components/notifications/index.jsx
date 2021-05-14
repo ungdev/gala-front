@@ -2,7 +2,7 @@ import React from 'react';
 
 class Notifications extends React.Component {
   componentDidMount() {
-    var OneSignal = window.OneSignal || [];
+    const OneSignal = window.OneSignal || [];
 
     OneSignal.push([
       'init',
