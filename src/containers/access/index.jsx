@@ -18,22 +18,6 @@ class access extends React.Component {
           />
         </div>
 
-        <h2 className="title-decoration">Navettes depuis le centre ville de Troyes</h2>
-        <p>
-          À partir de 21h30, une navette gratuite est mise en place entre l'arrêt de bus Beurnonville et le parking de
-          l’UTT.
-        </p>
-        <ul>
-          <li>
-            Départs Beurnonville : 21h30 – 22h00 – 22h15 – 22h30 – 22h45 – 23h00 – 23h15 – 23h30 – 23h45 – 00h00 – 00h15
-            – 00h30
-          </li>
-          <li>
-            Départs UTT : 01h00 – 01h30 – 02h00 – 02h30 – 03h00 – 03h30 – 03h45 – 04h00 – 04h15 – 04h30 – 04h45 – 05h00
-            – 05h15 – 05h30
-          </li>
-        </ul>
-
         <h2 className="title-decoration">En voiture</h2>
 
         <p>
