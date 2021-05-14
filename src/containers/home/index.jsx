@@ -117,7 +117,7 @@ class Home extends React.Component {
 
       <div className="page-container">
         <Countdown
-          date="05 June 2021 20:00:00"
+          date="05 June 2021 14:30:00"
           renderer={(props) => {
             if (!props.days && !props.hours && !props.minutes && !props.seconds) {
               return null;
