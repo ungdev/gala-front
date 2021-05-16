@@ -1,10 +1,7 @@
 #contact {
 	max-width: 1220px;
-	height: 100%;
-	margin: auto;
-	margin-bottom: 30px;
-	padding: 30px 15px 15px 30px;
-	line-height: 1.6em;
+  margin: auto;
+	padding: 30px;
 	color: #fff;
 	background-color: rgba(198,233,250,0.6);
 	text-align: left;
@@ -22,15 +19,22 @@
 	justify-content: space-between;
 }
 
-#contact .content #input_fields #input-field-2 {
-	width: 100%;
-}
-
-#contact .content .contact-textarea {
-	width: 100%;
-}
-
 #contact .content .contact-submit-button {
 	margin-top: 30px;
 	text-align: right;
+}
+
+@media screen and (max-width: 580px) {
+  #contact .content #input_fields {
+    display: block;
+  }
+
+  #contact .content .input-field {
+    display: block;
+    width: 100%;
+  }
+
+  #contact .content .input-field input {
+    width: calc(100% - 16px);
+  }
 }
