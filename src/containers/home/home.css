@@ -40,6 +40,21 @@
 	margin-bottom: 40px;
 }
 
+#home .poster-text .important {
+  background: #1f7594;
+  padding: 20px;
+  margin: 20px;
+}
+
+#home .poster-text .important > * {
+  color: #fff;
+  text-align: center;
+}
+
+#home .poster-text .important h2 {
+  margin-top: 0;
+}
+
 #home .poster-container .poster {
 	position: relative;
 	top: -30px;

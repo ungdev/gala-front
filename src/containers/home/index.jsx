@@ -148,6 +148,13 @@ class Home extends React.Component {
 
         <div className="poster-text">
           <h1>À propos de Cassiopée</h1>
+
+          <div className="important">
+            <h2>⚠️ Important ⚠️</h2>
+            <p>Malgré toute l’inventivité dont l’équipe de Cassiopée a pu faire preuve pour organiser un événement respectant les normes en vigueur et préservant la santé des participants, nous sommes au regret de vous annoncer l’annulation de Cassiopée Day Edition prévu le 5 juin 2021 💔<br />
+            C’est le cœur lourd que nous vous disons à l’année prochaine pour que Cassiopée puisse enfin voir le jour 🙋</p>
+          </div>
+
           <p>
             Cassiopée Day Edition est un événement géré par l'association Gala UTT de l'Université de Technologie de
             Troyes qui organise tous les ans une soirée incontournable dans le Grand Est.
