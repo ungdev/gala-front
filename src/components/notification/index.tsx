@@ -4,7 +4,13 @@ import './notification.scss';
 
 export type NotificationStatus = 'success' | 'error' | string | null;
 
-const Notification = ({ status: initialStatus, children }: { status?: NotificationStatus; children: JSX.Element }) => {
+const Notification = ({
+  status: initialStatus,
+  children,
+}: {
+  status?: NotificationStatus;
+  children: React.ReactNode;
+}) => {
   const [status, setStatus] = useState<NotificationStatus>(initialStatus ?? null);
   let timeout: number | null = null;
 

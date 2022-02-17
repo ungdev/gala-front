@@ -4,7 +4,7 @@ import axios from '../../utils/axios';
 
 import InputField from '../../components/inputField';
 import Textarea from '../../components/textarea';
-import SubmitButton, { SubmitState } from '../../components/submitButton';
+import SubmitButton, { SubmitButtonState } from '../../components/submitButton';
 import Notification from '../../components/notification';
 
 import './contact.scss';
@@ -12,7 +12,7 @@ import './contact.scss';
 const emailRegexp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 interface ContactState {
-  buttonStatus: SubmitState['status'];
+  buttonStatus: SubmitButtonState;
   notificationStatus: string | null;
   notificationText: string;
   errorFields: {
