@@ -4,15 +4,29 @@ import axios from '../../utils/axios';
 
 import InputField from '../../components/inputField';
 import Textarea from '../../components/textarea';
-import SubmitButton from '../../components/submitButton';
+import SubmitButton, { SubmitState } from '../../components/submitButton';
 import Notification from '../../components/notification';
 
 import './contact.css';
 
 const emailRegexp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-class Contact extends React.Component {
-  constructor(props) {
+interface ContactState {
+  buttonStatus: SubmitState['status'];
+  notificationStatus: string | null;
+  notificationText: string;
+  errorFields: {
+    name: string;
+    email: string;
+    message: string;
+  };
+  name: string;
+  email: string;
+  message: string;
+}
+
+class Contact extends React.Component<{}, ContactState> {
+  constructor(props: {}) {
     super(props);
 
     this.state = {

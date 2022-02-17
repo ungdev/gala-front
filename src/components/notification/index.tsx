@@ -2,8 +2,11 @@ import React from 'react';
 
 import './notification.css';
 
-class Notification extends React.Component {
-  constructor(props) {
+type NotificationProps = { status: string | null };
+class Notification extends React.Component<NotificationProps, NotificationProps> {
+  private timeout?: number;
+
+  constructor(props: NotificationProps) {
     super(props);
 
     this.state = {
@@ -11,7 +14,7 @@ class Notification extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: NotificationProps) {
     if (this.props.status !== prevProps.status) {
       this.setState({
         status: this.props.status,

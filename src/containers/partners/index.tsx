@@ -4,8 +4,18 @@ import axios from '../../utils/axios';
 
 import './partners.css';
 
-class Partners extends React.Component {
-  constructor(props) {
+interface RawPartner {
+  url: string;
+  image: string;
+  name: string;
+}
+
+interface PartnersState {
+  partners: JSX.Element[] | null;
+}
+
+class Partners extends React.Component<{}, PartnersState> {
+  constructor(props: {}) {
     super(props);
 
     this.state = {
@@ -18,9 +28,9 @@ class Partners extends React.Component {
   }
 
   fetchPartners = async () => {
-    let partners = await axios.get('partners');
+    const apiPartners = await axios.get<RawPartner[]>('partners');
 
-    partners = partners.data.map((partner, i) => (
+    const partners = apiPartners.data.map((partner, i) => (
       <a href={partner.url} className="partner-link" key={i}>
         <div className="partner" data-name={partner.name}>
           <div className="partner-image">

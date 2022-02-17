@@ -2,10 +2,17 @@ import React from 'react';
 
 import './submitButton.css';
 
-// Available status : null, 'loading', 'success'
+export interface SubmitState {
+  status: 'loading' | 'success' | null;
+}
 
-class SubmitButton extends React.Component {
-  constructor(props) {
+interface SubmitProps extends SubmitState {
+  className?: string;
+  onClick: () => void;
+}
+
+class SubmitButton extends React.Component<SubmitProps, SubmitState> {
+  constructor(props: SubmitProps) {
     super(props);
 
     this.state = {
@@ -13,7 +20,7 @@ class SubmitButton extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: SubmitProps) {
     if (prevProps !== this.props) {
       this.setState({
         status: this.props.status,

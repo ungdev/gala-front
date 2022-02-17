@@ -7,8 +7,20 @@ import Events from './events';
 
 import './program.css';
 
-class Program extends React.Component {
-  constructor(props) {
+interface RawArtist {
+  name: string;
+  image: string;
+  link: string;
+  eventDate?: string;
+  eventPlace: string;
+}
+
+interface ProgramState {
+  artists: JSX.Element[] | null;
+}
+
+class Program extends React.Component<{}, ProgramState> {
+  constructor(props: {}) {
     super(props);
 
     this.state = {
@@ -19,9 +31,9 @@ class Program extends React.Component {
   }
 
   fetchArtists = async () => {
-    let artists = await axios.get('artists');
+    const apiArtists = await axios.get<RawArtist[]>('artists');
 
-    artists = artists.data.map((artist, i) => (
+    const artists = apiArtists.data.map((artist, i) => (
       <Artist
         name={artist.name}
         image={`${import.meta.env.VITE_API_URL}${artist.image}`}

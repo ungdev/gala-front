@@ -4,14 +4,27 @@ import Countdown from 'react-countdown';
 import OwlCarousel from 'react-owl-carousel';
 
 import axios from '../../utils/axios';
-import posterImg from '../../assets/Logo_day_edition.png';
+import posterImg from '../../assets/ic-cassiopee.png';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import './home.css';
 
-class Home extends React.Component {
-  constructor(props) {
+interface RawPartner {
+  url: string;
+  image: string;
+  name: string;
+}
+
+interface HomeState {
+  partners: JSX.Element[] | null;
+  top: boolean;
+}
+
+class Home extends React.Component<{}, HomeState> {
+  private carouselRef: React.RefObject<OwlCarousel>;
+  private carouselInterval: number | null;
+
+  constructor(props: {}) {
     super(props);
 
     this.carouselRef = React.createRef();
@@ -33,10 +46,8 @@ class Home extends React.Component {
   componentWillUnmount() {
     this.clearCarouselInterval();
 
-    window.removeEventListener('scroll', this.scrollHandle, { passive: true });
-    window.removeEventListener('touchmove', this.scrollHandle, {
-      passive: true,
-    });
+    window.removeEventListener('scroll', this.scrollHandle);
+    window.removeEventListener('touchmove', this.scrollHandle);
   }
 
   scrollHandle = () => {
@@ -65,7 +76,7 @@ class Home extends React.Component {
   };
 
   carouselPrev = () => {
-    this.carouselRef.current.prev(300);
+    this.carouselRef.current?.prev(300);
 
     // Reset carousel interval
     this.clearCarouselInterval();
@@ -73,7 +84,7 @@ class Home extends React.Component {
   };
 
   carouselNext = () => {
-    this.carouselRef.current.next(300);
+    this.carouselRef.current?.next(300);
 
     // Reset carousel interval
     this.clearCarouselInterval();
@@ -85,14 +96,16 @@ class Home extends React.Component {
       return;
     }
 
-    // eslint-disable-next-line no-undef
-    $('html, body').animate({ scrollTop: window.innerHeight - 80 }, 500);
+    document.body.scrollTo({
+      behavior: 'smooth',
+      top: window.innerHeight - 80,
+    });
   };
 
   fetchPartners = async () => {
-    let partners = await axios.get('partners');
+    const apiPartners = await axios.get<RawPartner[]>('partners');
 
-    partners = partners.data.map((partner, i) => (
+    const partners = apiPartners.data.map((partner, i) => (
       <a href={partner.url} key={i}>
         <img src={`${import.meta.env.VITE_API_URL}${partner.image}`} alt={partner.name} />
       </a>
@@ -151,8 +164,14 @@ class Home extends React.Component {
 
           <div className="important">
             <h2>⚠️ Important ⚠️</h2>
-            <p>Malgré toute l’inventivité dont l’équipe de Cassiopée a pu faire preuve pour organiser un événement respectant les normes en vigueur et préservant la santé des participants, nous sommes au regret de vous annoncer l’annulation de Cassiopée Day Edition prévu le 5 juin 2021 💔<br />
-            C’est le cœur lourd que nous vous disons à l’année prochaine pour que Cassiopée puisse enfin voir le jour 🙋</p>
+            <p>
+              Malgré toute l’inventivité dont l’équipe de Cassiopée a pu faire preuve pour organiser un événement
+              respectant les normes en vigueur et préservant la santé des participants, nous sommes au regret de vous
+              annoncer l’annulation de Cassiopée Day Edition prévu le 5 juin 2021 💔
+              <br />
+              C’est le cœur lourd que nous vous disons à l’année prochaine pour que Cassiopée puisse enfin voir le jour
+              🙋
+            </p>
           </div>
 
           <p>

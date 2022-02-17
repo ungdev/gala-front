@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactPropTypes } from 'react';
 import { Link } from 'react-router-dom';
 
 import './header.css';
@@ -39,8 +39,13 @@ const links = [
   },
 ];
 
-class Header extends React.Component {
-  constructor(props) {
+type HeaderState = {
+  mobileMenuActive: boolean;
+  top: boolean;
+};
+
+class Header extends React.Component<{}, HeaderState> {
+  constructor(props: ReactPropTypes) {
     super(props);
 
     this.state = {
@@ -54,7 +59,7 @@ class Header extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.scrollHandle, { passive: true });
+    window.removeEventListener('scroll', this.scrollHandle);
   }
 
   scrollHandle = () => {

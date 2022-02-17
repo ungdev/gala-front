@@ -2,18 +2,16 @@ import React from 'react';
 
 import './artist.css';
 
-/**
- * props : {
- * 	 name: String,
- *   image: String,
- *   hour: String,
- *   place: String,
- *   link: String,
- *   number: Integer
- * }
- */
+interface ArtistProps {
+  name: string;
+  image: string;
+  hour: string;
+  place: string;
+  link: string;
+  number: number;
+}
 
-const Artist = (props) => {
+const Artist = (props: ArtistProps) => {
   let artist;
   if (props.number % 2 === 0) {
     artist = (

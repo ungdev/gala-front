@@ -5,8 +5,21 @@ import axios from '../../../utils/axios';
 
 import './events.css';
 
-class Events extends React.Component {
-  constructor(props) {
+interface RawEvent {
+  start: number;
+  end: number;
+  image: string;
+  name: string;
+  place: string;
+  description: string;
+}
+
+interface EventsState {
+  events: JSX.Element[] | null;
+}
+
+class Events extends React.Component<{}, EventsState> {
+  constructor(props: {}) {
     super(props);
 
     this.state = {
@@ -17,9 +30,9 @@ class Events extends React.Component {
   }
 
   fetchEvents = async () => {
-    let events = await axios.get('events');
+    const apiEvents = await axios.get<RawEvent[]>('events');
 
-    events = events.data
+    const events = apiEvents.data
       .sort((event1, event2) => {
         const date1 = new Date(event1.start);
         const date2 = new Date(event2.start);
@@ -33,7 +46,7 @@ class Events extends React.Component {
         image: `${import.meta.env.VITE_API_URL}${event.image}`,
       }));
 
-    events = events.map((event, i) => (
+    const eventElements = events.map((event, i) => (
       <div className="event" key={i}>
         <div className="event-dates">
           <div className="event-start">{event.start}</div>
@@ -52,7 +65,7 @@ class Events extends React.Component {
     ));
 
     this.setState({
-      events,
+      events: eventElements,
     });
   };
 

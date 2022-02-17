@@ -1,8 +1,10 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { RouteComponentProps, withRouter } from 'react-router';
 
-class ScrollToTop extends React.Component {
-  constructor(props) {
+class ScrollToTop extends React.Component<RouteComponentProps> {
+  private unlisten: () => void;
+
+  constructor(props: RouteComponentProps) {
     super(props);
 
     this.unlisten = () => {};

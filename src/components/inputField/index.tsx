@@ -4,7 +4,13 @@ import './inputField.css';
 
 let lastGeneratedId = 0;
 
-const InputField = (props) => {
+const InputField = (props: {
+  className: string;
+  value: any;
+  onChange: (value: any) => void;
+  placeholder: string | undefined;
+  error: string | undefined;
+}) => {
   const id = lastGeneratedId++;
 
   return (
