@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './covid-19.css';
+import './covid-19.scss';
 
 class Covid19 extends React.Component {
   render() {

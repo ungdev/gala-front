@@ -5,7 +5,7 @@ import axios from '../../utils/axios';
 import Artist from './artist';
 import Events from './events';
 
-import './program.css';
+import './program.scss';
 
 interface RawArtist {
   name: string;

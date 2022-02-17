@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './legal.css';
+import './legal.scss';
 
 class Legal extends React.Component {
   render() {

@@ -7,7 +7,7 @@ import axios from '../../utils/axios';
 import posterImg from '../../assets/ic-cassiopee.png';
 
 import 'owl.carousel/dist/assets/owl.carousel.css';
-import './home.css';
+import './home.scss';
 
 interface RawPartner {
   url: string;

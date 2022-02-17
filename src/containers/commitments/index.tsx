@@ -1,7 +1,7 @@
 import React from 'react';
 import logoAstree from '../../assets/logo-astree.jpg';
 
-import './commitments.css';
+import './commitments.scss';
 
 class Commitments extends React.Component {
   render() {

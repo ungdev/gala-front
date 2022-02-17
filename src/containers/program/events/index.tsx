@@ -3,7 +3,7 @@ import moment from 'moment';
 
 import axios from '../../../utils/axios';
 
-import './events.css';
+import './events.scss';
 
 interface RawEvent {
   start: number;

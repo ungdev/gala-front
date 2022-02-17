@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './notification.css';
+import './notification.scss';
 
 type NotificationProps = { status: string | null };
 class Notification extends React.Component<NotificationProps, NotificationProps> {

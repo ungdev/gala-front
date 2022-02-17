@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './videoContainer.css';
+import './videoContainer.scss';
 
 interface VideoContainerProperties {
   title: string;

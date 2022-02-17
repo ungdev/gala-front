@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './artist.css';
+import './artist.scss';
 
 interface ArtistProps {
   name: string;

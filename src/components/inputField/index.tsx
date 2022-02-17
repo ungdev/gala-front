@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './inputField.css';
+import './inputField.scss';
 
 let lastGeneratedId = 0;
 

@@ -17,7 +17,7 @@ import Legal from './containers/legal';
 import Privacy from './containers/privacy';
 import Commitments from './containers/commitments';
 
-import './index.css';
+import './index.scss';
 
 const App = () => (
   <div id="app">

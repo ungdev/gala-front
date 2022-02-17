@@ -1,7 +1,7 @@
 import React from 'react';
 import FadeIn from 'react-lazyload-fadein';
 
-import './lazyloadimage.css';
+import './lazyloadimage.scss';
 
 interface LazyLoadImageProperties {
   className: string;

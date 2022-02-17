@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './submitButton.css';
+import './submitButton.scss';
 
 export interface SubmitState {
   status: 'loading' | 'success' | null;

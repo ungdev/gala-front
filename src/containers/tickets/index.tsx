@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './tickets.css';
+import './tickets.scss';
 
 class Tickets extends React.Component {
   render() {

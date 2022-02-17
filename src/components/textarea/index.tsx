@@ -1,7 +1,7 @@
 import React from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 
-import './textarea.css';
+import './textarea.scss';
 
 let lastGeneratedId = 0;
 

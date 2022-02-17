@@ -2,7 +2,7 @@ import React from 'react';
 
 import axios from '../../utils/axios';
 
-import './partners.css';
+import './partners.scss';
 
 interface RawPartner {
   url: string;
