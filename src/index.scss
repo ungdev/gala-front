@@ -3,81 +3,87 @@
 /* --------------- */
 
 @font-face {
-	font-family: 'Fundamental';
-	src: url('/fonts/Fundamental-Brigade.ttf');
+  font-family: 'Fundamental';
+  src: url('/fonts/Fundamental-Brigade.ttf');
 }
 
 #root {
-	height: 100vh;
+  height: 100vh;
 }
 
 :root {
-	--primary-color: #222145;
-	--secondary-color: #083e60;
-	height: 100%;
+  --primary-color: #fee4ab;
+  --secondary-color: #9b1f1f;
+  --accent-color: #dd513a;
+  --text-color: #0c0b08;
+  --shadow-color: #707070;
+  height: 100%;
 }
 
 html {
-	background: radial-gradient(at top right,#43B9D5 0%, #22749C 100%);
-	font-family: 'Roboto', arial, sans-serif;
-	font-size: 18px;
-	height: 100%;
+  background-color: var(--primary-color);
+  font-family: 'Roboto', arial, sans-serif;
+  font-size: 18px;
+  height: 100%;
 }
 
-html, body {
-	overflow-x: hidden;
-	margin: 0;
-	padding: 0;
-	height: 100%;
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 ::selection {
-	background: #adadad;
-	color: #fff;
+  background: #adadad;
+  color: #fff;
 }
 
 img::selection {
-	background: #adadad;
+  background: #adadad;
 }
 
 a {
-	outline: none;
+  outline: none;
 }
 
-img, iframe {
-	max-width: 100%;
+img,
+iframe {
+  max-width: 100%;
 }
 
 h1 {
-	font-family: 'Fundamental', arial, sans-serif;
-	text-transform: uppercase;
-	font-size: 48px;
+  font-family: 'Fundamental', arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 48px;
   text-align: center;
-	color: var(--secondary-color);
-	margin: 0;
+  color: var(--secondary-color);
+  margin: 0;
 }
 
-h2, h3 {
-	font-family: 'Fundamental', arial, sans-serif;
-	text-transform: uppercase;
-	font-size: 36px;
-	text-align: left;
-	color: var(--secondary-color);
+h2,
+h3 {
+  font-family: 'Fundamental', arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 36px;
+  text-align: left;
+  color: var(--secondary-color);
 }
 
 p {
-	font-family: 'Fundamental', arial, sans-serif;
-	color: #0A3D60;
-	text-align: justify;
+  font-family: 'Fundamental', arial, sans-serif;
+  color: #0a3d60;
+  text-align: justify;
 }
 
 hr {
-	height: 2px;
-	width: 400px;
-	max-width: 100%;
-	background: radial-gradient( #22749C 0%, transparent);
-	border: none;
-	margin: 20px auto;
+  height: 2px;
+  width: 400px;
+  max-width: 100%;
+  background: radial-gradient(#22749c 0%, transparent);
+  border: none;
+  margin: 20px auto;
 }
 
 small {
@@ -89,78 +95,78 @@ small {
 /* ------------ */
 
 .centered {
-	text-align: center;
+  text-align: center;
 }
 
 .justified {
-	text-align: justify;
+  text-align: justify;
 }
 
 #app {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
 #page {
-	color: #fff;
-	margin: 0 auto;
-	padding: 20px 10px;
-	flex-grow: 1;
+  color: #fff;
+  margin: 0 auto;
+  padding: 20px 10px;
+  flex-grow: 1;
   width: calc(100% - 20px);
 }
 
 .button {
-	position: relative;
-	display: inline-block;
-	margin: 10px 0;
-	padding: 14px 20px;
-	background: var(--secondary-color);
-	color: #fff;
-	text-decoration: none;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 0;
-	font-size: 14px;
-	letter-spacing: 1px;
-	overflow: hidden;
-	cursor: pointer;
-	outline: none;
-	transition: all .3s;
+  position: relative;
+  display: inline-block;
+  margin: 10px 0;
+  padding: 14px 20px;
+  background: var(--secondary-color);
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
 }
 
 .button::before {
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: calc(-30% - 20px);
-	height: 100%;
-	width: 100%;
-	background: rgba(50, 50, 50, 0.2);
-	clip-path: polygon(0 0, 30% 0, calc(30% + 20px) 100%, 0% 100%);
-	z-index: 1;
-	transition: all .3s;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(-30% - 20px);
+  height: 100%;
+  width: 100%;
+  background: rgba(50, 50, 50, 0.2);
+  clip-path: polygon(0 0, 30% 0, calc(30% + 20px) 100%, 0% 100%);
+  z-index: 1;
+  transition: all 0.3s;
 }
 
 .button:hover,
 .button:focus {
-	filter: brightness(0.9);
+  filter: brightness(0.9);
 }
 
 .button:hover::before,
 .button:focus::before {
-	left: 0;
+  left: 0;
 }
 
 h2.title-decoration {
-	position: relative;
-	letter-spacing: 1px;
+  position: relative;
+  letter-spacing: 1px;
 }
 
-#ticketsButton{
-	display: block;
-	margin: auto;
-	text-align: center;
+#ticketsButton {
+  display: block;
+  margin: auto;
+  text-align: center;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router';
 
+// TODO: update code style
 class ScrollToTop extends React.Component<RouteComponentProps> {
   private unlisten: () => void;
 

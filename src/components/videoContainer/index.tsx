@@ -2,13 +2,7 @@ import React from 'react';
 
 import './videoContainer.scss';
 
-interface VideoContainerProperties {
-  title: string;
-  src: string;
-  style: React.CSSProperties;
-}
-
-const VideoContainer = (props: VideoContainerProperties) => (
+const VideoContainer = (props: { title: string; src: string; style: React.CSSProperties }) => (
   <div className="video-container" style={props.style}>
     <div className="video-container-ratio">
       <div className="video-container-full">

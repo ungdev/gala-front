@@ -1,17 +1,17 @@
 .lazyloadimage {
   position: relative;
-}
 
-.lazyloadimage .lazyloadimage-placeholder {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(255, 255, 255, 0.2);
-	transition: all .3s;
-}
+  .lazyloadimage-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
 
-.lazyloadimage .lazyloadimage-placeholder.disabled {
-	opacity: 0;
+    &.disabled {
+      opacity: 0;
+    }
+  }
 }

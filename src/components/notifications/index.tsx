@@ -1,7 +1,7 @@
-import React from 'react';
+import { useEffect } from 'react';
 
-class Notifications extends React.Component {
-  componentDidMount() {
+const Notifications = () => {
+  useEffect(() => {
     const OneSignal = window.OneSignal || [];
 
     OneSignal.push([
@@ -29,11 +29,9 @@ class Notifications extends React.Component {
         },
       },
     ]);
-  }
+  }, []);
 
-  render() {
-    return null;
-  }
-}
+  return null;
+};
 
 export default Notifications;

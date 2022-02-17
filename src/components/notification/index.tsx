@@ -1,44 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './notification.scss';
 
-type NotificationProps = { status: string | null };
-class Notification extends React.Component<NotificationProps, NotificationProps> {
-  private timeout?: number;
+export type NotificationStatus = 'success' | 'error' | string | null;
 
-  constructor(props: NotificationProps) {
-    super(props);
+const Notification = ({ status: initialStatus, children }: { status?: NotificationStatus; children: JSX.Element }) => {
+  const [status, setStatus] = useState<NotificationStatus>(initialStatus ?? null);
+  let timeout: number | null = null;
 
-    this.state = {
-      status: null,
-    };
-  }
+  useEffect(() => {
+    // Clear previous timeout
+    if (timeout) clearTimeout(timeout);
 
-  componentDidUpdate(prevProps: NotificationProps) {
-    if (this.props.status !== prevProps.status) {
-      this.setState({
-        status: this.props.status,
-      });
+    // Set new timeout
+    timeout = setTimeout(() => setStatus(null), 3000);
+  }, [status]);
 
-      // Clear previous timeout
-      clearTimeout(this.timeout);
-
-      // Set new timeout
-      this.timeout = setTimeout(() => {
-        this.setState({
-          status: null,
-        });
-      }, 3000);
-    }
-  }
-
-  render() {
-    return (
-      <div onClick={() => this.setState({ status: null })} className={`notification ${this.state.status || ''}`}>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+  return (
+    <div onClick={() => setStatus(null)} className={`notification ${status}`}>
+      {children}
+    </div>
+  );
+};
 
 export default Notification;

@@ -1,40 +1,40 @@
 .notification {
-	position: absolute;
-	top: 20px;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 400px;
-	max-width: 80vw;
-	padding: 6px 14px;
-	border: 2px solid #fff;
-	border-radius: 4px;
-	z-index: 999;
-	transition: top .3s, opacity .3s;
-}
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  max-width: 80vw;
+  padding: 6px 14px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  z-index: 999;
+  transition: top 0.3s, opacity 0.3s;
 
-.notification:not(.success):not(.error) {
-	top: -20px;
-	opacity: 0;
-}
+  &::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+    margin-right: 10px;
+  }
 
-.notification.error {
-	background: #d23131;
-}
+  &:not(.success):not(.error) {
+    top: -20px;
+    opacity: 0;
+  }
 
-.notification.success {
-	background: var(--secondary-color);
-}
+  &.error {
+    background: #d23131;
 
-.notification::before {
-	font-family: 'Font Awesome 5 Free';
-	font-weight: bold;
-	margin-right: 10px;
-}
+    &::before {
+      content: '\f071';
+    }
+  }
 
-.notification.error::before {
-	content: '\f071';
-}
+  &.success {
+    background: var(--secondary-color);
 
-.notification.success::before {
-	content: '\f00c';
+    &::before {
+      content: '\f00c';
+    }
+  }
 }

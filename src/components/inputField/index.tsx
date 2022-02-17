@@ -4,31 +4,32 @@ import './inputField.scss';
 
 let lastGeneratedId = 0;
 
-const InputField = (props: {
+const InputField = ({
+  className,
+  value,
+  onChange,
+  error,
+  placeholder,
+}: {
   className: string;
   value: any;
   onChange: (value: any) => void;
-  placeholder: string | undefined;
-  error: string | undefined;
+  placeholder?: string;
+  error?: string;
 }) => {
   const id = lastGeneratedId++;
 
   return (
-    <span className={`input-field ${props.className || ''}`}>
-      <input
-        type="text"
-        onChange={(e) => props.onChange(e.target.value)}
-        value={props.value}
-        id={`input-field-${id}`}
-      />
+    <span className={`input-field ${className || ''}`}>
+      <input type="text" onChange={(e) => onChange(e.target.value)} value={value} id={`input-field-${id}`} />
 
       <label htmlFor={`input-field-${id}`} className="input-field-placeholder">
-        {props.placeholder}
+        {placeholder}
       </label>
 
-      <div className={`input-field-error${props.error ? ' active' : ''}`}>
+      <div className={`input-field-error${error ? ' active' : ''}`}>
         <i className="fas fa-exclamation-triangle error-icon" />
-        <div className="error-content">{props.error}</div>
+        <div className="error-content">{error}</div>
       </div>
     </span>
   );

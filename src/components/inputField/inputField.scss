@@ -1,103 +1,102 @@
 .input-field {
-	position: relative;
-	display: inline-block;
-	margin-top: 30px;
-}
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
 
-.input-field input {
-	border: none;
-	border-radius: 0;
-	padding: 8px;
-	color: var(--secondary-color);
-	background: rgba(255, 255, 255, 0.1);
-	font-size: inherit;
-	font-family: 'Roboto', arial, sans-serif;
-	outline: none;
-	box-shadow: 0 1px 0 0 #707070;
-	transition: all .3s;
-}
+  input {
+    border: none;
+    border-radius: 0;
+    padding: 8px;
+    color: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.1);
+    font-size: inherit;
+    font-family: 'Roboto', arial, sans-serif;
+    outline: none;
+    box-shadow: 0 1px 0 0 #707070;
+    transition: all 0.3s;
 
-.input-field input:focus {
-	box-shadow: 0 3px 0 0 var(--secondary-color);
-}
+    &:focus {
+      box-shadow: 0 3px 0 0 var(--secondary-color);
+    }
+  }
 
-.input-field .input-field-placeholder {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	transform: translate(0, -50%);
-	color: var(--secondary-color);
-	padding: 0 8px;
-	user-select: none;
-	cursor: text;
-	transition: all .3s;
-}
+  .input-field-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    color: var(--secondary-color);
+    padding: 0 8px;
+    user-select: none;
+    cursor: text;
+    transition: all 0.3s;
 
-.input-field .input-field-placeholder label {
-	cursor: text;
-}
+    label {
+      cursor: text;
+    }
+  }
 
-.input-field input:not([value=""]) + .input-field-placeholder,
-.input-field input:focus + .input-field-placeholder {
-	top: -12px;
-	font-size: 12px;
-	left: -8px;
-	cursor: default;
-}
+  input:not([value='']) + .input-field-placeholder,
+  input:focus + .input-field-placeholder {
+    top: -12px;
+    font-size: 12px;
+    left: -8px;
+    cursor: default;
 
-.input-field input:not([value=""]) + .input-field-placeholder label,
-.input-field input:focus + .input-field-placeholder label {
-	cursor: default;
-}
+    label {
+      cursor: default;
+    }
+  }
 
-.input-field .input-field-error {
-	position: absolute;
-	right: 0;
-	top: 0;
-	height: 100%;
-}
+  .input-field-error {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
 
-.input-field .input-field-error:not(.active) {
-	display: none;
-}
+    &:not(.active) {
+      display: none;
+    }
 
-.input-field .input-field-error .error-icon {
-	position: absolute;
-	right: 8px;
-	top: 50%;
-	transform: translateY(-50%);
-	color: #ff1a1a;
-}
+    .error-icon {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ff1a1a;
 
-.input-field .input-field-error .error-content {
-	display: none;
-	position: absolute;
-	top: -10px;
-	right: 17px;
-	transform: translate(50%, -100%);
-	width: 180px;
-	text-align: center;
-	background: var(--primary-color);
-	padding: 4px 8px;
-	border: 1px solid #fff;
-	border-radius: 2px;
-	z-index: 1;
-}
+      &:hover + .error-content {
+        display: block;
+      }
+    }
 
-.input-field .input-field-error .error-content::after {
-	content: '';
-	position: absolute;
-	bottom: -8px;
-	left: 50%;
-	transform: translateX(-50%) rotate(-45deg);
-	display: block;
-	width: 14px;
-	height: 14px;
-	background: #fff;
+    .error-content {
+      display: none;
+      position: absolute;
+      top: -10px;
+      right: 17px;
+      transform: translate(50%, -100%);
+      width: 180px;
+      text-align: center;
+      background: var(--primary-color);
+      padding: 4px 8px;
+      border: 1px solid #fff;
+      border-radius: 2px;
+      z-index: 1;
 
-	clip-path: polygon(0 0, 200% 200%, 200% 200%, 0 200%);
-}
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%) rotate(-45deg);
+        display: block;
+        width: 14px;
+        height: 14px;
+        background: #fff;
 
-.input-field .input-field-error .error-icon:hover + .error-content {
-	display: block;
+        clip-path: polygon(0 0, 200% 200%, 200% 200%, 0 200%);
+      }
+    }
+  }
 }

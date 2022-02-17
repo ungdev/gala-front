@@ -4,27 +4,27 @@ import FadeIn from 'react-lazyload-fadein';
 import './lazyloadimage.scss';
 
 interface LazyLoadImageProperties {
-  className: string;
+  className?: string;
   src: string;
-  alt: string;
+  alt?: string;
   onClick: React.MouseEventHandler<HTMLImageElement>;
 }
 
-const LazyloadImage = (props: LazyLoadImageProperties) => (
-  <div className={`lazyloadimage ${props.className || ''}`}>
+const LazyloadImage = ({ className, alt, src, onClick }: LazyLoadImageProperties) => (
+  <div className={`lazyloadimage ${className || ''}`}>
     <div className="lazyloadimage-placeholder" />
 
     <FadeIn duration={300}>
       {(onload) => (
         <img
-          src={props.src}
+          src={src}
           onLoad={(e) => {
-            // TODO: refactor types
-            ((e.target as HTMLElement).parentNode!.parentNode!.childNodes[0] as HTMLElement).classList.add('disabled'); // disable placeholder
+            // disable placeholder
+            (e.target as HTMLElement).parentNode?.parentNode?.firstElementChild?.classList?.add('disabled');
             onload();
           }}
-          alt={props.alt || ''}
-          onClick={props.onClick}
+          alt={alt || ''}
+          onClick={onClick}
         />
       )}
     </FadeIn>
