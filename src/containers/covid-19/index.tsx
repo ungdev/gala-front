@@ -1,13 +1,13 @@
 import React from 'react';
 
 import './covid-19.scss';
-import covidIcon from '../../assets/logo-INRS.png';
-import handSanitizerIcon from '../../assets/logo-INRS.png';
-import maskIcon from '../../assets/logo-INRS.png';
-import socialDistancingIcon from '../../assets/logo-INRS.png';
-import handShakeIcon from '../../assets/logo-INRS.png';
+import covid_icon from '../../assets/logo-INRS.png';
+import hand_sanitizer_icon from '../../assets/logo-INRS.png';
+import mask_icon from '../../assets/logo-INRS.png';
+import social_distancing_icon from '../../assets/logo-INRS.png';
+import hand_shake_icon from '../../assets/logo-INRS.png';
 
-function Covid19() {
+const Covid19 = () => {
   return (
     <div className="page-container" id="covid-19">
       <div className="billetterie_container">
@@ -40,29 +40,29 @@ function Covid19() {
           id tempus ultrices. Aliquam quis nulla accumsan, fermentum ligula ac, egestas augue. Aliquam erat volutpat.
           Quisque accumsan sapien nisi, nec maximus velit pretium ut.
         </p>
-        <img alt="Covid-19" src={covidIcon} />
+        <img src={covid_icon} />
         <h2>LE PROTOCOLE</h2>
-        <img alt="Gel hydroalcoolique" src={handSanitizerIcon} />
+        <img src={hand_sanitizer_icon} />
         <h5>Gel hydroalcoolique</h5>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis officia quia iste nostrum magni dolor
           ipsam libero quidem. Alias fuga harum mollitia repellat suscipit sint odit velit accusantium rem. Quis.
         </p>
-        <img alt="Masque" src={maskIcon} />
+        <img src={mask_icon} />
         <h5>Le masque</h5>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum debitis odio ullam molestias odit. Rem
           nihil harum dolore corrupti voluptatem debitis exercitationem animi at doloribus velit, accusantium culpa
           nesciunt error!
         </p>
-        <img alt="Distanciation sociale" src={socialDistancingIcon} />
+        <img src={social_distancing_icon} />
         <h5>Distanciation sociale</h5>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum debitis odio ullam molestias odit. Rem
           nihil harum dolore corrupti voluptatem debitis exercitationem animi at doloribus velit, accusantium culpa
           nesciunt error!
         </p>
-        <img alt="Poignée de main" src={handShakeIcon} />
+        <img src={hand_shake_icon} />
         <h5>Poignée de main</h5>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum debitis odio ullam molestias odit. Rem
@@ -72,6 +72,6 @@ function Covid19() {
       </div>
     </div>
   );
-}
+};
 
 export default Covid19;
