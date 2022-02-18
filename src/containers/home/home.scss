@@ -1,250 +1,256 @@
 @keyframes arrow-icon-animation {
-	0% {
-		bottom: 60px;
-		opacity: 0;
-	}
+  0% {
+    bottom: 60px;
+    opacity: 0;
+  }
 
-	20% {
-		opacity: 1;
-	}
+  20% {
+    opacity: 1;
+  }
 
-	60% {
-		bottom: 30px;
-		opacity: 1;
-	}
+  60% {
+    bottom: 30px;
+    opacity: 1;
+  }
 
-	100% {
-		bottom: 5px;
-		opacity: 0;
-	}
+  100% {
+    bottom: 5px;
+    opacity: 0;
+  }
 }
 
-#home .poster-container {
-	position: relative;
-	display: flex;
-	height: calc(100vh - 61px);
-	width: 100%;
-}
+#home {
+  .poster-container {
+    position: relative;
+    display: flex;
+    height: calc(100vh - 61px);
+    width: 100%;
 
-#home .poster-text {
-	max-width: 1220px;
-	margin: auto;
-	margin-bottom: 30px;
-	padding: 40px 20px 10px 20px;
-	color: #fff;
-	background-color: rgba(198,233,250,0.6);
-	text-align: left;
-}
+    .poster {
+      position: relative;
+      top: -30px;
+      margin: auto;
+      max-width: 100%;
+      max-height: 100%;
+      user-select: none;
+    }
 
-#home .poster-text h1 {
-	margin-bottom: 40px;
-}
+    .arrow-button {
+      position: absolute;
+      background: none;
+      width: 40px;
+      height: 90px;
+      border: none;
+      outline: none;
+      padding: 0 5px;
+      cursor: pointer;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      color: #fff;
+      transition: all 0.3s;
 
-#home .poster-text .important {
-  background: #1f7594;
-  padding: 20px;
-  margin: 20px;
-}
+      &:not(.active) {
+        opacity: 0;
+        cursor: default;
+      }
 
-#home .poster-text .important > * {
-  color: #fff;
-  text-align: center;
-}
+      &:hover,
+      &:focus {
+        color: #aaa;
+      }
+    }
 
-#home .poster-text .important h2 {
-  margin-top: 0;
-}
+    .arrow-icon {
+      position: absolute;
+      font-size: 26px;
+      height: 30px;
+      width: 30px;
+      animation: arrow-icon-animation 2s infinite;
+      opacity: 1;
+      transition: all 0.3s;
 
-#home .poster-container .poster {
-	position: relative;
-	top: -30px;
-	margin: auto;
-	max-width: 100%;
-	max-height: 100%;
-	user-select: none;
-}
+      .icon {
+        opacity: 1;
+        transition: all 0.3s;
+      }
+    }
 
-#home .poster-container .arrow-button {
-	position: absolute;
-	background: none;
-	width: 40px;
-	height: 90px;
-	border: none;
-	outline: none;
-	padding: 0 5px;
-	cursor: pointer;
-	left: 50%;
-	bottom: 20px;
-	transform: translateX(-50%);
-	color: #fff;
-	transition: all .3s;
-}
+    img {
+      width: 55%;
+    }
+  }
 
-#home .poster-container img {
-	width: 55%;
-}
+  .poster-text {
+    max-width: 1220px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 40px 20px 10px 20px;
+    color: #fff;
+    background-color: rgba(198, 233, 250, 0.6);
+    text-align: left;
 
-#home .poster-container .arrow-button:not(.active) {
-	opacity: 0;
-	cursor: default;
-}
+    h1 {
+      margin-bottom: 40px;
+    }
 
-#home .poster-container .arrow-button:hover,
-#home .poster-container .arrow-button:focus {
-	color: #aaa;
-}
+    .important {
+      background: #1f7594;
+      padding: 20px;
+      margin: 20px;
 
-#home .poster-container .arrow-icon {
-	position: absolute;
-	font-size: 26px;
-	height: 30px;
-	width: 30px;
-	animation: arrow-icon-animation 2s infinite;
-	opacity: 1;
-	transition: all .3s;
-}
+      & > * {
+        color: #fff;
+        text-align: center;
+      }
 
-#home .poster-container .arrow-icon .icon {
-	opacity: 1;
-	transition: all .3s;
-}
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
 
-#home .countdown {
-	display: flex;
-	justify-content: space-evenly;
-	flex-flow: row wrap;
-  margin-bottom: 50px;
-}
+  .countdown {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    margin-bottom: 50px;
 
-#home .countdown .countdown-item {
-	font-weight: bold;
-	font-family: 'LemonMilk', arial, sans-serif;
-}
+    .countdown-item {
+      font-weight: bold;
+      font-family: 'LemonMilk', arial, sans-serif;
 
-#home .countdown .countdown-item > div {
-	display: block;
-	text-align: center;
-}
+      & > div {
+        display: block;
+        text-align: center;
 
-#home .countdown .countdown-item > div:nth-child(1) {
-	font-size: 4em;
-}
+        &:nth-child(1) {
+          font-size: 4em;
+        }
 
-#home .countdown .countdown-item > div:nth-child(2) {
-	color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-}
+        &:nth-child(2) {
+          color: rgba(255, 255, 255, 0.6);
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
 
-#home .partners {
-	position: relative;
-	top: 20px;
-	background: #fff;
-	padding: 20px 0;
-}
+  .partners {
+    position: relative;
+    top: 20px;
+    background: #fff;
+    padding: 20px 0;
 
-#home .partners::before {
-  content: '';
-	position: absolute;
-	top: 0;
-	left: 50%;
-	transform: translate(-50%);
-	width: 100vw;
-	height: 100%;
-	background: #fff;
-  z-index: -1
-}
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%);
+      width: 100vw;
+      height: 100%;
+      background: #fff;
+      z-index: -1;
+    }
 
-#home .partners h2 {
-	text-align: center;
-}
+    h2 {
+      text-align: center;
+    }
+  }
 
-#home .partners-carousel-container {
-	position: relative;
-	max-width: 1036px;
-	left: 50%;
-	transform: translate(-50%, 0);
-}
+  .partners-carousel-container {
+    position: relative;
+    max-width: 1036px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 
-#home .partners-carousel-arrow-left,
-#home .partners-carousel-arrow-right {
-	position: absolute;
-	top: 50%;
-	color: var(--secondary-color);
-	font-size: 50px;
-	padding: 20px;
-	cursor: pointer;
-}
+  .partners-carousel-arrow-left,
+  .partners-carousel-arrow-right {
+    position: absolute;
+    top: 50%;
+    color: var(--secondary-color);
+    font-size: 50px;
+    padding: 20px;
+    cursor: pointer;
+  }
 
-#home .partners-carousel-arrow-left {
-	left: 0;
-	transform: translate(-100%, -50%);
-}
+  .partners-carousel-arrow-left {
+    left: 0;
+    transform: translate(-100%, -50%);
+  }
 
-#home .partners-carousel-arrow-right {
-	right: 0;
-	transform: translate(100%, -50%);
-}
+  .partners-carousel-arrow-right {
+    right: 0;
+    transform: translate(100%, -50%);
+  }
 
-#home .partners-carousel {
-	margin: 60px 0 20px 0;
-	touch-action: manipulation;
-}
+  .partners-carousel {
+    margin: 60px 0 20px 0;
+    touch-action: manipulation;
+  }
 
-#home .owl-carousel .owl-stage {
-	display: flex;
-}
+  .owl-carousel {
+    .owl-stage {
+      display: flex;
+    }
 
-#home .owl-carousel .owl-item {
-	margin: auto 10px;
-}
+    .owl-item {
+      margin: auto 10px;
 
-#home .owl-carousel .owl-item img {
-	width: calc(100% - 10px);
-	margin: 5px;
-	max-height: 100%;
-}
+      img {
+        width: calc(100% - 10px);
+        margin: 5px;
+        max-height: 100%;
+      }
+    }
+  }
 
-#home .partners-loader,
-#home .no-partners {
-	position: relative;
-	color: rgba(39, 39, 39, 0.8);
-	text-align: center;
-	margin: 20px 0;
-}
+  .partners-loader,
+  .no-partners {
+    position: relative;
+    color: rgba(39, 39, 39, 0.8);
+    text-align: center;
+    margin: 20px 0;
+  }
 
-#home .partners-loader {
-	font-size: 24px;
-	color: #272727;
+  .partners-loader {
+    font-size: 24px;
+    color: #272727;
+  }
 }
 
 @media screen and (max-width: 1160px) {
-	#home .partners-carousel-arrow-left,
-	#home .partners-carousel-arrow-right {
-		display: none;
-	}
+  #home {
+    .partners-carousel-arrow-left,
+    .partners-carousel-arrow-right {
+      display: none;
+    }
+  }
 }
 
 @media screen and (max-width: 1000px) {
-	#home .partners-carousel-container {
-		width: calc(100% + 40px);
-	}
+  #home .partners-carousel-container {
+    width: calc(100% + 40px);
+  }
 }
 
 @media screen and (max-width: 460px) {
-	#home .countdown {
-		font-size: 14px;
-	}
+  #home .countdown {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 380px) {
-	#home .countdown {
-		font-size: 12px;
-	}
+  #home .countdown {
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 340px) {
-	#home .countdown {
-		font-size: 14px;
-		flex-flow: column wrap;
-	}
+  #home .countdown {
+    font-size: 14px;
+    flex-flow: column wrap;
+  }
 }

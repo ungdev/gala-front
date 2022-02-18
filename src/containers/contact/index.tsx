@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import axios from '../../utils/axios';
 
@@ -11,171 +11,133 @@ import './contact.scss';
 
 const emailRegexp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-interface ContactState {
-  buttonStatus: SubmitButtonState;
-  notificationStatus: string | null;
-  notificationText: string;
-  errorFields: {
-    name: string;
-    email: string;
-    message: string;
-  };
-  name: string;
-  email: string;
-  message: string;
-}
+const Contact = () => {
+  const [buttonStatus, setButtonStatus] = useState<'loading' | null>(null);
+  const [notificationStatus, setNotificationStatus] = useState<'success' | 'error' | '' | null>(null);
+  const [notificationText, setNotificationText] = useState('');
+  const [errorFields, setErrorFields] = useState({ name: '', email: '', message: '' });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
-class Contact extends React.Component<{}, ContactState> {
-  constructor(props: {}) {
-    super(props);
-
-    this.state = {
-      buttonStatus: null,
-      notificationStatus: null,
-      notificationText: '',
-      errorFields: {
-        name: '',
-        email: '',
-        message: '',
-      },
-      name: '',
-      email: '',
-      message: '',
-    };
-  }
-
-  checkFields = () => {
+  const checkFields = () => {
     const errors = {
       name: '',
       email: '',
       message: '',
     };
 
-    if (this.state.name === '') {
+    if (name === '') {
       errors.name = 'Veuillez saisir votre nom';
     }
 
-    if (this.state.email === '') {
+    if (email === '') {
       errors.email = 'Veuillez saisir votre adresse mail';
-    } else if (!this.state.email.match(emailRegexp)) {
+    } else if (!email.match(emailRegexp)) {
       errors.email = 'Veuillez saisir une adresse mail valide';
     }
 
-    if (this.state.message === '') {
+    if (message === '') {
       errors.message = 'Veuillez saisir votre message';
     }
 
     if (!errors.name && !errors.email && !errors.message) {
       return true;
     }
-    this.setState({
-      errorFields: errors,
-    });
 
+    setErrorFields(errors);
     return false;
   };
 
-  submit = async () => {
-    if (!this.checkFields()) {
+  const submit = async () => {
+    if (!checkFields()) {
       return;
     }
 
-    this.setState({
-      buttonStatus: 'loading',
-    });
+    setButtonStatus('loading');
 
     try {
       await axios.post('contact', {
-        name: this.state.name,
-        email: this.state.email,
-        message: this.state.message,
+        name,
+        email,
+        message,
       });
 
-      this.setState({
-        notificationStatus: 'success',
-        notificationText: 'Le message a bien été envoyé',
-      });
+      setNotificationStatus('success');
+      setNotificationText('Le message a bien été envoyé');
 
-      this.clearFields();
+      clearFields();
     } catch (err) {
-      this.setState({
-        notificationStatus: 'error',
-        notificationText: "Erreur lors de l'envoi du message",
-      });
+      setNotificationStatus('error');
+      setNotificationText("Erreur lors de l'envoi du message");
     }
 
-    this.setState({
-      buttonStatus: null,
-    });
+    setButtonStatus(null);
   };
 
-  clearFields = () => {
-    this.setState({
-      errorFields: {
-        name: '',
-        email: '',
-        message: '',
-      },
+  const clearFields = () => {
+    setErrorFields({
       name: '',
       email: '',
       message: '',
     });
+    setName('');
+    setEmail('');
+    setMessage('');
   };
 
-  render() {
-    return (
-      <div className="page-container" id="contact">
-        <div className="content">
-          <h1>Contact</h1>
-          <hr />
+  return (
+    <div className="page-container" id="contact">
+      <div className="content">
+        <h1>Contact</h1>
+        <hr />
 
-          <Notification status={this.state.notificationStatus}>{this.state.notificationText}</Notification>
-          <div id="input_fields">
-            <InputField
-              placeholder="Nom"
-              className="contact-name-field"
-              onChange={(name) =>
-                this.setState({
-                  name,
-                  errorFields: { ...this.state.errorFields, name: '' },
-                })
-              }
-              value={this.state.name}
-              error={this.state.errorFields.name}
-            />
-
-            <InputField
-              placeholder="Email"
-              className="contact-name-field"
-              onChange={(email) =>
-                this.setState({
-                  email,
-                  errorFields: { ...this.state.errorFields, email: '' },
-                })
-              }
-              value={this.state.email}
-              error={this.state.errorFields.email}
-            />
-          </div>
-
-          <Textarea
-            placeholder="Message"
-            className="contact-textarea"
-            onChange={(message) =>
-              this.setState({
-                message,
-                errorFields: { ...this.state.errorFields, message: '' },
+        <Notification status={notificationStatus}>{notificationText}</Notification>
+        <div id="input_fields">
+          <InputField
+            placeholder="Nom"
+            className="contact-name-field"
+            onChange={(name) =>
+              setErrorFields({
+                ...errorFields,
+                name,
               })
             }
-            value={this.state.message}
-            error={this.state.errorFields.message}
+            value={name}
+            error={errorFields.name}
           />
 
-          <SubmitButton className="contact-submit-button" onClick={this.submit} status={this.state.buttonStatus} />
+          <InputField
+            placeholder="Email"
+            className="contact-name-field"
+            onChange={(email) =>
+              setErrorFields({
+                ...errorFields,
+                email,
+              })
+            }
+            value={email}
+            error={errorFields.email}
+          />
         </div>
+
+        <Textarea
+          placeholder="Message"
+          className="contact-textarea"
+          onChange={(message) =>
+            setErrorFields({
+              ...errorFields,
+              message,
+            })
+          }
+          value={message}
+          error={errorFields.message}
+        />
+
+        <SubmitButton className="contact-submit-button" onClick={submit} status={buttonStatus} />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Contact;

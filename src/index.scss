@@ -134,30 +134,30 @@ small {
   cursor: pointer;
   outline: none;
   transition: all 0.3s;
-}
 
-.button::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: calc(-30% - 20px);
-  height: 100%;
-  width: 100%;
-  background: rgba(50, 50, 50, 0.2);
-  clip-path: polygon(0 0, 30% 0, calc(30% + 20px) 100%, 0% 100%);
-  z-index: 1;
-  transition: all 0.3s;
-}
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: calc(-30% - 20px);
+    height: 100%;
+    width: 100%;
+    background: rgba(50, 50, 50, 0.2);
+    clip-path: polygon(0 0, 30% 0, calc(30% + 20px) 100%, 0% 100%);
+    z-index: 1;
+    transition: all 0.3s;
+  }
 
-.button:hover,
-.button:focus {
-  filter: brightness(0.9);
-}
+  &:hover,
+  &:focus {
+    filter: brightness(0.9);
+  }
 
-.button:hover::before,
-.button:focus::before {
-  left: 0;
+  &:hover::before,
+  &:focus::before {
+    left: 0;
+  }
 }
 
 h2.title-decoration {

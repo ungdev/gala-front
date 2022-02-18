@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Countdown from 'react-countdown';
 import OwlCarousel from 'react-owl-carousel';
@@ -15,84 +15,64 @@ interface RawPartner {
   name: string;
 }
 
-interface HomeState {
-  partners: JSX.Element[] | null;
-  top: boolean;
-}
+const Home = () => {
+  const [partners, setPartners] = useState<JSX.Element[] | null>(null);
+  const [isTop, setTop] = useState(true);
 
-class Home extends React.Component<{}, HomeState> {
-  private carouselRef: React.RefObject<OwlCarousel>;
-  private carouselInterval: number | null;
+  const carouselRef = React.createRef<OwlCarousel>();
+  let carouselInterval: number | null = null;
 
-  constructor(props: {}) {
-    super(props);
-
-    this.carouselRef = React.createRef();
-    this.carouselInterval = null;
-
-    this.state = {
-      partners: null,
-      top: true,
+  useEffect(() => {
+    fetchPartners();
+    window.addEventListener('scroll', scrollHandle, { passive: true });
+    window.addEventListener('touchmove', scrollHandle, { passive: true });
+    return () => {
+      clearCarouselInterval();
+      window.removeEventListener('scroll', scrollHandle);
+      window.removeEventListener('touchmove', scrollHandle);
     };
+  }, []);
 
-    this.fetchPartners();
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.scrollHandle, { passive: true });
-    window.addEventListener('touchmove', this.scrollHandle, { passive: true });
-  }
-
-  componentWillUnmount() {
-    this.clearCarouselInterval();
-
-    window.removeEventListener('scroll', this.scrollHandle);
-    window.removeEventListener('touchmove', this.scrollHandle);
-  }
-
-  scrollHandle = () => {
+  const scrollHandle = () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-
-    this.setState({
-      top: scrollTop === 0,
-    });
+    setTop(scrollTop === 0);
   };
 
-  clearCarouselInterval = () => {
-    if (this.carouselInterval) {
-      window.clearInterval(this.carouselInterval);
-      this.carouselInterval = null;
+  const clearCarouselInterval = () => {
+    if (carouselInterval) {
+      window.clearInterval(carouselInterval);
+      carouselInterval = null;
     }
   };
 
-  setCarouselInterval = () => {
-    if (!this.carouselInterval) {
-      this.carouselInterval = window.setInterval(() => {
-        if (this.carouselRef.current) {
-          this.carouselRef.current.next(1200);
+  const setCarouselInterval = () => {
+    if (!carouselInterval) {
+      carouselInterval = window.setInterval(() => {
+        if (carouselRef.current) {
+          carouselRef.current.next(1200);
         }
       }, 2000);
     }
   };
 
-  carouselPrev = () => {
-    this.carouselRef.current?.prev(300);
+  const carouselPrev = () => {
+    carouselRef.current?.prev(300);
 
     // Reset carousel interval
-    this.clearCarouselInterval();
-    this.setCarouselInterval();
+    clearCarouselInterval();
+    setCarouselInterval();
   };
 
-  carouselNext = () => {
-    this.carouselRef.current?.next(300);
+  const carouselNext = () => {
+    carouselRef.current?.next(300);
 
     // Reset carousel interval
-    this.clearCarouselInterval();
-    this.setCarouselInterval();
+    clearCarouselInterval();
+    setCarouselInterval();
   };
 
-  handleArrow = () => {
-    if (!this.state.top) {
+  const handleArrow = () => {
+    if (!isTop) {
       return;
     }
 
@@ -102,7 +82,7 @@ class Home extends React.Component<{}, HomeState> {
     });
   };
 
-  fetchPartners = async () => {
+  const fetchPartners = async () => {
     const apiPartners = await axios.get<RawPartner[]>('partners');
 
     const partners = apiPartners.data.map((partner, i) => (
@@ -111,17 +91,15 @@ class Home extends React.Component<{}, HomeState> {
       </a>
     ));
 
-    this.setState({
-      partners,
-    });
+    setPartners(partners);
   };
 
-  render = () => (
+  return (
     <div id="home">
       <div className="poster-container">
         <img src={posterImg} alt="" className="poster" />
 
-        <button className={`arrow-button${this.state.top ? ' active' : ''}`} onClick={this.handleArrow}>
+        <button className={`arrow-button${isTop ? ' active' : ''}`} onClick={handleArrow}>
           <div className="arrow-icon">
             <i className="fas fa-chevron-down" />
           </div>
@@ -192,11 +170,11 @@ class Home extends React.Component<{}, HomeState> {
       <div className="partners">
         <h2>Nos Partenaires</h2>
 
-        {this.state.partners && this.state.partners.length ? (
+        {partners && partners.length ? (
           <>
             <div className="partners-carousel-container">
-              <i className="partners-carousel-arrow-left fas fa-chevron-left" onClick={this.carouselPrev} />
-              <i className="partners-carousel-arrow-right fas fa-chevron-right" onClick={this.carouselNext} />
+              <i className="partners-carousel-arrow-left fas fa-chevron-left" onClick={carouselPrev} />
+              <i className="partners-carousel-arrow-right fas fa-chevron-right" onClick={carouselNext} />
 
               <OwlCarousel
                 responsive={{
@@ -208,12 +186,12 @@ class Home extends React.Component<{}, HomeState> {
                 }}
                 loop
                 smartSpeed={500}
-                onLoad={this.setCarouselInterval}
-                onDrag={this.clearCarouselInterval}
-                onDragged={this.setCarouselInterval}
+                onLoad={setCarouselInterval}
+                onDrag={clearCarouselInterval}
+                onDragged={setCarouselInterval}
                 className="partners-carousel"
-                ref={this.carouselRef}>
-                {this.state.partners}
+                ref={carouselRef}>
+                {partners}
               </OwlCarousel>
             </div>
 
@@ -223,7 +201,7 @@ class Home extends React.Component<{}, HomeState> {
               </Link>
             </div>
           </>
-        ) : this.state.partners === null ? (
+        ) : partners === null ? (
           <div className="partners-loader">
             <i className="fas fa-spinner fa-spin" />
           </div>
@@ -233,6 +211,6 @@ class Home extends React.Component<{}, HomeState> {
       </div>
     </div>
   );
-}
+};
 
 export default Home;

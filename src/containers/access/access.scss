@@ -1,42 +1,42 @@
 #access {
   max-width: 1220px;
-	margin: auto;
-	margin-bottom: 30px;
-	padding: 30px;
-	line-height: 1.6em;
-	color: #fff;
-	background-color: rgba(198,233,250,0.6);
-	text-align: left;
-}
+  margin: auto;
+  margin-bottom: 30px;
+  padding: 30px;
+  line-height: 1.6em;
+  color: #fff;
+  background-color: rgba(198, 233, 250, 0.6);
+  text-align: left;
 
-#access .plan-container {
-  width: 100%;
-  position: relative;
-  padding-top: 50%;
-  min-height: 350px;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.2);
-}
+  .plan-container {
+    width: 100%;
+    position: relative;
+    padding-top: 50%;
+    min-height: 350px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.2);
 
-#access ul li {
-  font-family: 'Fundamental', arial, sans-serif;
-  color: #0a3d60;
-  text-align: justify;
-}
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
 
-#access .plan-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 0;
-  width: 100%;
-  height: 100%;
-}
+  ul li {
+    font-family: 'Fundamental', arial, sans-serif;
+    color: #0a3d60;
+    text-align: justify;
+  }
 
-#access .access-list {
-  padding-left: 40px;
-}
+  .access-list {
+    padding-left: 40px;
 
-#access .access-list > li {
-  margin-right: 10px;
+    & > li {
+      margin-right: 10px;
+    }
+  }
 }

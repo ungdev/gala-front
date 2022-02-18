@@ -1,11 +1,11 @@
 #legal a {
-	color: #fff;
-	text-decoration: none;
-	border-bottom: 1px solid #868686;
-	display: inline-block;
-	transition: all .3s;
-}
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #868686;
+  display: inline-block;
+  transition: all 0.3s;
 
-#legal a:hover {
-	border-bottom: 1px solid #fff;
+  &:hover {
+    border-bottom: 1px solid #fff;
+  }
 }
