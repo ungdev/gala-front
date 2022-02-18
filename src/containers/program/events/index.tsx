@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import moment from 'moment';
 
 import axios from '../../../utils/axios';
@@ -14,22 +14,10 @@ interface RawEvent {
   description: string;
 }
 
-interface EventsState {
-  events: JSX.Element[] | null;
-}
+const Events = () => {
+  const [events, setEvents] = useState<ReactNode[]>();
 
-class Events extends React.Component<{}, EventsState> {
-  constructor(props: {}) {
-    super(props);
-
-    this.state = {
-      events: null,
-    };
-
-    this.fetchEvents();
-  }
-
-  fetchEvents = async () => {
+  const fetchEvents = async () => {
     const apiEvents = await axios.get<RawEvent[]>('events');
 
     const events = apiEvents.data
@@ -63,27 +51,26 @@ class Events extends React.Component<{}, EventsState> {
         </div>
       </div>
     ));
-
-    this.setState({
-      events: eventElements,
-    });
+    setEvents(eventElements);
   };
 
-  render() {
-    return (
-      <div id="events">
-        {this.state.events && this.state.events.length ? (
-          this.state.events
-        ) : this.state.events === null ? (
-          <div className="events-loader">
-            <i className="fas fa-spinner fa-spin" />
-          </div>
-        ) : (
-          <div className="no-events">(Les événements seront bientôt disponibles)</div>
-        )}
-      </div>
-    );
-  }
-}
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
+  return (
+    <div id="events">
+      {events && events.length ? (
+        events
+      ) : events === null ? (
+        <div className="events-loader">
+          <i className="fas fa-spinner fa-spin" />
+        </div>
+      ) : (
+        <div className="no-events">(Les événements seront bientôt disponibles)</div>
+      )}
+    </div>
+  );
+};
 
 export default Events;
