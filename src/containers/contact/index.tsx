@@ -97,12 +97,7 @@ const Contact = () => {
           <InputField
             placeholder="Nom"
             className="contact-name-field"
-            onChange={(name) =>
-              setErrorFields({
-                ...errorFields,
-                name,
-              })
-            }
+            onChange={(name) => setName(name)}
             value={name}
             error={errorFields.name}
           />
@@ -110,12 +105,7 @@ const Contact = () => {
           <InputField
             placeholder="Email"
             className="contact-name-field"
-            onChange={(email) =>
-              setErrorFields({
-                ...errorFields,
-                email,
-              })
-            }
+            onChange={(email) => setEmail(email)}
             value={email}
             error={errorFields.email}
           />
@@ -124,12 +114,7 @@ const Contact = () => {
         <Textarea
           placeholder="Message"
           className="contact-textarea"
-          onChange={(message) =>
-            setErrorFields({
-              ...errorFields,
-              message,
-            })
-          }
+          onChange={(message) => setMessage(message)}
           value={message}
           error={errorFields.message}
         />
