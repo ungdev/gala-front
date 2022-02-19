@@ -10,7 +10,7 @@ declare module 'react-lazyload-fadein' {
   export default class FadeIn extends React.Component<PropTypes> {}
 }
 
-declare module globalThis {
+declare namespace globalThis {
   interface Window {
     readonly OneSignal: any[];
   }

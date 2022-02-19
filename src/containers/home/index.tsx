@@ -14,7 +14,7 @@ interface RawPartner {
   name: string;
 }
 
-const Home = () => {
+function Home() {
   const [partners, setPartners] = useState<JSX.Element[] | null>(null);
   const [isTop, setTop] = useState(true);
 
@@ -84,13 +84,13 @@ const Home = () => {
   const fetchPartners = async () => {
     const apiPartners = await axios.get<RawPartner[]>('partners');
 
-    const partners = apiPartners.data.map((partner, i) => (
+    const fetchedPartners = apiPartners.data.map((partner, i) => (
       <a href={partner.url} key={i}>
         <img src={`${import.meta.env.VITE_API_URL}${partner.image}`} alt={partner.name} />
       </a>
     ));
 
-    setPartners(partners);
+    setPartners(fetchedPartners);
   };
 
   return (
@@ -208,6 +208,6 @@ const Home = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Home;

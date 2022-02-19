@@ -4,7 +4,7 @@ import './inputField.scss';
 
 let lastGeneratedId = 0;
 
-const InputField = ({
+function InputField({
   className,
   value,
   onChange,
@@ -12,11 +12,11 @@ const InputField = ({
   placeholder,
 }: {
   className: string;
-  value: any;
-  onChange: (value: any) => void;
+  value: string;
+  onChange: (update: string) => void;
   placeholder?: string;
   error?: string;
-}) => {
+}) {
   const id = lastGeneratedId++;
 
   return (
@@ -33,6 +33,11 @@ const InputField = ({
       </div>
     </span>
   );
+}
+
+InputField.defaultProps = {
+  placeholder: null,
+  error: null,
 };
 
 export default InputField;

@@ -13,7 +13,7 @@ interface TextAreaProps {
   error?: string;
 }
 
-const Textarea = (props: TextAreaProps) => {
+function Textarea(props: TextAreaProps) {
   const id = lastGeneratedId++;
 
   return (
@@ -36,6 +36,12 @@ const Textarea = (props: TextAreaProps) => {
       </div>
     </div>
   );
+}
+
+Textarea.defaultProps = {
+  className: null,
+  error: null,
+  placeholder: null,
 };
 
 export default Textarea;

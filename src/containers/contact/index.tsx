@@ -9,9 +9,10 @@ import Notification from '../../components/notification';
 
 import './contact.scss';
 
-const emailRegexp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const emailRegexp =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-const Contact = () => {
+function Contact() {
   const [buttonStatus, setButtonStatus] = useState<'loading' | null>(null);
   const [notificationStatus, setNotificationStatus] = useState<'success' | 'error' | '' | null>(null);
   const [notificationText, setNotificationText] = useState('');
@@ -97,7 +98,7 @@ const Contact = () => {
           <InputField
             placeholder="Nom"
             className="contact-name-field"
-            onChange={(name) => setName(name)}
+            onChange={(updatedName) => setName(updatedName)}
             value={name}
             error={errorFields.name}
           />
@@ -105,7 +106,7 @@ const Contact = () => {
           <InputField
             placeholder="Email"
             className="contact-name-field"
-            onChange={(email) => setEmail(email)}
+            onChange={(updatedEmail) => setEmail(updatedEmail)}
             value={email}
             error={errorFields.email}
           />
@@ -114,7 +115,7 @@ const Contact = () => {
         <Textarea
           placeholder="Message"
           className="contact-textarea"
-          onChange={(message) => setMessage(message)}
+          onChange={(updatedMessage) => setMessage(updatedMessage)}
           value={message}
           error={errorFields.message}
         />
@@ -123,6 +124,12 @@ const Contact = () => {
       </div>
     </div>
   );
+}
+
+Contact.defaultProps = {
+  name: null,
+  email: null,
+  message: null,
 };
 
 export default Contact;

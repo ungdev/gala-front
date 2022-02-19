@@ -4,7 +4,7 @@ import './submitButton.scss';
 
 export type SubmitButtonState = 'loading' | 'success' | null;
 
-const SubmitButton = ({
+function SubmitButton({
   className,
   status: initialStatus,
   onClick,
@@ -12,7 +12,7 @@ const SubmitButton = ({
   className?: string;
   onClick: () => void;
   status: SubmitButtonState;
-}) => {
+}) {
   const [status] = useState(initialStatus);
 
   const click = () => {
@@ -31,6 +31,10 @@ const SubmitButton = ({
       </button>
     </div>
   );
+}
+
+SubmitButton.defaultProps = {
+  className: null,
 };
 
 export default SubmitButton;

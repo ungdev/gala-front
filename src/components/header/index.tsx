@@ -17,6 +17,7 @@ const links = [
     path: '/',
     id: 'home',
     imageSrc: cassiopee,
+    title: 'Accueil',
   },
   {
     title: 'Covid-19',
@@ -28,7 +29,7 @@ const links = [
   },
 ];
 
-const Header = () => {
+function Header() {
   const [isMobileMenuActive, setMobileMenuActive] = useState(false);
   const [isAtTop, setAtTop] = useState(true);
 
@@ -66,7 +67,7 @@ const Header = () => {
         onClick={closeMobileMenu}
         id={link.id && `nav-${link.id}-link`}>
         {/* .normalize("NFD").replace(/[\u0300-\u036f]/g is used to remove accents */}
-        <div className="container">{link.imageSrc ? <img src={link.imageSrc} /> : link.title}</div>
+        <div className="container">{link.imageSrc ? <img src={link.imageSrc} alt={link.title} /> : link.title}</div>
       </Link>
     );
   });
@@ -91,6 +92,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+}
 
 export default Header;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './tickets.scss';
 
-const Tickets = () => {
+function Tickets() {
   return (
     <div className="page-container" id="tickets">
       <div className="billetterie_container">
@@ -21,8 +21,8 @@ const Tickets = () => {
 
         <h2 className="title-decoration">Identité</h2>
         <p>
-          Une pièce d'identité (permis de conduire, carte d'identité ou passeport) est nécessaire afin de pouvoir
-          entrer au sein de l'événement, les places étant nominatives.
+          Une pièce d'identité (permis de conduire, carte d'identité ou passeport) est nécessaire afin de pouvoir entrer
+          au sein de l'événement, les places étant nominatives.
         </p>
         <p>
           <strong>Les organisateurs se réservent le droit d'accès.</strong>
@@ -34,9 +34,8 @@ const Tickets = () => {
         <h2 className="title-decoration">Sécurité</h2>
         <p>
           Les dispositifs dangereux tels que les armes à feu, les armes blanches ou les objets contondants sont
-          interdits à l'intérieur du Gala, sans exception.{' '}
-          <strong>Une fouille sera réalisée avant toute entrée</strong>, provoquant la confiscation de tout matériel
-          pouvant poser un problème de sécurité (rasoir, aérosol, ...).
+          interdits à l'intérieur du Gala, sans exception. <strong>Une fouille sera réalisée avant toute entrée</strong>
+          , provoquant la confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
         </p>
         <button className="tickets-button button">La billetterie est fermée</button>
       </div>

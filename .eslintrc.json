@@ -2,7 +2,6 @@
   "extends": [
     "airbnb",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
     "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
@@ -30,6 +29,9 @@
     "react/no-unescaped-entities": "off",
     "import/default": "off",
     "react/prop-types": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-filename-extension": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "no-unused-vars": "warn",
     "import/no-named-as-default": "off",

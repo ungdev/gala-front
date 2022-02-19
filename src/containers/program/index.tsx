@@ -1,5 +1,4 @@
-import React, { ReactNode } from 'react';
-import { useState, useEffect } from 'react';
+import React, { ReactNode, useState, useEffect } from 'react';
 import moment from 'moment';
 
 import axios from '../../utils/axios';
@@ -16,26 +15,27 @@ interface RawArtist {
   eventPlace: string;
 }
 
-const Program = () => {
+function Program() {
   const [artists, setArtists] = useState<ReactNode[]>();
-  
-  
+
   const fetchArtists = async () => {
     const apiArtists = await axios.get<RawArtist[]>('artists');
-    
-    setArtists(apiArtists.data.map((artist, i) => (
-      <Artist
-      name={artist.name}
-      image={`${import.meta.env.VITE_API_URL}${artist.image}`}
-      link={artist.link}
-      hour={artist.eventDate ? moment(artist.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').format('HH[h]mm') : ''}
-      place={artist.eventPlace}
-      key={i}
-      number={i}
-      />
-    )));
+
+    setArtists(
+      apiArtists.data.map((artist, i) => (
+        <Artist
+          name={artist.name}
+          image={`${import.meta.env.VITE_API_URL}${artist.image}`}
+          link={artist.link}
+          hour={artist.eventDate ? moment(artist.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').format('HH[h]mm') : ''}
+          place={artist.eventPlace}
+          key={i}
+          number={i}
+        />
+      )),
+    );
   };
-  
+
   useEffect(() => {
     fetchArtists();
   }, []);

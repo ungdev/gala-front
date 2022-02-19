@@ -19,39 +19,41 @@ import Commitments from './containers/commitments';
 
 import './index.scss';
 
-const App = () => (
-  <div id="app">
-    <Router>
-      <ScrollToTop>
-        <Notifications />
+function App() {
+  return (
+    <div id="app">
+      <Router>
+        <ScrollToTop>
+          <Notifications />
 
-        <Header />
+          <Header />
 
-        <div id="page">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/programme" element={<Program />} />
-            <Route path="/billetterie" element={<Tickets />} />
-            <Route path="/partenaires" element={<Partners />} />
-            <Route path="/engagements" element={<Commitments />} />
-            <Route path="/covid-19" element={<Covid19 />} />
-            <Route path="/acces" element={<Access />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/mentions-legales" element={<Legal />} />
-            <Route path="/confidentialite" element={<Privacy />} />
-            {/*
-             * This is a temporary fix: "Recognize that the navigation will happen in a useEffect"
-             * From a note of the docs: https://reactrouter.com/docs/en/v6/upgrading/v5#use-usenavigate-instead-of-usehistory
-             * For this reason, all other routes may use the existing pageNotFound container in the future.
-             */}
-            <Route path="/*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </div>
+          <div id="page">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/programme" element={<Program />} />
+              <Route path="/billetterie" element={<Tickets />} />
+              <Route path="/partenaires" element={<Partners />} />
+              <Route path="/engagements" element={<Commitments />} />
+              <Route path="/covid-19" element={<Covid19 />} />
+              <Route path="/acces" element={<Access />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/mentions-legales" element={<Legal />} />
+              <Route path="/confidentialite" element={<Privacy />} />
+              {/*
+               * This is a temporary fix: "Recognize that the navigation will happen in a useEffect"
+               * From a note of the docs: https://reactrouter.com/docs/en/v6/upgrading/v5#use-usenavigate-instead-of-usehistory
+               * For this reason, all other routes may use the existing pageNotFound container in the future.
+               */}
+              <Route path="/*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </div>
 
-        <Footer />
-      </ScrollToTop>
-    </Router>
-  </div>
-);
+          <Footer />
+        </ScrollToTop>
+      </Router>
+    </div>
+  );
+}
 
 export default App;

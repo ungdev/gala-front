@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const Notifications = () => {
+function Notifications() {
   useEffect(() => {
     const OneSignal = window.OneSignal || [];
 
@@ -32,6 +32,6 @@ const Notifications = () => {
   }, []);
 
   return null;
-};
+}
 
 export default Notifications;

@@ -4,7 +4,13 @@ import axios from '../../utils/axios';
 
 import './partners.scss';
 
-const Partners = () => {
+interface RawPartner {
+  url: string;
+  image: string;
+  name: string;
+}
+
+function Partners() {
   const [partners, setPartners] = useState<ReactNode[] | null>(null);
 
   useEffect(() => {
@@ -14,7 +20,7 @@ const Partners = () => {
   const fetchPartners = async () => {
     const apiPartners = await axios.get<RawPartner[]>('partners');
 
-    const partners = apiPartners.data.map((partner, i) => (
+    const fetchedPartners = apiPartners.data.map((partner, i) => (
       <a href={partner.url} className="partner-link" key={i}>
         <div className="partner" data-name={partner.name}>
           <div className="partner-image">
@@ -24,7 +30,7 @@ const Partners = () => {
       </a>
     ));
 
-    setPartners(partners);
+    setPartners(fetchedPartners);
   };
 
   return (
@@ -43,12 +49,6 @@ const Partners = () => {
       )}
     </div>
   );
-};
-
-interface RawPartner {
-  url: string;
-  image: string;
-  name: string;
 }
 
 export default Partners;

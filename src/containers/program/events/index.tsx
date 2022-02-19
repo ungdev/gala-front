@@ -14,13 +14,13 @@ interface RawEvent {
   description: string;
 }
 
-const Events = () => {
+function Events() {
   const [events, setEvents] = useState<ReactNode[]>();
 
   const fetchEvents = async () => {
     const apiEvents = await axios.get<RawEvent[]>('events');
 
-    const events = apiEvents.data
+    const fetchedEvents = apiEvents.data
       .sort((event1, event2) => {
         const date1 = new Date(event1.start);
         const date2 = new Date(event2.start);
@@ -34,7 +34,7 @@ const Events = () => {
         image: `${import.meta.env.VITE_API_URL}${event.image}`,
       }));
 
-    const eventElements = events.map((event, i) => (
+    const eventElements = fetchedEvents.map((event, i) => (
       <div className="event" key={i}>
         <div className="event-dates">
           <div className="event-start">{event.start}</div>
@@ -71,6 +71,6 @@ const Events = () => {
       )}
     </div>
   );
-};
+}
 
 export default Events;
