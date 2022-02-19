@@ -153,11 +153,13 @@ header {
         position: fixed;
         display: block;
         background: var(--text-color);
-        opacity: 0.7;
-        height: 0;
+        height: 100%;
         width: 100%;
         z-index: -1;
-        transition: all 0.05s;
+        pointer-events: none;
+        top: 0;
+        opacity: 0;
+        transition: opacity 150ms;
       }
 
       a {
@@ -179,7 +181,8 @@ header {
 
     &.active .links {
       &::before {
-        height: 100%;
+        opacity: 0.7;
+        pointer-events: all;
       }
 
       a {
