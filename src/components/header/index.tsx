@@ -1,41 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import cassiopee from '../../assets/ic-cassiopee.png';
 import './header.scss';
 
 const links = [
   {
-    title: 'Accueil',
-    path: '/',
-    id: 'home',
+    title: 'A propos',
+    path: '/about',
   },
   {
-    title: 'Programme',
-    path: '/programme',
+    title: 'Les artistes',
+    path: '/artists',
+  },
+  {
+    path: '/',
+    id: 'home',
+    imageSrc: cassiopee,
+  },
+  {
+    title: 'Covid-19',
+    path: '/covid19',
   },
   {
     title: 'Billetterie',
     path: '/billetterie',
-  },
-  {
-    title: 'Partenaires',
-    path: '/partenaires',
-  },
-  {
-    title: 'Engagements',
-    path: '/engagements',
-  },
-  {
-    title: 'COVID-19',
-    path: '/covid-19',
-  },
-  {
-    title: 'Accès',
-    path: '/acces',
-  },
-  {
-    title: 'Contact',
-    path: '/contact',
   },
 ];
 
@@ -77,7 +66,7 @@ const Header = () => {
         onClick={closeMobileMenu}
         id={link.id && `nav-${link.id}-link`}>
         {/* .normalize("NFD").replace(/[\u0300-\u036f]/g is used to remove accents */}
-        <li id={link.id && `nav-${link.id}-text`}>{link.title}</li>
+        <div className="container">{link.imageSrc ? <img src={link.imageSrc} /> : link.title}</div>
       </Link>
     );
   });
@@ -97,7 +86,7 @@ const Header = () => {
             </div>
           </div>
 
-          <ul>{navigationLinks}</ul>
+          <div className="links">{navigationLinks}</div>
         </nav>
       </div>
     </header>

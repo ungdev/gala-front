@@ -4,7 +4,6 @@ import Countdown from 'react-countdown';
 import OwlCarousel from 'react-owl-carousel';
 
 import axios from '../../utils/axios';
-import posterImg from '../../assets/ic-cassiopee.png';
 
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import './home.scss';
@@ -97,8 +96,6 @@ const Home = () => {
   return (
     <div id="home">
       <div className="poster-container">
-        <img src={posterImg} alt="" className="poster" />
-
         <button className={`arrow-button${isTop ? ' active' : ''}`} onClick={handleArrow}>
           <div className="arrow-icon">
             <i className="fas fa-chevron-down" />

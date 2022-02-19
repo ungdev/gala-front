@@ -127,15 +127,13 @@ small {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
 }
 
 #page {
   color: #fff;
   margin: 0 auto;
-  padding: 20px 10px;
   flex-grow: 1;
-  width: calc(100% - 20px);
+  width: 100%;
 }
 
 .button {
