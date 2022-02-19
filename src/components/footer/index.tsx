@@ -19,12 +19,12 @@ function Footer() {
           Les artistes
         </Link>
         <br />
-        <Link to="/covid-19" className="animate">
+        <Link to="/covid19" className="animate">
           Covid-19
         </Link>
         <br />
         <Link to="/shop" className="animate">
-          Billeterie
+          Billetterie
         </Link>
       </div>
 

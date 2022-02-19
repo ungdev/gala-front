@@ -25,7 +25,7 @@ const links = [
   },
   {
     title: 'Billetterie',
-    path: '/billetterie',
+    path: '/shop',
   },
 ];
 
