@@ -1,0 +1,11 @@
+#legal a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #868686;
+  display: inline-block;
+  transition: all 0.3s;
+
+  &:hover {
+    border-bottom: 1px solid #fff;
+  }
+}
