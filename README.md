@@ -50,10 +50,10 @@ gala.utt.fr/
 │   ├── containers/                  # pages that handle routes
 │   │   └── home/
 |   │      └── components/           # components used by this container only
-│   ├── app.jsx                      # describe the app and the routes
-│   ├── index.css                    # common css
-│   ├── index.jsx                    # entry point
-│   └── serviceWorker.js             # generated file for PWA
+│   ├── app.tsx                      # describe the app and the routes
+│   ├── index.scss                    # sass script, turned into common css by vite
+│   ├── index.tsx                    # entry point
+│   └── serviceWorker.ts             # generated file for PWA
 ├── .editorconfig                 # define editor options
 └── .env                          # environment variables
 ```

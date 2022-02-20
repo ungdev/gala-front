@@ -1,0 +1,42 @@
+#access {
+  max-width: 1220px;
+  margin: auto;
+  margin-bottom: 30px;
+  padding: 30px;
+  line-height: 1.6em;
+  color: #fff;
+  background-color: rgba(198, 233, 250, 0.6);
+  text-align: left;
+
+  .plan-container {
+    width: 100%;
+    position: relative;
+    padding-top: 50%;
+    min-height: 350px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.2);
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  ul li {
+    font-family: 'Fundamental', arial, sans-serif;
+    color: #0a3d60;
+    text-align: justify;
+  }
+
+  .access-list {
+    padding-left: 40px;
+
+    & > li {
+      margin-right: 10px;
+    }
+  }
+}
