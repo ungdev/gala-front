@@ -7,6 +7,8 @@ import axios from '../../utils/axios';
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 
 import 'owl.carousel/dist/assets/owl.carousel.css';
+import placeholderImage from '../../assets/placeholder.jpg';
+import bookmark from '../../assets/bookmark-content.png';
 import './home.scss';
 
 interface RawPartner {
@@ -116,76 +118,93 @@ function Home() {
 
       <div className="page-container">
         <div className="poster-text">
-          <h1>À propos de Cassiopée</h1>
-
-          <div className="important">
-            <h2>⚠️ Important ⚠️</h2>
-            <p>
-              Malgré toute l’inventivité dont l’équipe de Cassiopée a pu faire preuve pour organiser un événement
-              respectant les normes en vigueur et préservant la santé des participants, nous sommes au regret de vous
-              annoncer l’annulation de Cassiopée Day Edition prévu le 5 juin 2021 💔
-              <br />
-              C’est le cœur lourd que nous vous disons à l’année prochaine pour que Cassiopée puisse enfin voir le jour
-              🙋
-            </p>
+          <div className="title center">
+            <h1>Qu'est ce que le gala&nbsp;?</h1>
           </div>
 
           <p>
-            Cassiopée Day Edition est un événement géré par l'association Gala UTT de l'Université de Technologie de
-            Troyes qui organise tous les ans une soirée incontournable dans le Grand Est.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula a felis a mollis. Nunc
+            hendrerit, eros fringilla efficitur dapibus, libero quam rutrum sem, ut pharetra augue mi at urna. Duis sit
+            amet ligula eros. Nam commodo iaculis euismod. Nullam pulvinar, massa ultrices elementum pretium, risus
+            dolor ultricies est, et tempus ex justo nec odio. Quisque ex nisl, iaculis id volutpat et, viverra at enim.
+            Etiam tincidunt vulputate erat, nec malesuada velit mattis id. Proin tristique mauris est.
           </p>
           <p>
-            Cette année Cassiopée aura lieu sous un format exceptionnel et gratuit, réunissant tous types d'invités pour
-            un après-midi de concerts et de découvertes sur le thème d'Atlantide entre 14h30 et 19h !
+            Nunc venenatis fringilla dapibus. Vestibulum eros lacus, luctus a arcu eget, venenatis ultrices lorem. In
+            gravida, sem sed laoreet ultricies, lacus diam aliquet dolor, ac tristique nunc metus eu mauris. Suspendisse
+            risus nunc, lacinia eu lobortis eget, eleifend sed metus. Phasellus quis tortor nunc. Morbi porta tincidunt
+            porttitor. Praesent ornare nisi vitae nisl maximus sollicitudin. Nulla scelerisque lorem ante, id accumsan
+            enim malesuada in. Aliquam erat volutpat. In hac habitasse platea dictumst. In hac habitasse platea
+            dictumst. Donec sed tempus sem, id euismod enim. Curabitur quis tortor et lectus euismod mattis. Nunc ut
+            orci ut lacus aliquam tristique. Suspendisse sit amet ullamcorper urna, at porta elit. Duis malesuada libero
+            ac dictum feugiat.
           </p>
           <p>
-            Trois scènes étudiantes, deux stands de restauration, un stand de champagne et deux animations originales,
-            cet évènement ne pourra que vous séduire…
+            In hac habitasse platea dictumst. Sed tristique imperdiet felis. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Praesent metus ante, egestas nec congue nec, semper eget nulla. Proin nulla nulla, gravida
+            ac dapibus et, laoreet ut urna. Aliquam non est ultricies, cursus odio at, blandit turpis. In massa est,
+            auctor eu est eget, tincidunt porta nulla. Aenean nisl lectus, maximus eu est id, pharetra imperdiet felis.
+            In in arcu sit amet felis tempus posuere eget in enim. Pellentesque lobortis iaculis quam, vitae consequat
+            nibh euismod laoreet.
           </p>
+
+          <img src={placeholderImage} alt="Illustration" />
+          <div className="shadow" />
         </div>
       </div>
 
       <div className="partners">
-        <h2>Nos Partenaires</h2>
-
-        {partners && partners.length ? (
-          <>
-            <div className="partners-carousel-container">
-              <i className="partners-carousel-arrow-left fas fa-chevron-left" onClick={carouselPrev} />
-              <i className="partners-carousel-arrow-right fas fa-chevron-right" onClick={carouselNext} />
-
-              <OwlCarousel
-                responsive={{
-                  0: { items: 2 },
-                  400: { items: 3 },
-                  550: { items: 4 },
-                  800: { items: 5 },
-                  1000: { items: 6 },
-                }}
-                loop
-                smartSpeed={500}
-                onLoad={setCarouselInterval}
-                onDrag={clearCarouselInterval}
-                onDragged={setCarouselInterval}
-                className="partners-carousel"
-                ref={carouselRef}>
-                {partners}
-              </OwlCarousel>
+        <div className="partner-content">
+          <div className="bookmark-wrapper">
+            <div className="title left">
+              <h2>Nos Partenaires</h2>
             </div>
 
-            <div className="centered">
-              <Link to="/partenaires" className="button">
-                Tous les partenaires
-              </Link>
+            <div className="bookmark">
+              <div className="overlay" />
+              <img src={bookmark} alt="Logo Cassiopée" />
             </div>
-          </>
-        ) : partners === null ? (
-          <div className="partners-loader">
-            <i className="fas fa-spinner fa-spin" />
           </div>
-        ) : (
-          <div className="no-partners">(Les partenaires seront bientôt disponibles)</div>
-        )}
+
+          {partners && partners.length ? (
+            <>
+              <div className="partners-carousel-container">
+                <i className="partners-carousel-arrow-left fas fa-chevron-left" onClick={carouselPrev} />
+                <i className="partners-carousel-arrow-right fas fa-chevron-right" onClick={carouselNext} />
+
+                <OwlCarousel
+                  responsive={{
+                    0: { items: 2 },
+                    400: { items: 3 },
+                    550: { items: 4 },
+                    800: { items: 5 },
+                    1000: { items: 6 },
+                  }}
+                  loop
+                  smartSpeed={500}
+                  onLoad={setCarouselInterval}
+                  onDrag={clearCarouselInterval}
+                  onDragged={setCarouselInterval}
+                  className="partners-carousel"
+                  ref={carouselRef}>
+                  {partners}
+                </OwlCarousel>
+              </div>
+
+              <div className="centered">
+                <Link to="/partenaires" className="button">
+                  Tous les partenaires
+                </Link>
+              </div>
+            </>
+          ) : partners === null ? (
+            <div className="partners-loader">
+              <i className="fas fa-spinner fa-spin" />
+            </div>
+          ) : (
+            <div className="no-partners">(Les partenaires seront bientôt disponibles)</div>
+          )}
+        </div>
       </div>
     </div>
   );
