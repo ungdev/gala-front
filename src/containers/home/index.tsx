@@ -202,7 +202,7 @@ function Home() {
               <i className="fas fa-spinner fa-spin" />
             </div>
           ) : (
-            <div className="no-partners">(Les partenaires seront bientôt disponibles)</div>
+            <div className="no-partners">Les partenaires seront bientôt disponibles</div>
           )}
         </div>
       </div>

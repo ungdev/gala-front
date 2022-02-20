@@ -250,7 +250,7 @@
   .partners-carousel-arrow-right {
     position: absolute;
     top: 50%;
-    color: var(--secondary-color);
+    color: var(--text-color);
     font-size: 50px;
     padding: 20px;
     cursor: pointer;
@@ -283,6 +283,8 @@
         width: calc(100% - 10px);
         margin: 5px;
         max-height: 100%;
+        border-radius: 50%;
+        border: 6px solid var(--text-color);
       }
     }
   }
@@ -293,6 +295,11 @@
     color: #fff;
     text-align: center;
     margin: 20px 0;
+  }
+
+  .no-partners {
+    opacity: 0.9;
+    font-style: italic;
   }
 
   .partners-loader {
@@ -409,6 +416,14 @@
       grid-column: 1;
       grid-row: 3 / 4;
     }
+  }
+
+  .bookmark-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .bookmark {
+    display: none;
   }
 }
 
