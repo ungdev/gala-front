@@ -4,6 +4,7 @@ import Countdown from 'react-countdown';
 import OwlCarousel from 'react-owl-carousel';
 
 import axios from '../../utils/axios';
+import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import './home.scss';
@@ -16,26 +17,14 @@ interface RawPartner {
 
 function Home() {
   const [partners, setPartners] = useState<JSX.Element[] | null>(null);
-  const [isTop, setTop] = useState(true);
 
   const carouselRef = React.createRef<OwlCarousel>();
   let carouselInterval: number | null = null;
 
   useEffect(() => {
     fetchPartners();
-    window.addEventListener('scroll', scrollHandle, { passive: true });
-    window.addEventListener('touchmove', scrollHandle, { passive: true });
-    return () => {
-      clearCarouselInterval();
-      window.removeEventListener('scroll', scrollHandle);
-      window.removeEventListener('touchmove', scrollHandle);
-    };
+    return () => clearCarouselInterval();
   }, []);
-
-  const scrollHandle = () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    setTop(scrollTop === 0);
-  };
 
   const clearCarouselInterval = () => {
     if (carouselInterval) {
@@ -70,17 +59,6 @@ function Home() {
     setCarouselInterval();
   };
 
-  const handleArrow = () => {
-    if (!isTop) {
-      return;
-    }
-
-    document.body.scrollTo({
-      behavior: 'smooth',
-      top: window.innerHeight - 80,
-    });
-  };
-
   const fetchPartners = async () => {
     const apiPartners = await axios.get<RawPartner[]>('partners');
 
@@ -96,16 +74,8 @@ function Home() {
   return (
     <div id="home">
       <div className="poster-container">
-        <button className={`arrow-button${isTop ? ' active' : ''}`} onClick={handleArrow}>
-          <div className="arrow-icon">
-            <i className="fas fa-chevron-down" />
-          </div>
-        </button>
-      </div>
-
-      <div className="page-container">
         <Countdown
-          date="05 June 2021 14:30:00"
+          date="14 May 2022 14:30:00"
           renderer={(props) => {
             if (!props.days && !props.hours && !props.minutes && !props.seconds) {
               return null;
@@ -114,26 +84,37 @@ function Home() {
             return (
               <div className="countdown">
                 <div className="countdown-item">
-                  <div>{props.days}</div>
+                  <div>{Math.floor(props.days / 10)}</div>
+                  <div>{props.days % 10}</div>
                   <div>Jour{props.days > 1 ? 's' : ''}</div>
                 </div>
+                <span>:</span>
                 <div className="countdown-item">
-                  <div>{props.hours}</div>
+                  <div>{Math.floor(props.hours / 10)}</div>
+                  <div>{props.hours % 10}</div>
                   <div>Heure{props.hours > 1 ? 's' : ''}</div>
                 </div>
+                <span>:</span>
                 <div className="countdown-item">
-                  <div>{props.minutes}</div>
+                  <div>{Math.floor(props.minutes / 10)}</div>
+                  <div>{props.minutes % 10}</div>
                   <div>Minute{props.minutes > 1 ? 's' : ''}</div>
                 </div>
+                <span>:</span>
                 <div className="countdown-item">
-                  <div>{props.seconds}</div>
+                  <div>{Math.floor(props.seconds / 10)}</div>
+                  <div>{props.seconds % 10}</div>
                   <div>Seconde{props.seconds > 1 ? 's' : ''}</div>
                 </div>
               </div>
             );
           }}
         />
+      </div>
 
+      <TopFloatingActionButton />
+
+      <div className="page-container">
         <div className="poster-text">
           <h1>À propos de Cassiopée</h1>
 

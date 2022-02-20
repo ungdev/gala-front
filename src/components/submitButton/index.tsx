@@ -14,10 +14,12 @@ function SubmitButton({
   status: SubmitButtonState;
 }) {
   const [status] = useState(initialStatus);
+  const [lastUsed, setLastUsed] = useState(Date.now());
 
   const click = () => {
-    // TODO: Prevent from spamming
-    if (status !== null) return;
+    // 500ms button cooldown
+    if (status !== null || Date.now() - lastUsed < 500) return;
+    setLastUsed(Date.now());
     onClick();
   };
 
