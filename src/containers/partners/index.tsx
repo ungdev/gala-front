@@ -15,7 +15,7 @@ function Partners() {
 
   useEffect(() => {
     fetchPartners();
-  });
+  }, []);
 
   const fetchPartners = async () => {
     const apiPartners = await axios.get<RawPartner[]>('partners');
