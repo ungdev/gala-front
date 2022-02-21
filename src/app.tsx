@@ -31,6 +31,7 @@ function App() {
           <div id="page">
             <Routes>
               <Route path="/" element={<Home />} />
+
               <Route path="/programme" element={<Program />} />
               <Route path="/billetterie" element={<Tickets />} />
               <Route path="/partenaires" element={<Partners />} />
@@ -38,6 +39,7 @@ function App() {
               <Route path="/covid-19" element={<Covid19 />} />
               <Route path="/acces" element={<Access />} />
               <Route path="/contact" element={<Contact />} />
+
               <Route path="/mentions-legales" element={<Legal />} />
               <Route path="/confidentialite" element={<Privacy />} />
               {/*
