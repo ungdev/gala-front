@@ -5,10 +5,11 @@ import OwlCarousel from 'react-owl-carousel';
 
 import axios from '../../utils/axios';
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
+import BookmarkedSection from '../../components/bookmarkedSection';
+import IllustratedText from '../../components/illustratedText';
 
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import placeholderImage from '../../assets/placeholder.jpg';
-import bookmark from '../../assets/bookmark-content.png';
 import './home.scss';
 
 interface RawPartner {
@@ -117,11 +118,11 @@ function Home() {
       <TopFloatingActionButton />
 
       <div className="page-container">
-        <div className="poster-text">
-          <div className="title center">
-            <h1>Qu'est ce que le gala&nbsp;?</h1>
-          </div>
-
+        <IllustratedText
+          title="Qu'est ce que le gala&nbsp;?"
+          titleAlignment="center"
+          imageSrc={placeholderImage}
+          alignment="left">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula a felis a mollis. Nunc
             hendrerit, eros fringilla efficitur dapibus, libero quam rutrum sem, ut pharetra augue mi at urna. Duis sit
@@ -147,65 +148,49 @@ function Home() {
             In in arcu sit amet felis tempus posuere eget in enim. Pellentesque lobortis iaculis quam, vitae consequat
             nibh euismod laoreet.
           </p>
-
-          <img src={placeholderImage} alt="Illustration" />
-          <div className="shadow" />
-        </div>
+        </IllustratedText>
       </div>
 
-      <div className="partners">
-        <div className="partner-content">
-          <div className="bookmark-wrapper">
-            <div className="title left">
-              <h2>Nos Partenaires</h2>
+      <BookmarkedSection title="Nos Partenaires">
+        {partners && partners.length ? (
+          <>
+            <div className="partners-carousel-container">
+              <i className="partners-carousel-arrow-left fas fa-chevron-left" onClick={carouselPrev} />
+              <i className="partners-carousel-arrow-right fas fa-chevron-right" onClick={carouselNext} />
+
+              <OwlCarousel
+                responsive={{
+                  0: { items: 2 },
+                  400: { items: 3 },
+                  550: { items: 4 },
+                  800: { items: 5 },
+                  1000: { items: 6 },
+                }}
+                loop
+                smartSpeed={500}
+                onLoad={setCarouselInterval}
+                onDrag={clearCarouselInterval}
+                onDragged={setCarouselInterval}
+                className="partners-carousel"
+                ref={carouselRef}>
+                {partners}
+              </OwlCarousel>
             </div>
 
-            <div className="bookmark">
-              <div className="overlay" />
-              <img src={bookmark} alt="Logo Cassiopée" />
+            <div className="centered">
+              <Link to="/partenaires" className="button">
+                Tous les partenaires
+              </Link>
             </div>
+          </>
+        ) : partners === null ? (
+          <div className="partners-loader">
+            <i className="fas fa-spinner fa-spin" />
           </div>
-
-          {partners && partners.length ? (
-            <>
-              <div className="partners-carousel-container">
-                <i className="partners-carousel-arrow-left fas fa-chevron-left" onClick={carouselPrev} />
-                <i className="partners-carousel-arrow-right fas fa-chevron-right" onClick={carouselNext} />
-
-                <OwlCarousel
-                  responsive={{
-                    0: { items: 2 },
-                    400: { items: 3 },
-                    550: { items: 4 },
-                    800: { items: 5 },
-                    1000: { items: 6 },
-                  }}
-                  loop
-                  smartSpeed={500}
-                  onLoad={setCarouselInterval}
-                  onDrag={clearCarouselInterval}
-                  onDragged={setCarouselInterval}
-                  className="partners-carousel"
-                  ref={carouselRef}>
-                  {partners}
-                </OwlCarousel>
-              </div>
-
-              <div className="centered">
-                <Link to="/partenaires" className="button">
-                  Tous les partenaires
-                </Link>
-              </div>
-            </>
-          ) : partners === null ? (
-            <div className="partners-loader">
-              <i className="fas fa-spinner fa-spin" />
-            </div>
-          ) : (
-            <div className="no-partners">Les partenaires seront bientôt disponibles</div>
-          )}
-        </div>
-      </div>
+        ) : (
+          <div className="no-partners">Les partenaires seront bientôt disponibles</div>
+        )}
+      </BookmarkedSection>
     </div>
   );
 }
