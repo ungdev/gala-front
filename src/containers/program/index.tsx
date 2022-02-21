@@ -3,11 +3,12 @@ import moment from 'moment';
 
 import axios from '../../utils/axios';
 import Artist from './artist';
-import Events from './events';
+// import Events from './events';
 
 import './program.scss';
+import Heading from '../../components/heading';
 
-interface RawArtist {
+interface ApiArtist {
   name: string;
   image: string;
   link: string;
@@ -19,7 +20,7 @@ function Program() {
   const [artists, setArtists] = useState<ReactNode[]>();
 
   const fetchArtists = async () => {
-    const apiArtists = await axios.get<RawArtist[]>('artists');
+    const apiArtists = await axios.get<ApiArtist[]>('artists');
 
     setArtists(
       apiArtists.data.map((artist, i) => (
@@ -30,7 +31,6 @@ function Program() {
           hour={artist.eventDate ? moment(artist.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').format('HH[h]mm') : ''}
           place={artist.eventPlace}
           key={i}
-          number={i}
         />
       )),
     );
@@ -42,21 +42,20 @@ function Program() {
 
   return (
     <div className="page-container" id="program">
-      <div id="artists">
-        <h1>Artistes</h1>
-        <hr />
+      <Heading title="Les Artistes" />
 
-        {artists && artists.length ? (
+      <div id="artists">
+        {artists?.length ? (
           <div className="artists-container">{artists}</div>
         ) : artists === null ? (
           <div className="artists-loader">
             <i className="fas fa-spinner fa-spin" />
           </div>
         ) : (
-          <div className="no-artists">(Les artistes seront bientôt disponibles)</div>
+          <div className="no-artists">Les artistes seront bientôt disponibles</div>
         )}
       </div>
-
+      {/*
       <br />
 
       <br />
@@ -71,7 +70,7 @@ function Program() {
         <h1>Restauration</h1>
         <hr />
         <div className="centered">A venir</div>
-      </div>
+      </div> */}
     </div>
   );
 }

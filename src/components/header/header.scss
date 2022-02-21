@@ -3,7 +3,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 99;
-  font-family: Segoe UI;
+  font-family: var(--text-font);
 
   .header-content {
     text-align: center;

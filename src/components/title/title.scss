@@ -1,5 +1,5 @@
 .title {
-  font-family: Stencil;
+  font-family: var(--title-font);
   z-index: 0; /* Creates a stacking context */
   position: relative;
   margin-bottom: 40px;

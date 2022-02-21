@@ -5,7 +5,7 @@ import axios from '../../../utils/axios';
 
 import './events.scss';
 
-interface RawEvent {
+interface ApiEvent {
   start: number;
   end: number;
   image: string;
@@ -18,7 +18,7 @@ function Events() {
   const [events, setEvents] = useState<ReactNode[]>();
 
   const fetchEvents = async () => {
-    const apiEvents = await axios.get<RawEvent[]>('events');
+    const apiEvents = await axios.get<ApiEvent[]>('events');
 
     const fetchedEvents = apiEvents.data
       .sort((event1, event2) => {
@@ -67,7 +67,7 @@ function Events() {
           <i className="fas fa-spinner fa-spin" />
         </div>
       ) : (
-        <div className="no-events">(Les événements seront bientôt disponibles)</div>
+        <div className="no-events">Les événements seront bientôt disponibles</div>
       )}
     </div>
   );

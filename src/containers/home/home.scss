@@ -34,7 +34,7 @@
     flex-flow: row wrap;
     font-size: 4em;
     color: var(--accent-color);
-    font-family: Stencil;
+    font-family: var(--title-font);
     position: relative;
     margin: auto;
     z-index: 0; /* Create stack context */
@@ -87,7 +87,7 @@
           margin-top: 10px;
           color: var(--secondary-color);
           font-size: 1rem;
-          font-family: Segoe UI;
+          font-family: var(--text-font);
         }
       }
     }
