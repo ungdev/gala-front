@@ -17,7 +17,7 @@ interface ApiArtist {
 }
 
 function Program() {
-  const [artists, setArtists] = useState<ReactNode[]>();
+  const [artists, setArtists] = useState<ReactNode[] | null>(null);
 
   const fetchArtists = async () => {
     const apiArtists = await axios.get<ApiArtist[]>('artists');

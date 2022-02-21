@@ -33,10 +33,11 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/artists" element={<Program />} />
 
-              <Route path="/billetterie" element={<Tickets />} />
+              <Route path="/shop" element={<Tickets />} />
               <Route path="/partenaires" element={<Partners />} />
-              <Route path="/engagements" element={<Commitments />} />
-              <Route path="/covid-19" element={<Covid19 />} />
+              <Route path="/covid19" element={<Covid19 />} />
+              <Route path="/about" element={<Commitments />} />
+
               <Route path="/acces" element={<Access />} />
               <Route path="/contact" element={<Contact />} />
 
