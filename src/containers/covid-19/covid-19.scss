@@ -1,5 +1,4 @@
-#covid-19 .billetterie_container {
-  background-color: rgba(198, 233, 250, 0.6);
+#covid-19 {
   margin: auto;
   max-width: 1220px;
   padding: 30px;
@@ -8,5 +7,30 @@
     font-family: 'Fundamental', arial, sans-serif;
     color: #0a3d60;
     text-align: justify;
+  }
+
+  .situation-explaination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10%;
+    color: var(--secondary-color);
+
+    .explaination-text {
+      width: 60%;
+    }
+
+    .explaination-image {
+      width: 40%;
+    }
+  }
+
+  table {
+    .hand-sanitizer {
+      img {
+        //position: absolute;
+        clip: rect(0, 189px, 301px, 0);
+      }
+    }
   }
 }
