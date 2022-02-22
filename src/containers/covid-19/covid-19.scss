@@ -26,11 +26,48 @@
   }
 
   table {
-    .hand-sanitizer {
-      img {
-        //position: absolute;
-        clip: rect(0, 189px, 301px, 0);
+    .hand-sanitizer,
+    .mask,
+    .social-distancing,
+    .hand-shake {
+      //display: flex;
+      //flex-direction: column;
+      //width: 100px;
+      //height: 100px;
+      .image-container-1 {
+        background-color: var(--text-color);
+        padding: 10%;
+        border-radius: 50%;
+        align-self: center;
+        .image-container-2 {
+          background-color: var(--accent-color);
+          padding: 10%;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          img {
+            height: 30px;
+            width: 30px;
+            //overflow: hidden;
+            //margin-left: 40%;
+            //margin-right: 40%;
+            //position: absolute;
+            //clip: rect(0, 189px, 301px, 0);
+          }
+        }
       }
+      h5 {
+        //align-
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #covid-19 {
+    tr {
+      display: flex;
+      flex-direction: column;
     }
   }
 }

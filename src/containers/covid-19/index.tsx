@@ -50,7 +50,11 @@ const Covid19 = () => {
           <tbody>
             <tr>
               <td className="hand-sanitizer">
-                <img src={hand_sanitizer_icon} />
+                <div className="image-container-1">
+                  <div className="image-container-2">
+                    <img src={hand_sanitizer_icon} />
+                  </div>
+                </div>
                 <h5>Gel hydroalcoolique</h5>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis officia quia iste nostrum magni
@@ -59,7 +63,11 @@ const Covid19 = () => {
                 </p>
               </td>
               <td className="mask">
-                <img src={mask_icon} />
+                <div className="image-container-1">
+                  <div className="image-container-2">
+                    <img src={mask_icon} />
+                  </div>
+                </div>
                 <h5>Le masque</h5>
                 <p>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum debitis odio ullam molestias
@@ -70,7 +78,11 @@ const Covid19 = () => {
             </tr>
             <tr>
               <td className="social-distancing">
-                <img src={social_distancing_icon} />
+                <div className="image-container-1">
+                  <div className="image-container-2">
+                    <img src={social_distancing_icon} />
+                  </div>
+                </div>
                 <h5>Distanciation sociale</h5>
                 <p>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum debitis odio ullam molestias
@@ -79,7 +91,11 @@ const Covid19 = () => {
                 </p>
               </td>
               <td className="hand-shake">
-                <img src={hand_shake_icon} />
+                <div className="image-container-1">
+                  <div className="image-container-2">
+                    <img src={hand_shake_icon} />
+                  </div>
+                </div>
                 <h5>Poignée de main</h5>
                 <p>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum debitis odio ullam molestias
