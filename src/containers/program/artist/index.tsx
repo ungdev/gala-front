@@ -10,7 +10,7 @@ interface ArtistProps {
   link: string;
 }
 
-const Artist = (props: ArtistProps) => {
+function Artist(props: ArtistProps) {
   return (
     <div className="artist">
       <div className="artist-container">
@@ -45,6 +45,6 @@ const Artist = (props: ArtistProps) => {
       </div>
     </div>
   );
-};
+}
 
 export default Artist;
