@@ -4,8 +4,12 @@ import Countdown from 'react-countdown';
 import OwlCarousel from 'react-owl-carousel';
 
 import axios from '../../utils/axios';
+import TopFloatingActionButton from '../../components/TopFloatingActionButton';
+import BookmarkedSection from '../../components/bookmarkedSection';
+import IllustratedText from '../../components/illustratedText';
 
 import 'owl.carousel/dist/assets/owl.carousel.css';
+import placeholderImage from '../../assets/placeholder.jpg';
 import './home.scss';
 
 interface RawPartner {
@@ -16,26 +20,14 @@ interface RawPartner {
 
 function Home() {
   const [partners, setPartners] = useState<JSX.Element[] | null>(null);
-  const [isTop, setTop] = useState(true);
 
   const carouselRef = React.createRef<OwlCarousel>();
   let carouselInterval: number | null = null;
 
   useEffect(() => {
     fetchPartners();
-    window.addEventListener('scroll', scrollHandle, { passive: true });
-    window.addEventListener('touchmove', scrollHandle, { passive: true });
-    return () => {
-      clearCarouselInterval();
-      window.removeEventListener('scroll', scrollHandle);
-      window.removeEventListener('touchmove', scrollHandle);
-    };
+    return () => clearCarouselInterval();
   }, []);
-
-  const scrollHandle = () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    setTop(scrollTop === 0);
-  };
 
   const clearCarouselInterval = () => {
     if (carouselInterval) {
@@ -70,17 +62,6 @@ function Home() {
     setCarouselInterval();
   };
 
-  const handleArrow = () => {
-    if (!isTop) {
-      return;
-    }
-
-    document.body.scrollTo({
-      behavior: 'smooth',
-      top: window.innerHeight - 80,
-    });
-  };
-
   const fetchPartners = async () => {
     const apiPartners = await axios.get<RawPartner[]>('partners');
 
@@ -96,16 +77,8 @@ function Home() {
   return (
     <div id="home">
       <div className="poster-container">
-        <button className={`arrow-button${isTop ? ' active' : ''}`} onClick={handleArrow}>
-          <div className="arrow-icon">
-            <i className="fas fa-chevron-down" />
-          </div>
-        </button>
-      </div>
-
-      <div className="page-container">
         <Countdown
-          date="05 June 2021 14:30:00"
+          date="14 May 2022 20:00:00"
           renderer={(props) => {
             if (!props.days && !props.hours && !props.minutes && !props.seconds) {
               return null;
@@ -114,59 +87,71 @@ function Home() {
             return (
               <div className="countdown">
                 <div className="countdown-item">
-                  <div>{props.days}</div>
+                  <div>{Math.floor(props.days / 10)}</div>
+                  <div>{props.days % 10}</div>
                   <div>Jour{props.days > 1 ? 's' : ''}</div>
                 </div>
+                <span>:</span>
                 <div className="countdown-item">
-                  <div>{props.hours}</div>
+                  <div>{Math.floor(props.hours / 10)}</div>
+                  <div>{props.hours % 10}</div>
                   <div>Heure{props.hours > 1 ? 's' : ''}</div>
                 </div>
+                <span>:</span>
                 <div className="countdown-item">
-                  <div>{props.minutes}</div>
+                  <div>{Math.floor(props.minutes / 10)}</div>
+                  <div>{props.minutes % 10}</div>
                   <div>Minute{props.minutes > 1 ? 's' : ''}</div>
                 </div>
+                <span>:</span>
                 <div className="countdown-item">
-                  <div>{props.seconds}</div>
+                  <div>{Math.floor(props.seconds / 10)}</div>
+                  <div>{props.seconds % 10}</div>
                   <div>Seconde{props.seconds > 1 ? 's' : ''}</div>
                 </div>
               </div>
             );
           }}
         />
-
-        <div className="poster-text">
-          <h1>À propos de Cassiopée</h1>
-
-          <div className="important">
-            <h2>⚠️ Important ⚠️</h2>
-            <p>
-              Malgré toute l’inventivité dont l’équipe de Cassiopée a pu faire preuve pour organiser un événement
-              respectant les normes en vigueur et préservant la santé des participants, nous sommes au regret de vous
-              annoncer l’annulation de Cassiopée Day Edition prévu le 5 juin 2021 💔
-              <br />
-              C’est le cœur lourd que nous vous disons à l’année prochaine pour que Cassiopée puisse enfin voir le jour
-              🙋
-            </p>
-          </div>
-
-          <p>
-            Cassiopée Day Edition est un événement géré par l'association Gala UTT de l'Université de Technologie de
-            Troyes qui organise tous les ans une soirée incontournable dans le Grand Est.
-          </p>
-          <p>
-            Cette année Cassiopée aura lieu sous un format exceptionnel et gratuit, réunissant tous types d'invités pour
-            un après-midi de concerts et de découvertes sur le thème d'Atlantide entre 14h30 et 19h !
-          </p>
-          <p>
-            Trois scènes étudiantes, deux stands de restauration, un stand de champagne et deux animations originales,
-            cet évènement ne pourra que vous séduire…
-          </p>
-        </div>
       </div>
 
-      <div className="partners">
-        <h2>Nos Partenaires</h2>
+      <TopFloatingActionButton />
 
+      <div className="page-container">
+        <IllustratedText
+          title="Qu'est ce que le gala&nbsp;?"
+          titleAlignment="center"
+          imageSrc={placeholderImage}
+          alignment="left">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula a felis a mollis. Nunc
+            hendrerit, eros fringilla efficitur dapibus, libero quam rutrum sem, ut pharetra augue mi at urna. Duis sit
+            amet ligula eros. Nam commodo iaculis euismod. Nullam pulvinar, massa ultrices elementum pretium, risus
+            dolor ultricies est, et tempus ex justo nec odio. Quisque ex nisl, iaculis id volutpat et, viverra at enim.
+            Etiam tincidunt vulputate erat, nec malesuada velit mattis id. Proin tristique mauris est.
+          </p>
+          <p>
+            Nunc venenatis fringilla dapibus. Vestibulum eros lacus, luctus a arcu eget, venenatis ultrices lorem. In
+            gravida, sem sed laoreet ultricies, lacus diam aliquet dolor, ac tristique nunc metus eu mauris. Suspendisse
+            risus nunc, lacinia eu lobortis eget, eleifend sed metus. Phasellus quis tortor nunc. Morbi porta tincidunt
+            porttitor. Praesent ornare nisi vitae nisl maximus sollicitudin. Nulla scelerisque lorem ante, id accumsan
+            enim malesuada in. Aliquam erat volutpat. In hac habitasse platea dictumst. In hac habitasse platea
+            dictumst. Donec sed tempus sem, id euismod enim. Curabitur quis tortor et lectus euismod mattis. Nunc ut
+            orci ut lacus aliquam tristique. Suspendisse sit amet ullamcorper urna, at porta elit. Duis malesuada libero
+            ac dictum feugiat.
+          </p>
+          <p>
+            In hac habitasse platea dictumst. Sed tristique imperdiet felis. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Praesent metus ante, egestas nec congue nec, semper eget nulla. Proin nulla nulla, gravida
+            ac dapibus et, laoreet ut urna. Aliquam non est ultricies, cursus odio at, blandit turpis. In massa est,
+            auctor eu est eget, tincidunt porta nulla. Aenean nisl lectus, maximus eu est id, pharetra imperdiet felis.
+            In in arcu sit amet felis tempus posuere eget in enim. Pellentesque lobortis iaculis quam, vitae consequat
+            nibh euismod laoreet.
+          </p>
+        </IllustratedText>
+      </div>
+
+      <BookmarkedSection title="Nos Partenaires">
         {partners && partners.length ? (
           <>
             <div className="partners-carousel-container">
@@ -203,9 +188,9 @@ function Home() {
             <i className="fas fa-spinner fa-spin" />
           </div>
         ) : (
-          <div className="no-partners">(Les partenaires seront bientôt disponibles)</div>
+          <div className="no-partners">Les partenaires seront bientôt disponibles</div>
         )}
-      </div>
+      </BookmarkedSection>
     </div>
   );
 }

@@ -1,15 +1,13 @@
-#program {
-  background-color: rgba(198, 233, 250, 0.6);
+#artists {
   margin: auto;
   max-width: 1220px;
   padding: 30px;
-}
 
-#artists {
   .artists-container {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    gap: 40px;
   }
 
   .artists-loader {
@@ -19,7 +17,9 @@
   }
 
   .no-artists {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--secondary-color);
+    opacity: 0.9;
+    font-style: italic;
     text-align: center;
   }
 }
