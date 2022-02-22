@@ -78,7 +78,7 @@ function Home() {
     <div id="home">
       <div className="poster-container">
         <Countdown
-          date="14 May 2022 14:30:00"
+          date="14 May 2022 20:00:00"
           renderer={(props) => {
             if (!props.days && !props.hours && !props.minutes && !props.seconds) {
               return null;

@@ -3,8 +3,13 @@
 /* --------------- */
 
 @font-face {
-  font-family: 'Fundamental';
-  src: url('/fonts/Fundamental-Brigade.ttf');
+  font-family: 'FreeHouse';
+  src: url('/fonts/Freehouse-Regular.woff2');
+}
+
+@font-face {
+  font-family: 'HeroNew';
+  src: url('/fonts/Hero\ New\ Regular.woff2');
 }
 
 #root {
@@ -17,8 +22,8 @@
   --accent-color: #dd513a;
   --text-color: #0c0b08;
   --shadow-color: #707070;
-  --text-font: Segoe UI;
-  --title-font: Stencil;
+  --text-font: HeroNew;
+  --title-font: FreeHouse;
   height: 100%;
 }
 

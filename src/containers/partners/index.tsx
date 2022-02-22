@@ -1,4 +1,5 @@
 import React, { ReactNode, useEffect, useState } from 'react';
+import Heading from '../../components/heading';
 
 import axios from '../../utils/axios';
 
@@ -34,20 +35,21 @@ function Partners() {
   };
 
   return (
-    <div className="page-container" id="partners">
-      <h1>Partenaires</h1>
-      <hr />
+    <>
+      <Heading title="Partenaires" />
 
-      {partners && partners.length ? (
-        <div className="partners-list">{partners}</div>
-      ) : partners === null ? (
-        <div className="partners-loader">
-          <i className="fas fa-spinner fa-spin" />
-        </div>
-      ) : (
-        <div className="no-partners">(Les partenaires seront bientôt disponibles)</div>
-      )}
-    </div>
+      <div className="page-container" id="partners">
+        {partners && partners.length ? (
+          <div className="partners-list">{partners}</div>
+        ) : partners === null ? (
+          <div className="partners-loader">
+            <i className="fas fa-spinner fa-spin" />
+          </div>
+        ) : (
+          <div className="no-partners">(Les partenaires seront bientôt disponibles)</div>
+        )}
+      </div>
+    </>
   );
 }
 

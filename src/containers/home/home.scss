@@ -37,6 +37,7 @@
     font-family: var(--title-font);
     position: relative;
     margin: auto;
+    gap: 10px;
     z-index: 0; /* Create stack context */
 
     &::after {
@@ -68,6 +69,7 @@
           padding: 4px 8px;
           border-radius: 5px;
           margin: 2px;
+          width: 1ch;
           display: inline-block;
           position: relative;
           box-shadow: 0 2px 5px #4448;
