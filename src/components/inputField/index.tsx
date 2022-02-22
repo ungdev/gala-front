@@ -11,7 +11,7 @@ function InputField({
   error,
   placeholder,
 }: {
-  className: string;
+  className?: string;
   value: string;
   onChange: (update: string) => void;
   placeholder?: string;
@@ -38,6 +38,7 @@ function InputField({
 InputField.defaultProps = {
   placeholder: null,
   error: null,
+  className: null,
 };
 
 export default InputField;

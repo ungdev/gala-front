@@ -1,16 +1,14 @@
 import React from 'react';
+import Heading from '../../components/heading';
 
 import './tickets.scss';
 
 function Tickets() {
   return (
     <div className="page-container" id="tickets">
-      <div className="billetterie_container">
-        <div className="centered">
-          <h1>Billetterie</h1>
-          <hr />
-        </div>
+      <Heading title="Billetterie" />
 
+      <div className="billetterie_container">
         <p className="centered">
           Veuillez lire attentivement les conditions d'entrée avant de vous inscrire. Afin de respecter une jauge de
           1000 participants, l’inscription gratuite est obligatoire pour accéder à l’événement.

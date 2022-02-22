@@ -1,6 +1,6 @@
 # Gala UTT
 
-[![Build Status](https://travis-ci.org/ungdev/gala.utt.fr.svg?branch=dev)](https://travis-ci.org/ungdev/gala.utt.fr)
+[![Build Status](https://github.com/ungdev/gala.utt.fr/actions/workflows/ci.yml/badge.svg)](https://github.com/ungdev/gala.utt.fr/actions/workflows/ci.yml)
 
 ## Requirements
 

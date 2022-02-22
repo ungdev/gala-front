@@ -40,14 +40,14 @@ function Header() {
 
   const toggleMobileMenu = () => {
     // Prevent from scrolling when mobile menu is active
-    document.getElementsByTagName('html')[0].style.overflow = isMobileMenuActive ? '' : 'hidden';
-    document.getElementsByTagName('body')[0].style.overflow = isMobileMenuActive ? '' : 'hidden';
+    document.documentElement.style.overflow = isMobileMenuActive ? '' : 'hidden';
+    document.body.style.overflow = isMobileMenuActive ? '' : 'hidden';
     setMobileMenuActive(!isMobileMenuActive);
   };
 
   const closeMobileMenu = () => {
-    document.getElementsByTagName('html')[0].style.overflow = '';
-    document.getElementsByTagName('body')[0].style.overflow = '';
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
     setMobileMenuActive(false);
   };
 

@@ -3,8 +3,13 @@
 /* --------------- */
 
 @font-face {
-  font-family: 'Fundamental';
-  src: url('/fonts/Fundamental-Brigade.ttf');
+  font-family: 'FreeHouse';
+  src: url('/fonts/Freehouse-Regular.woff2');
+}
+
+@font-face {
+  font-family: 'HeroNew';
+  src: url('/fonts/Hero\ New\ Regular.woff2');
 }
 
 #root {
@@ -17,13 +22,15 @@
   --accent-color: #dd513a;
   --text-color: #0c0b08;
   --shadow-color: #707070;
+  --text-font: HeroNew;
+  --title-font: FreeHouse;
   height: 100%;
 }
 
 html {
   background-color: var(--primary-color);
-  font-family: 'Roboto', arial, sans-serif;
-  font-size: 18px;
+  font-family: var(--text-font);
+  font-size: 16px;
   height: 100%;
 }
 
@@ -75,7 +82,7 @@ iframe {
 }
 
 h1 {
-  font-family: 'Fundamental', arial, sans-serif;
+  font-family: var(--title-font);
   text-transform: uppercase;
   font-size: 48px;
   text-align: center;
@@ -85,7 +92,7 @@ h1 {
 
 h2,
 h3 {
-  font-family: 'Fundamental', arial, sans-serif;
+  font-family: var(--title-font);
   text-transform: uppercase;
   font-size: 36px;
   text-align: left;
@@ -93,18 +100,9 @@ h3 {
 }
 
 p {
-  font-family: 'Fundamental', arial, sans-serif;
-  color: #0a3d60;
+  font-family: var(--text-font);
+  color: var(--secondary-color);
   text-align: justify;
-}
-
-hr {
-  height: 2px;
-  width: 400px;
-  max-width: 100%;
-  background: radial-gradient(#22749c 0%, transparent);
-  border: none;
-  margin: 20px auto;
 }
 
 small {
@@ -130,7 +128,7 @@ small {
 }
 
 #page {
-  color: #fff;
+  color: var(--secondary-color);
   margin: 0 auto;
   flex-grow: 1;
   width: 100%;

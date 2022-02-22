@@ -1,11 +1,23 @@
-#legal a {
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid #868686;
-  display: inline-block;
-  transition: all 0.3s;
+#legal {
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-color);
+    display: inline-block;
+  }
 
-  &:hover {
-    border-bottom: 1px solid #fff;
+  .wrapper {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    margin: auto;
+  }
+
+  h2 {
+    font-family: var(--text-font);
+
+    a {
+      border: none !important;
+    }
   }
 }
