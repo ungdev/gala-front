@@ -187,3 +187,20 @@ h2.title-decoration {
   margin: auto;
   text-align: center;
 }
+
+@media screen and (max-width: 468px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2,
+  h3 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h2,
+  h3 {
+    font-size: 26px;
+  }
+}

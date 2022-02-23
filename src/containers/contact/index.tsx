@@ -4,7 +4,7 @@ import axios from '../../utils/axios';
 
 import InputField from '../../components/inputField';
 import Textarea from '../../components/textarea';
-import SubmitButton, { SubmitButtonState } from '../../components/submitButton';
+import SubmitButton from '../../components/submitButton';
 import Notification from '../../components/notification';
 
 import './contact.scss';
