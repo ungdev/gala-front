@@ -55,8 +55,14 @@ header {
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        border-top: 3px solid var(--text-color);
-        border-bottom: 3px solid var(--text-color);
+
+        &:not(#nav-home-link) > .container {
+          display: block;
+          width: 100%;
+          padding: 12px 0;
+          border-top: 3px solid var(--text-color);
+          border-bottom: 3px solid var(--text-color);
+        }
 
         &:nth-child(1),
         &:nth-child(4) {
@@ -164,9 +170,12 @@ header {
       }
 
       a {
-        border: none;
         flex: 1 1 2em;
         display: none;
+
+        & > .container {
+          border: none !important;
+        }
 
         &::after {
           content: none !important;
