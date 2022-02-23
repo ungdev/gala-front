@@ -1,12 +1,48 @@
-#covid-19 .billetterie_container {
-  background-color: rgba(198, 233, 250, 0.6);
-  margin: auto;
-  max-width: 1220px;
-  padding: 30px;
+#covid-19 {
+  .item-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 50px;
 
-  ul li {
-    font-family: 'Fundamental', arial, sans-serif;
-    color: #0a3d60;
-    text-align: justify;
+    .item {
+      flex: 1 1 calc(50% - 50px);
+      position: relative;
+
+      .image-container {
+        border-radius: 50%;
+        border: 20px solid var(--text-color);
+        padding: 30px;
+        background-color: var(--accent-color);
+        width: 50%;
+        margin: auto;
+        aspect-ratio: 1;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 80%;
+          height: auto;
+        }
+      }
+      h4 {
+        text-align: center;
+        font-size: 1.5em;
+      }
+      p {
+        color: var(--primary-color);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #covid-19 {
+    tr {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

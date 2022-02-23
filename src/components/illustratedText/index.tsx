@@ -18,7 +18,7 @@ function IllustratedText({ imageSrc, children, title, imageAlt, alignment, title
   return (
     <div className={`illustrated-text ${alignment}`}>
       {title && <Title alignment={titleAlignment}>{title}</Title>}
-      {children}
+      <div className="side">{children}</div>
 
       <img src={imageSrc} alt={imageAlt} />
       <div className="shadow" />
