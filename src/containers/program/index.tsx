@@ -7,6 +7,7 @@ import Artist from './artist';
 
 import './program.scss';
 import Heading from '../../components/heading';
+import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 
 interface ApiArtist {
   name: string;
@@ -43,6 +44,7 @@ function Program() {
   return (
     <div className="page-container" id="program">
       <Heading title="Les Artistes" />
+      <TopFloatingActionButton />
 
       <div id="artists">
         {artists?.length ? (
