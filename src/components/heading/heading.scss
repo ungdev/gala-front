@@ -37,7 +37,7 @@
     &:nth-of-type(1) {
       top: 10%;
       left: -5%;
-      rotate: 16deg;
+      transform: rotate(16deg);
     }
 
     &:nth-of-type(2) {
@@ -48,26 +48,25 @@
     &:nth-of-type(3) {
       bottom: 10%;
       left: -5%;
-      rotate: -16deg;
+      transform: rotate(-16deg);
     }
 
     &:nth-of-type(4) {
       top: 10%;
       right: -5%;
-      rotate: 164deg;
+      transform: rotate(164deg);
     }
 
     &:nth-of-type(5) {
       top: 50%;
       right: 0;
-      rotate: 180deg;
-      transform: translateY(50%);
+      transform: translateY(-50%) rotate(180deg);
     }
 
     &:nth-of-type(6) {
       bottom: 10%;
       right: -5%;
-      rotate: -164deg;
+      transform: rotate(-164deg);
     }
   }
 }
@@ -75,19 +74,19 @@
 @media screen and (max-width: 900px) {
   .stripe {
     &:nth-of-type(1) {
-      rotate: 32deg !important;
+      transform: rotate(32deg) !important;
     }
 
     &:nth-of-type(3) {
-      rotate: -32deg !important;
+      transform: rotate(-32deg) !important;
     }
 
     &:nth-of-type(4) {
-      rotate: 148deg !important;
+      transform: rotate(148deg) !important;
     }
 
     &:nth-of-type(6) {
-      rotate: -148deg !important;
+      transform: rotate(-148deg) !important;
     }
   }
 }
