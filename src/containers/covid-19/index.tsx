@@ -9,11 +9,14 @@ import handShakeIcon from '../../assets/hand-shake.png';
 import IllustratedText from '../../components/illustratedText';
 import Heading from '../../components/heading';
 import BookmarkedSection from '../../components/bookmarkedSection';
+import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 
 function Covid19() {
   return (
     <>
       <Heading title="COVID-19" />
+      <TopFloatingActionButton />
+
       <div className="page-container" id="covid-19">
         <IllustratedText imageSrc={covidIcon} title="LA SITUATION" alignment="left" titleAlignment="left">
           <p>
