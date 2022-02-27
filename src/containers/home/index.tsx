@@ -1,14 +1,19 @@
+/* eslint-disable import/no-unresolved */
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Countdown from 'react-countdown';
-import OwlCarousel from 'react-owl-carousel';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/autoplay';
 
 import axios from '../../utils/axios';
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 import BookmarkedSection from '../../components/bookmarkedSection';
 import IllustratedText from '../../components/illustratedText';
 
-import 'owl.carousel/dist/assets/owl.carousel.css';
 import placeholderImage from '../../assets/placeholder.jpg';
 import './home.scss';
 
@@ -21,46 +26,12 @@ interface RawPartner {
 function Home() {
   const [partners, setPartners] = useState<JSX.Element[] | null>(null);
 
-  const carouselRef = React.createRef<OwlCarousel>();
-  let carouselInterval: number | null = null;
+  const previous = React.createRef<HTMLElement>();
+  const next = React.createRef<HTMLElement>();
 
   useEffect(() => {
     fetchPartners();
-    return () => clearCarouselInterval();
   }, []);
-
-  const clearCarouselInterval = () => {
-    if (carouselInterval) {
-      window.clearInterval(carouselInterval);
-      carouselInterval = null;
-    }
-  };
-
-  const setCarouselInterval = () => {
-    if (!carouselInterval) {
-      carouselInterval = window.setInterval(() => {
-        if (carouselRef.current) {
-          carouselRef.current.next(1200);
-        }
-      }, 2000);
-    }
-  };
-
-  const carouselPrev = () => {
-    carouselRef.current?.prev(300);
-
-    // Reset carousel interval
-    clearCarouselInterval();
-    setCarouselInterval();
-  };
-
-  const carouselNext = () => {
-    carouselRef.current?.next(300);
-
-    // Reset carousel interval
-    clearCarouselInterval();
-    setCarouselInterval();
-  };
 
   const fetchPartners = async () => {
     const apiPartners = await axios.get<RawPartner[]>('partners');
@@ -155,26 +126,43 @@ function Home() {
         {partners && partners.length ? (
           <>
             <div className="partners-carousel-container">
-              <i className="partners-carousel-arrow-left fas fa-chevron-left" onClick={carouselPrev} />
-              <i className="partners-carousel-arrow-right fas fa-chevron-right" onClick={carouselNext} />
+              <i className="partners-carousel-arrow-left fas fa-chevron-left" ref={previous} />
+              <i className="partners-carousel-arrow-right fas fa-chevron-right" ref={next} />
 
-              <OwlCarousel
-                responsive={{
-                  0: { items: 2 },
-                  400: { items: 3 },
-                  550: { items: 4 },
-                  800: { items: 5 },
-                  1000: { items: 6 },
-                }}
-                loop
-                smartSpeed={500}
-                onLoad={setCarouselInterval}
-                onDrag={clearCarouselInterval}
-                onDragged={setCarouselInterval}
+              <Swiper
                 className="partners-carousel"
-                ref={carouselRef}>
-                {partners}
-              </OwlCarousel>
+                modules={[Autoplay, Navigation]}
+                loop
+                speed={500}
+                autoplay={{ delay: 2000, disableOnInteraction: false }}
+                slidesPerView={2}
+                spaceBetween={10}
+                breakpoints={{
+                  400: {
+                    slidesPerView: 3,
+                  },
+                  550: {
+                    slidesPerView: 4,
+                  },
+                  800: {
+                    slidesPerView: 5,
+                  },
+                  1000: {
+                    slidesPerView: 6,
+                  },
+                }}
+                onInit={(swiper) => {
+                  Object.assign(swiper.params.navigation, {
+                    prevEl: previous.current,
+                    nextEl: next.current,
+                  });
+                  swiper.navigation.init();
+                  swiper.navigation.update();
+                }}>
+                {partners.map((el) => (
+                  <SwiperSlide key={el.key}>{el}</SwiperSlide>
+                ))}
+              </Swiper>
             </div>
 
             <div className="centered">
