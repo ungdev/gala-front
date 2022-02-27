@@ -134,7 +134,7 @@ function Home() {
                 modules={[Autoplay, Navigation]}
                 loop
                 speed={500}
-                autoplay={{ delay: 2000 }}
+                autoplay={{ delay: 2000, disableOnInteraction: false }}
                 slidesPerView={2}
                 spaceBetween={10}
                 breakpoints={{
