@@ -56,6 +56,15 @@ function Footer() {
               Confidentialité
             </Link>
           </div>
+
+          <div className="contact">
+            <div className="item">
+              Téléphone: <a href="tel:+33325718060">03 25 71 80 60</a>
+            </div>
+            <div className="item">
+              Email: <a href="mailto:gala@utt.fr">gala@utt.fr</a>
+            </div>
+          </div>
         </small>
       </div>
     </footer>

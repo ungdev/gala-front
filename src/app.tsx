@@ -12,7 +12,6 @@ import Tickets from './containers/tickets';
 import Partners from './containers/partners';
 import Covid19 from './containers/covid-19';
 import Access from './containers/access';
-import Contact from './containers/contact';
 import Legal from './containers/legal';
 import Privacy from './containers/privacy';
 import Commitments from './containers/commitments';
@@ -39,7 +38,6 @@ function App() {
               <Route path="/about" element={<Commitments />} />
 
               <Route path="/acces" element={<Access />} />
-              <Route path="/contact" element={<Contact />} />
 
               <Route path="/mentions-legales" element={<Legal />} />
               <Route path="/confidentialite" element={<Privacy />} />

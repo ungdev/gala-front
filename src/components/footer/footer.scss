@@ -67,10 +67,23 @@ footer {
     }
 
     .legal-links {
-      margin-top: 8px;
+      margin-top: 4px;
 
       a {
         color: inherit;
+      }
+    }
+
+    .contact {
+      margin-top: 4px;
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 10px;
+      justify-content: center;
+
+      a {
+        text-decoration: none;
+        color: var(--accent-color);
       }
     }
   }
