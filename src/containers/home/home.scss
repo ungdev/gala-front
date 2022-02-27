@@ -131,16 +131,28 @@
     touch-action: manipulation;
   }
 
-  .swiper img {
-    height: 100%;
-    max-height: 150px;
-    aspect-ratio: 1;
-    margin: 5px auto;
-    border-radius: 50%;
-    border: 6px solid var(--text-color);
-    box-sizing: border-box;
-    display: block;
-    user-select: none;
+  .swiper {
+    a {
+      background-color: var(--accent-color);
+      display: block;
+      border: 6px solid var(--text-color);
+      border-radius: 50%;
+      height: 100%;
+      aspect-ratio: 1;
+      max-height: 150px;
+      overflow: hidden;
+      box-sizing: border-box;
+      position: relative;
+    }
+    img {
+      display: block;
+      margin: auto;
+      max-height: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      position: relative;
+      user-select: none;
+    }
   }
 
   .partners-loader,
