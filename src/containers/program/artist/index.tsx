@@ -1,4 +1,5 @@
 import React from 'react';
+import { Artist } from '../../../utils/api';
 
 import './artist.scss';
 
@@ -7,7 +8,7 @@ interface ArtistProps {
   image: string;
   hour: string;
   place: string;
-  link: string;
+  link: Artist['Links'][0];
 }
 
 function Artist(props: ArtistProps) {
@@ -37,7 +38,7 @@ function Artist(props: ArtistProps) {
           {!props.hour && !props.place && <div className="artist-no-informations">L'horaire n'est pas disponible</div>}
 
           {props.link && (
-            <a href={props.link} className="artist-link" target="_blank" rel="noopener noreferrer">
+            <a href={props.link.uri} className="artist-link" target="_blank" rel="noopener noreferrer">
               Page de l'artiste <i className="fas fa-external-link-alt icon" />
             </a>
           )}
