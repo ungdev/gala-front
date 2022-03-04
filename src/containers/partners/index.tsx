@@ -1,37 +1,20 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Heading from '../../components/heading';
-
-import axios from '../../utils/axios';
+import { fetchPartners, Partner } from '../../utils/api';
 
 import './partners.scss';
 
-interface RawPartner {
-  url: string;
-  image: string;
-  name: string;
-}
-
 function Partners() {
-  const [partners, setPartners] = useState<ReactNode[] | null>(null);
+  const [partners, setPartners] = useState<Partner[] | null>(null);
 
   useEffect(() => {
-    fetchPartners();
+    fetch();
   }, []);
 
-  const fetchPartners = async () => {
-    const apiPartners = await axios.get<RawPartner[]>('partners');
+  const fetch = async () => {
+    const apiPartners = await fetchPartners();
 
-    const fetchedPartners = apiPartners.data.map((partner, i) => (
-      <a href={partner.url} className="partner-link" key={i}>
-        <div className="partner" data-name={partner.name}>
-          <div className="partner-image">
-            <img src={`${import.meta.env.VITE_API_URL}${partner.image}`} alt={partner.name} />
-          </div>
-        </div>
-      </a>
-    ));
-
-    setPartners(fetchedPartners);
+    setPartners(apiPartners.data);
   };
 
   return (
@@ -40,13 +23,23 @@ function Partners() {
 
       <div className="page-container" id="partners">
         {partners && partners.length ? (
-          <div className="partners-list">{partners}</div>
+          <div className="partners-list">
+            {partners.map((partner, i) => (
+              <a href={partner.url} className="partner" key={i}>
+                <div className="image">
+                  <img src={`${import.meta.env.VITE_API_URL}${partner.image}`} alt={partner.name} />
+                </div>
+                <div className="name">{partner.name}</div>
+                <div className="description">{partner.description}</div>
+              </a>
+            ))}
+          </div>
         ) : partners === null ? (
           <div className="partners-loader">
             <i className="fas fa-spinner fa-spin" />
           </div>
         ) : (
-          <div className="no-partners">(Les partenaires seront bientôt disponibles)</div>
+          <div className="no-partners">Les partenaires seront bientôt disponibles</div>
         )}
       </div>
     </>

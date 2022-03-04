@@ -9,7 +9,7 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/autoplay';
 
-import axios from '../../utils/axios';
+import { fetchPartners, Partner } from '../../utils/api';
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 import BookmarkedSection from '../../components/bookmarkedSection';
 import IllustratedText from '../../components/illustratedText';
@@ -17,39 +17,26 @@ import IllustratedText from '../../components/illustratedText';
 import placeholderImage from '../../assets/placeholder.jpg';
 import './home.scss';
 
-interface RawPartner {
-  url: string;
-  image: string;
-  name: string;
-}
-
 function Home() {
-  const [partners, setPartners] = useState<JSX.Element[] | null>(null);
+  const [partners, setPartners] = useState<Partner[] | null>(null);
 
   const previous = React.createRef<HTMLElement>();
   const next = React.createRef<HTMLElement>();
 
   useEffect(() => {
-    fetchPartners();
+    fetch();
   }, []);
 
-  const fetchPartners = async () => {
-    const apiPartners = await axios.get<RawPartner[]>('partners');
-
-    const fetchedPartners = apiPartners.data.map((partner, i) => (
-      <a href={partner.url} key={i}>
-        <img src={`${import.meta.env.VITE_API_URL}${partner.image}`} alt={partner.name} />
-      </a>
-    ));
-
-    setPartners(fetchedPartners);
+  const fetch = async () => {
+    const apiPartners = await fetchPartners();
+    setPartners(apiPartners.data);
   };
 
   return (
     <div id="home">
       <div className="poster-container">
         <Countdown
-          date="14 May 2022 20:00:00"
+          date="14 May 2022 21:00:00 UTC+0200"
           renderer={(props) => {
             if (!props.days && !props.hours && !props.minutes && !props.seconds) {
               return null;
@@ -159,8 +146,12 @@ function Home() {
                   swiper.navigation.init();
                   swiper.navigation.update();
                 }}>
-                {partners.map((el) => (
-                  <SwiperSlide key={el.key}>{el}</SwiperSlide>
+                {partners.map((partner, i) => (
+                  <SwiperSlide key={i}>
+                    <a href={partner.url}>
+                      <img src={`${import.meta.env.VITE_API_URL}${partner.image}`} alt={partner.name} />
+                    </a>
+                  </SwiperSlide>
                 ))}
               </Swiper>
             </div>

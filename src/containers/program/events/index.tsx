@@ -1,32 +1,17 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-
-import axios from '../../../utils/axios';
+import { fetchEvents, Event } from '../../../utils/api';
 
 import './events.scss';
 
-interface ApiEvent {
-  start: number;
-  end: number;
-  image: string;
-  name: string;
-  place: string;
-  description: string;
-}
-
 function Events() {
-  const [events, setEvents] = useState<ReactNode[]>();
+  const [events, setEvents] = useState<Event[] | null>(null);
 
-  const fetchEvents = async () => {
-    const apiEvents = await axios.get<ApiEvent[]>('events');
+  const fetch = async () => {
+    const apiEvents = await fetchEvents();
 
     const fetchedEvents = apiEvents.data
-      .sort((event1, event2) => {
-        const date1 = new Date(event1.start);
-        const date2 = new Date(event2.start);
-
-        return date1 === date2 ? 0 : date1 < date2 ? -1 : 1;
-      })
+      .sort((event1, event2) => Date.parse(event1.start) - Date.parse(event2.start))
       .map((event) => ({
         ...event,
         start: moment(event.start).format('HH[h ]mm'),
@@ -34,34 +19,33 @@ function Events() {
         image: `${import.meta.env.VITE_API_URL}${event.image}`,
       }));
 
-    const eventElements = fetchedEvents.map((event, i) => (
-      <div className="event" key={i}>
-        <div className="event-dates">
-          <div className="event-start">{event.start}</div>
-          <div className="event-date-line" />
-          <div className="event-end">{event.end}</div>
-        </div>
-        <div className="event-image">
-          <img src={event.image} alt="" />
-        </div>
-        <div className="event-content">
-          <h3 className="event-name">{event.name}</h3>
-          <div className="event-place">{event.place}</div>
-          <div className="event-description">{event.description}</div>
-        </div>
-      </div>
-    ));
-    setEvents(eventElements);
+    setEvents(fetchedEvents);
   };
 
   useEffect(() => {
-    fetchEvents();
+    fetch();
   }, []);
 
   return (
     <div id="events">
       {events && events.length ? (
-        events
+        events.map((event, i) => (
+          <div className="event" key={i}>
+            <div className="event-dates">
+              <div className="event-start">{event.start}</div>
+              <div className="event-date-line" />
+              <div className="event-end">{event.end}</div>
+            </div>
+            <div className="event-image">
+              <img src={event.image} alt="" />
+            </div>
+            <div className="event-content">
+              <h3 className="event-name">{event.name}</h3>
+              {event.Place && <div className="event-place">{event.Place.name}</div>}
+              <div className="event-description">{event.description}</div>
+            </div>
+          </div>
+        ))
       ) : events === null ? (
         <div className="events-loader">
           <i className="fas fa-spinner fa-spin" />
