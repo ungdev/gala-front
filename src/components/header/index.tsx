@@ -20,7 +20,7 @@ const links = [
     title: 'Accueil',
   },
   {
-    title: 'Covid-19',
+    title: 'Informations',
     path: '/covid19',
   },
   {
