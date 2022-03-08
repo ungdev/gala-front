@@ -38,6 +38,30 @@
   }
 }
 
+.section {
+  & > .illustrated-text {
+    margin: auto;
+    max-width: 1220px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  * {
+    color: var(--secondary-color);
+  }
+
+  &.red {
+    background-color: var(--accent-color);
+
+    h2 {
+      background-color: var(--accent-color);
+    }
+
+    * {
+      color: var(--primary-color);
+    }
+  }
+}
 @media screen and (max-width: 720px) {
   #covid-19 {
     tr {
