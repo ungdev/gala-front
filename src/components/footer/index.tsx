@@ -19,13 +19,13 @@ function Footer() {
           Les artistes
         </Link>
         <br />
-        <Link to="/covid19" className="animate">
-          Covid-19
+        <Link to="/infos" className="animate">
+          Informations
         </Link>
         <br />
-        <Link to="/shop" className="animate">
+        <a href="https://www.billetweb.fr/cassiopee-2022-gala-utt" className="animate">
           Billetterie
-        </Link>
+        </a>
       </div>
 
       <div className="external-and-legal">
