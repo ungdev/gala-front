@@ -75,20 +75,20 @@ function Infos() {
           </p>
         </IllustratedText>
         <div className="red section">
-          <IllustratedText
-            imageSrc={securiteIcon}
-            alignment="right"
-            title="Sécurité"
-            titleAlignment="left">
+          <IllustratedText imageSrc={securiteIcon} alignment="right" title="Sécurité" titleAlignment="left">
             <p>
-            Attention, les objets dangereux comme les armes blanches, armes à feu ou objets contondants sont strictement 
-            internet à l’intérieur du Gala. Nous procéderons à une fouille avant chaque entrée, provoquant la confiscation 
-            de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
+              Attention, les objets dangereux comme les armes blanches, armes à feu ou objets contondants sont
+              strictement internet à l’intérieur du Gala. Nous procéderons à une fouille avant chaque entrée, provoquant
+              la confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
               <br />
             </p>
           </IllustratedText>
         </div>
-        <IllustratedText imageSrc={billeterieIcon} title="Informations billeterie" alignment="left" titleAlignment="left">
+        <IllustratedText
+          imageSrc={billeterieIcon}
+          title="Informations billeterie"
+          alignment="left"
+          titleAlignment="left">
           <p>La billetterie est ouverte !</p>
           <p>Pour votre information les tarifs sont les suivants :</p>
           <ul>
