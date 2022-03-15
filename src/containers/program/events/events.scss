@@ -107,8 +107,12 @@
       }
     }
 
-    .event-name::after {
-      margin: auto;
+    .event-name {
+      text-align: center;
+
+      &::after {
+        margin: auto;
+      }
     }
   }
 }
