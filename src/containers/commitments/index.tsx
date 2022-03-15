@@ -89,13 +89,6 @@ function Commitments() {
               coordination avec les mairies locales pour le traitement et le recyclage, dans les meilleures conditions,
               des déchets tels que la moquette et le carton, écolo-tags…
             </p>
-            <p>Associations déjà soutenues :</p>
-            <ul>
-              <li>Les Restos du Cœur</li>
-              <li>Amnesty International</li>
-              <li>UNICEF</li>
-              <li>WWF-France</li>
-            </ul>
           </IllustratedText>
         </div>
       </div>
