@@ -82,30 +82,27 @@ function Home() {
           imageSrc={placeholderImage}
           alignment="left">
           <p>
-            Le Gala de l'Université de Technologie de Troyes est une association qui organise la soirée de gala récemment
-             renommée “Cassiopée” depuis 1996. Cassiopée est une soirée de prestige, organisée par les étudiants et pour 
-             les étudiants afin de célébrer leur année universitaire. L'association passe près de 1 an à organiser 
-             l'événement, avec environ 50 membres puis une centaine de bénévoles durant les semaines qui précèdent 
-             Cassiopée. 
+            Le Gala de l'Université de Technologie de Troyes est une association qui organise la soirée de gala
+            récemment renommée “Cassiopée” depuis 1996. Cassiopée est une soirée de prestige, organisée par les
+            étudiants et pour les étudiants afin de célébrer leur année universitaire. L'association passe près de 1 an
+            à organiser l'événement, avec environ 50 membres puis une centaine de bénévoles durant les semaines qui
+            précèdent Cassiopée.
           </p>
           <p>
-            Sa spécificité ? Le fait de se renouveler chaque année à travers un thème différent et des animations phares. 
-            L’évènement est également soutenu par l'UTT ainsi que de nombreux partenaires.
+            Sa spécificité ? Le fait de se renouveler chaque année à travers un thème différent et des animations
+            phares. L’évènement est également soutenu par l'UTT ainsi que de nombreux partenaires.
           </p>
           <p>
-            En plus d'une soirée hors du commun rassemblant plus de 3500 participants, 2 scènes, des bars, des foodtrucks, 
-            des animations et un feu d'artifice, Cassiopée accueille chaque année des artistes de renommées nationales et 
-            internationales !
+            En plus d'une soirée hors du commun rassemblant plus de 3500 participants, 2 scènes, des bars, des
+            foodtrucks, des animations et un feu d'artifice, Cassiopée accueille chaque année des artistes de renommées
+            nationales et internationales !
           </p>
           <p>
-            Aux affiches précédentes: Skip the use, Lorenzo, Salut c'est cool, french fuse, Kavinsky, Uppermost, les casseurs flowteurs…
+            Aux affiches précédentes: Skip the use, Lorenzo, Salut c'est cool, french fuse, Kavinsky, Uppermost, les
+            casseurs flowteurs…
           </p>
-          <p>
-            L’événement aura lieu le samedi 14 mai 2022 de 20h à 5h.
-          </p>
-          <p>
-            On vous attend nombreux pour cette nouvelle édition !
-          </p>
+          <p>L’événement aura lieu le samedi 14 mai 2022 de 20h à 5h.</p>
+          <p>On vous attend nombreux pour cette nouvelle édition !</p>
         </IllustratedText>
       </div>
 

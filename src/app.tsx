@@ -8,7 +8,6 @@ import ScrollToTop from './components/scrollToTop';
 
 import Home from './containers/home';
 import Program from './containers/program';
-import Tickets from './containers/tickets';
 import Partners from './containers/partners';
 import Covid19 from './containers/covid-19';
 import Access from './containers/access';
@@ -32,7 +31,6 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/artists" element={<Program />} />
 
-              <Route path="/shop" element={<Tickets />} />
               <Route path="/partenaires" element={<Partners />} />
               <Route path="/covid19" element={<Covid19 />} />
               <Route path="/about" element={<Commitments />} />

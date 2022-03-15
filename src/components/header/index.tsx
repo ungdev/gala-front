@@ -25,7 +25,7 @@ const links = [
   },
   {
     title: 'Billetterie',
-    path: '/shop',
+    href: 'https://www.billetweb.fr/cassiopee-2022-gala-utt',
   },
 ];
 
@@ -58,6 +58,13 @@ function Header() {
 
   const navigationLinks = links.map((link, i) => {
     const active = link.path === document.location.pathname;
+
+    if ('href' in link)
+      return (
+        <a href={link.href} className={active ? 'active' : ''}>
+          <div className="container">{link.title}</div>
+        </a>
+      );
 
     return (
       <Link

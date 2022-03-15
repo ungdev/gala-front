@@ -22,7 +22,7 @@ function Covid19() {
         <IllustratedText imageSrc={covidIcon} title="Situation sur la covid-19" alignment="left" titleAlignment="left">
           <p>
             Au sein de cette section vous trouverez toutes les informations liées à la situation sanitaire actuelle.
-             Tout changement des mesures gouvernementales impactant notre évènement seront disponible ici.
+            Tout changement des mesures gouvernementales impactant notre évènement seront disponible ici.
           </p>
         </IllustratedText>
 
@@ -33,27 +33,21 @@ function Covid19() {
                 <img src={handSanitizerIcon} alt="Gel hydroalcoolique" />
               </div>
               <h4>Gel hydroalcoolique</h4>
-              <p>
-                Du matériel tel que du gel hydroalcoolique mis à disposition dans des bornes prévues à cet effet
-              </p>
+              <p>Du matériel tel que du gel hydroalcoolique mis à disposition dans des bornes prévues à cet effet</p>
             </div>
             <div className="item">
               <div className="image-container">
                 <img src={maskIcon} alt="Masque chirurgical" />
               </div>
               <h4>Le masque</h4>
-              <p>
-                Le masque est obligatoire au sein des bâtiments
-              </p>
+              <p>Le masque est obligatoire au sein des bâtiments</p>
             </div>
             <div className="item">
               <div className="image-container">
                 <img src={passIcon} alt="Distanciation sociale" />
               </div>
               <h4>Pass-sanitaire</h4>
-              <p>
-                Le pass-sanitaire est requis pour participer
-              </p>
+              <p>Le pass-sanitaire est requis pour participer</p>
             </div>
             <div className="item">
               <div className="image-container">
@@ -61,158 +55,104 @@ function Covid19() {
               </div>
               <h4>Communication préventive</h4>
               <p>
-                L’association prévoit une communication préventive. Des signalétiques seront présentes dans les différentes 
-                enceintes. Une communication régulière avec les autorités locales est mise en place.
+                L’association prévoit une communication préventive. Des signalétiques seront présentes dans les
+                différentes enceintes. Une communication régulière avec les autorités locales est mise en place.
               </p>
             </div>
           </div>
         </BookmarkedSection>
         <IllustratedText imageSrc={covidIcon} title="La tenue" alignment="left" titleAlignment="left">
+          <p>Venez comme vous êtes !</p>
           <p>
-            Venez comme vous êtes !
-          </p>
-          <p>
-            Une tenue simplement composée d’une chemise et d’un jean suffit. En revanche si vous avez envie de 
-            sortir le costume ou une belle robe c’est l’occasion parfaite.
-          </p>
-        </IllustratedText>
-      <div className="red section">
-          <IllustratedText
-            imageSrc={placeholderImageSrc}
-            alignment="right"
-            title="Le gala engagé"
-            titleAlignment="left">
-            <p>
-              L’environnement est un aspect qui est de plus en plus important au sein de notre société actuelle et 
-              dans notre évènement. Le Gala UTT est donc un gala engagé qui souhaite porter au mieux cette valeur. 
-              <br />
-            </p>
-            <p className="supported-association">
-              Attention, les objets dangereux comme les armes blanches, armes à feu ou objets contondants sont strictement 
-              internet à l’intérieur du Gala. Nous procéderons à une fouille avant chaque entrée, provoquant la confiscation 
-              de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
-            </p>
-          </IllustratedText>
-        </div>
-        <IllustratedText imageSrc={covidIcon} title="Informations billeterie" alignment="left" titleAlignment="left">
-          <p>
-          La billetterie est ouverte ! 
-          </p>
-          <p>
-            Pour votre information les tarifs sont les suivants :
-          </p>
-          <ul>
-            <li>
-              Cotisants BDE UTT et étudiants des écoles partenaires : 25€
-            </li>
-            <li>
-              Étudiants : 28€
-            </li>
-            <li>
-              Non-étudiants : 30€
-            </li>
-          </ul>
-          <p>
-            Vous pouvez dès à présent prendre vos places pour le 14 mai 2022 !
-          </p>
-          <p>
-            Les écoles partenaires seront annoncées au fur et à mesure des accords, n'hésites pas à nous contacter si 
-            tu penses que ton école serait intéressée.
-          </p>
-          <p>
-            Lors de votre arrivé le jour J n’oubliez pas de vous munir de votre billet ainsi que d’une pièce d'identité 
-            (permis de conduire, carte d'identité ou passeport), les places étant nominatives.
+            Une tenue simplement composée d’une chemise et d’un jean suffit. En revanche si vous avez envie de sortir le
+            costume ou une belle robe c’est l’occasion parfaite.
           </p>
         </IllustratedText>
         <div className="red section">
           <IllustratedText
             imageSrc={placeholderImageSrc}
             alignment="right"
-            title="Accés"
+            title="Le gala engagé"
             titleAlignment="left">
-              <h4>
-                En voiture :
-              </h4>
-                <h5>
-                  Depuis Paris
-                </h5>
-                  <ul>
-                    <li>
-                      Autoroute A5 : sortie n°20 (Sainte Savine)
-                    </li>
-                    <li>
-                      N60 direction Troyes
-                    </li>
-                    <li>
-                      Rocade de contournement
-                    </li>
-                    <li>
-                      Suivre Technopole de l’Aube
-                    </li>
-                  </ul>
-                <h5>
-                  Depuis Reims
-                </h5>
-                  <ul>
-                    <li>
-                      Autoroute A26 : sortie n°21 (Saint Thibault)
-                    </li>
-                    <li>
-                        N71 direction Troyes
-                    </li>
-                    <li>
-                      Rocade de contournement
-                    </li>
-                    <li>
-                      Suivre Technopole de l’Aube
-                    </li>
-                  </ul>
-                <h5>
-                  Depuis Dijon
-                </h5>
-                  <ul>
-                    <li>
-                      Autoroute A5 : sortie n°20 (Sainte Savine)
-                    </li>
-                    <li>
-                      N71 direction Troyes
-                    </li>
-                    <li>
-                      Rocade de contournement
-                    </li>
-                    <li>
-                      Suivre Technopole de l’Aube
-                    </li>
-                  </ul>
-                  <p className="supported-association">
-                    Un parking d’une centaine de places est disponible à proximité de l’UTT pour les personnes arrivant en 
-                    voiture.
-                  </p>
-              <h4>
-                En covoiture :
-              </h4>
-                <p>
-                  Un groupe Facebook sera mit en place afin de réaliser du covoiturage pour se rendre à l’UTT.
-                </p>
-              <h4>
-                En train :
-              </h4>
-                <p>
-                  Depuis Paris : TER Gare de l’Est vers Troyes
-                </p>
+            <p>
+              L’environnement est un aspect qui est de plus en plus important au sein de notre société actuelle et dans
+              notre évènement. Le Gala UTT est donc un gala engagé qui souhaite porter au mieux cette valeur.
+              <br />
+            </p>
+            <p className="supported-association">
+              Attention, les objets dangereux comme les armes blanches, armes à feu ou objets contondants sont
+              strictement internet à l’intérieur du Gala. Nous procéderons à une fouille avant chaque entrée, provoquant
+              la confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
+            </p>
           </IllustratedText>
         </div>
-        <IllustratedText imageSrc={covidIcon} title="Politique de confidentialité" alignment="left" titleAlignment="left">
+        <IllustratedText imageSrc={covidIcon} title="Informations billeterie" alignment="left" titleAlignment="left">
+          <p>La billetterie est ouverte !</p>
+          <p>Pour votre information les tarifs sont les suivants :</p>
+          <ul>
+            <li>Cotisants BDE UTT et étudiants des écoles partenaires : 25€</li>
+            <li>Étudiants : 28€</li>
+            <li>Non-étudiants : 30€</li>
+          </ul>
+          <p>Vous pouvez dès à présent prendre vos places pour le 14 mai 2022 !</p>
           <p>
-            Lors de votre utilisation du site web, il sera susceptible d’utiliser votre navigateur web. Vos données 
-            ne seront pas transmises à des tiers. Pour toutes informations relatives à vos données, vous pouvez 
-            contactez par courrier l’association Gala UTT, 12 rue Marie Curie, Troyes 10000.
+            Les écoles partenaires seront annoncées au fur et à mesure des accords, n'hésites pas à nous contacter si tu
+            penses que ton école serait intéressée.
+          </p>
+          <p>
+            Lors de votre arrivé le jour J n’oubliez pas de vous munir de votre billet ainsi que d’une pièce d'identité
+            (permis de conduire, carte d'identité ou passeport), les places étant nominatives.
+          </p>
+        </IllustratedText>
+        <div className="red section">
+          <IllustratedText imageSrc={placeholderImageSrc} alignment="right" title="Accés" titleAlignment="left">
+            <h4>En voiture :</h4>
+            <h5>Depuis Paris</h5>
+            <ul>
+              <li>Autoroute A5 : sortie n°20 (Sainte Savine)</li>
+              <li>N60 direction Troyes</li>
+              <li>Rocade de contournement</li>
+              <li>Suivre Technopole de l’Aube</li>
+            </ul>
+            <h5>Depuis Reims</h5>
+            <ul>
+              <li>Autoroute A26 : sortie n°21 (Saint Thibault)</li>
+              <li>N71 direction Troyes</li>
+              <li>Rocade de contournement</li>
+              <li>Suivre Technopole de l’Aube</li>
+            </ul>
+            <h5>Depuis Dijon</h5>
+            <ul>
+              <li>Autoroute A5 : sortie n°20 (Sainte Savine)</li>
+              <li>N71 direction Troyes</li>
+              <li>Rocade de contournement</li>
+              <li>Suivre Technopole de l’Aube</li>
+            </ul>
+            <p className="supported-association">
+              Un parking d’une centaine de places est disponible à proximité de l’UTT pour les personnes arrivant en
+              voiture.
+            </p>
+            <h4>En covoiture :</h4>
+            <p>Un groupe Facebook sera mit en place afin de réaliser du covoiturage pour se rendre à l’UTT.</p>
+            <h4>En train :</h4>
+            <p>Depuis Paris : TER Gare de l’Est vers Troyes</p>
+          </IllustratedText>
+        </div>
+        <IllustratedText
+          imageSrc={covidIcon}
+          title="Politique de confidentialité"
+          alignment="left"
+          titleAlignment="left">
+          <p>
+            Lors de votre utilisation du site web, il sera susceptible d’utiliser votre navigateur web. Vos données ne
+            seront pas transmises à des tiers. Pour toutes informations relatives à vos données, vous pouvez contactez
+            par courrier l’association Gala UTT, 12 rue Marie Curie, Troyes 10000.
           </p>
           <br />
           <p>
-            When using the website, it will likely use your web browser. Your data will not be passed on to third 
-            parties. For any information concerning your data you can contact by mail the association Gala UTT, 
-            12 rue Marie Curie, Troyes 10000.
+            When using the website, it will likely use your web browser. Your data will not be passed on to third
+            parties. For any information concerning your data you can contact by mail the association Gala UTT, 12 rue
+            Marie Curie, Troyes 10000.
           </p>
         </IllustratedText>
       </div>
