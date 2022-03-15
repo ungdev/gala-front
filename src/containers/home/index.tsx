@@ -94,8 +94,8 @@ function Home() {
           </p>
           <p>
             En plus d'une soirée hors du commun rassemblant plus de 3500 participants, 2 scènes, des bars, des
-            foodtrucks, des animations et un feu d'artifice, Cassiopée accueille chaque année des artistes de renommées
-            nationales et internationales !
+            foodtrucks, des animations et un feu d'artifice, Cassiopée accueille chaque année des artistes de renommée
+            nationale et internationale !
           </p>
           <p>
             Aux affiches précédentes: Skip the use, Lorenzo, Salut c'est cool, french fuse, Kavinsky, Uppermost, les
