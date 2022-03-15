@@ -2,6 +2,11 @@ import React from 'react';
 
 import './covid-19.scss';
 import covidIcon from '../../assets/covid.jpg';
+import tenueIcon from '../../assets/tenue.jpg';
+import securiteIcon from '../../assets/securite.jpg';
+import billeterieIcon from '../../assets/billeterie.png';
+import sceneIcon from '../../assets/scene.jpg';
+
 import handSanitizerIcon from '../../assets/hand-sanitizer.png';
 import maskIcon from '../../assets/surgical-mask.png';
 import passIcon from '../../assets/pass.png';
@@ -61,7 +66,7 @@ function Covid19() {
             </div>
           </div>
         </BookmarkedSection>
-        <IllustratedText imageSrc={covidIcon} title="La tenue" alignment="left" titleAlignment="left">
+        <IllustratedText imageSrc={tenueIcon} title="La tenue" alignment="left" titleAlignment="left">
           <p>Venez comme vous êtes !</p>
           <p>
             Une tenue simplement composée d’une chemise et d’un jean suffit. En revanche si vous avez envie de sortir le
@@ -70,23 +75,19 @@ function Covid19() {
         </IllustratedText>
         <div className="red section">
           <IllustratedText
-            imageSrc={placeholderImageSrc}
+            imageSrc={securiteIcon}
             alignment="right"
-            title="Le gala engagé"
+            title="Sécurité"
             titleAlignment="left">
             <p>
-              L’environnement est un aspect qui est de plus en plus important au sein de notre société actuelle et dans
-              notre évènement. Le Gala UTT est donc un gala engagé qui souhaite porter au mieux cette valeur.
+            Attention, les objets dangereux comme les armes blanches, armes à feu ou objets contondants sont strictement 
+            internet à l’intérieur du Gala. Nous procéderons à une fouille avant chaque entrée, provoquant la confiscation 
+            de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
               <br />
-            </p>
-            <p className="supported-association">
-              Attention, les objets dangereux comme les armes blanches, armes à feu ou objets contondants sont
-              strictement internet à l’intérieur du Gala. Nous procéderons à une fouille avant chaque entrée, provoquant
-              la confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
             </p>
           </IllustratedText>
         </div>
-        <IllustratedText imageSrc={covidIcon} title="Informations billeterie" alignment="left" titleAlignment="left">
+        <IllustratedText imageSrc={billeterieIcon} title="Informations billeterie" alignment="left" titleAlignment="left">
           <p>La billetterie est ouverte !</p>
           <p>Pour votre information les tarifs sont les suivants :</p>
           <ul>
@@ -139,7 +140,7 @@ function Covid19() {
           </IllustratedText>
         </div>
         <IllustratedText
-          imageSrc={covidIcon}
+          imageSrc={sceneIcon}
           title="Politique de confidentialité"
           alignment="left"
           titleAlignment="left">

@@ -5,7 +5,9 @@ import IllustratedText from '../../components/illustratedText';
 
 import './commitments.scss';
 
-import placeholderImageSrc from '../../assets/placeholder.jpg';
+import placeholderImageSrc from '../../assets/feu.jpg';
+import placeholderImageSrc1 from '../../assets/engage.jpg';
+
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 
 function Commitments() {
@@ -72,7 +74,7 @@ function Commitments() {
 
         <div className="red section">
           <IllustratedText
-            imageSrc={placeholderImageSrc}
+            imageSrc={placeholderImageSrc1}
             alignment="right"
             title="Le gala engagé"
             titleAlignment="left">
