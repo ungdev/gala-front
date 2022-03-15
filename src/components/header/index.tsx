@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import cassiopee from '../../assets/ic-cassiopee.png';
+import cassiopee from '../../assets/Cassiopee_logo.png';
 import './header.scss';
 
 const links = [

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './footer.scss';
 
-import cassiopeeIcon from '../../assets/ic-cassiopee.png';
+import cassiopeeIcon from '../../assets/Cassiopee_logo.png';
 
 function Footer() {
   return (
