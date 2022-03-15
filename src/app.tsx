@@ -9,8 +9,7 @@ import ScrollToTop from './components/scrollToTop';
 import Home from './containers/home';
 import Program from './containers/program';
 import Partners from './containers/partners';
-import Covid19 from './containers/covid-19';
-import Access from './containers/access';
+import Infos from './containers/infos';
 import Legal from './containers/legal';
 import Privacy from './containers/privacy';
 import Commitments from './containers/commitments';
@@ -30,12 +29,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/artists" element={<Program />} />
-
               <Route path="/partenaires" element={<Partners />} />
-              <Route path="/covid19" element={<Covid19 />} />
+              <Route path="/infos" element={<Infos />} />
               <Route path="/about" element={<Commitments />} />
-
-              <Route path="/acces" element={<Access />} />
 
               <Route path="/mentions-legales" element={<Legal />} />
               <Route path="/confidentialite" element={<Privacy />} />
