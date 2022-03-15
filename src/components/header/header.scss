@@ -56,6 +56,10 @@ header {
         justify-content: center;
         align-items: center;
 
+        &:hover:not(#nav-home-link) {
+          color: var(--accent-color);
+        }
+
         &:not(#nav-home-link) > .container {
           display: block;
           width: 100%;
@@ -72,6 +76,7 @@ header {
             display: block;
             right: 0;
             top: 50%;
+            color: var(--secondary-color);
             transform: translate(50%, -50%);
           }
         }
@@ -85,7 +90,7 @@ header {
             width: 90%;
             max-width: 250px;
 
-            img{
+            img {
               margin-top: 15px;
             }
           }
