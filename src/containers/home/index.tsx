@@ -14,7 +14,7 @@ import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 import BookmarkedSection from '../../components/bookmarkedSection';
 import IllustratedText from '../../components/illustratedText';
 
-import placeholderImage from '../../assets/placeholder.jpg';
+import placeholderImage from '../../assets/scene2.jpg';
 import './home.scss';
 
 function Home() {
