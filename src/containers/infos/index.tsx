@@ -46,14 +46,14 @@ function Infos() {
                 <img src={maskIcon} alt="Masque chirurgical" />
               </div>
               <h4>Le masque</h4>
-              <p>le port du masque ne sera pas obligatoire</p>
+              <p>Le port du masque ne sera pas obligatoire.</p>
             </div>
             <div className="item">
               <div className="image-container">
                 <img src={passIcon} alt="Distanciation sociale" />
               </div>
               <h4>Pass-sanitaire</h4>
-              <p>L'association se réserve le droit d'imposer le pass sanitaire en fonction de l'évolution de la l'épidémie</p>
+              <p>L'association se réserve le droit d'imposer le pass sanitaire en fonction de l'évolution de la l'épidémie.</p>
             </div>
             <div className="item">
               <div className="image-container">
