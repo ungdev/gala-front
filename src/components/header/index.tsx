@@ -21,7 +21,7 @@ const links = [
   },
   {
     title: 'Informations',
-    path: '/covid19',
+    path: '/infos',
   },
   {
     title: 'Billetterie',
@@ -61,7 +61,7 @@ function Header() {
 
     if ('href' in link)
       return (
-        <a href={link.href} className={active ? 'active' : ''}>
+        <a href={link.href} className={active ? 'active' : ''} key={i}>
           <div className="container">{link.title}</div>
         </a>
       );
