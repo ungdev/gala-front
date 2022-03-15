@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './covid-19.scss';
+import './infos.scss';
 import covidIcon from '../../assets/covid.jpg';
 import handSanitizerIcon from '../../assets/hand-sanitizer.png';
 import maskIcon from '../../assets/surgical-mask.png';
@@ -11,8 +11,9 @@ import Heading from '../../components/heading';
 import BookmarkedSection from '../../components/bookmarkedSection';
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 import placeholderImageSrc from '../../assets/placeholder.jpg';
+import Title from '../../components/title';
 
-function Covid19() {
+function Infos() {
   return (
     <>
       <Heading title="Informations pratiques" />
@@ -105,38 +106,47 @@ function Covid19() {
           </p>
         </IllustratedText>
         <div className="red section">
-          <IllustratedText imageSrc={placeholderImageSrc} alignment="right" title="Accés" titleAlignment="left">
-            <h4>En voiture :</h4>
-            <h5>Depuis Paris</h5>
-            <ul>
-              <li>Autoroute A5 : sortie n°20 (Sainte Savine)</li>
-              <li>N60 direction Troyes</li>
-              <li>Rocade de contournement</li>
-              <li>Suivre Technopole de l’Aube</li>
-            </ul>
-            <h5>Depuis Reims</h5>
-            <ul>
-              <li>Autoroute A26 : sortie n°21 (Saint Thibault)</li>
-              <li>N71 direction Troyes</li>
-              <li>Rocade de contournement</li>
-              <li>Suivre Technopole de l’Aube</li>
-            </ul>
-            <h5>Depuis Dijon</h5>
-            <ul>
-              <li>Autoroute A5 : sortie n°20 (Sainte Savine)</li>
-              <li>N71 direction Troyes</li>
-              <li>Rocade de contournement</li>
-              <li>Suivre Technopole de l’Aube</li>
-            </ul>
-            <p className="supported-association">
-              Un parking d’une centaine de places est disponible à proximité de l’UTT pour les personnes arrivant en
-              voiture.
-            </p>
-            <h4>En covoiture :</h4>
-            <p>Un groupe Facebook sera mit en place afin de réaliser du covoiturage pour se rendre à l’UTT.</p>
-            <h4>En train :</h4>
-            <p>Depuis Paris : TER Gare de l’Est vers Troyes</p>
-          </IllustratedText>
+          <div className="illustrated-text left">
+            <Title alignment="left">Accès</Title>
+            <div className="side">
+              <h4>En voiture :</h4>
+              <h5>Depuis Paris</h5>
+              <ul>
+                <li>Autoroute A5 : sortie n°20 (Sainte Savine)</li>
+                <li>N60 direction Troyes</li>
+                <li>Rocade de contournement</li>
+                <li>Suivre Technopole de l’Aube</li>
+              </ul>
+              <h5>Depuis Reims</h5>
+              <ul>
+                <li>Autoroute A26 : sortie n°21 (Saint Thibault)</li>
+                <li>N71 direction Troyes</li>
+                <li>Rocade de contournement</li>
+                <li>Suivre Technopole de l’Aube</li>
+              </ul>
+              <h5>Depuis Dijon</h5>
+              <ul>
+                <li>Autoroute A5 : sortie n°20 (Sainte Savine)</li>
+                <li>N71 direction Troyes</li>
+                <li>Rocade de contournement</li>
+                <li>Suivre Technopole de l’Aube</li>
+              </ul>
+              <p className="supported-association">
+                Un parking d’une centaine de places est disponible à proximité de l’UTT pour les personnes arrivant en
+                voiture.
+              </p>
+              <h4>En covoiture :</h4>
+              <p>Un groupe Facebook sera mit en place afin de réaliser du covoiturage pour se rendre à l’UTT.</p>
+              <h4>En train :</h4>
+              <p>Depuis Paris : TER Gare de l’Est vers Troyes</p>
+            </div>
+            <iframe
+              title="Plan accès Gala UTT"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5311.667167902067!2d4.064695!3d48.267577!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x42148ce859fa2d02!2sUniversit%C3%A9+de+Technologie+de+Troyes!5e0!3m2!1sfr!2sde!4v1547220645001"
+              frameBorder="0"
+              allowFullScreen
+            />
+          </div>
         </div>
         <IllustratedText
           imageSrc={covidIcon}
@@ -160,4 +170,4 @@ function Covid19() {
   );
 }
 
-export default Covid19;
+export default Infos;
