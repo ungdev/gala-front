@@ -28,7 +28,7 @@ function Infos() {
         <IllustratedText imageSrc={covidIcon} title="Situation sur la covid-19" alignment="left" titleAlignment="left">
           <p>
             Au sein de cette section vous trouverez toutes les informations liées à la situation sanitaire actuelle.
-            Tout changement des mesures gouvernementales impactant notre évènement seront disponible ici.
+            Tout changement des mesures gouvernementales impactant notre évènement sera disponible ici.
           </p>
         </IllustratedText>
 

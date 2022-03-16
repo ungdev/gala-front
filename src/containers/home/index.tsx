@@ -77,7 +77,7 @@ function Home() {
 
       <div className="page-container">
         <IllustratedText
-          title="Qu'est ce que le gala&nbsp;?"
+          title="Qu'est-ce que le gala&nbsp;?"
           titleAlignment="center"
           imageSrc={placeholderImage}
           alignment="left">

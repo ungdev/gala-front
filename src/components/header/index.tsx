@@ -6,7 +6,7 @@ import './header.scss';
 
 const links = [
   {
-    title: 'A propos',
+    title: 'À propos',
     path: '/about',
   },
   {
