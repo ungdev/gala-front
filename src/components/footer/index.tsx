@@ -12,7 +12,7 @@ function Footer() {
 
       <div className="links">
         <Link to="/about" className="animate">
-          A propos
+          À propos
         </Link>
         <br />
         <Link to="/artists" className="animate">
