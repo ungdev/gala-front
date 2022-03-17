@@ -36,6 +36,8 @@ function Program() {
                 link={artist.Links[0]}
                 hour={artist.eventDate ? moment(artist.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').format('HH[h]mm') : ''}
                 place={artist.eventPlace}
+                description={artist.description}
+                // description="testetsetetesgsdfds"
                 key={i}
               />
             ))}
