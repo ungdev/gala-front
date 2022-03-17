@@ -1,0 +1,40 @@
+.notification {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  max-width: 80vw;
+  padding: 6px 14px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  z-index: 999;
+  transition: top 0.3s, opacity 0.3s;
+
+  &::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  &:not(.success):not(.error) {
+    top: -20px;
+    opacity: 0;
+  }
+
+  &.error {
+    background: var(--accent-color);
+
+    &::before {
+      content: '\f071';
+    }
+  }
+
+  &.success {
+    background: var(--text-color);
+
+    &::before {
+      content: '\f00c';
+    }
+  }
+}

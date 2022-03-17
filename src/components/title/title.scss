@@ -1,0 +1,57 @@
+.title {
+  font-family: var(--title-font);
+  z-index: 0; /* Creates a stacking context */
+  position: relative;
+  margin-bottom: 40px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIzNSIgdmlld0JveD0iMCAwIDI4IDM1Ij48cGF0aCBkPSJNMCAwaDI4djVoLTI4ek0yMiAxOS4yNGwtNy4xOS0uNjJMMTIgMTIgOS4xOSAxOC42MyAyIDE5LjI0bDUuNDYgNC43M0w1LjgyIDMxIDEyIDI3LjI3IDE4LjE4IDMxbC0xLjYzLTcuMDNMMjIgMTkuMjR6TTEyIDI1LjRsLTMuNzYgMi4yNyAxLTQuMjgtMy4zMi0yLjg4IDQuMzgtLjM4TDEyIDE2LjFsMS43MSA0LjA0IDQuMzguMzgtMy4zMiAyLjg4IDEgNC4yOEwxMiAyNS40eiIgLz48L3N2Zz4=)
+      repeat-x;
+    transform: translateY(-50%);
+    height: 35px;
+    display: block;
+    z-index: -1;
+  }
+
+  h1,
+  h2 {
+    background-color: var(--primary-color);
+    display: inline-block;
+  }
+
+  &.left {
+    h1,
+    h2 {
+      padding-right: 20px;
+    }
+  }
+
+  &.center {
+    display: flex;
+    justify-content: center;
+
+    h1,
+    h2 {
+      padding: 0 20px;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .title {
+    &::after {
+      content: unset;
+    }
+
+    h1,
+    h2 {
+      padding: 0 !important;
+    }
+  }
+}

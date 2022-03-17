@@ -1,0 +1,24 @@
+#legal {
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-color);
+    display: inline-block;
+  }
+
+  .wrapper {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    font-family: var(--text-font);
+
+    a {
+      border: none !important;
+    }
+  }
+}

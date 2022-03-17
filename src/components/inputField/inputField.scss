@@ -1,0 +1,104 @@
+.input-field {
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+
+  input {
+    border: none;
+    border-radius: 0;
+    padding: 8px;
+    color: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.1);
+    font-size: inherit;
+    font-family: 'Roboto', arial, sans-serif;
+    outline: none;
+    box-shadow: 0 1px 0 0 var(--text-color);
+    transition: all 0.3s;
+
+    &:focus {
+      box-shadow: 0 3px 0 0 var(--secondary-color);
+    }
+  }
+
+  .input-field-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    color: var(--secondary-color);
+    padding: 0 8px;
+    opacity: 0.6;
+    user-select: none;
+    cursor: text;
+    transition: all 0.3s;
+
+    label {
+      cursor: text;
+    }
+  }
+
+  input:not([value='']) + .input-field-placeholder,
+  input:focus + .input-field-placeholder {
+    top: -12px;
+    font-size: 12px;
+    left: -8px;
+    opacity: 1;
+    cursor: default;
+
+    label {
+      cursor: default;
+    }
+  }
+
+  .input-field-error {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+
+    &:not(.active) {
+      display: none;
+    }
+
+    .error-icon {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent-color);
+
+      &:hover + .error-content {
+        display: block;
+      }
+    }
+
+    .error-content {
+      display: none;
+      position: absolute;
+      top: -10px;
+      right: 17px;
+      transform: translate(50%, -100%);
+      width: 180px;
+      text-align: center;
+      background: var(--accent-color);
+      padding: 4px 8px;
+      border: 1px solid var(--accent-color);
+      border-radius: 2px;
+      z-index: 1;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%) rotate(-45deg);
+        display: block;
+        width: 14px;
+        height: 14px;
+        background: var(--accent-color);
+
+        clip-path: polygon(0 0, 200% 200%, 200% 200%, 0 200%);
+      }
+    }
+  }
+}

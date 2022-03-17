@@ -1,0 +1,206 @@
+/* --------------- */
+/* --- General --- */
+/* --------------- */
+
+@font-face {
+  font-family: 'FreeHouse';
+  src: url('/fonts/Freehouse-Regular.woff2');
+}
+
+@font-face {
+  font-family: 'HeroNew';
+  src: url('/fonts/Hero\ New\ Regular.woff2');
+}
+
+#root {
+  height: 100vh;
+}
+
+:root {
+  --primary-color: #fee4ab;
+  --secondary-color: #9b1f1f;
+  --accent-color: #dd513a;
+  --text-color: #0c0b08;
+  --shadow-color: #707070;
+  --text-font: HeroNew;
+  --title-font: FreeHouse;
+  height: 100%;
+}
+
+html {
+  background-color: var(--primary-color);
+  font-family: var(--text-font);
+  font-size: 16px;
+  height: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+::selection {
+  background: #adadad;
+  color: #fff;
+}
+
+img::selection {
+  background: #adadad;
+}
+
+a {
+  outline: none;
+}
+
+a.animate {
+  position: relative;
+  text-decoration: none;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    transform: scaleX(0);
+    background-color: var(--secondary-color);
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transform-origin: bottom left;
+  }
+  &:hover:after,
+  &:focus:after {
+    transform: scaleX(1);
+  }
+}
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+h1 {
+  font-family: var(--title-font);
+  text-transform: uppercase;
+  font-size: 48px;
+  text-align: center;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+h2,
+h3 {
+  font-family: var(--title-font);
+  text-transform: uppercase;
+  font-size: 36px;
+  text-align: left;
+  color: var(--secondary-color);
+}
+
+p {
+  font-family: var(--text-font);
+  color: var(--secondary-color);
+  text-align: justify;
+}
+
+small {
+  font-size: 13px;
+}
+
+/* ------------ */
+/* --- Misc --- */
+/* ------------ */
+
+.centered {
+  text-align: center;
+}
+
+.justified {
+  text-align: justify;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#page {
+  color: var(--secondary-color);
+  margin: 0 auto;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  margin: 10px 0;
+  padding: 14px 20px;
+  background: var(--secondary-color);
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: calc(-30% - 20px);
+    height: 100%;
+    width: 100%;
+    background: rgba(50, 50, 50, 0.2);
+    clip-path: polygon(0 0, 30% 0, calc(30% + 20px) 100%, 0% 100%);
+    z-index: 1;
+    transition: all 0.3s;
+  }
+
+  &:hover,
+  &:focus {
+    filter: brightness(0.9);
+  }
+
+  &:hover::before,
+  &:focus::before {
+    left: 0;
+  }
+}
+
+h2.title-decoration {
+  position: relative;
+  letter-spacing: 1px;
+}
+
+#ticketsButton {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 468px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2,
+  h3 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h2,
+  h3 {
+    font-size: 26px;
+  }
+}
