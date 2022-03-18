@@ -15,7 +15,6 @@ import IllustratedText from '../../components/illustratedText';
 import Heading from '../../components/heading';
 import BookmarkedSection from '../../components/bookmarkedSection';
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
-import placeholderImageSrc from '../../assets/placeholder.jpg';
 import Title from '../../components/title';
 
 function Infos() {
@@ -53,7 +52,9 @@ function Infos() {
                 <img src={passIcon} alt="Distanciation sociale" />
               </div>
               <h4>Pass-sanitaire</h4>
-              <p>L'association se réserve le droit d'imposer le pass sanitaire en fonction de l'évolution de la l'épidémie.</p>
+              <p>
+                L'association se réserve le droit d'imposer le pass sanitaire en fonction de l'évolution de l'épidémie.
+              </p>
             </div>
             <div className="item">
               <div className="image-container">
@@ -78,8 +79,8 @@ function Infos() {
           <IllustratedText imageSrc={securiteIcon} alignment="right" title="Sécurité" titleAlignment="left">
             <p>
               Attention, les objets dangereux comme les armes blanches, armes à feu ou objets contondants sont
-              strictement internet à l’intérieur du Gala. Nous procéderons à une fouille avant chaque entrée, provoquant
-              la confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
+              strictement interdits à l’intérieur du Gala. Nous procéderons à une fouille avant chaque entrée,
+              provoquant la confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
               <br />
             </p>
           </IllustratedText>
