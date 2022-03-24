@@ -87,7 +87,7 @@ function Infos() {
         </div>
         <IllustratedText
           imageSrc={billeterieIcon}
-          title="Informations billeterie"
+          title="Informations billetterie"
           alignment="left"
           titleAlignment="left">
           <p>La billetterie est ouverte !</p>
@@ -103,7 +103,7 @@ function Infos() {
             penses que ton école serait intéressée.
           </p>
           <p>
-            Lors de votre arrivé le jour J n’oubliez pas de vous munir de votre billet ainsi que d’une pièce d'identité
+            Lors de votre arrivée le jour J n’oubliez pas de vous munir de votre billet ainsi que d’une pièce d'identité
             (permis de conduire, carte d'identité ou passeport), les places étant nominatives.
           </p>
         </IllustratedText>
