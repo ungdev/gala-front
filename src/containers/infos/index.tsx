@@ -15,7 +15,6 @@ import IllustratedText from '../../components/illustratedText';
 import Heading from '../../components/heading';
 import BookmarkedSection from '../../components/bookmarkedSection';
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
-import placeholderImageSrc from '../../assets/placeholder.jpg';
 import Title from '../../components/title';
 
 function Infos() {
@@ -53,7 +52,9 @@ function Infos() {
                 <img src={passIcon} alt="Distanciation sociale" />
               </div>
               <h4>Pass-sanitaire</h4>
-              <p>L'association se réserve le droit d'imposer le pass sanitaire en fonction de l'évolution de la l'épidémie.</p>
+              <p>
+                L'association se réserve le droit d'imposer le pass sanitaire en fonction de l'évolution de l'épidémie.
+              </p>
             </div>
             <div className="item">
               <div className="image-container">
@@ -68,24 +69,24 @@ function Infos() {
           </div>
         </BookmarkedSection>
         <IllustratedText imageSrc={tenueIcon} title="La tenue" alignment="left" titleAlignment="left">
-          <p>Tenue correcte exigée pour la soirée.</p>
-          <p> 
-              La totale costard cravate/robe de soirée n'est pas obligatoire, il suffit de  faire un petit effort ! Cela dit c'est la soirée idéale pour sortir votre plus belle tenue !
+          <p>Tenue correcte exigée pour la soirée. </p>
+          <p>
+          La totale costard cravate/robe de soirée n'est pas obligatoire, il suffit de  faire un petit effort ! Cela dit c'est la soirée idéale pour sortir votre plus belle tenue !
           </p>
         </IllustratedText>
         <div className="red section">
           <IllustratedText imageSrc={securiteIcon} alignment="right" title="Sécurité" titleAlignment="left">
             <p>
               Attention, les objets dangereux comme les armes blanches, armes à feu ou objets contondants sont
-              strictement internet à l’intérieur du Gala. Nous procéderons à une fouille avant chaque entrée, provoquant
-              la confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
+              strictement interdits à l’intérieur du Gala. Nous procéderons à une fouille avant chaque entrée,
+              provoquant la confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
               <br />
             </p>
           </IllustratedText>
         </div>
         <IllustratedText
           imageSrc={billeterieIcon}
-          title="Informations billeterie"
+          title="Informations billetterie"
           alignment="left"
           titleAlignment="left">
           <p>La billetterie est ouverte !</p>
@@ -101,7 +102,7 @@ function Infos() {
             penses que ton école serait intéressée.
           </p>
           <p>
-            Lors de votre arrivé le jour J n’oubliez pas de vous munir de votre billet ainsi que d’une pièce d'identité
+            Lors de votre arrivée le jour J n’oubliez pas de vous munir de votre billet ainsi que d’une pièce d'identité
             (permis de conduire, carte d'identité ou passeport), les places étant nominatives.
           </p>
         </IllustratedText>

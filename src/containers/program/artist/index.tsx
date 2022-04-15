@@ -8,6 +8,7 @@ interface ArtistProps {
   image: string;
   hour: string;
   place: string;
+  description: string;
   link: Artist['Links'][0];
 }
 
@@ -20,9 +21,7 @@ function Artist(props: ArtistProps) {
         </div>
         <div className="artist-infos">
           <div className="artist-name">{props.name}</div>
-
           {(props.hour || props.place || props.link) && <div className="artist-divider" />}
-
           {props.hour && (
             <div className="artist-hour">
               <i className="far fa-clock icon" title="Horaire" />
@@ -36,7 +35,7 @@ function Artist(props: ArtistProps) {
             </div>
           )}
           {!props.hour && !props.place && <div className="artist-no-informations">L'horaire n'est pas disponible</div>}
-
+          {props.description && <div className="artist-description">{props.description}</div>}
           {props.link && (
             <a href={props.link.uri} className="artist-link" target="_blank" rel="noopener noreferrer">
               Page de l'artiste <i className="fas fa-external-link-alt icon" />
