@@ -71,7 +71,8 @@ function Infos() {
         <IllustratedText imageSrc={tenueIcon} title="La tenue" alignment="left" titleAlignment="left">
           <p>Tenue correcte exigée pour la soirée. </p>
           <p>
-          La totale costard cravate/robe de soirée n'est pas obligatoire, il suffit de  faire un petit effort ! Cela dit c'est la soirée idéale pour sortir votre plus belle tenue !
+            La totale costard cravate/robe de soirée n'est pas obligatoire, il suffit de faire un petit effort ! Cela
+            dit c'est la soirée idéale pour sortir votre plus belle tenue !
           </p>
         </IllustratedText>
         <div className="red section">
