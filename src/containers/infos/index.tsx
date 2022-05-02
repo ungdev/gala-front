@@ -16,6 +16,7 @@ import Heading from '../../components/heading';
 import BookmarkedSection from '../../components/bookmarkedSection';
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 import Title from '../../components/title';
+import Map from '../../components/map';
 
 function Infos() {
   return (
@@ -24,6 +25,11 @@ function Infos() {
       <TopFloatingActionButton />
 
       <div className="page-container" id="covid-19">
+        <div className="map-container">
+          <Title>Plan</Title>
+          <Map />
+        </div>
+
         <IllustratedText imageSrc={covidIcon} title="Situation sur la covid-19" alignment="left" titleAlignment="left">
           <p>
             Au sein de cette section vous trouverez toutes les informations liées à la situation sanitaire actuelle.

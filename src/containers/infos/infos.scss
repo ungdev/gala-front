@@ -1,4 +1,12 @@
 #covid-19 {
+  .map-container {
+    max-width: 1220px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 40px 20px 10px 20px;
+    box-sizing: border-box;
+  }
+
   .item-container {
     display: flex;
     flex-flow: row wrap;
