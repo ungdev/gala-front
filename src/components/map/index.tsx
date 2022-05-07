@@ -8,9 +8,33 @@ import mapVignette from '../../assets/map-vignette.png';
 
 import './map.scss';
 
+const enum MapSelection {
+  EAT,
+  RESTAURANT,
+  SOFT_BAR,
+  SCENE,
+  RECHARGEMENT,
+  PHOTO,
+  SUMO,
+  VESTIAIRE,
+  POSTE_SECOURS,
+}
+
 function Map() {
   const backdropRef = React.createRef<HTMLDivElement>();
   const [backdropContent, setBackdropContent] = useState<JSX.Element | null>(null);
+  const [selection, setSelection] = useState<MapSelection | null>(null);
+
+  const toggleSelection = (selectionUpdate: MapSelection) => {
+    setSelection(selectionUpdate === selection ? null : selectionUpdate);
+  };
+
+  const getSelectionStatus = (target: MapSelection) => {
+    if (selection === target) return 'selected';
+    if (selection !== null) return 'unselected';
+    return '';
+  };
+
   let handlingBackdrop = false;
   let handlingStartY: number | null = null;
 
@@ -50,7 +74,7 @@ function Map() {
 
   return (
     <>
-      <svg className="map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1561 668">
+      <svg className="map" xmlns="http://www.w3.org/2000/svg" viewBox="100 0 1200 668">
         <defs>
           <linearGradient
             id="Dégradé_sans_nom_14"
@@ -65,7 +89,7 @@ function Map() {
             <stop offset="0.86" stopColor="#eb9718" />
             <stop offset="1" stopColor="#f7a418" />
           </linearGradient>
-          <filter id="luminosity-invert" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <filter id="luminosity-invert" filterUnits="objectBoundingBox" colorInterpolationFilters="sRGB">
             <feColorMatrix values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0" />
           </filter>
           <mask id="mask" x="1063" y="392" width="476" height="255" maskUnits="userSpaceOnUse">
@@ -76,8 +100,8 @@ function Map() {
         </defs>
         <g className="cls-1">
           <g id="Calque_1" data-name="Calque 1">
-            <rect className="cls-2" x="-68.7" y="-47.23" width="1655.7" height="1146.23" />
-            <rect className="cls-3" x="-68.7" y="-47.23" width="1655.7" height="1146.23" />
+            <rect className="cls-2 background" x="-68.7" y="-47.23" width="1655.7" height="1146.23" />
+            <rect className="cls-3 background" x="-68.7" y="-47.23" width="1655.7" height="1146.23" />
             <image
               xmlns="http://www.w3.org/2000/svg"
               width="2087"
@@ -163,7 +187,7 @@ function Map() {
               points="972.17 531.86 1174.6 595.81 1187.94 528.83 987.55 468.43 972.17 531.86"
             />
             <rect
-              className="cls-14 clickable"
+              className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
               x="697.48"
               y="120.61"
               width="38.59"
@@ -172,7 +196,7 @@ function Map() {
               onClick={() => openBackdrop('EAT #1', 'La description de cet EAT sera écrite ici')}
             />
             <rect
-              className="cls-14 clickable"
+              className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
               x="767.87"
               y="129.33"
               width="38.59"
@@ -181,7 +205,7 @@ function Map() {
               onClick={() => openBackdrop('EAT #2', 'La description de cet EAT sera écrite ici')}
             />
             <rect
-              className="cls-14 clickable"
+              className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
               x="515.12"
               y="321.06"
               width="38.59"
@@ -190,7 +214,7 @@ function Map() {
               onClick={() => openBackdrop('EAT #3', 'La description de cet EAT sera écrite ici')}
             />
             <rect
-              className="cls-14 clickable"
+              className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
               x="610.32"
               y="506.1"
               width="38.59"
@@ -198,7 +222,7 @@ function Map() {
               onClick={() => openBackdrop('EAT #4', 'La description de cet EAT sera écrite ici')}
             />
             <rect
-              className="cls-15"
+              className={`cls-15 selectable ${getSelectionStatus(MapSelection.POSTE_SECOURS)}`}
               x="789.44"
               y="398.02"
               width="50.57"
@@ -206,89 +230,104 @@ function Map() {
               transform="translate(173.34 -237.87) rotate(18.56)"
             />
             <rect
-              className="cls-14 clickable"
+              className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
               x="834.24"
               y="323.75"
               width="38.59"
               height="25.72"
-              onClick={() => openBackdrop('EAT #4', 'La description de cet EAT sera écrite ici')}
+              onClick={() => openBackdrop('EAT #5', 'La description de cet EAT sera écrite ici')}
             />
             <rect
-              className="cls-14 clickable"
+              className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
               x="814.8"
               y="125.31"
               width="38.59"
               height="25.72"
-              onClick={() => openBackdrop('EAT #5', 'La description de cet EAT sera écrite ici')}
+              onClick={() => openBackdrop('EAT #6', 'La description de cet EAT sera écrite ici')}
             />
             <ellipse
-              className="cls-16 clickable"
+              className={`cls-16 clickable selectable ${getSelectionStatus(MapSelection.SCENE)}`}
               cx="752.58"
               cy="480.17"
               rx="61.68"
               ry="20.78"
               transform="translate(-116.95 278.02) rotate(-19.45)"
-              onClick={() => openBackdrop('Grande scène', 'La description de cette scène sera écrite ici')}
+              onClick={() => openBackdrop('Scène principale', 'La description de cette scène sera écrite ici')}
             />
             <ellipse
-              className="cls-16 clickable"
+              className={`cls-16 clickable selectable ${getSelectionStatus(MapSelection.SCENE)}`}
               cx="931.58"
               cy="318.6"
               rx="37.77"
               ry="12.73"
               transform="matrix(0.94, -0.33, 0.33, 0.94, -52.92, 328.41)"
-              onClick={() => openBackdrop('Petite scène', 'La description de cette scène sera écrite ici')}
+              onClick={() => openBackdrop('Scène secondaire', 'La description de cette scène sera écrite ici')}
             />
             <circle
-              className="cls-17 clickable"
+              className={`cls-17 clickable selectable ${getSelectionStatus(MapSelection.PHOTO)}`}
               cx="420.39"
               cy="397.37"
               r="11.73"
               onClick={() => openBackdrop('Stand photo', 'La description de cette activité sera écrite ici')}
             />
             <circle
-              className="cls-17 clickable"
+              className={`cls-17 clickable selectable ${getSelectionStatus(MapSelection.SUMO)}`}
               cx="711.69"
               cy="286.52"
               r="20.3"
               onClick={() => openBackdrop('Stand sumo', 'La description de cette activité sera écrite ici')}
             />
-            <circle className="cls-18" cx="448.55" cy="388.66" r="11.73" />
             <circle
-              className="cls-19 clickable"
+              className={`cls-18 selectable ${getSelectionStatus(MapSelection.RECHARGEMENT)}`}
+              cx="448.55"
+              cy="388.66"
+              r="11.73"
+            />
+            <circle
+              className={`cls-19 clickable selectable ${getSelectionStatus(MapSelection.SOFT_BAR)}`}
               cx="499.5"
               cy="226.42"
               r="11.73"
               onClick={() => openBackdrop('Bar à softs', 'La description de ce bar sera écrite ici')}
             />
-            <circle className="cls-18" cx="636.26" cy="172.11" r="11.73" />
-            <circle className="cls-18" cx="764.31" cy="361.17" r="11.73" />
+            <circle
+              className={`cls-18 selectable ${getSelectionStatus(MapSelection.RECHARGEMENT)}`}
+              cx="636.26"
+              cy="172.11"
+              r="11.73"
+            />
+            <circle
+              className={`cls-18 selectable ${getSelectionStatus(MapSelection.RECHARGEMENT)}`}
+              cx="764.31"
+              cy="361.17"
+              r="11.73"
+            />
             <rect
-              className="cls-19 clickable"
+              className={`cls-19 clickable selectable ${getSelectionStatus(MapSelection.RESTAURANT)}`}
               x="467.65"
               y="372.23"
               width="38.21"
               height="16.09"
               transform="translate(1029.06 84.55) rotate(113.4)"
-              onClick={() => openBackdrop('Espace restauration', 'La description de cet espace sera écrite ici')}
+              onClick={() => openBackdrop('Espace restauration #1', 'La description de cet espace sera écrite ici')}
             />
             <rect
-              className="cls-19 clickable"
+              className={`cls-19 clickable selectable ${getSelectionStatus(MapSelection.RESTAURANT)}`}
               x="761.96"
               y="315.92"
               width="38.21"
               height="16.09"
               transform="translate(147.57 -236.12) rotate(18.95)"
-              onClick={() => openBackdrop('Espace restauration', 'La description de cet espace sera écrite ici')}
+              onClick={() => openBackdrop('Espace restauration #2', 'La description de cet espace sera écrite ici')}
             />
             <rect
-              className="cls-19 clickable"
+              className={`cls-19 clickable selectable ${getSelectionStatus(MapSelection.RESTAURANT)}`}
               x="874.59"
               y="167.09"
               width="38.21"
               height="16.09"
               transform="translate(58.97 -189.01) rotate(12.48)"
-              onClick={() => openBackdrop('Espace restauration', 'La description de cet espace sera écrite ici')}
+              onClick={() => openBackdrop('Espace restauration #3', 'La description de cet espace sera écrite ici')}
             />
             <line className="cls-19" x1="329.89" y1="500.61" x2="353.68" y2="492.9" />
             <polygon className="cls-19" points="328.19 495.38 353.69 492.9 331.58 505.85 328.19 495.38 328.19 495.38" />
@@ -300,7 +339,7 @@ function Map() {
               <image width="250" height="161" transform="translate(149 122)" href={mapEntry2} />
             </g>
             <rect
-              className="cls-17"
+              className={`cls-17 selectable ${getSelectionStatus(MapSelection.VESTIAIRE)}`}
               x="759.9"
               y="102.28"
               width="95.63"
@@ -336,7 +375,7 @@ function Map() {
             <path d="M820.72,106.33l.29,0a1.58,1.58,0,0,0,.61-.14l.16,1.65a2.21,2.21,0,0,1,2-1.91A1.72,1.72,0,0,1,825.7,107l-.7.56c-.36-.69-.74-1-1.37-.89-1.13.11-1.85,1-1.71,2.59l.37,3.86-.91.09Z" />
             <path d="M826.64,109.26a3.47,3.47,0,0,1,3-3.92c1.85-.18,3.38,1.25,3.59,3.43l-5.65.54a2.63,2.63,0,0,0,2.91,2.44,2.26,2.26,0,0,0,2.08-1.63l.72.31a3,3,0,0,1-2.73,2.06A3.53,3.53,0,0,1,826.64,109.26Zm.86-.57,4.78-.46a2.5,2.5,0,0,0-2.62-2.19A2.47,2.47,0,0,0,827.5,108.69Z" />
             <rect
-              className="cls-22 clickable"
+              className={`cls-22 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
               x="397.77"
               y="291.41"
               width="42.96"
@@ -350,83 +389,132 @@ function Map() {
             <path d="M414.91,326.59l.3-.86,8.81-.13-6.84-5.54.28-.83,7.66,6.31-.29.82Z" />
             <path d="M417.93,317.88l.29-.82,8.78,3.05-.28.81Z" />
             <path d="M419.05,314.67l.66-1.92c.77-2.22,2.13-3.17,3.74-2.61s2.07,2.14,1.3,4.36l-.38,1.1,3.74,1.3-.28.81Zm.92-.59,3.76,1.3.4-1.14c.6-1.73.3-2.8-1-3.25s-2.19.21-2.79,1.94Z" />
-            <rect className="cls-23" x="1068.91" y="397" width="465.09" height="245" rx="12" />
-            <rect className="cls-24" x="1068.91" y="397" width="465.09" height="245" rx="12" />
-            <g className="cls-25">
-              <g className="cls-26">
-                <rect x="1068.91" y="397" width="465.09" height="245" rx="12" />
-                <rect className="cls-27" x="1068.91" y="397" width="465.09" height="245" rx="12" />
+            <g className="caption">
+              <rect className="cls-23" x="1068.91" y="397" width="465.09" height="245" rx="12" />
+              <rect className="cls-24" x="1068.91" y="397" width="465.09" height="245" rx="12" />
+              <g className="cls-25">
+                <g className="cls-26">
+                  <rect x="1068.91" y="397" width="465.09" height="245" rx="12" />
+                  <rect className="cls-27" x="1068.91" y="397" width="465.09" height="245" rx="12" />
+                </g>
               </g>
+              <rect
+                className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
+                x="1351.62"
+                y="419"
+                width="44.91"
+                height="25.85"
+                onClick={() => toggleSelection(MapSelection.EAT)}
+              />
+              <rect
+                className={`cls-15 clickable selectable ${getSelectionStatus(MapSelection.POSTE_SECOURS)}`}
+                x="1099.17"
+                y="514.38"
+                width="45.26"
+                height="24.35"
+                onClick={() => toggleSelection(MapSelection.POSTE_SECOURS)}
+              />
+              <ellipse
+                className={`cls-16 clickable selectable ${getSelectionStatus(MapSelection.SCENE)}`}
+                cx="1121.79"
+                cy="495.52"
+                rx="29.74"
+                ry="11.39"
+                onClick={() => toggleSelection(MapSelection.SCENE)}
+              />
+              <circle
+                className={`cls-17 clickable selectable ${getSelectionStatus(MapSelection.PHOTO)}`}
+                cx="1374.07"
+                cy="554.38"
+                r="13.65"
+                onClick={() => toggleSelection(MapSelection.PHOTO)}
+              />
+              <circle
+                className={`cls-17 clickable selectable ${getSelectionStatus(MapSelection.SUMO)}`}
+                cx="1374.07"
+                cy="603.38"
+                r="23.62"
+                onClick={() => toggleSelection(MapSelection.SUMO)}
+              />
+              <circle
+                className={`cls-18 clickable selectable ${getSelectionStatus(MapSelection.RECHARGEMENT)}`}
+                cx="1121.79"
+                cy="556.55"
+                r="10.5"
+                onClick={() => toggleSelection(MapSelection.RECHARGEMENT)}
+              />
+              <circle
+                className={`cls-19 clickable selectable ${getSelectionStatus(MapSelection.SOFT_BAR)}`}
+                cx="1374.07"
+                cy="463.43"
+                r="13.65"
+                onClick={() => toggleSelection(MapSelection.SOFT_BAR)}
+              />
+              <rect
+                className={`cls-19 clickable selectable ${getSelectionStatus(MapSelection.RESTAURANT)}`}
+                x="1351.84"
+                y="514.12"
+                width="44.47"
+                height="18.72"
+                transform="translate(2748.14 1046.96) rotate(180)"
+                onClick={() => toggleSelection(MapSelection.RESTAURANT)}
+              />
+              <line className="cls-19" x1="1144.35" y1="430.38" x2="1151.77" y2="430.5" />
+              <polygon
+                className="cls-19"
+                points="1144.44 424.88 1151.77 430.5 1144.27 435.88 1144.44 424.88 1144.44 424.88"
+              />
+              <line className="cls-20" x1="1091.82" y1="430.3" x2="1144.35" y2="430.38" />
+              <polyline className="cls-5" points="1149.87 466.75 1149.87 472.75 1143.87 472.75" />
+              <line className="cls-28" x1="1129.15" y1="472.76" x2="1107.08" y2="472.76" />
+              <polyline className="cls-5" points="1099.72 472.75 1093.72 472.75 1093.72 466.75" />
+              <polyline className="cls-5" points="1093.72 459.53 1093.72 453.53 1099.72 453.53" />
+              <line className="cls-28" x1="1114.44" y1="453.53" x2="1136.51" y2="453.53" />
+              <polyline className="cls-5" points="1143.87 453.53 1149.87 453.53 1149.87 459.53" />
+              <text className="cls-29" transform="translate(1160.4 435.64)">
+                <tspan>Accès Pompier</tspan>
+                <tspan x="0" y="31.2">
+                  Barriérage
+                </tspan>
+                <tspan x="0" y="62.4">
+                  Scènes
+                </tspan>
+                <tspan className="cls-31" x="0" y="93.6">
+                  Postes de secours
+                </tspan>
+                <tspan className="cls-34" x="0" y="124.8">
+                  Rechargement
+                </tspan>
+              </text>
+              <text className="cls-29" transform="translate(1406.4 436.64)">
+                <tspan>Bar / EAT</tspan>
+                <tspan x="0" y="31.2">
+                  Bar à Soft
+                </tspan>
+                <tspan className="cls-31" x="0" y="62.4">
+                  Pot VIP / Bar
+                </tspan>
+                <tspan className="cls-34" x="0" y="93.6">
+                  Restauration
+                </tspan>
+                <tspan x="0" y="124.8">
+                  Stand Photo
+                </tspan>
+                <tspan x="0" y="171.6">
+                  Animation Sumo
+                </tspan>
+              </text>
+              <rect
+                className={`cls-22 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
+                x="1362.53"
+                y="475.69"
+                width="23.46"
+                height="39.16"
+                transform="translate(1869.53 -878.98) rotate(90)"
+                onClick={() => toggleSelection(MapSelection.EAT)}
+              />
             </g>
-            <rect className="cls-14" x="1351.62" y="419" width="44.91" height="25.85" />
-            <rect className="cls-15" x="1099.17" y="514.38" width="45.26" height="24.35" />
-            <ellipse className="cls-16" cx="1121.79" cy="495.52" rx="29.74" ry="11.39" />
-            <circle className="cls-17" cx="1374.07" cy="554.38" r="13.65" />
-            <circle className="cls-17" cx="1374.07" cy="603.38" r="23.62" />
-            <circle className="cls-18" cx="1121.79" cy="556.55" r="10.5" />
-            <circle className="cls-19" cx="1374.07" cy="463.43" r="13.65" />
-            <rect
-              className="cls-19"
-              x="1351.84"
-              y="514.12"
-              width="44.47"
-              height="18.72"
-              transform="translate(2748.14 1046.96) rotate(180)"
-            />
-            <line className="cls-19" x1="1144.35" y1="430.38" x2="1151.77" y2="430.5" />
-            <polygon
-              className="cls-19"
-              points="1144.44 424.88 1151.77 430.5 1144.27 435.88 1144.44 424.88 1144.44 424.88"
-            />
-            <line className="cls-20" x1="1091.82" y1="430.3" x2="1144.35" y2="430.38" />
-            <polyline className="cls-5" points="1149.87 466.75 1149.87 472.75 1143.87 472.75" />
-            <line className="cls-28" x1="1129.15" y1="472.76" x2="1107.08" y2="472.76" />
-            <polyline className="cls-5" points="1099.72 472.75 1093.72 472.75 1093.72 466.75" />
-            <polyline className="cls-5" points="1093.72 459.53 1093.72 453.53 1099.72 453.53" />
-            <line className="cls-28" x1="1114.44" y1="453.53" x2="1136.51" y2="453.53" />
-            <polyline className="cls-5" points="1143.87 453.53 1149.87 453.53 1149.87 459.53" />
-            <text className="cls-29" transform="translate(1160.4 435.64)">
-              <tspan>Accès Pompier</tspan>
-              <tspan x="0" y="31.2">
-                Barriérage
-              </tspan>
-              <tspan x="0" y="62.4">
-                Scènes
-              </tspan>
-              <tspan className="cls-31" x="0" y="93.6">
-                Postes de secours
-              </tspan>
-              <tspan className="cls-34" x="0" y="124.8">
-                Rechargement
-              </tspan>
-            </text>
-            <text className="cls-29" transform="translate(1406.4 436.64)">
-              <tspan>Bar / EAT</tspan>
-              <tspan x="0" y="31.2">
-                Bar à Soft
-              </tspan>
-              <tspan className="cls-31" x="0" y="62.4">
-                Pot VIP / Bar
-              </tspan>
-              <tspan className="cls-34" x="0" y="93.6">
-                Restauration
-              </tspan>
-              <tspan x="0" y="124.8">
-                Stand Photo
-              </tspan>
-              <tspan x="0" y="171.6">
-                Animation Sumo
-              </tspan>
-            </text>
-            <image width="1756" height="578" transform="translate(23) scale(0.15)" href={mapLogo} />
-            <rect
-              className="cls-22"
-              x="1362.53"
-              y="475.69"
-              width="23.46"
-              height="39.16"
-              transform="translate(1869.53 -878.98) rotate(90)"
-            />
+            <image className="logo" width="1756" height="578" href={mapLogo} />
           </g>
         </g>
       </svg>
@@ -454,6 +542,7 @@ function Map() {
         </div>
         <div className="background" onClick={() => openBackdrop(null)} />
       </div>
+      <div className="caption">Clique sur les éléments du plan pour en savoir plus</div>
     </>
   );
 }

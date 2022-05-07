@@ -1,6 +1,36 @@
 svg.map {
+  border-radius: 4px;
+
   .clickable {
     cursor: pointer;
+  }
+
+  & .caption {
+    transform: translateX(-240px) translateY(20px);
+  }
+
+  & .background {
+    width: 1200px;
+    height: 1200px;
+    x: 100px;
+  }
+
+  & image.background {
+    width: 1400px;
+    height: 838px;
+    transform: translate(0 -30);
+  }
+
+  & image.logo {
+    transform: translate(123px) scale(0.15);
+  }
+
+  & .selectable {
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  & .selectable.unselected {
+    opacity: 0.2;
   }
 
   g.cls-21 {
@@ -252,8 +282,9 @@ svg.map + .backdrop {
       border-radius: 5px;
       background-color: var(--text-color);
       opacity: 0.5;
-      margin: -15px 0 0 50%;
-      transform: translateX(-100%);
+      margin-top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 
@@ -268,6 +299,12 @@ svg.map + .backdrop {
       pointer-events: all;
     }
   }
+}
+
+svg.map + .backdrop + .caption {
+  font-style: italic;
+  font-size: 0.8em;
+  text-align: center;
 }
 
 @media screen and (max-width: 1200px) {
