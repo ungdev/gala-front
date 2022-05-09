@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import mapGradient from '../../assets/map-gradient.png';
 import mapEntry2 from '../../assets/map-entry-2.png';
@@ -24,6 +24,17 @@ function Map() {
   const backdropRef = React.createRef<HTMLDivElement>();
   const [backdropContent, setBackdropContent] = useState<JSX.Element | null>(null);
   const [selection, setSelection] = useState<MapSelection | null>(null);
+  const [posX, setPosX] = useState<number>(0);
+  const [posY, setPosY] = useState<number>(0);
+
+  const updatePosition = (x: number, y: number) => {
+    // Entrance: 48.27018346874385,4.065467119216919 -> 300,95
+    // Otherside: 48.26849028741819,4.069109559059143 -> 1240,390
+    const dx = x - 4.065467119216919;
+    const dy = y - 48.27018346874385;
+    setPosY(Math.min(Math.max(24, (dy / (48.26849028741819 - 48.27018346874385)) * (390 - 95) + 95), 668));
+    setPosX(Math.min(Math.max(12, (dx / (4.069109559059143 - 4.065467119216919)) * (1240 - 300) + 200), 1200 - 12));
+  };
 
   const toggleSelection = (selectionUpdate: MapSelection) => {
     setSelection(selectionUpdate === selection ? null : selectionUpdate);
@@ -34,6 +45,17 @@ function Map() {
     if (selection !== null) return 'unselected';
     return '';
   };
+
+  useEffect(() => {
+    const watchId = navigator.geolocation.watchPosition(
+      (pos) => updatePosition(pos.coords.longitude, pos.coords.latitude),
+      () => updatePosition(0, 0),
+      {
+        enableHighAccuracy: true,
+      },
+    );
+    return () => navigator.geolocation.clearWatch(watchId);
+  }, []);
 
   let handlingBackdrop = false;
   let handlingStartY: number | null = null;
@@ -186,6 +208,13 @@ function Map() {
               className="cls-4"
               points="972.17 531.86 1174.6 595.81 1187.94 528.83 987.55 468.43 972.17 531.86"
             />
+            {posX && posY && (
+              <path
+                className="youhere"
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                transform={`translate(${100 + posX - 12} ${posY - 24})`}
+              />
+            )}
             <rect
               className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
               x="697.48"
@@ -471,6 +500,13 @@ function Map() {
               <polyline className="cls-5" points="1093.72 459.53 1093.72 453.53 1099.72 453.53" />
               <line className="cls-28" x1="1114.44" y1="453.53" x2="1136.51" y2="453.53" />
               <polyline className="cls-5" points="1143.87 453.53 1149.87 453.53 1149.87 459.53" />
+              {posX && posY && (
+                <path
+                  className="youhere"
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                  transform="translate(1110 575.64)"
+                />
+              )}
               <text className="cls-29" transform="translate(1160.4 435.64)">
                 <tspan>Accès Pompier</tspan>
                 <tspan x="0" y="31.2">
@@ -485,6 +521,11 @@ function Map() {
                 <tspan className="cls-34" x="0" y="124.8">
                   Rechargement
                 </tspan>
+                {posX && posY && (
+                  <tspan className="cls-34" x="0" y="156">
+                    Vous êtes ici
+                  </tspan>
+                )}
               </text>
               <text className="cls-29" transform="translate(1406.4 436.64)">
                 <tspan>Bar / EAT</tspan>
