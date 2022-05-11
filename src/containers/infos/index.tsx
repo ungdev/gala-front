@@ -16,6 +16,7 @@ import Heading from '../../components/heading';
 import BookmarkedSection from '../../components/bookmarkedSection';
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 import Title from '../../components/title';
+import Map from '../../components/map';
 
 function Infos() {
   return (
@@ -24,6 +25,32 @@ function Infos() {
       <TopFloatingActionButton />
 
       <div className="page-container" id="covid-19">
+        <div className="container">
+          <Title>Plan</Title>
+          <Map />
+          <a href="/plan-cassiopee.png" download className="button">
+            Télécharger le plan au format png
+          </a>
+        </div>
+
+        <div className="red section">
+          <div className="container">
+            <Title>Horaires des navettes</Title>
+            <div>
+              Des navettes seront disponibles (trajet Beurnonville -&gt; Gillon -&gt; UTT) aux horaires suivants{' '}
+              <em>(horaires à l'arrêt Beurnonville)</em>:
+              <br />
+              21h30 - 22h00 - 22h15 - 22h30 - 22h45 - 23h00 - 23h15 - 23h30 - 23h45 - 0h00 - 0h15 - 0h30
+              <br />
+              <br />
+              Des navettes seront disponibles (trajet UTT -&gt; Gillon -&gt; Beurnonville) aux horaires suivants{' '}
+              <em>(horaires au parking de l'UTT)</em>:
+              <br />
+              1h00 - 1h30 - 2h00 - 2h30 - 3h00 - 3h30 - 3h45 - 4h00 - 4h15 - 4h30 - 4h45 - 5h00 - 5h15
+            </div>
+          </div>
+        </div>
+
         <IllustratedText imageSrc={covidIcon} title="Situation sur la covid-19" alignment="left" titleAlignment="left">
           <p>
             Au sein de cette section vous trouverez toutes les informations liées à la situation sanitaire actuelle.
