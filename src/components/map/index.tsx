@@ -523,7 +523,7 @@ function Map() {
                 </tspan>
                 {posX && posY && (
                   <tspan className="cls-34" x="0" y="156">
-                    Vous êtes ici
+                    Vous êtes (approximativement) ici
                   </tspan>
                 )}
               </text>
