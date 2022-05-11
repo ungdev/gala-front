@@ -222,7 +222,7 @@ function Map() {
               width="38.59"
               height="25.72"
               transform="translate(-3.54 246.31) rotate(-19.45)"
-              onClick={() => openBackdrop('EAT #1', 'La description de cet EAT sera écrite ici')}
+              onClick={() => openBackdrop('EAT #1', 'Les détails de cet EAT seront bientôt disponibles')}
             />
             <rect
               className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
@@ -231,7 +231,7 @@ function Map() {
               width="38.59"
               height="25.72"
               transform="translate(-12.48 121.85) rotate(-8.78)"
-              onClick={() => openBackdrop('EAT #2', 'La description de cet EAT sera écrite ici')}
+              onClick={() => openBackdrop('EAT #2', 'Les détails de cet EAT seront bientôt disponibles')}
             />
             <rect
               className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
@@ -240,7 +240,7 @@ function Map() {
               width="38.59"
               height="25.72"
               transform="translate(134.05 -152.71) rotate(18.56)"
-              onClick={() => openBackdrop('EAT #3', 'La description de cet EAT sera écrite ici')}
+              onClick={() => openBackdrop('EAT #3', 'Les détails de cet EAT seront bientôt disponibles')}
             />
             <rect
               className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
@@ -248,7 +248,7 @@ function Map() {
               y="506.1"
               width="38.59"
               height="25.72"
-              onClick={() => openBackdrop('EAT #4', 'La description de cet EAT sera écrite ici')}
+              onClick={() => openBackdrop('EAT #4', 'Les détails de cet EAT seront bientôt disponibles')}
             />
             <rect
               className={`cls-15 selectable ${getSelectionStatus(MapSelection.POSTE_SECOURS)}`}
@@ -264,7 +264,7 @@ function Map() {
               y="323.75"
               width="38.59"
               height="25.72"
-              onClick={() => openBackdrop('EAT #5', 'La description de cet EAT sera écrite ici')}
+              onClick={() => openBackdrop('EAT #5', 'Les détails de cet EAT seront bientôt disponibles')}
             />
             <rect
               className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
@@ -272,7 +272,7 @@ function Map() {
               y="125.31"
               width="38.59"
               height="25.72"
-              onClick={() => openBackdrop('EAT #6', 'La description de cet EAT sera écrite ici')}
+              onClick={() => openBackdrop('EAT #6', 'Les détails de cet EAT seront bientôt disponibles')}
             />
             <ellipse
               className={`cls-16 clickable selectable ${getSelectionStatus(MapSelection.SCENE)}`}
@@ -281,7 +281,7 @@ function Map() {
               rx="61.68"
               ry="20.78"
               transform="translate(-116.95 278.02) rotate(-19.45)"
-              onClick={() => openBackdrop('Scène principale', 'La description de cette scène sera écrite ici')}
+              onClick={() => openBackdrop('Scène principale', 'Les détails de cet scène seront bientôt disponibles')}
             />
             <ellipse
               className={`cls-16 clickable selectable ${getSelectionStatus(MapSelection.SCENE)}`}
@@ -290,21 +290,21 @@ function Map() {
               rx="37.77"
               ry="12.73"
               transform="matrix(0.94, -0.33, 0.33, 0.94, -52.92, 328.41)"
-              onClick={() => openBackdrop('Scène secondaire', 'La description de cette scène sera écrite ici')}
+              onClick={() => openBackdrop('Scène secondaire', 'Les détails de cette scène seront bientôt disponibles')}
             />
             <circle
               className={`cls-17 clickable selectable ${getSelectionStatus(MapSelection.PHOTO)}`}
               cx="420.39"
               cy="397.37"
               r="11.73"
-              onClick={() => openBackdrop('Stand photo', 'La description de cette activité sera écrite ici')}
+              onClick={() => openBackdrop('Stand photo', 'Les détails de cette activité seront bientôt disponibles')}
             />
             <circle
               className={`cls-17 clickable selectable ${getSelectionStatus(MapSelection.SUMO)}`}
               cx="711.69"
               cy="286.52"
               r="20.3"
-              onClick={() => openBackdrop('Stand sumo', 'La description de cette activité sera écrite ici')}
+              onClick={() => openBackdrop('Stand sumo', 'Les détails de cette activité seront bientôt disponibles')}
             />
             <circle
               className={`cls-18 selectable ${getSelectionStatus(MapSelection.RECHARGEMENT)}`}
@@ -317,7 +317,7 @@ function Map() {
               cx="499.5"
               cy="226.42"
               r="11.73"
-              onClick={() => openBackdrop('Bar à softs', 'La description de ce bar sera écrite ici')}
+              onClick={() => openBackdrop('Bar à softs', 'Les détails de ce bar seront bientôt disponibles')}
             />
             <circle
               className={`cls-18 selectable ${getSelectionStatus(MapSelection.RECHARGEMENT)}`}
@@ -338,7 +338,12 @@ function Map() {
               width="38.21"
               height="16.09"
               transform="translate(1029.06 84.55) rotate(113.4)"
-              onClick={() => openBackdrop('Espace restauration #1', 'La description de cet espace sera écrite ici')}
+              onClick={() =>
+                openBackdrop(
+                  'Espace restauration #1',
+                  'Les détails de cet espace restauration seront bientôt disponibles',
+                )
+              }
             />
             <rect
               className={`cls-19 clickable selectable ${getSelectionStatus(MapSelection.RESTAURANT)}`}
@@ -347,7 +352,12 @@ function Map() {
               width="38.21"
               height="16.09"
               transform="translate(147.57 -236.12) rotate(18.95)"
-              onClick={() => openBackdrop('Espace restauration #2', 'La description de cet espace sera écrite ici')}
+              onClick={() =>
+                openBackdrop(
+                  'Espace restauration #2',
+                  'Les détails de cet espace restauration seront bientôt disponibles',
+                )
+              }
             />
             <rect
               className={`cls-19 clickable selectable ${getSelectionStatus(MapSelection.RESTAURANT)}`}
@@ -356,7 +366,12 @@ function Map() {
               width="38.21"
               height="16.09"
               transform="translate(58.97 -189.01) rotate(12.48)"
-              onClick={() => openBackdrop('Espace restauration #3', 'La description de cet espace sera écrite ici')}
+              onClick={() =>
+                openBackdrop(
+                  'Espace restauration #3',
+                  'Les détails de cet espace restauration seront bientôt disponibles',
+                )
+              }
             />
             <line className="cls-19" x1="329.89" y1="500.61" x2="353.68" y2="492.9" />
             <polygon className="cls-19" points="328.19 495.38 353.69 492.9 331.58 505.85 328.19 495.38 328.19 495.38" />
@@ -410,7 +425,7 @@ function Map() {
               width="42.96"
               height="71.73"
               transform="translate(125.94 -116.41) rotate(18.56)"
-              onClick={() => openBackdrop('Pot VIP/EAT #7', 'La description de cet EAT sera écrite ici')}
+              onClick={() => openBackdrop('Pot VIP/EAT #7', 'Les détails de cet EAT seront bientôt disponibles')}
             />
             <path d="M407.9,346.83l.66-1.92c.77-2.22,2.13-3.16,3.74-2.61s2.08,2.14,1.31,4.36l-.39,1.11,3.74,1.29-.28.81Zm.92-.59,3.76,1.3.4-1.14c.6-1.73.3-2.8-1-3.24s-2.19.21-2.78,1.94Z" />
             <path d="M416.06,342.5a3,3,0,1,1,3.92-1.81A3.1,3.1,0,0,1,416.06,342.5Zm1.7-4.91a2.21,2.21,0,1,0,1.59,2.88A2.29,2.29,0,0,0,417.76,337.59Z" />
@@ -500,7 +515,7 @@ function Map() {
               <polyline className="cls-5" points="1093.72 459.53 1093.72 453.53 1099.72 453.53" />
               <line className="cls-28" x1="1114.44" y1="453.53" x2="1136.51" y2="453.53" />
               <polyline className="cls-5" points="1143.87 453.53 1149.87 453.53 1149.87 459.53" />
-              {posX && posY && (
+              {!!posX && !!posY && (
                 <path
                   className="youhere"
                   d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
@@ -521,9 +536,9 @@ function Map() {
                 <tspan className="cls-34" x="0" y="124.8">
                   Rechargement
                 </tspan>
-                {posX && posY && (
+                {!!posX && !!posY && (
                   <tspan className="cls-34" x="0" y="156">
-                    Vous êtes (approximativement) ici
+                    Tu n'es pas loin d'ici
                   </tspan>
                 )}
               </text>
