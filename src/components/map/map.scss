@@ -1,5 +1,8 @@
 svg.map {
   border-radius: 4px;
+  max-width: 700px;
+  margin: auto;
+  display: block;
 
   .clickable {
     cursor: pointer;
