@@ -60,11 +60,12 @@ function Map() {
   let handlingBackdrop = false;
   let handlingStartY: number | null = null;
 
-  const openBackdrop = (title: string | null, ...content: string[]) => {
+  const openBackdrop = (title: string | null, until?: string | null, ...content: string[]) => {
     setBackdropContent(
       title == null && content.length === 0 ? null : (
         <>
           {title && <div className="backdrop-title">{title}</div>}
+          {until && <div className="until">Ouvert {until}</div>}
           {content.map((str, i) => (
             <div key={`key-${i}`} className="backdrop-content">
               {str}
@@ -222,7 +223,15 @@ function Map() {
               width="38.59"
               height="25.72"
               transform="translate(-3.54 246.31) rotate(-19.45)"
-              onClick={() => openBackdrop('EAT #1', 'Les détails de cet EAT seront bientôt disponibles')}
+              onClick={() =>
+                openBackdrop(
+                  'Eat diner (salle b105)',
+                  "jusqu'à 2h30",
+                  "Club: ch'utt de vers (théâtre) et lalal'utt (chorale)",
+                  'Karaoké',
+                  'Vente de champagne et bieres',
+                )
+              }
             />
             <rect
               className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
@@ -231,7 +240,16 @@ function Map() {
               width="38.59"
               height="25.72"
               transform="translate(-12.48 121.85) rotate(-8.78)"
-              onClick={() => openBackdrop('EAT #2', 'Les détails de cet EAT seront bientôt disponibles')}
+              onClick={() =>
+                openBackdrop(
+                  'Eat (salle c102)',
+                  "jusqu'à 2h30",
+                  'Club: Rutt (club de rugby)',
+                  'Chamboule tout',
+                  'Biere pong avec des lots à gagner',
+                  'Vente de champagne et de bieres',
+                )
+              }
             />
             <rect
               className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
@@ -240,7 +258,15 @@ function Map() {
               width="38.59"
               height="25.72"
               transform="translate(134.05 -152.71) rotate(18.56)"
-              onClick={() => openBackdrop('EAT #3', 'Les détails de cet EAT seront bientôt disponibles')}
+              onClick={() =>
+                openBackdrop(
+                  'Eat le garage',
+                  "jusqu'à 4h",
+                  "Association: UNG (association d'informatique et de technologie)",
+                  'Activité pêche aux canards',
+                  'Vente de bière et milkshake',
+                )
+              }
             />
             <rect
               className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
@@ -248,7 +274,14 @@ function Map() {
               y="506.1"
               width="38.59"
               height="25.72"
-              onClick={() => openBackdrop('EAT #4', 'Les détails de cet EAT seront bientôt disponibles')}
+              onClick={() =>
+                openBackdrop(
+                  'Eat bar inter école',
+                  "jusqu'à 4h",
+                  'Tenu par les étudiants des ecoles partenaires',
+                  'Vente de tous les type de bière',
+                )
+              }
             />
             <rect
               className={`cls-15 selectable ${getSelectionStatus(MapSelection.POSTE_SECOURS)}`}
@@ -264,7 +297,14 @@ function Map() {
               y="323.75"
               width="38.59"
               height="25.72"
-              onClick={() => openBackdrop('EAT #5', 'Les détails de cet EAT seront bientôt disponibles')}
+              onClick={() =>
+                openBackdrop(
+                  'Eat',
+                  "jusqu'à 4h",
+                  "Faluche club des faluchards de l'utt, tradition estudiantine",
+                  'Vente de bière',
+                )
+              }
             />
             <rect
               className={`cls-14 clickable selectable ${getSelectionStatus(MapSelection.EAT)}`}
@@ -272,39 +312,45 @@ function Map() {
               y="125.31"
               width="38.59"
               height="25.72"
-              onClick={() => openBackdrop('EAT #6', 'Les détails de cet EAT seront bientôt disponibles')}
+              onClick={() =>
+                openBackdrop(
+                  'Eat route 86 (salle c104)',
+                  "jusqu'à 2h30",
+                  "Club: MM (branche matériaux et mécanique à l'utt)",
+                  'Vente de champagne et de bières',
+                )
+              }
             />
             <ellipse
-              className={`cls-16 clickable selectable ${getSelectionStatus(MapSelection.SCENE)}`}
+              className={`cls-16 selectable ${getSelectionStatus(MapSelection.SCENE)}`}
               cx="752.58"
               cy="480.17"
               rx="61.68"
               ry="20.78"
               transform="translate(-116.95 278.02) rotate(-19.45)"
-              onClick={() => openBackdrop('Scène principale', 'Les détails de cet scène seront bientôt disponibles')}
             />
             <ellipse
-              className={`cls-16 clickable selectable ${getSelectionStatus(MapSelection.SCENE)}`}
+              className={`cls-16 selectable ${getSelectionStatus(MapSelection.SCENE)}`}
               cx="931.58"
               cy="318.6"
               rx="37.77"
               ry="12.73"
               transform="matrix(0.94, -0.33, 0.33, 0.94, -52.92, 328.41)"
-              onClick={() => openBackdrop('Scène secondaire', 'Les détails de cette scène seront bientôt disponibles')}
             />
             <circle
               className={`cls-17 clickable selectable ${getSelectionStatus(MapSelection.PHOTO)}`}
               cx="420.39"
               cy="397.37"
               r="11.73"
-              onClick={() => openBackdrop('Stand photo', 'Les détails de cette activité seront bientôt disponibles')}
+              onClick={() =>
+                openBackdrop('Stand photo', 'de 22h15 à 2h', 'Photo papier imprimée en direct (1€ la photo, 2€ les 3)')
+              }
             />
             <circle
-              className={`cls-17 clickable selectable ${getSelectionStatus(MapSelection.SUMO)}`}
+              className={`cls-17 selectable ${getSelectionStatus(MapSelection.SUMO)}`}
               cx="711.69"
               cy="286.52"
               r="20.3"
-              onClick={() => openBackdrop('Stand sumo', 'Les détails de cette activité seront bientôt disponibles')}
             />
             <circle
               className={`cls-18 selectable ${getSelectionStatus(MapSelection.RECHARGEMENT)}`}
@@ -317,7 +363,9 @@ function Map() {
               cx="499.5"
               cy="226.42"
               r="11.73"
-              onClick={() => openBackdrop('Bar à softs', 'Les détails de ce bar seront bientôt disponibles')}
+              onClick={() =>
+                openBackdrop('Bar à softs', 'toute la soirée', 'Eau, soft et cocktail soft gratuit', 'Ethylotests')
+              }
             />
             <circle
               className={`cls-18 selectable ${getSelectionStatus(MapSelection.RECHARGEMENT)}`}
@@ -340,8 +388,12 @@ function Map() {
               transform="translate(1029.06 84.55) rotate(113.4)"
               onClick={() =>
                 openBackdrop(
-                  'Espace restauration #1',
-                  'Les détails de cet espace restauration seront bientôt disponibles',
+                  'L’atelier Lahmacun',
+                  "jusqu'à 3h",
+                  'Cuisine Turque:',
+                  'Borek (bœuf/pomme de terre/bœuf, pomme de terre) : 5€',
+                  'Portion de frite + sauces 4€',
+                  'Borek + frites + sauce 8€',
                 )
               }
             />
@@ -354,8 +406,12 @@ function Map() {
               transform="translate(147.57 -236.12) rotate(18.95)"
               onClick={() =>
                 openBackdrop(
-                  'Espace restauration #2',
-                  'Les détails de cet espace restauration seront bientôt disponibles',
+                  'La crep d’élo',
+                  "jusqu'à 3h",
+                  'Crêpes:',
+                  'Crêpe sucre 2€',
+                  'Crêpe confiture fraise 2,5€',
+                  'Crêpe Nutella 3€',
                 )
               }
             />
@@ -368,8 +424,12 @@ function Map() {
               transform="translate(58.97 -189.01) rotate(12.48)"
               onClick={() =>
                 openBackdrop(
-                  'Espace restauration #3',
-                  'Les détails de cet espace restauration seront bientôt disponibles',
+                  'Le saisonnier',
+                  "jusqu'à 3h",
+                  'Poutine et burgers:',
+                  'Poutine Bœuf / Poutine Kebab 8.5€',
+                  'Burger classique / burger raclette 8.5€ (+ frites 1€)',
+                  'Portion de frites 1€',
                 )
               }
             />
@@ -425,7 +485,14 @@ function Map() {
               width="42.96"
               height="71.73"
               transform="translate(125.94 -116.41) rotate(18.56)"
-              onClick={() => openBackdrop('Pot VIP/EAT #7', 'Les détails de cet EAT seront bientôt disponibles')}
+              onClick={() =>
+                openBackdrop(
+                  'Pot VIP/EAT (salle M104)',
+                  'de 21h à 23h uniquement sur invitation puis pour tous de 23h jusqu’à 2h30',
+                  "Association : Genius (association d'innovation et d'entrepreneuriat)",
+                  'Vente de champagne et bière',
+                )
+              }
             />
             <path d="M407.9,346.83l.66-1.92c.77-2.22,2.13-3.16,3.74-2.61s2.08,2.14,1.31,4.36l-.39,1.11,3.74,1.29-.28.81Zm.92-.59,3.76,1.3.4-1.14c.6-1.73.3-2.8-1-3.24s-2.19.21-2.78,1.94Z" />
             <path d="M416.06,342.5a3,3,0,1,1,3.92-1.81A3.1,3.1,0,0,1,416.06,342.5Zm1.7-4.91a2.21,2.21,0,1,0,1.59,2.88A2.29,2.29,0,0,0,417.76,337.59Z" />

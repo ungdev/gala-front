@@ -274,9 +274,15 @@ svg.map + .backdrop {
     }
 
     & > .backdrop-title,
-    & > .backdrop-content {
+    & > .backdrop-content,
+    & > .until {
       color: var(--text-color);
       user-select: none;
+    }
+
+    & > .until {
+      font-style: italic;
+      opacity: 0.6;
     }
 
     & > .drag-indicator {
