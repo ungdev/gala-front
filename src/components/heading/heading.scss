@@ -4,7 +4,6 @@
   max-height: 500px;
   position: relative;
   background-color: var(--secondary-color);
-  overflow: hidden;
 
   h1 {
     top: 50%;
@@ -15,16 +14,15 @@
     z-index: 1;
   }
 
-  &::before {
+  &::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -60px; // position of the ribbon
     left: 0;
     width: 100%;
-    height: 20px;
-    background: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGJhc2VQcm9maWxlPSJmdWxsIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0iI2ZlZTRhYiIgZD0iTTAgMjB2LTEwYSAxMCAtMTAgMCAwIDEgMjAgMHYxMHoiLz48L3N2Zz4=)
-      repeat no-repeat;
-    z-index: 2;
+    height: 140px;
+    background: url("../../assets/banderole.png")
+        center center;
   }
 
   .stripe {

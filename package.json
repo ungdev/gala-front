@@ -3,9 +3,9 @@
   "version": "1.0",
   "private": false,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host --port 8081",
     "build": "vite build",
-    "start": "vite preview --port 8080",
+    "start": "vite preview --port 8081 --host",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint src/ --fix --ext .js,.jsx,.ts,.tsx"
   },
