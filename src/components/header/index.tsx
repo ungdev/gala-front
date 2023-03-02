@@ -25,7 +25,7 @@ const links = [
   },
   {
     title: 'Billetterie',
-    href: 'https://www.billetweb.fr/cassiopee-2022-gala-utt',
+    href: 'https://www.billetweb.fr/cassiopee-2023',
   },
 ];
 

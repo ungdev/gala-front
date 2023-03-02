@@ -1,5 +1,4 @@
 import React from 'react';
-import logoAstree from '../../assets/logo-astree.jpg';
 import Heading from '../../components/heading';
 import IllustratedText from '../../components/illustratedText';
 
