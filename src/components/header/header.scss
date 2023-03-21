@@ -39,8 +39,10 @@ header {
         top: 57%; // position of the ribbon
         left: 0;
         height: 140px;
-        background: url("../../assets/banderole.png")
-          center center;
+        background-image: url("../../assets/banderole.png");
+        background-position: center;
+        background-repeat: repeat-x;
+        background-size: 30%;
       }
 
       a {
@@ -200,12 +202,16 @@ header {
       #nav-home-link {
         order: -1;
         display: inherit;
-        padding: 20px 0 70px 0; // 20px everywhere for a classic header
+        padding: 20px 0 30px 0; // 20px everywhere for a classic header
+      }
+      &::after {
+        background-size: 50%;
+        top: 45%;
       }
     }
 
     &.active .links {
-      padding: 0 0 70px 0; // delete for classic dropdown
+      padding: 0 0 30px 0; // delete for classic dropdown
       &::before {
         opacity: 0.7;
         pointer-events: all;
@@ -216,6 +222,7 @@ header {
       }
       &::after {
         top: 82%; // position of the ribbon
+        background-size: 60%;
       }
       #nav-home-link {
         padding: 20px 0 20px 0;

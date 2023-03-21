@@ -17,7 +17,11 @@ function Commitments() {
 
       <div className="page-container" id="commitments">
         <div className="section">
-          <IllustratedText imageSrc={placeholderImageSrc} alignment="left" title="Astrée" titleAlignment="left">
+          <IllustratedText
+            imageSrc={placeholderImageSrc}
+            alignment="left"
+            title="Association soutenue"
+            titleAlignment="left">
             <p>
               Parce que nous pensons que chacun à son niveau et dans la limite de ses capacités se doit de venir en aide
               aux autres, l'association Gala UTT s'engage chaque année auprès d'une association caritative pour lui
@@ -25,8 +29,8 @@ function Commitments() {
               l'association auprès du public que l'événement peut toucher.
             </p>
             <p>
-              Cette année, nous avions choisi de renouveler notre soutien à Astrée, association œuvrant pour restaurer
-              le lien social et rompre la solitude à tous les âges
+              Cette année, nous avions choisi de soutenir Solidarité Femmes Aube, qui lutte contre les violences faites
+              aux femmes et les assiste en cas de problèmes.
             </p>
             <p>
               Avec 500 bénévoles actifs, l'association accompagne les personnes en souffrance, sensibilise les
@@ -43,7 +47,7 @@ function Commitments() {
               <li>UNICEF</li>
               <li>WWF-France</li>
             </ul>
-            <h2 className="title-decoration">Le soucis de la prévention</h2>
+            <h2 className="title-decoration">La prévention, nos actions</h2>
             <p>
               La sécurité de chacun est notre priorité. Que cela soit pendant la soirée, pour venir ou pour repartir. Il
               nous tient à cœur d'assurer la sécurité et de préserver la santé de chaque participant. Nous tenons donc à
@@ -54,7 +58,7 @@ function Commitments() {
               <li>Des bouchons d'oreille, des préservatifs et des éthylotests sont à votre disposition</li>
               <li>Un stand de prévention et de sensibilisation est mis en place</li>
               <li>
-                Des bénévoles de l'association revivre circulent pour distribuer de l'eau et des grignotis pour prévenir
+                Des bénévoles de l'association Revivre circulent pour distribuer de l'eau et des grignotis pour prévenir
                 les dangers liés à la consommation d’alcool
               </li>
               <li>
@@ -65,7 +69,7 @@ function Commitments() {
             </ul>
             <p>
               Cette implication a valu au Gala UTT d'obtenir en 2015, 2018 et 2019 des prix au concours “Monte ta
-              soirée", organisé par l’association avenir santé, qui récompense les structures qui ont le souci de rendre
+              soirée", organisé par l’association Avenir Santé, qui récompense les structures qui ont le souci de rendre
               leurs soirées responsables.
             </p>
           </IllustratedText>
@@ -75,11 +79,11 @@ function Commitments() {
           <IllustratedText
             imageSrc={placeholderImageSrc1}
             alignment="right"
-            title="Le gala engagé"
+            title="Cassiopée engagée"
             titleAlignment="left">
             <p>
               L’environnement est un aspect qui est de plus en plus important au sein de notre société actuelle et dans
-              notre évènement. Le Gala UTT est donc un gala engagé qui souhaite porter au mieux cette valeur.
+              notre évènement. Cassiopée organise donc un gala engagé qui souhaite porter au mieux cette valeur.
               <br />
             </p>
             <p className="supported-association">

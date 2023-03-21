@@ -10,12 +10,14 @@
     &::before {
       content: '';
       position: absolute;
-      bottom: -60px; // position of the ribbon
+      bottom: -50px; // position of the ribbon
       left: 0;
       width: 100%;
-      height: 140px;
-      background: url("../../assets/banderole.png")
-          center center;
+      height: 100px;
+      background-size: 30%;
+      background-image: url("../../assets/banderole.png");
+      background-position: center;
+      background-repeat: repeat-x;
     }
 
     .poster {
@@ -34,7 +36,7 @@
     flex-flow: row wrap;
     font-size: 4em;
     color: var(--accent-color);
-    font-family: var(--title-font);
+    font-family: var(--text-font);
     position: relative;
     margin: auto;
     gap: 10px;
@@ -50,7 +52,7 @@
       z-index: -1;
       border-radius: 10px;
       opacity: 0.67;
-      background-color: #fee4ab;
+      background-color: var(--primary-color);
       padding: 20px 35px;
       margin-left: -35px;
       margin-top: -20px;

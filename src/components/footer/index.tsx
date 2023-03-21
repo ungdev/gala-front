@@ -23,7 +23,7 @@ function Footer() {
           Informations
         </Link>
         <br />
-        <a href="https://www.billetweb.fr/cassiopee-2022-gala-utt" className="animate">
+        <a href="https://www.billetweb.fr/cassiopee-2023" className="animate">
           Billetterie
         </a>
       </div>
@@ -44,7 +44,7 @@ function Footer() {
         <small className="legal">
           <div className="copyright">
             <i className="far fa-copyright" />
-            Tous droits réservés - Gala UTT 2022
+            Tous droits réservés - Gala UTT 2023
           </div>
 
           <div className="legal-links">

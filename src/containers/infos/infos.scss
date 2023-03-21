@@ -1,4 +1,4 @@
-#covid-19 {
+#pratique {
   .container {
     max-width: 1220px;
     margin: 30px auto;
@@ -79,7 +79,7 @@
   }
 }
 @media screen and (max-width: 720px) {
-  #covid-19 {
+  #pratiqued {
     tr {
       display: flex;
       flex-direction: column;
@@ -94,7 +94,7 @@
 }
 
 @media screen and (max-width: 460px) {
-  #covid-19 .item-container .image-container {
+  #pratique .item-container .image-container {
     width: 200px !important;
     height: 200px !important;
   }
