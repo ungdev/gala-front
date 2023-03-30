@@ -211,7 +211,7 @@ header {
     }
 
     &.active .links {
-      padding: 0 0 30px 0; // delete for classic dropdown
+      padding: 0 0 60px 0; // delete for classic dropdown
       &::before {
         opacity: 0.7;
         pointer-events: all;
@@ -221,8 +221,8 @@ header {
         display: inherit;
       }
       &::after {
-        top: 82%; // position of the ribbon
-        background-size: 60%;
+        top: 83%; // position of the ribbon
+        background-size: 50%;
       }
       #nav-home-link {
         padding: 20px 0 20px 0;

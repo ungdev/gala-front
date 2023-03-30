@@ -2,7 +2,7 @@ import React from 'react';
 
 import './title.scss';
 
-export type TitleAlignment = 'center' | 'left';
+export type TitleAlignment = 'center' | 'left' | 'center';
 
 interface TitleProps {
   children: string;

@@ -69,6 +69,23 @@
       }
     }
   }
+  &.center {
+    & {
+      grid-template-columns: 1fr !important;
+      gap: 20px 0;
+    }
+    &.center > .side {
+      grid-column: 1 !important;
+    }
+    & > img,
+    & > iframe,
+    & > img + .shadow,
+    & > iframe + .shadow {
+      grid-column: 1;
+      grid-row: 3 / 4;
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {

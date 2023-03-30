@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './infos.scss';
-import tenueIcon from '../../assets/tenue.jpg';
+import tenueIcon from '../../assets/tenue.png';
 import securiteIcon from '../../assets/securite.jpg';
 import billeterieIcon from '../../assets/billeterie.png';
 import sceneIcon from '../../assets/scene.jpg';
@@ -21,6 +21,7 @@ function Infos() {
       <div className="page-container" id="pratique">
         <div className="container">
           <Title>Plan</Title>
+          <p>de 2022 pour l'instant</p>
           <Map />
           <a href="/plan-cassiopee.png" download className="button">
             Télécharger le plan au format png
@@ -34,7 +35,7 @@ function Infos() {
               Des navettes seront disponibles (trajet Beurnonville -&gt; Gillon -&gt; UTT) aux horaires suivants{' '}
               <em>(horaires à l'arrêt Beurnonville)</em>:
               <br />
-              21h30 - 22h00 - 22h15 - 22h30 - 22h45 - 23h00 - 23h15 - 23h30 - 23h45 - 0h00 - 0h15 - 0h30
+              20h15 - 20h30 - 21h00 - 21h15 - 21h30 - 22h00 - 22h15 - 22h30 - 22h45 - 23h00 - 23h15 - 23h30 - 23h45
               <br />
               <br />
               Des navettes seront disponibles (trajet UTT -&gt; Gillon -&gt; Beurnonville) aux horaires suivants{' '}
@@ -45,7 +46,11 @@ function Infos() {
           </div>
         </div>
 
-        <IllustratedText imageSrc={tenueIcon} title="La tenue" alignment="left" titleAlignment="left">
+        <IllustratedText
+          imageSrc={tenueIcon}
+          title="Dress Code: Tenue de soirée exigée"
+          alignment="left"
+          titleAlignment="left">
           <p>Tenue correcte exigée pour la soirée. </p>
           <p>
             La totale costard cravate/robe de soirée n'est pas obligatoire, il suffit de faire un petit effort ! Cela
@@ -55,10 +60,14 @@ function Infos() {
         <div className="red section">
           <IllustratedText imageSrc={securiteIcon} alignment="right" title="Objets interdits" titleAlignment="left">
             <p>
-              Attention, les objets dangereux comme les armes blanches, armes à feu ou objets contondants sont
-              strictement interdits à l’intérieur du Gala. Nous procéderons à une fouille avant chaque entrée,
-              provoquant la confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
-              <br />
+              Une fouille est organisée à l’entrée du site de Cassiopée. 
+            </p>
+            <p>
+              Il est interdit de se présenter en possession
+              d’armes (y compris les armes d’autodéfense), d’objets explosifs ou inflammables, de spray anti-agression,
+              déodorants ou aérosols, d’objets tranchants ou contondants, d’outils et objets métalliques, d’objets
+              encombrants (casque de moto, antivols...), des récipients (pleins ou vides), de la nourriture ou des
+              boissons, drogue et stupéfiants.
             </p>
           </IllustratedText>
         </div>

@@ -92,7 +92,7 @@ function Home() {
             phares. L’évènement est également soutenu par l'UTT ainsi que de nombreux partenaires.
           </p>
           <p>
-            En plus d'une soirée hors du commun rassemblant plus de 3500 participants, 3 scènes, des bars, des
+            En plus d'une soirée hors du commun rassemblant plus de 3500 participants, 2 scènes, des bars, des
             foodtrucks, des animations et un feu d'artifice, Cassiopée accueille chaque année des artistes de renommée
             nationale et internationale !
           </p>

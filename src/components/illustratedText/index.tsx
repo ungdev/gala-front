@@ -3,7 +3,7 @@ import Title, { TitleAlignment } from '../title';
 
 import './illustratedText.scss';
 
-type IllustratedTextAlignment = 'left' | 'right';
+type IllustratedTextAlignment = 'left' | 'right' | 'center';
 
 interface IllustratedTextProps {
   imageSrc: string;

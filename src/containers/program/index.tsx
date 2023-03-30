@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
 import Artist from './artist';
-import Events from './events';
 import Heading from '../../components/heading';
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 import { fetchArtists, Artist as ApiArtist } from '../../utils/api';
@@ -49,11 +48,6 @@ function Program() {
         ) : (
           <div className="no-artists">Les artistes seront bientôt disponibles</div>
         )}
-      </div>
-
-      <div id="animations">
-        <h1>Animations</h1>
-        <Events />
       </div>
     </div>
   );
