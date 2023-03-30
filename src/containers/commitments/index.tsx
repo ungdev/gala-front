@@ -98,7 +98,6 @@ function Commitments() {
           <Events />
         </div>
 
-
         {/* <div className="red section">
           <IllustratedText imageSrc={trombiImageSrc} alignment="center" title="L'équipe" titleAlignment="center">
             <p>Voici l'équipe qui se cache derrière Cassiopée qui vous propose l'évenement du Gala UTT</p>
