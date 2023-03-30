@@ -1,19 +1,13 @@
 import React from 'react';
 
 import './infos.scss';
-import covidIcon from '../../assets/covid.jpg';
-import tenueIcon from '../../assets/tenue.jpg';
+import tenueIcon from '../../assets/tenue.png';
 import securiteIcon from '../../assets/securite.jpg';
 import billeterieIcon from '../../assets/billeterie.png';
 import sceneIcon from '../../assets/scene.jpg';
 
-import handSanitizerIcon from '../../assets/hand-sanitizer.png';
-import maskIcon from '../../assets/surgical-mask.png';
-import passIcon from '../../assets/pass.png';
-import communicationIcon from '../../assets/communication.png';
 import IllustratedText from '../../components/illustratedText';
 import Heading from '../../components/heading';
-import BookmarkedSection from '../../components/bookmarkedSection';
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 import Title from '../../components/title';
 import Map from '../../components/map';
@@ -24,9 +18,10 @@ function Infos() {
       <Heading title="Informations pratiques" />
       <TopFloatingActionButton />
 
-      <div className="page-container" id="covid-19">
+      <div className="page-container" id="pratique">
         <div className="container">
           <Title>Plan</Title>
+          <p>de 2022 pour l'instant</p>
           <Map />
           <a href="/plan-cassiopee.png" download className="button">
             Télécharger le plan au format png
@@ -40,7 +35,7 @@ function Infos() {
               Des navettes seront disponibles (trajet Beurnonville -&gt; Gillon -&gt; UTT) aux horaires suivants{' '}
               <em>(horaires à l'arrêt Beurnonville)</em>:
               <br />
-              21h30 - 22h00 - 22h15 - 22h30 - 22h45 - 23h00 - 23h15 - 23h30 - 23h45 - 0h00 - 0h15 - 0h30
+              20h15 - 20h30 - 21h00 - 21h15 - 21h30 - 22h00 - 22h15 - 22h30 - 22h45 - 23h00 - 23h15 - 23h30 - 23h45
               <br />
               <br />
               Des navettes seront disponibles (trajet UTT -&gt; Gillon -&gt; Beurnonville) aux horaires suivants{' '}
@@ -51,51 +46,11 @@ function Infos() {
           </div>
         </div>
 
-        <IllustratedText imageSrc={covidIcon} title="Situation sur la covid-19" alignment="left" titleAlignment="left">
-          <p>
-            Au sein de cette section vous trouverez toutes les informations liées à la situation sanitaire actuelle.
-            Tout changement des mesures gouvernementales impactant notre évènement sera disponible ici.
-          </p>
-        </IllustratedText>
-
-        <BookmarkedSection title="LE PROTOCOLE">
-          <div className="item-container">
-            <div className="item">
-              <div className="image-container">
-                <img src={handSanitizerIcon} alt="Gel hydroalcoolique" />
-              </div>
-              <h4>Gel hydroalcoolique</h4>
-              <p>Du matériel tel que du gel hydroalcoolique mis à disposition dans des bornes prévues à cet effet</p>
-            </div>
-            <div className="item">
-              <div className="image-container">
-                <img src={maskIcon} alt="Masque chirurgical" />
-              </div>
-              <h4>Le masque</h4>
-              <p>Le port du masque ne sera pas obligatoire.</p>
-            </div>
-            <div className="item">
-              <div className="image-container">
-                <img src={passIcon} alt="Distanciation sociale" />
-              </div>
-              <h4>Pass-sanitaire</h4>
-              <p>
-                L'association se réserve le droit d'imposer le pass sanitaire en fonction de l'évolution de l'épidémie.
-              </p>
-            </div>
-            <div className="item">
-              <div className="image-container">
-                <img src={communicationIcon} alt="Interdiction: Poignée de main" />
-              </div>
-              <h4>Communication préventive</h4>
-              <p>
-                L’association prévoit une communication préventive. Des signalétiques seront présentes dans les
-                différentes enceintes. Une communication régulière avec les autorités locales est mise en place.
-              </p>
-            </div>
-          </div>
-        </BookmarkedSection>
-        <IllustratedText imageSrc={tenueIcon} title="La tenue" alignment="left" titleAlignment="left">
+        <IllustratedText
+          imageSrc={tenueIcon}
+          title="Dress Code: Tenue de soirée exigée"
+          alignment="left"
+          titleAlignment="left">
           <p>Tenue correcte exigée pour la soirée. </p>
           <p>
             La totale costard cravate/robe de soirée n'est pas obligatoire, il suffit de faire un petit effort ! Cela
@@ -103,12 +58,13 @@ function Infos() {
           </p>
         </IllustratedText>
         <div className="red section">
-          <IllustratedText imageSrc={securiteIcon} alignment="right" title="Sécurité" titleAlignment="left">
+          <IllustratedText imageSrc={securiteIcon} alignment="right" title="Objets interdits" titleAlignment="left">
+            <p>Une fouille est organisée à l’entrée du site de Cassiopée.</p>
             <p>
-              Attention, les objets dangereux comme les armes blanches, armes à feu ou objets contondants sont
-              strictement interdits à l’intérieur du Gala. Nous procéderons à une fouille avant chaque entrée,
-              provoquant la confiscation de tout matériel pouvant poser un problème de sécurité (rasoir, aérosol, ...).
-              <br />
+              Il est interdit de se présenter en possession d’armes (y compris les armes d’autodéfense), d’objets
+              explosifs ou inflammables, de spray anti-agression, déodorants ou aérosols, d’objets tranchants ou
+              contondants, d’outils et objets métalliques, d’objets encombrants (casque de moto, antivols...), des
+              récipients (pleins ou vides), de la nourriture ou des boissons, drogue et stupéfiants.
             </p>
           </IllustratedText>
         </div>
@@ -120,11 +76,11 @@ function Infos() {
           <p>La billetterie est ouverte !</p>
           <p>Pour votre information les tarifs sont les suivants :</p>
           <ul>
-            <li>Cotisants BDE UTT et étudiants des écoles partenaires : 25€</li>
-            <li>Étudiants : 28€</li>
-            <li>Non-étudiants : 30€</li>
+            <li>Cotisants BDE UTT et étudiants des écoles partenaires : 26€</li>
+            <li>Étudiants : 29€</li>
+            <li>Non-étudiants : 32€</li>
           </ul>
-          <p>Vous pouvez dès à présent prendre vos places pour le 14 mai 2022 !</p>
+          <p>Vous pouvez dès à présent prendre vos places pour le 6 mai 2023 !</p>
           <p>
             Les écoles partenaires seront annoncées au fur et à mesure des accords, n'hésites pas à nous contacter si tu
             penses que ton école serait intéressée.

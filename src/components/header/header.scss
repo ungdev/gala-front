@@ -29,25 +29,27 @@ header {
       flex-flow: row nowrap;
       justify-content: stretch;
       background-color: var(--primary-color);
-      padding: 20px 20px 0 20px;
+      padding: 20px 20px 70px 20px; // 20 px for a classic header
       box-sizing: border-box;
 
       &::after {
         position: absolute;
         width: 100%;
         content: '';
-        top: 100%;
+        top: 57%; // position of the ribbon
         left: 0;
-        height: 20px;
-        background: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGJhc2VQcm9maWxlPSJmdWxsIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0iI2ZlZTRhYiIgZD0iTTAgMHYxMGEgMTAgMTAgMCAwIDAgMjAgMHYtMTB6Ii8+PC9zdmc+)
-          repeat no-repeat;
+        height: 140px;
+        background-image: url("../../assets/banderole.png");
+        background-position: center;
+        background-repeat: repeat-x;
+        background-size: 30%;
       }
 
       a {
         flex: 1 1 200px;
         position: relative;
         text-decoration: none;
-        font-size: 1.4em;
+        font-size: 1.6em;
         transition: all 0.3s;
         color: var(--secondary-color);
         font-weight: 700;
@@ -64,8 +66,8 @@ header {
           display: block;
           width: 100%;
           padding: 12px 0;
-          border-top: 3px solid var(--text-color);
-          border-bottom: 3px solid var(--text-color);
+          border-top: 3px solid var(--icons-color);
+          border-bottom: 3px solid var(--icons-color);
         }
 
         &:nth-child(1),
@@ -89,9 +91,15 @@ header {
           .container {
             width: 90%;
             max-width: 250px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              transition: all 0.3s ease-in-out;
+              transform: scale(1.1);
+            }
 
             img {
-              margin-top: 15px;
+              margin-bottom: 15px; // centers the logo
             }
           }
         }
@@ -194,11 +202,16 @@ header {
       #nav-home-link {
         order: -1;
         display: inherit;
-        padding-top: 20px;
+        padding: 20px 0 30px 0; // 20px everywhere for a classic header
+      }
+      &::after {
+        background-size: 50%;
+        top: 45%;
       }
     }
 
     &.active .links {
+      padding: 0 0 60px 0; // delete for classic dropdown
       &::before {
         opacity: 0.7;
         pointer-events: all;
@@ -206,6 +219,13 @@ header {
 
       a {
         display: inherit;
+      }
+      &::after {
+        top: 83%; // position of the ribbon
+        background-size: 50%;
+      }
+      #nav-home-link {
+        padding: 20px 0 20px 0;
       }
     }
   }

@@ -3,8 +3,8 @@
 /* --------------- */
 
 @font-face {
-  font-family: 'FreeHouse';
-  src: url('/fonts/Freehouse-Regular.woff2');
+  font-family: 'CalvinoGrandeExtraBold';
+  src: url('/fonts/Calvino-grande-extrabold.woff2');
 }
 
 @font-face {
@@ -17,13 +17,14 @@
 }
 
 :root {
-  --primary-color: #fee4ab;
-  --secondary-color: #9b1f1f;
-  --accent-color: #dd513a;
+  --primary-color: #b1cac9;
+  --secondary-color: #772a65;
+  --accent-color: #9b3d89;
+  --icons-color: #03393f;
   --text-color: #0c0b08;
   --shadow-color: #707070;
   --text-font: HeroNew;
-  --title-font: FreeHouse;
+  --title-font: CalvinoGrandeExtraBold;
   height: 100%;
 }
 
