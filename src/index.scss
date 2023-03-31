@@ -70,10 +70,16 @@ a.animate {
     background-color: var(--secondary-color);
     transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
     transform-origin: bottom left;
+    // for compatibility
+    -webkit-transform-origin: bottom left;
+    -webkit-transform: scaleX(0);
+    -webkit-transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
   }
   &:hover:after,
   &:focus:after {
     transform: scaleX(1);
+    // for compatibility
+    -webkit-transform: scaleX(1);
   }
 }
 
@@ -152,6 +158,8 @@ small {
   cursor: pointer;
   outline: none;
   transition: all 0.3s;
+  // for compatibility
+  -webkit-transition: all 0.3s;
 
   &::before {
     content: '';
@@ -165,6 +173,8 @@ small {
     clip-path: polygon(0 0, 30% 0, calc(30% + 20px) 100%, 0% 100%);
     z-index: 1;
     transition: all 0.3s;
+    // for compatibility
+    -webkit-transition: all 0.3s;
   }
 
   &:hover,

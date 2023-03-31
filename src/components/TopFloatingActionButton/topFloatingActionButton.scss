@@ -13,6 +13,8 @@
   cursor: pointer;
   z-index: 10;
   transition: opacity 0.25s ease-in-out;
+  // for compatibility
+  -webkit-transition: opacity 0.25s ease-in-out;
 
   .arrow {
     width: 48px;
@@ -23,6 +25,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    // for compatibility
+    -webkit-transform: translate(-50%, -50%);
   }
 
   &.faded {

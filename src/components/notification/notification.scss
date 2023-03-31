@@ -10,7 +10,9 @@
   border-radius: 4px;
   z-index: 999;
   transition: top 0.3s, opacity 0.3s;
-
+  // for compatibility
+  -webkit-transform: translateX(-50%);
+  -webkit-transition: top 0.3s, opacity 0.3s;
   &::before {
     font-family: 'Font Awesome 5 Free';
     font-weight: bold;

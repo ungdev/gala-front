@@ -13,6 +13,8 @@
     transform: translate(-50%, -50%);
     color: var(--primary-color);
     z-index: 1;
+    // for compatibility
+    -webkit-transform: translate(-50%, -50%);
   }
 
   &::after {
@@ -38,35 +40,47 @@
       top: 10%;
       left: -5%;
       transform: rotate(16deg);
+      // for compatibility
+      -webkit-transform: rotate(16deg);
     }
 
     &:nth-of-type(2) {
       top: 50%;
       transform: translateY(-50%);
+      // for compatibility
+      -webkit-transform: translateY(-50%);
     }
 
     &:nth-of-type(3) {
       bottom: 10%;
       left: -5%;
       transform: rotate(-16deg);
+      // for compatibility
+      -webkit-transform: rotate(-16deg);
     }
 
     &:nth-of-type(4) {
       top: 10%;
       right: -5%;
       transform: rotate(164deg);
+      // for compatibility
+      -webkit-transform: rotate(164deg);
     }
 
     &:nth-of-type(5) {
       top: 50%;
       right: 0;
       transform: translateY(-50%) rotate(180deg);
+      // for compatibility
+      -webkit-transform: translateY(-50%) rotate(180deg);
     }
 
     &:nth-of-type(6) {
       bottom: 10%;
       right: -5%;
       transform: rotate(-164deg);
+      // for compatibility
+      -webkit-transform: rotate(-164deg);
     }
   }
 }
@@ -80,18 +94,26 @@
   .stripe {
     &:nth-of-type(1) {
       transform: rotate(32deg) !important;
+      // for compatibility
+      -webkit-transform: rotate(32deg) !important;
     }
 
     &:nth-of-type(3) {
       transform: rotate(-32deg) !important;
+      // for compatibility
+      -webkit-transform: rotate(-32deg) !important;
     }
 
     &:nth-of-type(4) {
       transform: rotate(148deg) !important;
+      // for compatibility
+      -webkit-transform: rotate(148deg) !important;
     }
 
     &:nth-of-type(6) {
       transform: rotate(-148deg) !important;
+      // for compatibility
+      -webkit-transform: rotate(-148deg) !important;
     }
   }
 }

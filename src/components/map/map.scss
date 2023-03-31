@@ -10,6 +10,8 @@ svg.map {
 
   & .selectable {
     transition: opacity 0.2s ease-in-out;
+    // for compatibility
+    -webkit-transition: opacity 0.2s ease-in-out;
   }
 
   & .selectable.unselected {
@@ -227,6 +229,8 @@ svg.map + .backdrop {
     background-color: var(--text-color);
     opacity: 0;
     transition: opacity 200ms ease-in-out;
+    // for compatibility
+    -webkit-transition: opacity 200ms ease-in-out;
     display: block;
     cursor: pointer;
   }
@@ -253,7 +257,9 @@ svg.map + .backdrop {
     box-sizing: border-box;
     transition: bottom 200ms ease-in-out;
     cursor: grab;
-
+    // for compatibility
+    -webkit-transform: translateX(-50%);
+    -webkit-transition: bottom 200ms ease-in-out;
     & > .backdrop-title {
       font-size: 1.4em;
     }
@@ -280,6 +286,8 @@ svg.map + .backdrop {
       margin-top: -15px;
       left: 50%;
       transform: translateX(-50%);
+      // for compatibility
+      -webkit-transform: translateX(-50%);
     }
   }
 

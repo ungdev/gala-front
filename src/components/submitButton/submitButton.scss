@@ -12,6 +12,8 @@
   overflow: hidden;
   transition: all 0.3s;
   width: 100%;
+  // for compatibility
+  -webkit-transition: all 0.3s;
 
   &:hover,
   &:focus {
@@ -26,6 +28,8 @@
     left: -16px;
     opacity: 0;
     transition: all 0.3s;
+    // for compatibility
+    -webkit-transition: all 0.3s;
   }
 
   &.icon .submit-button-icon,

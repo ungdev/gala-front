@@ -8,6 +8,8 @@
     .button {
       left: 50%;
       transform: translateX(-50%);
+      // for compatibility
+      -webkit-transform: translateX(-50%);
     }
   }
 
