@@ -158,10 +158,8 @@
       max-height: 100%;
       top: 50%;
       transform: translateY(-50%);
-      // for compatibility
       -webkit-transform: translateY(-50%);
-
-      position: relative;
+      position: absolute;
       user-select: none;
     }
   }
