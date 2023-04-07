@@ -20,7 +20,6 @@ function Program() {
     fetch();
   }, []);
 
-
   return (
     <div className="page-container" id="program">
       <Heading title="Les Artistes" />
@@ -31,8 +30,8 @@ function Program() {
           <div className="artists-container">
             {artists
               .sort((a, b) => {
-                var time1 = a.eventDate ? moment(a.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').unix() : moment.now();
-                var time2 = b.eventDate ? moment(b.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').unix() : moment.now();
+                const time1 = a.eventDate ? moment(a.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').unix() : moment.now();
+                const time2 = b.eventDate ? moment(b.eventDate, 'YYYY-MM-DDTHH:mm:ss.SSSSZ').unix() : moment.now();
                 return time1 - time2;
               })
               .map((artist, i) => (
