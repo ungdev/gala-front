@@ -9,6 +9,8 @@ header {
     text-align: center;
     width: 100%;
     transition: all 0.3s;
+    // for compatibility
+    -webkit-transition: all 0.3s;
 
     &.transparent {
       box-shadow: none;
@@ -36,13 +38,13 @@ header {
         position: absolute;
         width: 100%;
         content: '';
-        top: 57%; // position of the ribbon
+        top: 50%; // position of the ribbon
         left: 0;
-        height: 140px;
+        height: 100%;
         background-image: url("../../assets/banderole.png");
         background-position: center;
         background-repeat: repeat-x;
-        background-size: 30%;
+        background-size: 25%;
       }
 
       a {
@@ -51,6 +53,8 @@ header {
         text-decoration: none;
         font-size: 1.6em;
         transition: all 0.3s;
+        // for compatibility
+        -webkit-transition: all 0.3s;
         color: var(--secondary-color);
         font-weight: 700;
         display: flex;
@@ -80,6 +84,8 @@ header {
             top: 50%;
             color: var(--secondary-color);
             transform: translate(50%, -50%);
+            // for compatibility
+            -webkit-transform: translate(50%, -50%);
           }
         }
 
@@ -92,10 +98,15 @@ header {
             width: 90%;
             max-width: 250px;
             transition: all 0.3s ease-in-out;
+            // for compatibility
+            -webkit-transition: all 0.3s ease-in-out;
 
             &:hover {
               transition: all 0.3s ease-in-out;
               transform: scale(1.1);
+              // for compatibility
+              -webkit-transform: scale(1.1);
+              -webkit-transition: all 0.3s ease-in-out;
             }
 
             img {
@@ -121,6 +132,8 @@ header {
       z-index: 10;
       cursor: pointer;
       padding: 10px;
+      // for compatibility
+      -webkit-transform: translateY(-50%);
 
       & > div {
         position: relative;
@@ -134,6 +147,8 @@ header {
           height: 4px;
           width: 100%;
           transition: all 0.3s;
+          // for compatibility
+          -webkit-transition: all 0.3s;
 
           &:nth-child(1) {
             top: 0;
@@ -152,6 +167,8 @@ header {
       &:nth-child(1) {
         top: 50%;
         transform: translateY(-50%) rotate(45deg);
+        // for compatibility
+        -webkit-transform: translateY(-50%) rotate(45deg);
       }
 
       &:nth-child(2) {
@@ -161,6 +178,8 @@ header {
       &:nth-child(3) {
         top: 50%;
         transform: translateY(-50%) rotate(-45deg);
+        // for compatibility
+        -webkit-transform: translateY(-50%) rotate(-45deg);
       }
     }
 
@@ -171,6 +190,8 @@ header {
       left: 0;
       padding: 0;
       transition: all 0.05s;
+      // for compatibility
+      -webkit-transition: all 0.05s;
 
       &::before {
         content: '';
@@ -184,6 +205,8 @@ header {
         top: 0;
         opacity: 0;
         transition: opacity 150ms;
+        // for compatibility
+        -webkit-transition: opacity 150ms;
       }
 
       a {
@@ -226,6 +249,16 @@ header {
       }
       #nav-home-link {
         padding: 20px 0 20px 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  header nav {
+    .links {
+      &::after {
+        background-size: 8%;
       }
     }
   }

@@ -66,6 +66,8 @@
         width: 40%;
         transform: translateX(-50px);
         grid-column: 1;
+        // for compatibility
+        -webkit-transform: translateX(-50px);
       }
     }
   }

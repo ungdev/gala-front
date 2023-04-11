@@ -31,6 +31,8 @@
     height: 100%;
     background: #fff;
     z-index: -1;
+    // for compatibility
+    -webkit-transform: translate(-50%);
   }
 
   h2 {
@@ -50,7 +52,8 @@
     position: relative;
     transform: translateY(-10px);
     z-index: 1;
-
+    // for compatibility
+    -webkit-transform: translateY(-10px);
     img {
       padding: 10px;
       width: 100%;

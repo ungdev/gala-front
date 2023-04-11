@@ -18,6 +18,8 @@
     outline: none;
     box-shadow: 0 1px 0 0 var(--text-color);
     transition: all 0.3s;
+    // for compatibility
+    -webkit-transition: all 0.3s;
 
     &:focus {
       box-shadow: 0 3px 0 0 var(--secondary-color);
@@ -34,6 +36,8 @@
     user-select: none;
     cursor: text;
     transition: all 0.3s;
+    // for compatibility
+    -webkit-transition: all 0.3s;
 
     label {
       cursor: text;
@@ -64,6 +68,8 @@
       right: 8px;
       top: 16px;
       transform: translateY(-50%);
+      // for compatibility
+      -webkit-transform: translateY(-50%);
       color: var(--accent-color);
     }
 
@@ -73,6 +79,8 @@
       top: -10px;
       right: 17px;
       transform: translate(50%, -100%);
+      // for compatibility
+      -webkit-transform: translate(50%, -100%);
       width: 180px;
       text-align: center;
       background: var(--accent-color);
@@ -87,6 +95,8 @@
         bottom: -8px;
         left: 50%;
         transform: translateX(-50%) rotate(-45deg);
+        // for compatibility
+        -webkit-transform: translateX(-50%) rotate(-45deg);
         display: block;
         width: 14px;
         height: 14px;
