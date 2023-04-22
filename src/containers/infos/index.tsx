@@ -10,7 +10,6 @@ import IllustratedText from '../../components/illustratedText';
 import Heading from '../../components/heading';
 import TopFloatingActionButton from '../../components/TopFloatingActionButton';
 import Title from '../../components/title';
-import Map from '../../components/map';
 
 function Infos() {
   return (
@@ -21,8 +20,8 @@ function Infos() {
       <div className="page-container" id="pratique">
         <div className="container">
           <Title>Plan</Title>
-          <p>de 2022 pour l'instant</p>
-          <Map />
+          <img src="/plan-cassiopee.png" alt="Plan de la soirée." />
+          {/* <Map /> Can be reused in the future */}
           <a href="/plan-cassiopee.png" download className="button">
             Télécharger le plan au format png
           </a>
