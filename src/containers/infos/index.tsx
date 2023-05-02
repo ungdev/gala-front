@@ -58,7 +58,7 @@ function Infos() {
         </IllustratedText>
         <div className="red section">
           <IllustratedText imageSrc={securiteIcon} alignment="right" title="Objets interdits" titleAlignment="left">
-            <p>Une fouille est organisée à l’entrée du site de Cassiopée.</p>
+            <p>Une palpation est organisée à l’entrée du site de Cassiopée.</p>
             <p>
               Il est interdit de se présenter en possession d’armes (y compris les armes d’autodéfense), d’objets
               explosifs ou inflammables, de spray anti-agression, déodorants ou aérosols, d’objets tranchants ou
